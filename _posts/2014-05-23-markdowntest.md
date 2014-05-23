@@ -166,7 +166,7 @@ $ sudo apt-get install vim-gnome
 
 Python 示例：
 
-```python
+
 @requires_authorization
 def somefunc(param1='', param2=0):
     '''A docstring'''
@@ -179,11 +179,11 @@ class SomeClass:
 
 >>> message = '''interpreter
 ... prompt'''
-```
+
 
 JavaScript 示例：
 
-``` javascript
+{% highlight javascript %}
 /**
 * nth element in the fibonacci series.
 * @param n >= 0
@@ -201,7 +201,7 @@ function fib(n) {
 }
 
 document.write(fib(10));
-```
+{% endhighlight %}
 
 ### 7. 表格支持
 
