@@ -46,10 +46,11 @@ links:
 timezone:    Asia/Shanghai
 future:      true
 pygments:    true
-markdown:    kramdown
+markdown:    redcarpet
+#kramdown
 
 redcarpet:
-  extensions: ["autolink", "tables", "no_intra_emphasis", "fenced_code_blocks", "tables", "with_toc_data"]
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data", "strikethrough","superscript"]
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:   /:categories/:year/:month/:day/:title 
