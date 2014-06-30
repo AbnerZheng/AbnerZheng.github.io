@@ -21,7 +21,7 @@ jQuery.extend( jQuery.easing,
  
 $(function() {
     var dict = {};
-    $('h3').each(function (idx) {
+    $('h2').each(function (idx) {
         var title = $(this).text();
         var id = 'outline_' + idx;
         dict[title] = id;

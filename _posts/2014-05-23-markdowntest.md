@@ -166,7 +166,7 @@ $ sudo apt-get install vim-gnome
 
 Python 示例：
 
-
+~~~python
 @requires_authorization
 def somefunc(param1='', param2=0):
     '''A docstring'''
@@ -179,7 +179,7 @@ class SomeClass:
 
 >>> message = '''interpreter
 ... prompt'''
-
+~~~
 
 JavaScript 示例：
 
