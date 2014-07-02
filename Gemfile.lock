@@ -61,6 +61,7 @@ GEM
     toml (0.1.1)
       parslet (~> 1.5.0)
     tzinfo (0.3.38)
+    wdm (0.1.0)
     yajl-ruby (1.1.0)
     yajl-ruby (1.1.0-x86-mingw32)
 
@@ -76,3 +77,4 @@ DEPENDENCIES
   rake
   stringex
   thor
+  wdm (~> 0.1.0)
