@@ -14,10 +14,10 @@ share: true
 alias: [/2014/07/02/markdowntext2]
 ---
 
-### 
-新的markdown测试
+### 新的markdown测试
+
 <!--more-->
-Welcome to StackEdit!   {#welcome}
+Welcome to StackEdit! 
 =====================
 
 
