@@ -75,7 +75,7 @@ def zeroOnePack(i,k):
 w = [4,5,3,4,3]
 v = [5,6,2,6,3]
 def zeroOnePack2(w,v,k):
-	result = [0] * (k+1) #初始化,空间复杂度为O(|items|)
+	result = [0] * (k+1) #初始化,空间复杂度为O(k)
 	for dummy_i in range(0,len(v)):
 		for ww in range(k,0,-1):
 			if ww - w[dummy_i]>=0:
@@ -86,7 +86,10 @@ print zeroOnePack2(w,v,13)
 
 {% endhighlight %}
 
-该程序的时间复杂度为O(|items|*k)
+该程序的时间复杂度为
+$$O(k^2)$$
+
+
 
 
 
