@@ -16,6 +16,7 @@ GEM
     commander (4.1.6)
       highline (~> 1.6.11)
     fast-stemmer (1.0.2)
+    ffi (1.9.3)
     ffi (1.9.3-x64-mingw32)
     ffi (1.9.3-x86-mingw32)
     highline (1.6.20)
@@ -61,11 +62,11 @@ GEM
     toml (0.1.1)
       parslet (~> 1.5.0)
     tzinfo (0.3.38)
-    wdm (0.1.0)
     yajl-ruby (1.1.0)
     yajl-ruby (1.1.0-x86-mingw32)
 
 PLATFORMS
+  ruby
   x64-mingw32
   x86-mingw32
 
@@ -77,4 +78,3 @@ DEPENDENCIES
   rake
   stringex
   thor
-  wdm (~> 0.1.0)
