@@ -1,17 +1,17 @@
 ---
 layout: post
-title: "test"
+title: "checkio note"
 description: 
-modified: 2014-06-02 10:33:46 +0800
+modified: 2015-03-05 21:24:01 +0800
 category: 
-tags: [test,use of rake]
+tags: [python, algorithms]
 image:
   feature: 19.jpg-clip.jpg
   credit: 
   creditlink: 
 comments: true
 share: true
-alias: [/2014/06/02/test]
+alias: [/2015/03/05/checkio note]
 ---
 
 ### 
