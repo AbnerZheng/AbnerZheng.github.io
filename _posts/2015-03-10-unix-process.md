@@ -14,7 +14,7 @@ share: true
 alias: [/2015/03/10/Unix Process]
 ---
 
-准备面试中， 重读这本《理解Unix进程》，该书是用ruby作为讲解语言，面向普通没有C语言系统编程的web开发者，正好我准备投入nodejs的怀抱，想着ruby和node都是脚本语言，涉及到系统调用的地方都是一致的，同为脚本语言，接口的相通性应该是有的，所以在第二遍的阅读中，准备以node实现其中的示例代码，以此作为学习。
+准备面试中， 重读这本[《理解Unix进程》][1]，该书是用ruby作为讲解语言，面向普通没有C语言系统编程的web开发者，正好我准备投入nodejs的怀抱，想着ruby和node都是脚本语言，涉及到系统调用的地方都是一致的，同为脚本语言，接口的相通性应该是有的，所以在第二遍的阅读中，准备以node实现其中的示例代码，以此作为学习。
 
 <!--more-->
 
@@ -155,4 +155,23 @@ test
 
 ## 第十章 进程皆有退出码
 
-当进程即将结束时，它还有最后一线机会留下自身的信息：退出码（unsigned char 类型). 通过退出码的机制来跟其他进程进行通信。要坚持退出码0代表顺利结束。在node中，可以通过"
+当进程即将结束时，它还有最后一线机会留下自身的信息：退出码（unsigned char 类型). 通过退出码的机制来跟其他进程进行通信。要坚持退出码0代表顺利结束。在node中，可以通过process.exit(exitcode)来实现。如：
+{% highlight javascript linenos  %}
+// exitTest.js
+console.log("The process is running");
+process.exit(101)
+{% endhighlight %}
+
+使用bash查看结果：
+{% highlight bash %}
+$ node exitTest.js
+The process is running
+$ echo $?
+101
+{% endhighlight %}
+
+## 第十一章
+
+
+
+[1]: http://book.douban.com/subject/24298701/
