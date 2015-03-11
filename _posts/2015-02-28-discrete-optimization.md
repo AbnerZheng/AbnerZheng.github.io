@@ -89,6 +89,47 @@ print zeroOnePack2(w,v,13)
 该程序的时间复杂度为
 $$O(k^2)$$
 
+#### 3月6日更新
+
+这几点忙着准备找实习，这门课看来又要往后拖了，怨念啊。慢慢填坑吧。
+
+继续前面的01背包问题，老师在之后的视频介绍了branch and bound算法，这个算法现在已经被淘汰了。不过我查了wikipedia，发现这个算法在亮相之初曾获得了旅行商锦标赛的冠军，还算挺经典的算法。不过还不急着上branch and bound，先用backtrace刷一遍。程序如下，基本套用backtrace即可，backtrace是深度优先搜索（没用队列），递归基一般选为遍历完数组。
+
+{% highlight python linenos %}
+nn = len(v)
+resultBacktrace = [0]* nn
+maxV =0
+def zeroOnePackBacktrace(k):
+	"""
+	k表示背包容量，i为第几个物品，ww为目前选入背包物品的重量，vv为其价值
+	"""
+    def backtrace(i,ww,vv):
+        global maxV
+        #求解成功,递归基
+        if i== nn:
+            if vv>maxV:
+                maxV = vv
+                print resultBacktrace
+            return
+
+        if ww + w[i]<=k:
+            #放进背包
+            resultBacktrace[i]= 1
+            backtrace(i+1, ww+w[i],vv+v[i])
+        #不放入背包
+        resultBacktrace[i] = 0
+        backtrace(i+1,ww,vv)
+
+    backtrace(0,0,0)
+
+zeroOnePackBacktrace(21)
+print maxV
+{% endhighlight %}
+
+分析可以知道，这种backtrace的复杂度是指数爆炸的。
+
+接下来撸一把branch and bound，这是一种远古剪枝算法，其求解目标是找出解空间树种满足约束条件的所有解，而分支限界法的求解目标则是找出满足约束条件的一个解或是某种意义下的最优解，再看搜索方式，回溯法
+
 
 
 
