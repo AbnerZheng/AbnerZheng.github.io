@@ -56,6 +56,7 @@ NAN_METHOD(node_getppid) {
 {% endhighlight %}
 
 #### 对应的系统调用: getppid
+
 #### python实现： os.getppid()
 
 ## 第五章 进程皆有文件描述符
@@ -75,6 +76,7 @@ fs.closeSync(fid); //关闭文件
 {% endhighlight %}
 
 #### 系统调用： open
+
 #### python实现： open("filename","mode").fileno()
 
 文件描述符是操作系统用来跟踪打开的资源，所分配的文件描述符是尚未使用的最小的数值，资源一旦释放，对应的文件描述符就又能够使用了。
