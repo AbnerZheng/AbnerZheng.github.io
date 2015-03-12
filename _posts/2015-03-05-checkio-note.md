@@ -265,6 +265,7 @@ def fibgolf(t, n):
     return f(3,0,2,0,1,1,n)
 {% endhighlight %}
 
+该程序经过判定程序检测，为721，得179分，排91。
 
 
 [1]: http://www.checkio.org/mission/roman-numerals/
