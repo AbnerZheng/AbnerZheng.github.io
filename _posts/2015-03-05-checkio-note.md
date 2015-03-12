@@ -248,7 +248,7 @@ if __name__ == '__main__':
 
 题目[链接][4], 该题竞标赛，给了一大堆的类fibonacci的各种数列，考量条件是编译后的长度，编译长度？!  一点概念都没有。。。只能是**先留坑日后填**了。现阶段的解法如下：
 
-{% highlight python lineos %}
+{% highlight python linenos %}
 def f(a,b,c,d,e,f,n):
     for i in range(n):
         a,b,c=b,c,d*c+e*b+f*a
