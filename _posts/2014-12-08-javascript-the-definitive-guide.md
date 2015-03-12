@@ -14,11 +14,11 @@ share: true
 alias: [/2014/12/08/JavaScript The Definitive Guide]
 ---
 
-### JavaScript权威指南笔记及思考
+### JavaScript权威指南笔记
 
 <!--more-->
 
-## 第一章 概述
+## 
 
 JavaScript语言语法来自于Java，一等函数来自Scheme，基于原型（prototype-based）的继承来自于Self。
 

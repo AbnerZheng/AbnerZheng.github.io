@@ -70,6 +70,6 @@ $broadcast: 下级可以响应
 * $scope的生命周期：
 ![生命周期](\images\post\$scopeLifeCircle.jpg)
 
-###
+
 
 
