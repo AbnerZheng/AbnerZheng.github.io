@@ -36,6 +36,8 @@
 
 {% macro mathjax_script(post) %}
     {% if post.is_mathjax %}
-        <script src="/assets/js/mathjax.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+      </script>
     {% endif %}
 {% endmacro %}
