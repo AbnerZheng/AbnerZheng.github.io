@@ -1,0 +1,18 @@
+  /Users/abnerzheng/Github/AbnerZheng.github.io/notes:
+  total used in directory 2480 available 4291060296
+  -rw-r--r--@  1 abnerzheng  staff   6.0K Apr 21 11:57 .DS_Store
+  -rw-r--r--   1 abnerzheng  staff     4B Apr 22 18:48 Artificial_Intelligence
+  -rw-r--r--   1 abnerzheng  staff    57K Apr 22 20:00 Artificial_Intelligence.log
+  -rw-r--r--   1 abnerzheng  staff   142B Apr 22 20:00 Artificial_Intelligence.out
+  -rw-r--r--@  1 abnerzheng  staff    51K Apr 22 20:00 Artificial_Intelligence.pdf
+  -rw-r--r--   1 abnerzheng  staff   1.0K Apr 23 18:47 Artificial_Intelligence.rel
+  -rw-r--r--   1 abnerzheng  staff   1.1K Apr 22 20:00 Artificial_Intelligence.tex
+  -rw-r--r--   1 abnerzheng  staff    49K Apr 21 15:06 Python_for_analyse.log
+  -rw-r--r--@  1 abnerzheng  staff   117K Apr 21 15:06 Python_for_analyse.pdf
+  -rw-r--r--   1 abnerzheng  staff   1.8K Apr 22 18:47 Python_for_analyse.rel
+  -rw-r--r--   1 abnerzheng  staff   2.9K Apr 22 18:47 Python_for_analyse.tex
+  -rw-r--r--   1 abnerzheng  staff   8.1K Sep 30 10:42 databasesystem.org  -rw-r--r--@  1 abnerzheng  staff   697K Sep 29 14:36 databasesystem.pdf
+  -rw-r--r--   1 abnerzheng  staff    51K Aug 28 13:32 hihoCoder_note.log
+  -rw-r--r--@  1 abnerzheng  staff   117K Aug 28 13:32 hihoCoder_note.pdf
+  -rw-r--r--   1 abnerzheng  staff    19K Aug 28 13:32 hihoCoder_note.synctex.gz
+  -rw-r--r--   1 abnerzheng  staff   3.0K Oct  8 00:07 hihoCoder_note.tex

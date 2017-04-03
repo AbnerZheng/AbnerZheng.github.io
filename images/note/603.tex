@@ -1,0 +1,36 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{xcolor,graphicx}
+\usepackage{float}
+\usepackage{CJK}
+
+\begin{document}
+\begin{CJK*}{GBK}{song}
+
+\title{在 ~\LaTeX{} 中插入图片示例}
+\author{}
+\date{}
+\maketitle
+
+%这里插入一张~eps 图片, 用~latex 编译, 不能用~pdflatex 编译.
+%
+%\begin{figure}[H]
+%\begin{center}
+%  \includegraphics[width=0.8\textwidth]{tiger.eps}\\
+%  \caption{这是一只老虎}\label{tiger_eps}
+%\end{center}
+%\end{figure}
+
+\bigskip
+
+下面是插入 png 图片, 不能用~latex 编译, 要用~pdflatex 编译.
+
+\begin{figure}[H]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{tiger.png}
+  \caption{这是一只老虎}\label{tiger_png}
+\end{center}
+\end{figure}
+
+
+\end{CJK*}
+\end{document}
