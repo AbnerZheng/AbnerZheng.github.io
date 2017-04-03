@@ -5,3 +5,9 @@ _site
 *.sublime-workspace
 codekit-config.json
 node_modules
+*.py[cod]
+__pycache__
+cache
+output
+.doit.db
+_env/
