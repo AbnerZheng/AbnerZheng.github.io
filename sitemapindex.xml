@@ -6,23 +6,27 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://abnerzheng.github.io/categories/blog.xml</loc>
+  <lastmod>2017-04-03T15:41:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://abnerzheng.github.io/categories/c.xml</loc>
-  <lastmod>2017-04-03T08:14:00Z</lastmod>
+  <lastmod>2017-04-03T15:41:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://abnerzheng.github.io/categories/mathjax.xml</loc>
+  <lastmod>2017-04-03T15:41:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/categories/system-programming.xml</loc>
-  <lastmod>2017-04-03T08:14:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://abnerzheng.github.io/galleries/rss.xml</loc>
-  <lastmod>2017-04-03T08:58:00Z</lastmod>
+  <lastmod>2017-04-03T15:41:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/rss.xml</loc>
-  <lastmod>2017-04-03T09:27:00Z</lastmod>
+  <lastmod>2017-04-03T15:41:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/sitemap.xml</loc>
-  <lastmod>2017-04-03T09:30:00Z</lastmod>
+  <lastmod>2017-04-03T15:41:00Z</lastmod>
  </sitemap>
 </sitemapindex>

@@ -1,0 +1,16 @@
+#+BEGIN_COMMENT
+.. title: Migrating My Blog to org-mode(using nikola)
+.. slug: migrating-my-blog-to-nikola
+.. date: 2017-04-03 20:16:02 UTC+08:00
+.. tags: blog
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+
+Two years ago, I established my first blog, and wrote down somes articals to summarize my learning experience in Chinese. At that time, I use Jekyll with a theme forking from others. But nowadays, I fall in love with org-mode and Emacs. I try to schedule all my work and study with org-mode.
+#+HTML: <!--TEASER_END-->
+
+What's more, I also migrate my note system to org-mode. It's so amazing and comfortable to write and organize in its way, with high efficiency and beauty. And today, I finally migrate my blog to org-mode. And in order to practice my writing, I will start writing all my blog in English. I wish I would persist in bloging.

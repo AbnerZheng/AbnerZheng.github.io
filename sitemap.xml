@@ -7,7 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://abnerzheng.github.io/</loc>
-  <lastmod>2017-04-03T09:20:00Z</lastmod>
+  <lastmod>2017-04-03T09:50:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/2014/</loc>
+  <lastmod>2017-04-03T09:50:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/2017/</loc>
@@ -15,38 +19,42 @@
  </url>
  <url>
   <loc>https://abnerzheng.github.io/archive.html</loc>
-  <lastmod>2017-04-03T09:30:00Z</lastmod>
+  <lastmod>2017-04-03T15:41:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/categories/</loc>
-  <lastmod>2017-04-03T08:14:00Z</lastmod>
+  <lastmod>2017-04-03T15:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/categories/blog/</loc>
+  <lastmod>2017-04-03T15:41:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/categories/c/</loc>
   <lastmod>2017-04-03T08:14:00Z</lastmod>
  </url>
  <url>
+  <loc>https://abnerzheng.github.io/categories/mathjax/</loc>
+  <lastmod>2017-04-03T10:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://abnerzheng.github.io/categories/system-programming/</loc>
   <lastmod>2017-04-03T08:14:00Z</lastmod>
- </url>
- <url>
-  <loc>https://abnerzheng.github.io/galleries/</loc>
-  <lastmod>2017-04-03T07:44:00Z</lastmod>
- </url>
- <url>
-  <loc>https://abnerzheng.github.io/listings/</loc>
-  <lastmod>2017-04-03T07:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/pages/about/</loc>
   <lastmod>2017-04-03T09:20:00Z</lastmod>
  </url>
  <url>
-  <loc>https://abnerzheng.github.io/posts/about/</loc>
-  <lastmod>2017-04-03T09:26:00Z</lastmod>
+  <loc>https://abnerzheng.github.io/posts/ben-ke-bi-ye-ji-nian-ji-wo-dan-teng-de-bi-she/</loc>
+  <lastmod>2017-04-03T09:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/posts/how-to-write-a-own-malloc/</loc>
   <lastmod>2017-04-03T08:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/posts/migrating-my-blog-to-nikola/</loc>
+  <lastmod>2017-04-03T15:41:00Z</lastmod>
  </url>
 </urlset>
