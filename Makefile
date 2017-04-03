@@ -20,3 +20,7 @@ post:
 
 deploy:
 	nikola github_deploy
+
+auto:
+	nikola auto
+
