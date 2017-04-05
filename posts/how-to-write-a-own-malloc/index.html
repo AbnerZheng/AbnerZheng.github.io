@@ -32,11 +32,401 @@
         Posted: <time class="published dt-published" datetime="2017-04-03T15:54:59+08:00" itemprop="datePublished">2017-04-03 15:54</time>
 		          |  More posts about
             <a class="tag" href="../../categories/c/"><span class="badge badge-info">C</span></a>
+            <a class="tag" href="../../categories/mathjax/"><span class="badge badge-info">mathjax</span></a>
             <a class="tag" href="../../categories/system-programming/"><span class="badge badge-info">System Programming</span></a>
 
     </small>
     <div class="e-content" itemprop="articleBody text">
-    <!--TEASER_END-->
+    <p>
+This is a note for reading <b>A Malloc Tutorial</b> <sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>.
+</p>
+
+<!--TEASER_END-->
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+The first time I meet malloc is when I have the class <b>C for programmer</b>. I use this function to apply for memory block in heap. But I don't know what is really behind until some days ago when I read this tutorial. In fact malloc is nothing more than a simple function, and below I will show how I will make a own malloc/realloc/calloc/free.
+</p>
+</div>
+
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">What is malloc</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+The prototype of malloc is as follows:
+</p>
+<div class="highlight"><pre><span></span><span class="kt">void</span><span class="o">*</span>  <span class="n">malloc</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">First malloc implementation</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">Heap</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+In process view, the memory is a continuous array, mapping to physical memory by MMU. This block of memory divide into several parts. Stack is grown from top to down, and heap grow bottom to top. In more detail, heap is controled by three bounds: a starting point, a maximum limit and an end point called the break.
+</p>
+
+<p>
+The break marks the end of the mapped memory space. The maximum limit is called rlimit, which can be managed by <b>getrlimit</b> and <b>setrlimit</b>
+</p>
+
+<div class="highlight"><pre><span></span>+-------------------+
+|                   |
+|                   |
+|   stack space     |
+|                   |
+|                   |
+|                   |
++-------Rlimit------+
+|                   |
+|                   |
+|                   |
+|                   |
+|  Mapped Region    |
+|                   |
+|                   |
+|                   |
+|                   |
++----heap start-----+
+|                   |
+|      BSS          |
+|    Code Segment   |
+|                   |
++-------------------+
+</pre></div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">brk and sbrk</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+brk and sbrk are the system calls to manage the <b>break</b>, which is mentioned above.
+The function signature of sbrk and brk show below:
+</p>
+
+<div class="highlight"><pre><span></span><span class="kt">int</span>     <span class="nf">brk</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">addr</span><span class="p">);</span>
+<span class="kt">void</span>    <span class="nf">sbrk</span><span class="p">(</span><span class="kt">intptr_t</span> <span class="n">incr</span><span class="p">);</span>
+</pre></div>
+
+<p>
+Since three is no specification for sbrk's result, but we can use a special case of sbrk: when increment is null(i.e. sbrk(0)),  the returned value is the acture break address(the previous and the new break addresses are the same).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3">mmap(2)</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+mmap is a syscall to direct map files in memory, which can be used to implement malloc too. In some system, i.e. OpenBSD, its malloc is built basing this syscall. Compared to the sbrk, it's more efficent while it could apply for memory block.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-4" class="outline-3">
+<h3 id="sec-2-4">First malloc</h3>
+<div class="outline-text-3" id="text-2-4">
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;cstdlib&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">void</span><span class="o">*</span>
+<span class="nf">malloc</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">size</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">sbrk</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// get the old position of break</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">sbrk</span> <span class="p">(</span><span class="n">size</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+	<span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">p</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">malloc</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p1</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="kt">void</span><span class="o">*</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">malloc</span> <span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p2</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="kt">void</span><span class="o">*</span> <span class="n">p3</span> <span class="o">=</span> <span class="n">malloc</span> <span class="p">(</span><span class="mi">100000</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p3</span> <span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>
+The result is:
+</p>
+<div class="highlight"><pre><span></span>0x1031c2000
+0x1031c2000
+0x1031c23e8
+</pre></div>
+
+<p>
+Since 0x1031c23e8 - 0x1031c2000 = 0x3e8 = 10<sup>3</sup>, this dummy malloc do allocate rigth size of memory. But how can we free this block of memory? How can we avoid the fragment? The next charpter will discuss thest topics.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Organizing the Heap</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+The method to organizing the heap is by using a linked list. When I read this charpter, I surprisly found these knowledge is similar to the the cs168(Database System). When dive deeper, the more similarity you'll find, and this is really the beauty of study.
+</p>
+
+<p>
+Below shows the structure to managing of heap, it's a linked list.
+</p>
+
+<div class="highlight"><pre><span></span>	     next              next
+       /-------------+     -------------|
+     /-              |   /-             |
+    /                v  /               v
++-----+-----------+------+------------+-----+-----------+--------------+
+|  m  |           |  m   |            |  m  |           |              |
+|  e  |           |  e   |            |  e  |           |              |
+|  t  |           |  t   |            |  t  |           |              |
+|  a  |           |  a   |            |  a  |           |              |
+|     |  data     |      |   data     |     |    data   |              |
+|  d  |           |  d   |            |  d  |           |              |
+|  a  |           |  a   |            |  a  |           |              |
+|  t  |           |  t   |            |  t  |           |              |
+|  a  |           |  a   |            |  a  |           |              |
++-----+-----------+------+------------+-----+-----------+--------------+
+       ^                  ^
+       |                  |
+       |                  |
+     pointer            pointer
+</pre></div>
+
+<p>
+As we can see from the figure above, each chunck of data is composed of a block of meta-data followed by the block of data. We can use a struct to define the meta data.
+</p>
+
+<div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">s_block</span> <span class="o">*</span><span class="n">t_block</span><span class="p">;</span>
+
+<span class="k">struct</span> <span class="n">s_block</span><span class="p">{</span>
+    <span class="kt">size_t</span>  <span class="n">size</span><span class="p">;</span>
+    <span class="n">t_block</span> <span class="n">next</span><span class="p">;</span>
+    <span class="kt">int</span>     <span class="n">free</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>
+The result return by malloc is indicated in the lower part of the diagram, not on the complete chunk.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">A First Fit Malloc</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+The first fit algorithm is quite simple: we traverse the chunks list and stop when we find a free block with enough space for the requested allocation.
+</p>
+</div>
+
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1">Aligned Pointer</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+It's often required that pointers be aligned to the integer size. This is to say, that, we should get the nearest greater or equal multiple of four. We can use the arithmetic trick:
+</p>
+
+<p>
+\[
+(x-1)/4\times4+4
+\]
+</p>
+
+<p>
+And we will use macro to use this formula:
+</p>
+<div class="highlight"><pre><span></span><span class="cp">#define align4(x)  (((((x)-1)&gt;&gt;2) &lt;&lt;2 ) + 4)</span>
+</pre></div>
+
+<p>
+And all of the code shows below:
+</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;sys/types.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">s_block</span> <span class="o">*</span><span class="n">t_block</span><span class="p">;</span>
+
+<span class="cp">#define BLOCK_SIZE 12 </span><span class="cm">/* 3*4 */</span><span class="cp"></span>
+
+<span class="k">struct</span> <span class="n">s_block</span><span class="p">{</span>
+    <span class="kt">size_t</span>  <span class="n">size</span><span class="p">;</span>
+    <span class="n">t_block</span> <span class="n">next</span><span class="p">;</span>
+    <span class="kt">int</span>     <span class="n">free</span><span class="p">;</span> <span class="c1">// flag whether this is a free block</span>
+
+    <span class="kt">char</span>    <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="p">};</span>
+
+<span class="n">t_block</span> <span class="nf">find_block</span><span class="p">(</span><span class="n">t_block</span> <span class="o">*</span><span class="n">last</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">){</span>
+    <span class="n">t_block</span> <span class="n">b</span> <span class="o">=</span> <span class="n">base</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span> <span class="n">b</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="n">b</span><span class="o">-&gt;</span><span class="n">free</span> <span class="o">&amp;&amp;</span> <span class="n">b</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">&gt;=</span> <span class="n">size</span><span class="p">)</span> <span class="p">){</span>
+	<span class="c1">// use this field to avoid travese again</span>
+	<span class="c1">// when there is no memory block to fit size s;</span>
+	<span class="o">*</span><span class="n">last</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+	<span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">t_block</span> <span class="nf">extend_heap</span><span class="p">(</span><span class="n">t_block</span> <span class="n">last</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">s</span><span class="p">){</span>
+    <span class="n">t_block</span>     <span class="n">b</span><span class="p">;</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">sbrk</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">sbrk</span><span class="p">(</span><span class="n">BLOCK_SIZE</span> <span class="o">+</span> <span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+	<span class="k">return</span> <span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+    <span class="n">b</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+    <span class="n">b</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">last</span><span class="p">)</span>
+	<span class="n">last</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span> <span class="c1">// add this newly allocated memory to the tail</span>
+    <span class="n">b</span><span class="o">-&gt;</span><span class="n">free</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/**</span>
+<span class="cm">   before split</span>
+
+<span class="cm">   next</span>
+<span class="cm">   |-----------------------------------------</span>
+<span class="cm">   |                                         |</span>
+<span class="cm">   |                                         v</span>
+<span class="cm">   +-+---+----------------------------------+-------+</span>
+<span class="cm">   |next | data                             |       |</span>
+<span class="cm">   |size |                                  | next  |</span>
+<span class="cm">   |     |                                  | data  |</span>
+<span class="cm">   |free |                                  |segment|</span>
+<span class="cm">   |     |                                  | node  |</span>
+<span class="cm">   |     |                                  |       |</span>
+<span class="cm">   |     |                                  |       |</span>
+<span class="cm">   |     |                                  |       |</span>
+<span class="cm">   |     |                                  |       |</span>
+<span class="cm">   +-----+----------------------------------+-------+</span>
+<span class="cm">   &lt;--------------------------------&gt;</span>
+<span class="cm">   size</span>
+
+
+<span class="cm">   After split, split_block(b, 100)</span>
+
+<span class="cm">   next                    next</span>
+<span class="cm">   +--------------+  -----------------------|</span>
+<span class="cm">   |       s      |  | size-s-BLOCK_SIZE    |</span>
+<span class="cm">   |   &lt;-------&gt;  v  | &lt;----------------&gt;   v</span>
+<span class="cm">   +--+--+---------+-----+------------------+-------+</span>
+<span class="cm">   |next | data    |next |                  |       |</span>
+<span class="cm">   |size |         |     |                  | next  |</span>
+<span class="cm">   |     |         |size |                  | data  |</span>
+<span class="cm">   |free |         |free |                  |segment|</span>
+<span class="cm">   |     |         |     |                  | node  |</span>
+<span class="cm">   |     |         |     |                  |       |</span>
+<span class="cm">   |     |         |     |                  |       |</span>
+<span class="cm">   |     |         |     |                  |       |</span>
+<span class="cm">   |     |         |     |                  |       |</span>
+<span class="cm">   +-----+---------+-----+------------------+-------+</span>
+<span class="cm">   &lt;----&gt; &lt;--------------------------------&gt;</span>
+<span class="cm">   Block             size</span>
+<span class="cm">   Size</span>
+<span class="cm">**/</span>
+
+<span class="kt">void</span> <span class="nf">split_block</span><span class="p">(</span><span class="n">t_block</span> <span class="n">b</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">s</span><span class="p">){</span>
+    <span class="n">t_block</span>   <span class="n">new</span><span class="p">;</span> <span class="c1">// the new split memory block</span>
+    <span class="n">new</span> <span class="o">=</span> <span class="n">b</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">+</span> <span class="n">s</span><span class="p">;</span> <span class="c1">// split s byte of memory from old block</span>
+    <span class="n">new</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">=</span> <span class="n">b</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">-</span> <span class="n">s</span> <span class="o">-</span> <span class="n">BLOCK_SIZE</span><span class="p">;</span> <span class="c1">// now the the size of new block become this</span>
+    <span class="n">new</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">b</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span> <span class="c1">// insert a new node into the linked node</span>
+    <span class="n">new</span><span class="o">-&gt;</span><span class="n">free</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>      <span class="c1">// set new block free to allocate memory next time</span>
+    <span class="n">b</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+    <span class="n">b</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">new</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="cm">/**</span>
+<span class="cm"> * return a pointer to data field of next availble memory block</span>
+<span class="cm"> **/</span>
+<span class="kt">void</span> <span class="o">*</span><span class="nf">malloc</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">size</span><span class="p">){</span>
+    <span class="n">t_block</span>   <span class="n">b</span><span class="p">,</span> <span class="n">last</span><span class="p">;</span>
+    <span class="kt">size_t</span>    <span class="n">s</span><span class="p">;</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">align4</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>   <span class="c1">// align to the nearest multiply of 4</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">base</span><span class="p">){</span> <span class="c1">// if this is not the first time to malloc</span>
+	<span class="n">last</span> <span class="o">=</span> <span class="n">base</span><span class="p">;</span>
+	<span class="n">b</span> <span class="o">=</span> <span class="n">find_block</span><span class="p">(</span><span class="o">&amp;</span><span class="n">last</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="p">){</span>
+	    <span class="c1">// if it's availble for next chunk, then split it</span>
+	    <span class="k">if</span><span class="p">(</span> <span class="p">(</span><span class="n">b</span><span class="o">-&gt;</span><span class="n">size</span> <span class="o">-</span> <span class="n">s</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="n">BLOCK_SIZE</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="p">)</span>
+		<span class="n">split_block</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+	    <span class="n">b</span><span class="o">-&gt;</span><span class="n">free</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+	    <span class="n">b</span> <span class="o">=</span> <span class="n">extend_heap</span><span class="p">(</span><span class="n">last</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+	    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">b</span><span class="p">)</span>
+		<span class="k">return</span> <span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+	<span class="p">}</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+	<span class="cm">/* first time</span>
+<span class="cm">	 *</span>
+<span class="cm">	 * just extend a size of s bytes,</span>
+<span class="cm">	 * since it's the first time, we pass NULL to</span>
+<span class="cm">	 * the function extend_heap, and then take the</span>
+<span class="cm">	 * return pointer as the base pointer, which,</span>
+<span class="cm">	 * in other words, is the head of linked list.</span>
+<span class="cm">	 *</span>
+<span class="cm">	 **/</span>
+
+	<span class="n">b</span> <span class="o">=</span> <span class="n">extend_heap</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">b</span><span class="p">)</span>
+	    <span class="k">return</span> <span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+	<span class="n">base</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">b</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+<span class="kt">void</span><span class="o">*</span> <span class="nf">calloc</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">number</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">){</span>
+    <span class="kt">size_t</span>  <span class="o">*</span><span class="n">new</span><span class="p">;</span>
+    <span class="kt">size_t</span>  <span class="n">s4</span><span class="p">,</span> <span class="n">i</span><span class="p">;</span>
+    <span class="n">new</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">number</span> <span class="o">*</span> <span class="n">size</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">new</span><span class="p">){</span>
+	<span class="n">s4</span> <span class="o">=</span> <span class="n">align4</span><span class="p">(</span><span class="n">number</span><span class="o">*</span><span class="n">size</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// a typo in the *A Malloc Tutorial*</span>
+	<span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span> <span class="n">s4</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	    <span class="n">new</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">new</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">To Be Continued</h2>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef">
+<sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup><p class="footpara">
+A Malloc Tutorial
+</p>
+</div>
+
+
+</div>
+</div>
     </div>
     </div>
             <ul class="pager">
@@ -46,7 +436,9 @@
             <li class="next">
                 <a href="../migrating-my-blog-to-nikola/" rel="next">后一篇 →</a>
             </li>
-        </ul></article>
+        </ul>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
+      </script></article>
 </div>
                 </div>
                 <div id="ftr">
