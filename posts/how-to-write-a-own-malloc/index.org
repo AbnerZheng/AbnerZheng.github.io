@@ -329,37 +329,6 @@ And all of the code shows below:
 #+END_SRC
 
 * To Be Continued
-
-#+tblname: delsee
-| airmass | zenith_seeing | delivered_seeing |
-|---------+---------------+------------------|
-|     1.3 |          0.95 |        1.1119612 |
-|     1.3 |           1.0 |        1.1704854 |
-|     1.3 |           1.1 |        1.2875340 |
-|     1.3 |           1.2 |        1.4045825 |
-#+TBLFM: $3=$2*($1**0.6)
-
-#+BEGIN_SRC python :var fname="../images/delseepy.png" :var delsee=delsee :results file
-import matplotlib.pyplot as plt
-
-x, y, z = zip(*delsee)
-
-fig = plt.figure()
-axes = fig.add_subplot(1,1,1)
-axes.plot(y, z, marker='o')
-fig.savefig(fname)
-
-return fname
-#+END_SRC
-
-#+RESULTS:
-#+CAPTION:    This was the ditaa example
-#+LABEL:      fig:ditaaex
-#+ATTR_LaTeX: width=5cm,angle=90
-[[file:../images/delseepy.png]]
-
-\ref{fig:ditaaex}
-
 * Footnotes
 
 [fn:1] A Malloc Tutorial
