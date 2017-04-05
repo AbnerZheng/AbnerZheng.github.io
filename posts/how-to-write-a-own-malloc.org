@@ -2,11 +2,335 @@
 .. title: how to write a own Malloc
 .. slug: how-to-write-a-own-malloc
 .. date: 2017-04-03 15:54:59 UTC+08:00
-.. tags: System Programming, C
-.. category: 
-.. link: 
-.. description: 
+.. tags: System Programming, C, mathjax
+.. category:
+.. link:
+.. description:
 .. type: text
 #+END_COMMENT
+#+OPTIONS: tex:t         
+
+
+This is a note for reading *A Malloc Tutorial* [fn:1].
 
 #+HTML: <!--TEASER_END-->
+
+* Introduction
+
+The first time I meet malloc is when I have the class *C for programmer*. I use this function to apply for memory block in heap. But I don't know what is really behind until some days ago when I read this tutorial. In fact malloc is nothing more than a simple function, and below I will show how I will make a own malloc/realloc/calloc/free.
+
+** What is malloc
+The prototype of malloc is as follows:
+#+BEGIN_SRC C
+  void*  malloc(size_t size)
+#+END_SRC
+
+* First malloc implementation
+
+** Heap
+
+In process view, the memory is a continuous array, mapping to physical memory by MMU. This block of memory divide into several parts. Stack is grown from top to down, and heap grow bottom to top. In more detail, heap is controled by three bounds: a starting point, a maximum limit and an end point called the break.
+
+The break marks the end of the mapped memory space. The maximum limit is called rlimit, which can be managed by *getrlimit* and *setrlimit*
+
+#+BEGIN_SRC ditaa :file test_ditaa.png :cmdline -r -s 0.8
+
+  +-------------------+
+  |                   |
+  |                   |
+  |   stack space     |
+  |                   |
+  |                   |
+  |                   |
+  +-------Rlimit------+
+  |                   |
+  |                   |
+  |                   |
+  |                   |
+  |  Mapped Region    |
+  |                   |
+  |                   |
+  |                   |
+  |                   |
+  +----heap start-----+
+  |                   |
+  |      BSS          |
+  |    Code Segment   |
+  |                   |
+  +-------------------+
+
+#+END_SRC
+
+#+RESULTS:
+[[file:test_ditaa.png]]
+
+
+** brk and sbrk
+brk and sbrk are the system calls to manage the *break*, which is mentioned above.
+The function signature of sbrk and brk show below:
+
+#+BEGIN_SRC C
+  int     brk(const void *addr);
+  void    sbrk(intptr_t incr);
+#+END_SRC
+
+Since three is no specification for sbrk's result, but we can use a special case of sbrk: when increment is null(i.e. sbrk(0)),  the returned value is the acture break address(the previous and the new break addresses are the same).
+
+** mmap(2)
+mmap is a syscall to direct map files in memory, which can be used to implement malloc too. In some system, i.e. OpenBSD, its malloc is built basing this syscall. Compared to the sbrk, it's more efficent while it could apply for memory block.
+
+** First malloc
+#+BEGIN_SRC C
+  #include <cstdlib>
+  #include <unistd.h>
+  #include <iostream>
+
+  using namespace std;
+  void*
+  malloc(size_t size)
+  {
+      void *p = sbrk (0); // get the old position of break
+      if(sbrk (size) == (void *) -1)
+          return NULL;
+      return p;
+  }
+
+  int main(){
+      void* p1 = malloc (0);
+      cout << p1<<endl;
+
+      void* p2 = malloc (1000);
+      cout << p2<<endl;
+
+      void* p3 = malloc (100000);
+      cout << p3 <<endl;
+      return 0;
+  }
+#+END_SRC
+
+The result is:
+#+BEGIN_SRC sh
+0x1031c2000
+0x1031c2000
+0x1031c23e8
+#+END_SRC
+
+Since 0x1031c23e8 - 0x1031c2000 = 0x3e8 = 10^3, this dummy malloc do allocate rigth size of memory. But how can we free this block of memory? How can we avoid the fragment? The next charpter will discuss thest topics.
+
+
+* Organizing the Heap
+The method to organizing the heap is by using a linked list. When I read this charpter, I surprisly found these knowledge is similar to the the cs168(Database System). When dive deeper, the more similarity you'll find, and this is really the beauty of study.
+
+Below shows the structure to managing of heap, it's a linked list.
+
+#+BEGIN_SRC ditaa :file ../structre.png :cmdline -r -s 0.8
+               next              next
+         /-------------+     -------------|
+       /-              |   /-             |
+      /                v  /               v
+  +-----+-----------+------+------------+-----+-----------+--------------+
+  |  m  |           |  m   |            |  m  |           |              |
+  |  e  |           |  e   |            |  e  |           |              |
+  |  t  |           |  t   |            |  t  |           |              |
+  |  a  |           |  a   |            |  a  |           |              |
+  |     |  data     |      |   data     |     |    data   |              |
+  |  d  |           |  d   |            |  d  |           |              |
+  |  a  |           |  a   |            |  a  |           |              |
+  |  t  |           |  t   |            |  t  |           |              |
+  |  a  |           |  a   |            |  a  |           |              |
+  +-----+-----------+------+------------+-----+-----------+--------------+
+         ^                  ^
+         |                  |
+         |                  |
+       pointer            pointer
+#+END_SRC
+
+#+RESULTS:
+[[file:../structre.png]]
+
+As we can see from the figure above, each chunck of data is composed of a block of meta-data followed by the block of data. We can use a struct to define the meta data.
+
+#+BEGIN_SRC C
+  typedef struct s_block *t_block;
+
+  struct s_block{
+      size_t  size;
+      t_block next;
+      int     free;
+  }
+#+END_SRC
+
+The result return by malloc is indicated in the lower part of the diagram, not on the complete chunk.
+
+* A First Fit Malloc
+
+The first fit algorithm is quite simple: we traverse the chunks list and stop when we find a free block with enough space for the requested allocation.
+
+** Aligned Pointer
+It's often required that pointers be aligned to the integer size. This is to say, that, we should get the nearest greater or equal multiple of four. We can use the arithmetic trick:
+
+\[
+(x-1)/4\times4+4
+\]
+
+And we will use macro to use this formula:
+#+BEGIN_SRC C
+  #define align4(x)  (((((x)-1)>>2) <<2 ) + 4)
+#+END_SRC
+
+And all of the code shows below:
+#+BEGIN_SRC C
+  #include <sys/types.h>
+  #include <unistd.h>
+
+  typedef struct s_block *t_block;
+
+  #define BLOCK_SIZE 12 /* 3*4 */
+
+  struct s_block{
+      size_t  size;
+      t_block next;
+      int     free; // flag whether this is a free block
+
+      char    data[1];
+  };
+
+  t_block find_block(t_block *last, size_t size){
+      t_block b = base;
+      while( b && !(b->free && b->size >= size) ){
+          // use this field to avoid travese again
+          // when there is no memory block to fit size s;
+          ,*last = b;
+          b = b->next;
+      }
+      return (b);
+  }
+
+  t_block extend_heap(t_block last, size_t s){
+      t_block     b;
+      b = sbrk(0);
+      if(sbrk(BLOCK_SIZE + s) == (void*) -1)
+          return (NULL);
+      b->size = s;
+      b->next = NULL;
+      if(last)
+          last->next = b; // add this newly allocated memory to the tail
+      b->free = 0;
+      return (b);
+  }
+
+  /**
+     before split
+
+     next
+     |-----------------------------------------
+     |                                         |
+     |                                         v
+     +-+---+----------------------------------+-------+
+     |next | data                             |       |
+     |size |                                  | next  |
+     |     |                                  | data  |
+     |free |                                  |segment|
+     |     |                                  | node  |
+     |     |                                  |       |
+     |     |                                  |       |
+     |     |                                  |       |
+     |     |                                  |       |
+     +-----+----------------------------------+-------+
+     <-------------------------------->
+     size
+
+
+     After split, split_block(b, 100)
+
+     next                    next
+     +--------------+  -----------------------|
+     |       s      |  | size-s-BLOCK_SIZE    |
+     |   <------->  v  | <---------------->   v
+     +--+--+---------+-----+------------------+-------+
+     |next | data    |next |                  |       |
+     |size |         |     |                  | next  |
+     |     |         |size |                  | data  |
+     |free |         |free |                  |segment|
+     |     |         |     |                  | node  |
+     |     |         |     |                  |       |
+     |     |         |     |                  |       |
+     |     |         |     |                  |       |
+     |     |         |     |                  |       |
+     +-----+---------+-----+------------------+-------+
+     <----> <-------------------------------->
+     Block             size
+     Size
+  ,**/
+
+  void split_block(t_block b, size_t s){
+      t_block   new; // the new split memory block
+      new = b->data + s; // split s byte of memory from old block
+      new->size = b->size - s - BLOCK_SIZE; // now the the size of new block become this
+      new->next = b->next; // insert a new node into the linked node
+      new->free = 1;      // set new block free to allocate memory next time
+      b->size = s;
+      b->next = new;
+  }
+
+
+  /**
+   ,* return a pointer to data field of next availble memory block
+   ,**/
+  void *malloc(size_t size){
+      t_block   b, last;
+      size_t    s;
+      s = align4(size);   // align to the nearest multiply of 4
+
+      if(base){ // if this is not the first time to malloc
+          last = base;
+          b = find_block(&last, s);
+          if(b){
+              // if it's availble for next chunk, then split it
+              if( (b->size - s) >= (BLOCK_SIZE + 4) )
+                  split_block(b, s);
+              b->free = 0;
+          }else{
+              b = extend_heap(last, s);
+              if(!b)
+                  return (NULL);
+          }
+      }else{
+          /* first time
+           ,*
+           ,* just extend a size of s bytes,
+           ,* since it's the first time, we pass NULL to
+           ,* the function extend_heap, and then take the
+           ,* return pointer as the base pointer, which,
+           ,* in other words, is the head of linked list.
+           ,*
+           ,**/
+
+          b = extend_heap(NULL, s);
+          if(!b)
+              return (NULL);
+          base = b;
+      }
+      return (b->data);
+  }
+
+
+  void* calloc(size_t number, size_t size){
+      size_t  *new;
+      size_t  s4, i;
+      new = malloc(number * size);
+      if(new){
+          s4 = align4(number*size) >> 2; // a typo in the *A Malloc Tutorial*
+          for(i=0; i< s4; i++)
+              new[i] = 0;
+      }
+      return (new);
+  }
+#+END_SRC
+
+* To Be Continued
+
+
+* Footnotes
+
+[fn:1] A Malloc Tutorial
