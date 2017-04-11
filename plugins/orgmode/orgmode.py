@@ -120,4 +120,5 @@ class CompileOrgmode(PageCompiler):
             if content:
                 fd.write(content)
             else:
+                fd.write("#+OPTIONS: ^:{}")
                 fd.write('Write your post here.')
