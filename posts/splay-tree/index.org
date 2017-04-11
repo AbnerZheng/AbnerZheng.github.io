@@ -1,0 +1,12 @@
+#+BEGIN_COMMENT
+.. title: splay tree
+.. slug: splay-tree
+.. date: 2017-04-07 10:46:00 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+Splay tree is a self-adjusting form of BST.

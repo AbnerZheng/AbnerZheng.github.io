@@ -73,7 +73,7 @@ ul
 }
 li 
 {
-	background: transparent url(../img/bullet.png) no-repeat 2px 4px;
+	/*background: transparent url(../img/bullet.png) no-repeat 2px 4px;*/
 	padding: 0 0 0 24px;
 	margin: 6px 0px;
 	list-style: none; 

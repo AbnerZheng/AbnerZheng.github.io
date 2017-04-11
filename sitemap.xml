@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://abnerzheng.github.io/archive.html</loc>
-  <lastmod>2017-04-04T03:18:00Z</lastmod>
+  <lastmod>2017-04-07T06:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/categories/</loc>
@@ -56,5 +56,13 @@
  <url>
   <loc>https://abnerzheng.github.io/posts/migrating-my-blog-to-nikola/</loc>
   <lastmod>2017-04-03T15:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/posts/plan/</loc>
+  <lastmod>2017-04-07T06:30:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/posts/splay-tree/</loc>
+  <lastmod>2017-04-07T02:46:00Z</lastmod>
  </url>
 </urlset>
