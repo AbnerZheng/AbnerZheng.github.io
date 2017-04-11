@@ -665,11 +665,9 @@ O”（视频）](<a href="https://class.coursera.org/algorithmicthink1-004/lect
 </div>
 </div>
 
-<div id="outline-container-队列queue" class="outline-4">
-<h4 id="队列queue">
-<a id="sec-1-7-4" name="sec-1-7-4"></a>队列（Queue）</h4>
-<div class="outline-text-4" id="text-队列queue">
-
+<div id="outline-container-sec-1-7-4" class="outline-4">
+<h4 id="sec-1-7-4">队列（Queue）</h4>
+<div class="outline-text-4" id="text-1-7-4">
 <ul class="org-ul">
 <li>
 <code>[ ]</code> [使用队列 —— 先进先出（视频）](<a href="https://www.lynda.com/Developer-Programming-Foundations-tutorials/Using-queues-first-first-out/149042/177122-4.html">https://www.lynda.com/Developer-Programming-Foundations-tutorials/Using-queues-first-first-out/149042/177122-4.html</a>)
@@ -687,18 +685,14 @@ O”（视频）](<a href="https://class.coursera.org/algorithmicthink1-004/lect
 <code>[ ]</code> 使用含有尾部指针的链表来实现:
 
 <ul class="org-ul">
-<li>enqueue(value) —— 在尾部添加值
-</li>
 <li>dequeue() —— 删除最早添加的元素并返回其值（首部元素）
 </li>
 <li>empty()
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> 使用固定大小的数组实现：
-
 <ul class="org-ul">
 <li>enqueue(value) —— 在可容的情况下添加元素到尾部
 </li>
@@ -710,7 +704,6 @@ O”（视频）](<a href="https://class.coursera.org/algorithmicthink1-004/lect
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> 花销：
 <ul class="org-ul">
@@ -730,9 +723,42 @@ O(n)。因为，你需要找到下一个元素，以致循环整个队列
 </div>
 </div>
 
+<div id="outline-container-sec-1-7-5" class="outline-4">
+<h4 id="sec-1-7-5">优先级队列<code>[33%]</code>
+</h4>
+<div class="outline-text-4" id="text-1-7-5">
+<ul class="org-ul">
+<li>
+<code>[X]</code> 二叉堆的实现
+</li>
+<li>
+<code>[ ]</code> 复杂度分析(算法导论)
+<ul class="org-ul">
+<li>
+<code>[ ]</code> insert
+</li>
+<li>
+<code>[ ]</code> top
+</li>
+<li>
+<code>[ ]</code> pop
+</li>
+<li>
+<code>[ ]</code> build
+</li>
+</ul>
+</li>
+<li>
+<code>[ ]</code> 堆排序的实现
+</li>
+</ul>
+</div>
+</div>
+
+
 <div id="outline-container-哈希表hash-table" class="outline-4">
 <h4 id="哈希表hash-table">
-<a id="sec-1-7-5" name="sec-1-7-5"></a>哈希表（Hash table）</h4>
+<a id="sec-1-7-6" name="sec-1-7-6"></a>哈希表（Hash table）</h4>
 <div class="outline-text-4" id="text-哈希表hash-table">
 
 <ul class="org-ul">
@@ -827,7 +853,7 @@ Problem）（视频）](<a href="https://www.coursera.org/learn/data-structures/
 
 <div id="outline-container-二分查找binary-search" class="outline-4">
 <h4 id="二分查找binary-search">
-<a id="sec-1-7-6" name="sec-1-7-6"></a>二分查找（Binary search）</h4>
+<a id="sec-1-7-7" name="sec-1-7-7"></a>二分查找（Binary search）</h4>
 <div class="outline-text-4" id="text-二分查找binary-search">
 
 <ul class="org-ul">
@@ -856,13 +882,12 @@ Problem）（视频）](<a href="https://www.coursera.org/learn/data-structures/
 
 <div id="outline-container-按位运算bitwise-operations" class="outline-4">
 <h4 id="按位运算bitwise-operations">
-<a id="sec-1-7-7" name="sec-1-7-7"></a>按位运算（Bitwise operations）</h4>
+<a id="sec-1-7-8" name="sec-1-7-8"></a>按位运算（Bitwise operations）</h4>
 <div class="outline-text-4" id="text-按位运算bitwise-operations">
 
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [Bits
-速查表](<a href="https://github.com/jwasham/google-interview-university/blob/master/extras/cheat%20sheets/bits-cheat-cheet.pdf">https://github.com/jwasham/google-interview-university/blob/master/extras/cheat%20sheets/bits-cheat-cheet.pdf</a>)
+<code>[ ]</code> [Bits 速查表](<a href="https://github.com/jwasham/google-interview-university/blob/master/extras/cheat%20sheets/bits-cheat-cheet.pdf">https://github.com/jwasham/google-interview-university/blob/master/extras/cheat%20sheets/bits-cheat-cheet.pdf</a>)
 
 <ul class="org-ul">
 <li>你需要知道大量2的幂数值（从2\^1 到 2\^16 及 2\^32）
@@ -875,39 +900,34 @@ Problem）（视频）](<a href="https://www.coursera.org/learn/data-structures/
 
 <ul class="org-ul">
 <li>
-<code>[ ]</code>          [字码（words）](<a href="https://en.wikipedia.org/wiki/Word">https://en.wikipedia.org/wiki/Word</a>\_(computer\_architecture))
+<code>[ ]</code> [字码（words）](<a href="https://en.wikipedia.org/wiki/Word">https://en.wikipedia.org/wiki/Word</a>\_(computer\_architecture))
 </li>
 <li>
-<code>[ ]</code> 好的介绍：
-<a href="https://www.youtube.com/watch?v=7jkIUgLC29I">位操作（视频）</a>
+<code>[ ]</code> 好的介绍： <a href="https://www.youtube.com/watch?v=7jkIUgLC29I">位操作（视频）</a>
 </li>
 <li>
-<code>[ ]</code> [C 语言编程教程
-2-10：按位运算（视频）](<a href="https://www.youtube.com/watch?v=d0AwjSpNXR0">https://www.youtube.com/watch?v=d0AwjSpNXR0</a>)
+<code>[ ]</code> [C 语言编程教程 2-10：按位运算（视频）](<a href="https://www.youtube.com/watch?v=d0AwjSpNXR0">https://www.youtube.com/watch?v=d0AwjSpNXR0</a>)
 </li>
 <li>
 <code>[ ]</code> [位操作](<a href="https://en.wikipedia.org/wiki/Bit%5C_manipulation">https://en.wikipedia.org/wiki/Bit\_manipulation</a>)
 </li>
 <li>
-<code>[ ]</code>          [按位运算](<a href="https://en.wikipedia.org/wiki/Bitwise%5C_operation">https://en.wikipedia.org/wiki/Bitwise\_operation</a>)
+<code>[ ]</code> [按位运算](<a href="https://en.wikipedia.org/wiki/Bitwise%5C_operation">https://en.wikipedia.org/wiki/Bitwise\_operation</a>)
 </li>
 <li>
-<code>[ ]</code>          [Bithacks](<a href="https://graphics.stanford.edu/~seander/bithacks.html">https://graphics.stanford.edu/~seander/bithacks.html</a>)
+<code>[ ]</code> [Bithacks](<a href="https://graphics.stanford.edu/~seander/bithacks.html">https://graphics.stanford.edu/~seander/bithacks.html</a>)
 </li>
 <li>
-<code>[ ]</code> [位元抚弄者（The Bit
-Twiddler）](<a href="http://bits.stephan-brumme.com/">http://bits.stephan-brumme.com/</a>)
+<code>[ ]</code> [位元抚弄者（The Bit Twiddler）](<a href="http://bits.stephan-brumme.com/">http://bits.stephan-brumme.com/</a>)
 </li>
 <li>
-<code>[ ]</code> [交互式位元抚弄者（The Bit Twiddler
-Interactive）](<a href="http://bits.stephan-brumme.com/interactive.html">http://bits.stephan-brumme.com/interactive.html</a>)
+<code>[ ]</code> [交互式位元抚弄者（The Bit Twiddler Interactive）](<a href="http://bits.stephan-brumme.com/interactive.html">http://bits.stephan-brumme.com/interactive.html</a>)
 </li>
 </ul>
 </li>
 
 <li>
 <code>[ ]</code> 一补数和补码
-
 <ul class="org-ul">
 <li>
 <a href="https://www.youtube.com/watch?v=lKTsv6iVxV4">二进制：利 &amp; 弊（为什么我们要使用补码）（视频）</a>
@@ -923,7 +943,6 @@ Interactive）](<a href="http://bits.stephan-brumme.com/interactive.html">http:/
 
 <li>
 <code>[ ]</code> 计算置位（Set Bits）
-
 <ul class="org-ul">
 <li>
 <a href="https://youtu.be/Hzuzo9NJrlc">计算一个字节中置位（Set Bits）的四种方式（视频）</a>
@@ -936,7 +955,6 @@ Interactive）](<a href="http://bits.stephan-brumme.com/interactive.html">http:/
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> 四舍五入2的幂数：
 <ul class="org-ul">
@@ -964,9 +982,9 @@ Interactive）](<a href="http://bits.stephan-brumme.com/interactive.html">http:/
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-1-7-8" class="outline-4">
-<h4 id="sec-1-7-8">树 —— 笔记 &amp; 背景</h4>
-<div class="outline-text-4" id="text-1-7-8">
+<div id="outline-container-sec-1-7-9" class="outline-4">
+<h4 id="sec-1-7-9">树 —— 笔记 &amp; 背景</h4>
+<div class="outline-text-4" id="text-1-7-9">
 <ul class="org-ul">
 <li>基本的树形结构
 </li>
@@ -975,7 +993,6 @@ Interactive）](<a href="http://bits.stephan-brumme.com/interactive.html">http:/
 <li>操作算法
 </li>
 <li>BFS（广度优先检索，breadth-first search）
-
 <ul class="org-ul">
 <li>
 <a href="https://www.youtube.com/watch?v=s-CYnVz-uh4&amp;list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&amp;index=13">MIT（视频）</a>
@@ -1027,9 +1044,9 @@ Interactive）](<a href="http://bits.stephan-brumme.com/interactive.html">http:/
 </div>
 </div>
 
-<div id="outline-container-sec-1-7-9" class="outline-4">
-<h4 id="sec-1-7-9">二叉查找树（Binary search trees）：BSTs</h4>
-<div class="outline-text-4" id="text-1-7-9">
+<div id="outline-container-sec-1-7-10" class="outline-4">
+<h4 id="sec-1-7-10">二叉查找树（Binary search trees）：BSTs</h4>
+<div class="outline-text-4" id="text-1-7-10">
 <ul class="org-ul">
 <li>
 <code>[ ]</code>       [二叉查找树概览（视频）](<a href="https://www.youtube.com/watch?v=x6At0nzX92o&amp;index=1&amp;list=PLA5Lqm4uh9Bbq-E0ZnqTIa8LRaL77ica6">https://www.youtube.com/watch?v=x6At0nzX92o&amp;index=1&amp;list=PLA5Lqm4uh9Bbq-E0ZnqTIa8LRaL77ica6</a>)
@@ -1126,7 +1143,7 @@ Interactive）](<a href="http://bits.stephan-brumme.com/interactive.html">http:/
 
 <div id="outline-container-堆heap-优先级队列priority-queue-二叉堆binary-heap" class="outline-4">
 <h4 id="堆heap-优先级队列priority-queue-二叉堆binary-heap">
-<a id="sec-1-7-10" name="sec-1-7-10"></a>堆（Heap） / 优先级队列（Priority Queue） / 二叉堆（Binary Heap）</h4>
+<a id="sec-1-7-11" name="sec-1-7-11"></a>堆（Heap） / 优先级队列（Priority Queue） / 二叉堆（Binary Heap）</h4>
 <div class="outline-text-4" id="text-堆heap-优先级队列priority-queue-二叉堆binary-heap">
 
 <ul class="org-ul">
@@ -1157,28 +1174,25 @@ Interactive）](<a href="http://bits.stephan-brumme.com/interactive.html">http:/
 <code>[ ]</code>       [伪代码（视频）](<a href="https://www.coursera.org/learn/data-structures/lecture/HxQo9/pseudocode">https://www.coursera.org/learn/data-structures/lecture/HxQo9/pseudocode</a>)
 </li>
 <li>
-<code>[ ]</code> [堆排序 ——
-跳到起点（视频）](<a href="https://youtu.be/odNJmw5TOEE?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;t=3291">https://youtu.be/odNJmw5TOEE?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;t=3291</a>)
+<code>[ ]</code> [堆排序 —— 跳到起点（视频）](<a href="https://youtu.be/odNJmw5TOEE?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;t=3291">https://youtu.be/odNJmw5TOEE?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;t=3291</a>)
 </li>
 <li>
-<code>[ ]</code>       [堆排序（视频）](<a href="https://www.coursera.org/learn/data-structures/lecture/hSzMO/heap-sort">https://www.coursera.org/learn/data-structures/lecture/hSzMO/heap-sort</a>)
+<code>[ ]</code> [堆排序（视频）](<a href="https://www.coursera.org/learn/data-structures/lecture/hSzMO/heap-sort">https://www.coursera.org/learn/data-structures/lecture/hSzMO/heap-sort</a>)
 </li>
 <li>
-<code>[ ]</code>       [构建一个堆（视频）](<a href="https://www.coursera.org/learn/data-structures/lecture/dwrOS/building-a-heap">https://www.coursera.org/learn/data-structures/lecture/dwrOS/building-a-heap</a>)
+<code>[ ]</code> [构建一个堆（视频）](<a href="https://www.coursera.org/learn/data-structures/lecture/dwrOS/building-a-heap">https://www.coursera.org/learn/data-structures/lecture/dwrOS/building-a-heap</a>)
 </li>
 <li>
-<code>[ ]</code>       [MIT：堆与堆排序（视频）](<a href="https://www.youtube.com/watch?v=B7hVxCmfPtM&amp;index=4&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb">https://www.youtube.com/watch?v=B7hVxCmfPtM&amp;index=4&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb</a>)
+<code>[ ]</code> [MIT：堆与堆排序（视频）](<a href="https://www.youtube.com/watch?v=B7hVxCmfPtM&amp;index=4&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb">https://www.youtube.com/watch?v=B7hVxCmfPtM&amp;index=4&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb</a>)
 </li>
 <li>
-<code>[ ]</code> [CS 61B Lecture
-24：优先级队列（视频）](<a href="https://www.youtube.com/watch?v=yIUFT6AKBGE&amp;index=24&amp;list=PL4BBB74C7D2A1049C">https://www.youtube.com/watch?v=yIUFT6AKBGE&amp;index=24&amp;list=PL4BBB74C7D2A1049C</a>)
+<code>[ ]</code> [CS 61B Lecture 24：优先级队列（视频）](<a href="https://www.youtube.com/watch?v=yIUFT6AKBGE&amp;index=24&amp;list=PL4BBB74C7D2A1049C">https://www.youtube.com/watch?v=yIUFT6AKBGE&amp;index=24&amp;list=PL4BBB74C7D2A1049C</a>)
 </li>
 <li>
-<code>[ ]</code>       [构建线性时间复杂度的堆（大顶堆）](<a href="https://www.youtube.com/watch?v=MiyLo8adrWw">https://www.youtube.com/watch?v=MiyLo8adrWw</a>)
+<code>[ ]</code> [构建线性时间复杂度的堆（大顶堆）](<a href="https://www.youtube.com/watch?v=MiyLo8adrWw">https://www.youtube.com/watch?v=MiyLo8adrWw</a>)
 </li>
 <li>
 <code>[ ]</code> 实现一个大顶堆：
-
 <ul class="org-ul">
 <li>
 <code>[ ]</code> insert
@@ -1210,7 +1224,6 @@ Interactive）](<a href="http://bits.stephan-brumme.com/interactive.html">http:/
 <li>
 <code>[ ]</code> heap\_sort() ——
 拿到一个未排序的数组，然后使用大顶堆进行就地排序
-
 <ul class="org-ul">
 <li>注意：若用小顶堆可节省操作，但导致空间复杂度加倍。（无法做到就地）
 </li>
@@ -1222,42 +1235,39 @@ Interactive）](<a href="http://bits.stephan-brumme.com/interactive.html">http:/
 </div>
 </div>
 
-<div id="outline-container-字典树tries" class="outline-4">
-<h4 id="字典树tries">
-<a id="sec-1-7-11" name="sec-1-7-11"></a>字典树（Tries）</h4>
-<div class="outline-text-4" id="text-字典树tries">
-
+<div id="outline-container-sec-1-7-12" class="outline-4">
+<h4 id="sec-1-7-12">字典树（Tries）</h4>
+<div class="outline-text-4" id="text-1-7-12">
 <ul class="org-ul">
 <li>需要注意的是，字典树各式各样。有些有前缀，而有些则没有。有些使用字符串而不使用比特位来追踪路径。
 </li>
 <li>阅读代码，但不实现。
 </li>
 <li>
-<code>[ ]</code> [数据结构笔记及编程技术](<a href="http://www.cs.yale.edu/homes/aspnes/classes/223/notes.html#Tries">http://www.cs.yale.edu/homes/aspnes/classes/223/notes.html#Tries</a>)
+<code>[ ]</code> <a href="http://www.cs.yale.edu/homes/aspnes/classes/223/notes.html#Tries">数据结构笔记及编程技术</a>
 </li>
 <li>
 <code>[ ]</code> 短课程视频：
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [对字典树的介绍（视频）](<a href="https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/08Xyf/core-introduction-to-tries">https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/08Xyf/core-introduction-to-tries</a>)
+<code>[ ]</code> <a href="https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/08Xyf/core-introduction-to-tries">对字典树的介绍（视频）</a>
 </li>
 <li>
-<code>[ ]</code> [字典树的性能（视频）](<a href="https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/PvlZW/core-performance-of-tries">https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/PvlZW/core-performance-of-tries</a>)
+<code>[ ]</code> <a href="https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/PvlZW/core-performance-of-tries">字典树的性能（视频）</a>
 </li>
 <li>
-<code>[ ]</code> [实现一棵字典树（视频）](<a href="https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/DFvd3/core-implementing-a-trie">https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/DFvd3/core-implementing-a-trie</a>)
+<code>[ ]</code> <a href="https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/DFvd3/core-implementing-a-trie">实现一棵字典树（视频）</a>
 </li>
 </ul>
 </li>
-
 <li>
-<code>[ ]</code> [字典树：一个被忽略的数据结构](<a href="https://www.toptal.com/java/the-trie-a-neglected-data-structure">https://www.toptal.com/java/the-trie-a-neglected-data-structure</a>)
+<code>[ ]</code> <a href="https://www.toptal.com/java/the-trie-a-neglected-data-structure">字典树：一个被忽略的数据结构</a>
 </li>
 <li>
-<code>[ ]</code> [高级编程 —— 使用字典树](<a href="https://www.topcoder.com/community/data-science/data-science-tutorials/using-tries/">https://www.topcoder.com/community/data-science/data-science-tutorials/using-tries/</a>)
+<code>[ ]</code> <a href="https://www.topcoder.com/community/data-science/data-science-tutorials/using-tries/">高级编程 —— 使用字典树</a>
 </li>
 <li>
-<code>[ ]</code> [标准教程（现实中的用例）（视频）](<a href="https://www.youtube.com/watch?v=TJ8SkcUSdbU">https://www.youtube.com/watch?v=TJ8SkcUSdbU</a>)
+<code>[ ]</code> <a href="https://www.youtube.com/watch?v=TJ8SkcUSdbU">标准教程（现实中的用例）（视频）</a>
 </li>
 <li>
 <code>[ ]</code> [MIT，高阶数据结构，使用字符串追踪路径（可事半功倍）](<a href="https://www.youtube.com/watch?v=NinWEPPrkDQ&amp;index=16&amp;list=PLUl4u3cNGP61hsJNdULdudlRL493b-XZf">https://www.youtube.com/watch?v=NinWEPPrkDQ&amp;index=16&amp;list=PLUl4u3cNGP61hsJNdULdudlRL493b-XZf</a>)
@@ -1266,10 +1276,10 @@ Interactive）](<a href="http://bits.stephan-brumme.com/interactive.html">http:/
 </div>
 </div>
 
-<div id="outline-container-n-叉树k-叉树m-叉树" class="outline-4">
-<h4 id="n-叉树k-叉树m-叉树">
-<a id="sec-1-7-12" name="sec-1-7-12"></a><span class="done DONE">DONE</span> 平衡查找树（Balanced search trees）</h4>
-<div class="outline-text-4" id="text-n-叉树k-叉树m-叉树">
+<div id="outline-container-sec-1-7-13" class="outline-4">
+<h4 id="sec-1-7-13">
+<span class="done DONE">DONE</span> 平衡查找树（Balanced search trees）</h4>
+<div class="outline-text-4" id="text-1-7-13">
 <ul class="org-ul">
 <li>我希望能阅读到更多关于B树的资料，因为它也被广泛地应用到大型的数据库当中。
 </li>
@@ -1401,8 +1411,7 @@ i 转换成一个硬盘块（或一个柱面-磁头-扇区）上的地址。
 树的删除操作（视频）](<a href="https://www.youtube.com/watch?v=svfnVhJOfMc&amp;index=8&amp;list=PLA5Lqm4uh9Bbq-E0ZnqTIa8LRaL77ica6">https://www.youtube.com/watch?v=svfnVhJOfMc&amp;index=8&amp;list=PLA5Lqm4uh9Bbq-E0ZnqTIa8LRaL77ica6</a>)
 </li>
 <li>
-<code>[ ]</code> [MIT 6.851 —— 内存层次模块（Memory Hierarchy
-Models）（视频）](<a href="https://www.youtube.com/watch?v=V3omVLzI0WE&amp;index=7&amp;list=PLUl4u3cNGP61hsJNdULdudlRL493b-XZf">https://www.youtube.com/watch?v=V3omVLzI0WE&amp;index=7&amp;list=PLUl4u3cNGP61hsJNdULdudlRL493b-XZf</a>)
+<code>[ ]</code> [MIT 6.851 —— 内存层次模块（Memory Hierarchy Models）（视频）](<a href="https://www.youtube.com/watch?v=V3omVLzI0WE&amp;index=7&amp;list=PLUl4u3cNGP61hsJNdULdudlRL493b-XZf">https://www.youtube.com/watch?v=V3omVLzI0WE&amp;index=7&amp;list=PLUl4u3cNGP61hsJNdULdudlRL493b-XZf</a>)
 
 <ul class="org-ul">
 <li>覆盖有高速缓存参数无关型（cache-oblivious）B
@@ -1445,10 +1454,8 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 
 <li>
 <b>*</b> N 叉树（K 叉树、M 叉树）
-
 <ul class="org-ul">
 <li>注意：N 或 K 指的是分支系数（即树的最大分支数）：
-
 <ul class="org-ul">
 <li>二叉树是一种分支系数为2的树
 </li>
@@ -1456,7 +1463,6 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> [K 叉树](<a href="https://en.wikipedia.org/wiki/K-ary%5C_tree">https://en.wikipedia.org/wiki/K-ary\_tree</a>)
 </li>
@@ -1475,21 +1481,15 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 <ul class="org-ul">
 <li>
 <code>[ ]</code> 笔记:
-
 <ul class="org-ul">
-<li>实现各种排序 &amp;
-知道每种排序的最坏、最好和平均的复杂度分别是什么场景:
-
+<li>实现各种排序 &amp; 知道每种排序的最坏、最好和平均的复杂度分别是什么场景:
 <ul class="org-ul">
-<li>不要用冒泡排序 - 大多数情况下效率感人 - 时间复杂度 O(n\^2),
-除非 n &lt;= 16
+<li>不要用冒泡排序 - 大多数情况下效率感人 - 时间复杂度 O(n\^2), 除非 n &lt;= 16
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> 排序算法的稳定性 ("快排是稳定的么?")
-
 <ul class="org-ul">
 <li>
 <a href="https://en.wikipedia.org/wiki/Sorting_algorithm#Stability">排序算法的稳定性</a>
@@ -1504,14 +1504,12 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 <a href="http://www.geeksforgeeks.org/stability-in-sorting-algorithms/">排序算法的稳定性</a>
 </li>
 <li>[[<a href="http://homepages.math.uic.edu/~leon/cs-mcs401-s08/handouts/stability.pdf%5D%5B%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95">http://homepages.math.uic.edu/~leon/cs-mcs401-s08/handouts/stability.pdf][%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95</a>
-<ul class="org-ul">
+</li>
+</ul>
+</li>
 <li>稳定性]]
-</li>
-</ul>
-</li>
-</ul>
-</li>
 
+<ul class="org-ul">
 <li>
 <code>[ ]</code> 哪种排序算法可以用链表？哪种用数组？哪种两者都可？
 
@@ -1520,6 +1518,8 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 </li>
 <li>
 <a href="http://www.geeksforgeeks.org/merge-sort-for-linked-list/">链表的归并排序</a>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -1717,10 +1717,8 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 
 <ul class="org-ul">
 <li>Yegge 的笔记:
-
 <ul class="org-ul">
 <li>有 3 种基本方式在内存里表示一个图:
-
 <ul class="org-ul">
 <li>对象和指针
 </li>
@@ -1730,7 +1728,6 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 </li>
 </ul>
 </li>
-
 <li>熟悉以上每一种图的表示法，并了解各自的优缺点
 </li>
 <li>宽度优先搜索和深度优先搜索 -
@@ -1740,10 +1737,8 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> Skiena 教授的课程 - 很不错的介绍:
-
 <ul class="org-ul">
 <li>
 <code>[ ]</code> [CSE373 2012 - 课程 11 - 图的数据结构
@@ -1771,60 +1766,46 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> 图 (复习和其他):
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [6.006 单源最短路径问题
-(video)](<a href="https://www.youtube.com/watch?v=Aa2sqUhIn-E&amp;index=15&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb">https://www.youtube.com/watch?v=Aa2sqUhIn-E&amp;index=15&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb</a>)
+<code>[ ]</code> [6.006 单源最短路径问题 (video)](<a href="https://www.youtube.com/watch?v=Aa2sqUhIn-E&amp;index=15&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb">https://www.youtube.com/watch?v=Aa2sqUhIn-E&amp;index=15&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb</a>)
 </li>
 <li>
-<code>[ ]</code> [6.006 Dijkstra 算法
-(video)](<a href="https://www.youtube.com/watch?v=2E7MmKv0Y24&amp;index=16&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb">https://www.youtube.com/watch?v=2E7MmKv0Y24&amp;index=16&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb</a>)
+<code>[ ]</code> [6.006 Dijkstra 算法 (video)](<a href="https://www.youtube.com/watch?v=2E7MmKv0Y24&amp;index=16&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb">https://www.youtube.com/watch?v=2E7MmKv0Y24&amp;index=16&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb</a>)
 </li>
 <li>
-<code>[ ]</code> [6.006 Bellman-Ford
-算法(video)](<a href="https://www.youtube.com/watch?v=ozsuci5pIso&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb&amp;index=17">https://www.youtube.com/watch?v=ozsuci5pIso&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb&amp;index=17</a>)
+<code>[ ]</code> [6.006 Bellman-Ford 算法(video)](<a href="https://www.youtube.com/watch?v=ozsuci5pIso&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb&amp;index=17">https://www.youtube.com/watch?v=ozsuci5pIso&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb&amp;index=17</a>)
 </li>
 <li>
-<code>[ ]</code> [6.006 Dijkstra 效率优化
-(video)](<a href="https://www.youtube.com/watch?v=CHvQ3q%5C_gJ7E&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb&amp;index=18">https://www.youtube.com/watch?v=CHvQ3q\_gJ7E&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb&amp;index=18</a>)
+<code>[ ]</code> [6.006 Dijkstra 效率优化 (video)](<a href="https://www.youtube.com/watch?v=CHvQ3q%5C_gJ7E&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb&amp;index=18">https://www.youtube.com/watch?v=CHvQ3q\_gJ7E&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb&amp;index=18</a>)
 </li>
 <li>
-<code>[ ]</code> [Aduni: 图的算法 I - 拓扑排序, 最小生成树, Prim 算法 - 第六课
-(video)](
+<code>[ ]</code> [Aduni: 图的算法 I - 拓扑排序, 最小生成树, Prim 算法 - 第六课 (video)](
 <a href="https://www.youtube.com/watch?v=i%5C_AQT%5C_XfvD8&amp;index=6&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm">https://www.youtube.com/watch?v=i\_AQT\_XfvD8&amp;index=6&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm</a>)
 </li>
 <li>
-<code>[ ]</code> [Aduni: 图的算法 II - 深度优先搜索, 广度优先搜索, Kruskal
-算法, 并查集数据结构 - 第七课 (video)](
+<code>[ ]</code> [Aduni: 图的算法 II - 深度优先搜索, 广度优先搜索, Kruskal 算法, 并查集数据结构 - 第七课 (video)](
 <a href="https://www.youtube.com/watch?v=ufj5%5C_bppBsA&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=7">https://www.youtube.com/watch?v=ufj5\_bppBsA&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=7</a>)
 </li>
 <li>
-<code>[ ]</code> [Aduni: 图的算法 III: 最短路径 - 第八课
-(video)](<a href="https://www.youtube.com/watch?v=DiedsPsMKXc&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=8">https://www.youtube.com/watch?v=DiedsPsMKXc&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=8</a>)
+<code>[ ]</code> [Aduni: 图的算法 III: 最短路径 - 第八课 (video)](<a href="https://www.youtube.com/watch?v=DiedsPsMKXc&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=8">https://www.youtube.com/watch?v=DiedsPsMKXc&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=8</a>)
 </li>
 <li>
-<code>[ ]</code> [Aduni: 图的算法. IV: 几何算法介绍 - 第九课
-(video)](<a href="https://www.youtube.com/watch?v=XIAQRlNkJAw&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=9">https://www.youtube.com/watch?v=XIAQRlNkJAw&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=9</a>)
+<code>[ ]</code> [Aduni: 图的算法. IV: 几何算法介绍 - 第九课 (video)](<a href="https://www.youtube.com/watch?v=XIAQRlNkJAw&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=9">https://www.youtube.com/watch?v=XIAQRlNkJAw&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=9</a>)
 </li>
 <li>
-<code>[ ]</code> [CS 61B 2014 (从 58:09 开始)
-(video)](<a href="https://youtu.be/dgjX4HdMI-Q?list=PL-XXv-cvA%5C_iAlnI-BQr9hjqADPBtujFJd&amp;t=3489">https://youtu.be/dgjX4HdMI-Q?list=PL-XXv-cvA\_iAlnI-BQr9hjqADPBtujFJd&amp;t=3489</a>)
+<code>[ ]</code> [CS 61B 2014 (从 58:09 开始) (video)](<a href="https://youtu.be/dgjX4HdMI-Q?list=PL-XXv-cvA%5C_iAlnI-BQr9hjqADPBtujFJd&amp;t=3489">https://youtu.be/dgjX4HdMI-Q?list=PL-XXv-cvA\_iAlnI-BQr9hjqADPBtujFJd&amp;t=3489</a>)
 </li>
 <li>
-<code>[ ]</code> [CS 61B 2014: 加权图
-(video)](<a href="https://www.youtube.com/watch?v=aJjlQCFwylA&amp;list=PL-XXv-cvA%5C_iAlnI-BQr9hjqADPBtujFJd&amp;index=19">https://www.youtube.com/watch?v=aJjlQCFwylA&amp;list=PL-XXv-cvA\_iAlnI-BQr9hjqADPBtujFJd&amp;index=19</a>)
+<code>[ ]</code> [CS 61B 2014: 加权图 (video)](<a href="https://www.youtube.com/watch?v=aJjlQCFwylA&amp;list=PL-XXv-cvA%5C_iAlnI-BQr9hjqADPBtujFJd&amp;index=19">https://www.youtube.com/watch?v=aJjlQCFwylA&amp;list=PL-XXv-cvA\_iAlnI-BQr9hjqADPBtujFJd&amp;index=19</a>)
 </li>
 <li>
-<code>[ ]</code> [贪心算法: 最小生成树
-(video)](<a href="https://www.youtube.com/watch?v=tKwnms5iRBU&amp;index=16&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp">https://www.youtube.com/watch?v=tKwnms5iRBU&amp;index=16&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp</a>)
+<code>[ ]</code> [贪心算法: 最小生成树 (video)](<a href="https://www.youtube.com/watch?v=tKwnms5iRBU&amp;index=16&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp">https://www.youtube.com/watch?v=tKwnms5iRBU&amp;index=16&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp</a>)
 </li>
 <li>
-<code>[ ]</code> [图的算法之强连通分量 Kosaraju 算法
-(video)](<a href="https://www.youtube.com/watch?v=RpgcYiky7uw">https://www.youtube.com/watch?v=RpgcYiky7uw</a>)
+<code>[ ]</code> [图的算法之强连通分量 Kosaraju 算法 (video)](<a href="https://www.youtube.com/watch?v=RpgcYiky7uw">https://www.youtube.com/watch?v=RpgcYiky7uw</a>)
 </li>
 </ul>
 </li>
@@ -1833,8 +1814,7 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [图的算法
-(video)](<a href="https://www.coursera.org/learn/algorithms-on-graphs/home/welcome">https://www.coursera.org/learn/algorithms-on-graphs/home/welcome</a>)
+<code>[ ]</code> [图的算法 (video)](<a href="https://www.coursera.org/learn/algorithms-on-graphs/home/welcome">https://www.coursera.org/learn/algorithms-on-graphs/home/welcome</a>)
 </li>
 </ul>
 </li>
@@ -1850,16 +1830,13 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [A*
-算法](<a href="https://en.wikipedia.org/wiki/A*%5C_search%5C_algorithm">https://en.wikipedia.org/wiki/A*\_search\_algorithm</a>)
+<code>[ ]</code> [A* 算法](<a href="https://en.wikipedia.org/wiki/A*%5C_search%5C_algorithm">https://en.wikipedia.org/wiki/A*\_search\_algorithm</a>)
 </li>
 <li>
-<code>[ ]</code> [A* 寻路教程
-(video)](<a href="https://www.youtube.com/watch?v=KNXfSOx4eEE">https://www.youtube.com/watch?v=KNXfSOx4eEE</a>)
+<code>[ ]</code> [A* 寻路教程 (video)](<a href="https://www.youtube.com/watch?v=KNXfSOx4eEE">https://www.youtube.com/watch?v=KNXfSOx4eEE</a>)
 </li>
 <li>
-<code>[ ]</code> [A* 寻路 (E01: 算法解释)
-(video)](<a href="https://www.youtube.com/watch?v=-L-WgKMFuhE">https://www.youtube.com/watch?v=-L-WgKMFuhE</a>)
+<code>[ ]</code> [A* 寻路 (E01: 算法解释) (video)](<a href="https://www.youtube.com/watch?v=-L-WgKMFuhE">https://www.youtube.com/watch?v=-L-WgKMFuhE</a>)
 </li>
 </ul>
 </li>
@@ -1867,7 +1844,6 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 </li>
 
 <li>我会实现:
-
 <ul class="org-ul">
 <li>
 <code>[ ]</code> DFS 邻接表 (递归)
@@ -1894,7 +1870,6 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 <code>[ ]</code> 最小生成树
 </li>
 <li>基于 DFS 的算法 (根据上文 Aduni 的视频):
-
 <ul class="org-ul">
 <li>
 <code>[ ]</code> 检查环 (我们会先检查是否有环存在以便做拓扑排序)
@@ -1917,8 +1892,7 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 </li>
 </ul>
 <p>
-可以从 Skiena
-的书（参考下面的书推荐小节）和面试书籍中学习更多关于图的实践。
+可以从 Skiena 的书（参考下面的书推荐小节）和面试书籍中学习更多关于图的实践。
 </p>
 </div>
 </div>
@@ -1935,7 +1909,6 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 <ul class="org-ul">
 <li>
 <code>[ ]</code> Stanford 大学关于递归 &amp; 回溯的课程:
-
 <ul class="org-ul">
 <li>
 <code>[ ]</code> [课程 8 | 抽象编程
@@ -1955,11 +1928,9 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 </li>
 </ul>
 </li>
-
 <li>什么时候适合使用
 </li>
 <li>尾递归会更好么?
-
 <ul class="org-ul">
 <li>
 <code>[ ]</code>          [什么是尾递归以及为什么它如此糟糕?](<a href="https://www.quora.com/What-is-tail-recursion-Why-is-it-so-bad">https://www.quora.com/What-is-tail-recursion-Why-is-it-so-bad</a>)
@@ -1978,49 +1949,37 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 
 <ul class="org-ul">
 <li>
-<b>注意</b> ：动态规划是门极为重要的技术，尽管其并未被 Google
-提供的准备手册提及，但你可能会对寻求最佳解的方式有点疑问，所以我将其列入这份表单。
+<b>注意</b> ：动态规划是门极为重要的技术，尽管其并未被 Google 提供的准备手册提及，但你可能会对寻求最佳解的方式有点疑问，所以我将其列入这份表单。
 </li>
 <li>这一部分会有点困难，每个可以用动态规划解决的问题都必须先定义出递推关系，要推导出来可能会有点棘手。
 </li>
-<li>我建议先阅读和学习足够多的动态规划的例子，以便对解决 DP
-问题的一般模式有个扎实的理解。
+<li>我建议先阅读和学习足够多的动态规划的例子，以便对解决 DP 问题的一般模式有个扎实的理解。
 </li>
-
 <li>
 <code>[ ]</code> 视频:
-
 <ul class="org-ul">
-<li>Skiena
-的视频可能会有点难跟上，有时候他用白板写的字会比较小，难看清楚。
+<li>Skiena 的视频可能会有点难跟上，有时候他用白板写的字会比较小，难看清楚。
 </li>
 <li>
-<code>[ ]</code> [Skiena: CSE373 2012 - 课程 19 - 动态规划介绍
-(video)](<a href="https://youtu.be/Qc2ieXRgR0k?list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&amp;t=1718">https://youtu.be/Qc2ieXRgR0k?list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&amp;t=1718</a>)
+<code>[ ]</code> [Skiena: CSE373 2012 - 课程 19 - 动态规划介绍 (video)](<a href="https://youtu.be/Qc2ieXRgR0k?list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&amp;t=1718">https://youtu.be/Qc2ieXRgR0k?list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&amp;t=1718</a>)
 </li>
 <li>
-<code>[ ]</code> [Skiena: CSE373 2012 - 课程 20 - 编辑距离
-(video)](<a href="https://youtu.be/IsmMhMdyeGY?list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&amp;t=2749">https://youtu.be/IsmMhMdyeGY?list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&amp;t=2749</a>)
+<code>[ ]</code> [Skiena: CSE373 2012 - 课程 20 - 编辑距离 (video)](<a href="https://youtu.be/IsmMhMdyeGY?list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&amp;t=2749">https://youtu.be/IsmMhMdyeGY?list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&amp;t=2749</a>)
 </li>
 <li>
-<code>[ ]</code> [Skiena: CSE373 2012 - 课程 21 - 动态规划举例
-(video)](<a href="https://youtu.be/o0V9eYF4UI8?list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&amp;t=406">https://youtu.be/o0V9eYF4UI8?list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&amp;t=406</a>)
+<code>[ ]</code> [Skiena: CSE373 2012 - 课程 21 - 动态规划举例 (video)](<a href="https://youtu.be/o0V9eYF4UI8?list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&amp;t=406">https://youtu.be/o0V9eYF4UI8?list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&amp;t=406</a>)
 </li>
 <li>
-<code>[ ]</code> [Skiena: CSE373 2012 - 课程 22 - 动态规划应用
-(video)](<a href="https://www.youtube.com/watch?v=dRbMC1Ltl3A&amp;list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&amp;index=22">https://www.youtube.com/watch?v=dRbMC1Ltl3A&amp;list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&amp;index=22</a>)
+<code>[ ]</code> [Skiena: CSE373 2012 - 课程 22 - 动态规划应用 (video)](<a href="https://www.youtube.com/watch?v=dRbMC1Ltl3A&amp;list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&amp;index=22">https://www.youtube.com/watch?v=dRbMC1Ltl3A&amp;list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&amp;index=22</a>)
 </li>
 <li>
-<code>[ ]</code> [Simonson: 动态规划 0 (starts at 59:18)
-(video)](<a href="https://youtu.be/J5aJEcOr6Eo?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;t=3558">https://youtu.be/J5aJEcOr6Eo?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;t=3558</a>)
+<code>[ ]</code> [Simonson: 动态规划 0 (starts at 59:18) (video)](<a href="https://youtu.be/J5aJEcOr6Eo?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;t=3558">https://youtu.be/J5aJEcOr6Eo?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;t=3558</a>)
 </li>
 <li>
-<code>[ ]</code> [Simonson: 动态规划 I - 课程 11
-(video)](<a href="https://www.youtube.com/watch?v=0EzHjQ%5C_SOeU&amp;index=11&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm">https://www.youtube.com/watch?v=0EzHjQ\_SOeU&amp;index=11&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm</a>)
+<code>[ ]</code> [Simonson: 动态规划 I - 课程 11 (video)](<a href="https://www.youtube.com/watch?v=0EzHjQ%5C_SOeU&amp;index=11&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm">https://www.youtube.com/watch?v=0EzHjQ\_SOeU&amp;index=11&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm</a>)
 </li>
 <li>
-<code>[ ]</code> [Simonson: 动态规划 II - 课程 12
-(video)](<a href="https://www.youtube.com/watch?v=v1qiRwuJU7g&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=12">https://www.youtube.com/watch?v=v1qiRwuJU7g&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=12</a>)
+<code>[ ]</code> [Simonson: 动态规划 II - 课程 12 (video)](<a href="https://www.youtube.com/watch?v=v1qiRwuJU7g&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=12">https://www.youtube.com/watch?v=v1qiRwuJU7g&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=12</a>)
 </li>
 <li>
 <code>[ ]</code> 单独的 DP 问题 (每一个视频都很短):
@@ -2095,23 +2054,18 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 </li>
 <li>
 <code>[ ]</code> 可汗学院:
-
 <ul class="org-ul">
 <li>课程设置:
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code>             [概率理论基础](<a href="https://www.khanacademy.org/math/probability/probability-and-combinatorics-topic">https://www.khanacademy.org/math/probability/probability-and-combinatorics-topic</a>)
+<code>[ ]</code> [概率理论基础](<a href="https://www.khanacademy.org/math/probability/probability-and-combinatorics-topic">https://www.khanacademy.org/math/probability/probability-and-combinatorics-topic</a>)
 </li>
 </ul>
 </li>
-
 <li>视频 - 41 (每一个都短小精悍):
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [概率解释
-(video)](<a href="https://www.youtube.com/watch?v=uzkc-qNVoOk&amp;list=PLC58778F28211FA19">https://www.youtube.com/watch?v=uzkc-qNVoOk&amp;list=PLC58778F28211FA19</a>)
+<code>[ ]</code> [概率解释 (video)](<a href="https://www.youtube.com/watch?v=uzkc-qNVoOk&amp;list=PLC58778F28211FA19">https://www.youtube.com/watch?v=uzkc-qNVoOk&amp;list=PLC58778F28211FA19</a>)
 </li>
 </ul>
 </li>
@@ -2122,43 +2076,33 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 
 <li>
 <b>*</b> NP, NP-完全和近似算法
-
 <ul class="org-ul">
-<li>知道最经典的一些 NP 完全问题，比如旅行商问题和背包问题,
-而且能在面试官试图忽悠你的时候识别出他们。
+<li>知道最经典的一些 NP 完全问题，比如旅行商问题和背包问题, 而且能在面试官试图忽悠你的时候识别出他们。
 </li>
 <li>知道 NP 完全是什么意思.
 </li>
 <li>
-<code>[ ]</code> [计算复杂度
-(video)](<a href="https://www.youtube.com/watch?v=moPtwq%5C_cVH8&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb&amp;index=23">https://www.youtube.com/watch?v=moPtwq\_cVH8&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb&amp;index=23</a>)
+<code>[ ]</code> [计算复杂度 (video)](<a href="https://www.youtube.com/watch?v=moPtwq%5C_cVH8&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb&amp;index=23">https://www.youtube.com/watch?v=moPtwq\_cVH8&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb&amp;index=23</a>)
 </li>
 <li>
 <code>[ ]</code> Simonson:
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [贪心算法. II &amp; 介绍 NP-完全性
-(video)](<a href="https://youtu.be/qcGnJ47Smlo?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;t=2939">https://youtu.be/qcGnJ47Smlo?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;t=2939</a>)
+<code>[ ]</code> [贪心算法. II &amp; 介绍 NP-完全性 (video)](<a href="https://youtu.be/qcGnJ47Smlo?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;t=2939">https://youtu.be/qcGnJ47Smlo?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;t=2939</a>)
 </li>
 <li>
-<code>[ ]</code> [NP-完全性 II &amp; 归约
-(video)](<a href="https://www.youtube.com/watch?v=e0tGC6ZQdQE&amp;index=16&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm">https://www.youtube.com/watch?v=e0tGC6ZQdQE&amp;index=16&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm</a>)
+<code>[ ]</code> [NP-完全性 II &amp; 归约 (video)](<a href="https://www.youtube.com/watch?v=e0tGC6ZQdQE&amp;index=16&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm">https://www.youtube.com/watch?v=e0tGC6ZQdQE&amp;index=16&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm</a>)
 </li>
 <li>
-<code>[ ]</code> [NP-完全性 III
-(Video)](<a href="https://www.youtube.com/watch?v=fCX1BGT3wjE&amp;index=17&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm">https://www.youtube.com/watch?v=fCX1BGT3wjE&amp;index=17&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm</a>)
+<code>[ ]</code> [NP-完全性 III (Video)](<a href="https://www.youtube.com/watch?v=fCX1BGT3wjE&amp;index=17&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm">https://www.youtube.com/watch?v=fCX1BGT3wjE&amp;index=17&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm</a>)
 </li>
 <li>
-<code>[ ]</code> [NP-完全性 IV
-(video)](<a href="https://www.youtube.com/watch?v=NKLDp3Rch3M&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=18">https://www.youtube.com/watch?v=NKLDp3Rch3M&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=18</a>)
+<code>[ ]</code> [NP-完全性 IV (video)](<a href="https://www.youtube.com/watch?v=NKLDp3Rch3M&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=18">https://www.youtube.com/watch?v=NKLDp3Rch3M&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=18</a>)
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> Skiena:
-
 <ul class="org-ul">
 <li>
 <code>[ ]</code> [CSE373 2012 - 课程 23 - 介绍 NP-完全性 IV
@@ -2174,7 +2118,6 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> [复杂度: P, NP, NP-完全性, 规约
 (video)](<a href="https://www.youtube.com/watch?v=eHZifpgyH%5C_4&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=22">https://www.youtube.com/watch?v=eHZifpgyH\_4&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=22</a>)
@@ -2188,7 +2131,6 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 (video)](<a href="https://www.youtube.com/watch?v=4q-jmGrmxKs&amp;index=25&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp">https://www.youtube.com/watch?v=4q-jmGrmxKs&amp;index=25&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp</a>)
 </li>
 <li>Peter Norvik 讨论旅行商问题的近似最优解:
-
 <ul class="org-ul">
 <li>
 <a href="http://nbviewer.jupyter.org/url/norvig.com/ipython/TSP.ipynb">Jupyter
@@ -2208,23 +2150,18 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 <ul class="org-ul">
 <li>
 <code>[ ]</code> LRU 缓存:
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [LRU 的魔力 (100 Days of Google Dev)
-(video)](<a href="https://www.youtube.com/watch?v=R5ON3iwx78M">https://www.youtube.com/watch?v=R5ON3iwx78M</a>)
+<code>[ ]</code> [LRU 的魔力 (100 Days of Google Dev) (video)](<a href="https://www.youtube.com/watch?v=R5ON3iwx78M">https://www.youtube.com/watch?v=R5ON3iwx78M</a>)
 </li>
 <li>
-<code>[ ]</code> [实现 LRU
-(video)](<a href="https://www.youtube.com/watch?v=bq6N7Ym81iI">https://www.youtube.com/watch?v=bq6N7Ym81iI</a>)
+<code>[ ]</code> [实现 LRU (video)](<a href="https://www.youtube.com/watch?v=bq6N7Ym81iI">https://www.youtube.com/watch?v=bq6N7Ym81iI</a>)
 </li>
 <li>
-<code>[ ]</code> [LeetCode - 146 LRU Cache (C++)
-(video)](<a href="https://www.youtube.com/watch?v=8-FZRAjR7qU">https://www.youtube.com/watch?v=8-FZRAjR7qU</a>)
+<code>[ ]</code> [LeetCode - 146 LRU Cache (C++) (video)](<a href="https://www.youtube.com/watch?v=8-FZRAjR7qU">https://www.youtube.com/watch?v=8-FZRAjR7qU</a>)
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> CPU 缓存:
 
@@ -2263,10 +2200,8 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 <a href="https://www.quora.com/What-is-the-difference-between-a-process-and-a-thread">进程和线程的区别是什么?</a>
 </li>
 <li>涵盖了:
-
 <ul class="org-ul">
 <li>进程、线程、协程
-
 <ul class="org-ul">
 <li>进程和线程的区别
 </li>
@@ -2290,7 +2225,6 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 </li>
 </ul>
 </li>
-
 <li>CPU 活动, 中断, 上下文切换
 </li>
 <li>现代多核处理器的并发式结构
@@ -2303,7 +2237,6 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 操作是真正的写时复制（只读），直到新的进程写到内存中，才会生成一份新的拷贝。
 </li>
 <li>上下文切换
-
 <ul class="org-ul">
 <li>操作系统和底层硬件是如何初始化上下文切换的。
 </li>
@@ -2313,41 +2246,33 @@ Tree）](<a href="https://en.wikipedia.org/wiki/Red%E2%80%93black%5C_tree">https
 </li>
 
 <li>
-<code>[ ]</code> [C++ 的线程 (系列 - 10
-个视频)](<a href="https://www.youtube.com/playlist?list=PL5jc9xFGsL8E12so1wlMS0r0hTQoJL74M">https://www.youtube.com/playlist?list=PL5jc9xFGsL8E12so1wlMS0r0hTQoJL74M</a>)
+<code>[ ]</code> [C++ 的线程 (系列 - 10 个视频)](<a href="https://www.youtube.com/playlist?list=PL5jc9xFGsL8E12so1wlMS0r0hTQoJL74M">https://www.youtube.com/playlist?list=PL5jc9xFGsL8E12so1wlMS0r0hTQoJL74M</a>)
 </li>
 <li>
 <code>[ ]</code> Python 的协程 (视频):
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code>          [线程系列](<a href="https://www.youtube.com/playlist?list=PL1H1sBF1VAKVMONJWJkmUh6%5C_p8g4F2oy1">https://www.youtube.com/playlist?list=PL1H1sBF1VAKVMONJWJkmUh6\_p8g4F2oy1</a>)
+<code>[ ]</code> [线程系列](<a href="https://www.youtube.com/playlist?list=PL1H1sBF1VAKVMONJWJkmUh6%5C_p8g4F2oy1">https://www.youtube.com/playlist?list=PL1H1sBF1VAKVMONJWJkmUh6\_p8g4F2oy1</a>)
 </li>
 <li>
 <code>[ ]</code> [Python 线程](<a href="https://www.youtube.com/watch?v=Bs7vPNbB9JM">https://www.youtube.com/watch?v=Bs7vPNbB9JM</a>)
 </li>
 <li>
-<code>[ ]</code> [理解 Python 的 GIL
-(2010)](<a href="https://www.youtube.com/watch?v=Obt-vMVdM8s">https://www.youtube.com/watch?v=Obt-vMVdM8s</a>)
-
+<code>[ ]</code> [理解 Python 的 GIL (2010)](<a href="https://www.youtube.com/watch?v=Obt-vMVdM8s">https://www.youtube.com/watch?v=Obt-vMVdM8s</a>)
 <ul class="org-ul">
 <li>
 <a href="http://www.dabeaz.com/GIL">参考</a>
 </li>
 </ul>
 </li>
-
 <li>
-<code>[ ]</code> [David Beazley - Python 协程 - PyCon
-2015](<a href="https://www.youtube.com/watch?v=MCs5OvhV9S4">https://www.youtube.com/watch?v=MCs5OvhV9S4</a>)
+<code>[ ]</code> [David Beazley - Python 协程 - PyCon 2015](<a href="https://www.youtube.com/watch?v=MCs5OvhV9S4">https://www.youtube.com/watch?v=MCs5OvhV9S4</a>)
 </li>
 <li>
-<code>[ ]</code> [Keynote David Beazley - 兴趣主题 (Python 异步
-I/O)](<a href="https://www.youtube.com/watch?v=ZzfHjytDceU">https://www.youtube.com/watch?v=ZzfHjytDceU</a>)
+<code>[ ]</code> [Keynote David Beazley - 兴趣主题 (Python 异步 I/O)](<a href="https://www.youtube.com/watch?v=ZzfHjytDceU">https://www.youtube.com/watch?v=ZzfHjytDceU</a>)
 </li>
 <li>
-<code>[ ]</code> [Python
-中的互斥](<a href="https://www.youtube.com/watch?v=0zaPs8OtyKY">https://www.youtube.com/watch?v=0zaPs8OtyKY</a>)
+<code>[ ]</code> [Python 中的互斥](<a href="https://www.youtube.com/watch?v=0zaPs8OtyKY">https://www.youtube.com/watch?v=0zaPs8OtyKY</a>)
 </li>
 </ul>
 </li>
@@ -2399,42 +2324,38 @@ I/O)](<a href="https://www.youtube.com/watch?v=ZzfHjytDceU">https://www.youtube.
 </li>
 
 <li>
-<code>[ ]</code> <b>从这里开始</b>:
-<a href="http://www.hiredintech.com/system-design/">HiredInTech：系统设计</a>
+<code>[ ]</code> <b>从这里开始</b>: <a href="http://www.hiredintech.com/system-design/">HiredInTech：系统设计</a>
 </li>
 <li>
-<code>[ ]</code>       [该如何为技术面试里设计方面的问题做准备?](<a href="https://www.quora.com/How-do-I-prepare-to-answer-design-questions-in-a-technical-interview?redirected%5C_qid=1500023">https://www.quora.com/How-do-I-prepare-to-answer-design-questions-in-a-technical-interview?redirected\_qid=1500023</a>)
+<code>[ ]</code> [该如何为技术面试里设计方面的问题做准备?](<a href="https://www.quora.com/How-do-I-prepare-to-answer-design-questions-in-a-technical-interview?redirected%5C_qid=1500023">https://www.quora.com/How-do-I-prepare-to-answer-design-questions-in-a-technical-interview?redirected\_qid=1500023</a>)
 </li>
 <li>
-<code>[ ]</code> [在系统设计面试前必须知道的 8
-件事](<a href="http://blog.gainlo.co/index.php/2015/10/22/8-things-you-need-to-know-before-system-design-interviews/">http://blog.gainlo.co/index.php/2015/10/22/8-things-you-need-to-know-before-system-design-interviews/</a>)
+<code>[ ]</code> [在系统设计面试前必须知道的 8 件事](<a href="http://blog.gainlo.co/index.php/2015/10/22/8-things-you-need-to-know-before-system-design-interviews/">http://blog.gainlo.co/index.php/2015/10/22/8-things-you-need-to-know-before-system-design-interviews/</a>)
 </li>
 <li>
 <code>[ ]</code> [算法设计](<a href="http://www.hiredintech.com/algorithm-design/">http://www.hiredintech.com/algorithm-design/</a>)
 </li>
 <li>
-<code>[ ]</code> [数据库范式 - 1NF, 2NF, 3NF and 4NF
-(video)](<a href="https://www.youtube.com/watch?v=UrYLYV7WSHM">https://www.youtube.com/watch?v=UrYLYV7WSHM</a>)
+<code>[ ]</code> [数据库范式 - 1NF, 2NF, 3NF and 4NF (video)](<a href="https://www.youtube.com/watch?v=UrYLYV7WSHM">https://www.youtube.com/watch?v=UrYLYV7WSHM</a>)
 </li>
 <li>
-<code>[ ]</code>       [系统设计面试](<a href="https://github.com/checkcheckzz/system-design-interview">https://github.com/checkcheckzz/system-design-interview</a>)
+<code>[ ]</code> [系统设计面试](<a href="https://github.com/checkcheckzz/system-design-interview">https://github.com/checkcheckzz/system-design-interview</a>)
 <ul class="org-ul">
 <li>这一部分有很多的资源，浏览一下我放在下面的文章和例子。
 </li>
 </ul>
 </li>
 <li>
-<code>[ ]</code>       [如何在系统设计面试中脱颖而出](<a href="http://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/">http://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/</a>)
+<code>[ ]</code> [如何在系统设计面试中脱颖而出](<a href="http://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/">http://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/</a>)
 </li>
 <li>
-<code>[ ]</code>       [每个人都该知道的一些数字](<a href="http://everythingisdata.wordpress.com/2009/10/17/numbers-everyone-should-know/">http://everythingisdata.wordpress.com/2009/10/17/numbers-everyone-should-know/</a>)
+<code>[ ]</code> [每个人都该知道的一些数字](<a href="http://everythingisdata.wordpress.com/2009/10/17/numbers-everyone-should-know/">http://everythingisdata.wordpress.com/2009/10/17/numbers-everyone-should-know/</a>)
 </li>
 <li>
-<code>[ ]</code>       [上下文切换操作会耗费多少时间?](<a href="http://blog.tsunanet.net/2010/11/how-long-does-it-take-to-make-context.html">http://blog.tsunanet.net/2010/11/how-long-does-it-take-to-make-context.html</a>)
+<code>[ ]</code> [上下文切换操作会耗费多少时间?](<a href="http://blog.tsunanet.net/2010/11/how-long-does-it-take-to-make-context.html">http://blog.tsunanet.net/2010/11/how-long-does-it-take-to-make-context.html</a>)
 </li>
 <li>
-<code>[ ]</code> [跨数据中心的事务
-(video)](<a href="https://www.youtube.com/watch?v=srOgpXECblk">https://www.youtube.com/watch?v=srOgpXECblk</a>)
+<code>[ ]</code> [跨数据中心的事务 (video)](<a href="https://www.youtube.com/watch?v=srOgpXECblk">https://www.youtube.com/watch?v=srOgpXECblk</a>)
 </li>
 <li>
 <code>[ ]</code> [简明 CAP
@@ -2442,74 +2363,54 @@ I/O)](<a href="https://www.youtube.com/watch?v=ZzfHjytDceU">https://www.youtube.
 </li>
 <li>
 <code>[ ]</code> Paxos 一致性算法:
-
 <ul class="org-ul">
 <li>
 <a href="https://www.youtube.com/watch?v=s8JqcZtvnsM">时间很短</a>
 </li>
 <li>
-<a href="https://www.youtube.com/watch?v=JEpsBg0AO6o">用例 和
-multi-paxos</a>
+<a href="https://www.youtube.com/watch?v=JEpsBg0AO6o">用例 和 multi-paxos</a>
 </li>
 <li>
 <a href="http://research.microsoft.com/en-us/um/people/lamport/pubs/paxos-simple.pdf">论文</a>
 </li>
 </ul>
 </li>
-
 <li>
-<code>[ ]</code>       [一致性哈希](<a href="http://www.tom-e-white.com/2007/11/consistent-hashing.html">http://www.tom-e-white.com/2007/11/consistent-hashing.html</a>)
+<code>[ ]</code> [一致性哈希](<a href="http://www.tom-e-white.com/2007/11/consistent-hashing.html">http://www.tom-e-white.com/2007/11/consistent-hashing.html</a>)
 </li>
 <li>
-<code>[ ]</code> [NoSQL
-模式](<a href="http://horicky.blogspot.com/2009/11/nosql-patterns.html">http://horicky.blogspot.com/2009/11/nosql-patterns.html</a>)
+<code>[ ]</code> [NoSQL 模式](<a href="http://horicky.blogspot.com/2009/11/nosql-patterns.html">http://horicky.blogspot.com/2009/11/nosql-patterns.html</a>)
 </li>
 <li>
-<code>[ ]</code> [OOSE: UML 2.0 系列
-(video)](<a href="https://www.youtube.com/watch?v=OkC7HKtiZC0&amp;list=PLGLfVvz%5C_LVvQ5G-LdJ8RLqe-ndo7QITYc">https://www.youtube.com/watch?v=OkC7HKtiZC0&amp;list=PLGLfVvz\_LVvQ5G-LdJ8RLqe-ndo7QITYc</a>)
+<code>[ ]</code> [OOSE: UML 2.0 系列 (video)](<a href="https://www.youtube.com/watch?v=OkC7HKtiZC0&amp;list=PLGLfVvz%5C_LVvQ5G-LdJ8RLqe-ndo7QITYc">https://www.youtube.com/watch?v=OkC7HKtiZC0&amp;list=PLGLfVvz\_LVvQ5G-LdJ8RLqe-ndo7QITYc</a>)
 </li>
 <li>
 <code>[ ]</code> OOSE: 使用 UML 和 Java 开发软件 (21 videos):
-
 <ul class="org-ul">
 <li>如果你对 OO 都深刻的理解和实践，可以跳过这部分。
 </li>
 <li>
-<a href="https://www.youtube.com/playlist?list=PLJ9pm_Rc9HesnkwKlal_buSIHA-jTZMpO">OOSE:
-使用 UML 和 Java 开发软件</a>
+<a href="https://www.youtube.com/playlist?list=PLJ9pm_Rc9HesnkwKlal_buSIHA-jTZMpO">OOSE: 使用 UML 和 Java 开发软件</a>
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> 面向对象编程的 SOLID 原则:
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [Bob Martin 面向对象的 SOLID 原则和敏捷设计
-(video)](<a href="https://www.youtube.com/watch?v=TMuno5RZNeE">https://www.youtube.com/watch?v=TMuno5RZNeE</a>)
+<code>[ ]</code> [Bob Martin 面向对象的 SOLID 原则和敏捷设计 (video)](<a href="https://www.youtube.com/watch?v=TMuno5RZNeE">https://www.youtube.com/watch?v=TMuno5RZNeE</a>)
 </li>
 <li>
-<code>[ ]</code> [C# SOLID 设计模式
-(video)](<a href="https://www.youtube.com/playlist?list=PL8m4NUhTQU48oiGCSgCP1FiJEcg%5C_xJzyQ">https://www.youtube.com/playlist?list=PL8m4NUhTQU48oiGCSgCP1FiJEcg\_xJzyQ</a>)
+<code>[ ]</code> [C# SOLID 设计模式 (video)](<a href="https://www.youtube.com/playlist?list=PL8m4NUhTQU48oiGCSgCP1FiJEcg%5C_xJzyQ">https://www.youtube.com/playlist?list=PL8m4NUhTQU48oiGCSgCP1FiJEcg\_xJzyQ</a>)
 </li>
 <li>
-<code>[ ]</code> [SOLID 原则
-(video)](<a href="https://www.youtube.com/playlist?list=PL4CE9F710017EA77A">https://www.youtube.com/playlist?list=PL4CE9F710017EA77A</a>)
+<code>[ ]</code> [SOLID 原则 (video)](<a href="https://www.youtube.com/playlist?list=PL4CE9F710017EA77A">https://www.youtube.com/playlist?list=PL4CE9F710017EA77A</a>)
 </li>
 <li>
-<code>[ ]</code> S -
-<a href="http://www.oodesign.com/single-responsibility-principle.html">单一职责原则</a>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"><tbody><tr></tr></tbody></table>
-<p>
-<a href="http://www.javacodegeeks.com/2011/11/solid-single-responsibility-principle.html">每个对象的单一职责</a>
-</p>
-
-<ul class="org-ul">
+<code>[ ]</code> S - <a href="http://www.oodesign.com/single-responsibility-principle.html">单一职责原则</a> | <a href="http://www.javacodegeeks.com/2011/11/solid-single-responsibility-principle.html">每个对象的单一职责</a>
+</li>
 <li>
 <a href="https://docs.google.com/open?id=0ByOwmqah_nuGNHEtcU5OekdDMkk">更多</a>
-</li>
-</ul>
 </li>
 
 <li>
@@ -2586,15 +2487,12 @@ multi-paxos</a>
 
 <li>
 <code>[ ]</code> 可伸缩性:
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [很棒的概述
-(video)](<a href="https://www.youtube.com/watch?v=-W9F%5C_%5C_D3oY4">https://www.youtube.com/watch?v=-W9F\_\_D3oY4</a>)
+<code>[ ]</code> [很棒的概述 (video)](<a href="https://www.youtube.com/watch?v=-W9F%5C_%5C_D3oY4">https://www.youtube.com/watch?v=-W9F\_\_D3oY4</a>)
 </li>
 <li>
 <code>[ ]</code> 简短系列:
-
 <ul class="org-ul">
 <li>
 <a href="http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones">克隆</a>
@@ -2610,222 +2508,176 @@ multi-paxos</a>
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> [可伸缩的 Web
 架构和分布式系统](<a href="http://www.aosabook.org/en/distsys.html">http://www.aosabook.org/en/distsys.html</a>)
 </li>
 <li>
-<code>[ ]</code>          [错误的分布式系统解释](<a href="https://pages.cs.wisc.edu/~zuyu/files/fallacies.pdf">https://pages.cs.wisc.edu/~zuyu/files/fallacies.pdf</a>)
+<code>[ ]</code> [错误的分布式系统解释](<a href="https://pages.cs.wisc.edu/~zuyu/files/fallacies.pdf">https://pages.cs.wisc.edu/~zuyu/files/fallacies.pdf</a>)
 </li>
 <li>
-<code>[ ]</code>          [实用编程技术](<a href="http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html">http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html</a>)
-
+<code>[ ]</code> [实用编程技术](<a href="http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html">http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html</a>)
 <ul class="org-ul">
 <li>
-<a href="http://horicky.blogspot.com/2010/07/google-pregel-graph-processing.html">extra:
-Google Pregel 图形处理</a>
+<a href="http://horicky.blogspot.com/2010/07/google-pregel-graph-processing.html">extra: Google Pregel 图形处理</a>
 </li>
 </ul>
 </li>
-
 <li>
-<code>[ ]</code> [Jeff Dean - 在 Goolge 构建软件系统
-(video)](<a href="https://www.youtube.com/watch?v=modXC5IWTJI">https://www.youtube.com/watch?v=modXC5IWTJI</a>)
+<code>[ ]</code> [Jeff Dean - 在 Goolge 构建软件系统 (video)](<a href="https://www.youtube.com/watch?v=modXC5IWTJI">https://www.youtube.com/watch?v=modXC5IWTJI</a>)
 </li>
 <li>
-<code>[ ]</code>          [可伸缩系统架构设计介绍](<a href="http://lethain.com/introduction-to-architecting-systems-for-scale/">http://lethain.com/introduction-to-architecting-systems-for-scale/</a>)
+<code>[ ]</code> [可伸缩系统架构设计介绍](<a href="http://lethain.com/introduction-to-architecting-systems-for-scale/">http://lethain.com/introduction-to-architecting-systems-for-scale/</a>)
 </li>
 <li>
-<code>[ ]</code> [使用 App Engine
-和云存储扩展面向全球用户的手机游戏架构实践(video)](<a href="https://www.youtube.com/watch?v=9nWyWwY2Onc">https://www.youtube.com/watch?v=9nWyWwY2Onc</a>)
+<code>[ ]</code> [使用 App Engine 和云存储扩展面向全球用户的手机游戏架构实践(video)](<a href="https://www.youtube.com/watch?v=9nWyWwY2Onc">https://www.youtube.com/watch?v=9nWyWwY2Onc</a>)
 </li>
 <li>
-<code>[ ]</code> [How Google Does Planet-Scale Engineering for Planet-Scale
-Infra (video)](<a href="https://www.youtube.com/watch?v=H4vMcD7zKM0">https://www.youtube.com/watch?v=H4vMcD7zKM0</a>)
+<code>[ ]</code> [How Google Does Planet-Scale Engineering for Planet-Scale Infra (video)](<a href="https://www.youtube.com/watch?v=H4vMcD7zKM0">https://www.youtube.com/watch?v=H4vMcD7zKM0</a>)
 </li>
 <li>
-<code>[ ]</code>          [算法的重要性](<a href="https://www.topcoder.com/community/data-science/data-science-tutorials/the-importance-of-algorithms/">https://www.topcoder.com/community/data-science/data-science-tutorials/the-importance-of-algorithms/</a>)
+<code>[ ]</code> [算法的重要性](<a href="https://www.topcoder.com/community/data-science/data-science-tutorials/the-importance-of-algorithms/">https://www.topcoder.com/community/data-science/data-science-tutorials/the-importance-of-algorithms/</a>)
 </li>
 <li>
-<code>[ ]</code>          [分片](<a href="http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html">http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html</a>)
+<code>[ ]</code> [分片](<a href="http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html">http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html</a>)
 </li>
 <li>
-<code>[ ]</code> [Facebook 系统规模扩展实践
-(2009)](<a href="https://www.infoq.com/presentations/Scale-at-Facebook">https://www.infoq.com/presentations/Scale-at-Facebook</a>)
+<code>[ ]</code> [Facebook 系统规模扩展实践 (2009)](<a href="https://www.infoq.com/presentations/Scale-at-Facebook">https://www.infoq.com/presentations/Scale-at-Facebook</a>)
 </li>
 <li>
 <code>[ ]</code> [Facebook 系统规模扩展实践 (2012), "为 10 亿用户构建"
 (video)](<a href="https://www.youtube.com/watch?v=oodS71YtkGU">https://www.youtube.com/watch?v=oodS71YtkGU</a>)
 </li>
 <li>
-<code>[ ]</code> [Long Game 工程实践 - Astrid Atkinson
-Keynote(video)](<a href="https://www.youtube.com/watch?v=p0jGmgIrf%5C_M&amp;list=PLRXxvay%5C_m8gqVlExPC5DG3TGWJTaBgqSA&amp;index=4">https://www.youtube.com/watch?v=p0jGmgIrf\_M&amp;list=PLRXxvay\_m8gqVlExPC5DG3TGWJTaBgqSA&amp;index=4</a>)
+<code>[ ]</code> [Long Game 工程实践 - Astrid Atkinson Keynote(video)](<a href="https://www.youtube.com/watch?v=p0jGmgIrf%5C_M&amp;list=PLRXxvay%5C_m8gqVlExPC5DG3TGWJTaBgqSA&amp;index=4">https://www.youtube.com/watch?v=p0jGmgIrf\_M&amp;list=PLRXxvay\_m8gqVlExPC5DG3TGWJTaBgqSA&amp;index=4</a>)
 </li>
 <li>
-<code>[ ]</code> [30 分钟看完 YouTuBe 7
-年系统扩展经验](<a href="http://highscalability.com/blog/2012/3/26/7-years-of-youtube-scalability-lessons-in-30-minutes.html">http://highscalability.com/blog/2012/3/26/7-years-of-youtube-scalability-lessons-in-30-minutes.html</a>)
-
+<code>[ ]</code> [30 分钟看完 YouTuBe 7 年系统扩展经验](<a href="http://highscalability.com/blog/2012/3/26/7-years-of-youtube-scalability-lessons-in-30-minutes.html">http://highscalability.com/blog/2012/3/26/7-years-of-youtube-scalability-lessons-in-30-minutes.html</a>)
 <ul class="org-ul">
 <li>
 <a href="https://www.youtube.com/watch?v=G-lGCC4KKok">video</a>
 </li>
 </ul>
 </li>
-
 <li>
-<code>[ ]</code> [PayPal 如何用 8 台虚拟机扛住 10
-亿日交易量系统](<a href="http://highscalability.com/blog/2016/8/15/how-paypal-scaled-to-billions-of-transactions-daily-using-ju.html">http://highscalability.com/blog/2016/8/15/how-paypal-scaled-to-billions-of-transactions-daily-using-ju.html</a>)
+<code>[ ]</code> [PayPal 如何用 8 台虚拟机扛住 10 亿日交易量系统](<a href="http://highscalability.com/blog/2016/8/15/how-paypal-scaled-to-billions-of-transactions-daily-using-ju.html">http://highscalability.com/blog/2016/8/15/how-paypal-scaled-to-billions-of-transactions-daily-using-ju.html</a>)
 </li>
 <li>
-<code>[ ]</code>          [如何对大数据集去重](<a href="https://blog.clevertap.com/how-to-remove-duplicates-in-large-datasets/">https://blog.clevertap.com/how-to-remove-duplicates-in-large-datasets/</a>)
+<code>[ ]</code> [如何对大数据集去重](<a href="https://blog.clevertap.com/how-to-remove-duplicates-in-large-datasets/">https://blog.clevertap.com/how-to-remove-duplicates-in-large-datasets/</a>)
 </li>
 <li>
-<code>[ ]</code> [Etsy 的扩展和工程文化探究 Jon Cowie
-(video)](<a href="https://www.youtube.com/watch?v=3vV4YiqKm1o">https://www.youtube.com/watch?v=3vV4YiqKm1o</a>)
+<code>[ ]</code> [Etsy 的扩展和工程文化探究 Jon Cowie (video)](<a href="https://www.youtube.com/watch?v=3vV4YiqKm1o">https://www.youtube.com/watch?v=3vV4YiqKm1o</a>)
 </li>
 <li>
-<code>[ ]</code> [是什么造就了 Amazon
-自己的微服务架构](<a href="http://thenewstack.io/led-amazon-microservices-architecture/">http://thenewstack.io/led-amazon-microservices-architecture/</a>)
+<code>[ ]</code> [是什么造就了 Amazon 自己的微服务架构](<a href="http://thenewstack.io/led-amazon-microservices-architecture/">http://thenewstack.io/led-amazon-microservices-architecture/</a>)
 </li>
 <li>
-<code>[ ]</code> [压缩还是不压缩，是 Uber
-面临的问题](<a href="https://eng.uber.com/trip-data-squeeze/">https://eng.uber.com/trip-data-squeeze/</a>)
+<code>[ ]</code> [压缩还是不压缩，是 Uber 面临的问题](<a href="https://eng.uber.com/trip-data-squeeze/">https://eng.uber.com/trip-data-squeeze/</a>)
 </li>
 <li>
-<code>[ ]</code> [异步 I/O Tarantool
-队列](<a href="http://highscalability.com/blog/2016/3/3/asyncio-tarantool-queue-get-in-the-queue.html">http://highscalability.com/blog/2016/3/3/asyncio-tarantool-queue-get-in-the-queue.html</a>)
+<code>[ ]</code> [异步 I/O Tarantool 队列](<a href="http://highscalability.com/blog/2016/3/3/asyncio-tarantool-queue-get-in-the-queue.html">http://highscalability.com/blog/2016/3/3/asyncio-tarantool-queue-get-in-the-queue.html</a>)
 </li>
 <li>
-<code>[ ]</code>          [什么时候应该用近视查询处理?](<a href="http://highscalability.com/blog/2016/2/25/when-should-approximate-query-processing-be-used.html">http://highscalability.com/blog/2016/2/25/when-should-approximate-query-processing-be-used.html</a>)
+<code>[ ]</code> [什么时候应该用近视查询处理?](<a href="http://highscalability.com/blog/2016/2/25/when-should-approximate-query-processing-be-used.html">http://highscalability.com/blog/2016/2/25/when-should-approximate-query-processing-be-used.html</a>)
 </li>
 <li>
-<code>[ ]</code> [Google 从单数据中心到故障转移, 到本地多宿主架构的演变](
-<a href="http://highscalability.com/blog/2016/2/23/googles-transition-from-single-datacenter-to-failover-to-a-n.html">http://highscalability.com/blog/2016/2/23/googles-transition-from-single-datacenter-to-failover-to-a-n.html</a>)
+<code>[ ]</code> [Google 从单数据中心到故障转移, 到本地多宿主架构的演变](<a href="http://highscalability.com/blog/2016/2/23/googles-transition-from-single-datacenter-to-failover-to-a-n.html">http://highscalability.com/blog/2016/2/23/googles-transition-from-single-datacenter-to-failover-to-a-n.html</a>)
 </li>
 <li>
-<code>[ ]</code>          [Spanner](<a href="http://highscalability.com/blog/2012/9/24/google-spanners-most-surprising-revelation-nosql-is-out-and.html">http://highscalability.com/blog/2012/9/24/google-spanners-most-surprising-revelation-nosql-is-out-and.html</a>)
+<code>[ ]</code> [Spanner](<a href="http://highscalability.com/blog/2012/9/24/google-spanners-most-surprising-revelation-nosql-is-out-and.html">http://highscalability.com/blog/2012/9/24/google-spanners-most-surprising-revelation-nosql-is-out-and.html</a>)
 </li>
 <li>
-<code>[ ]</code> [Egnyte: 构建和扩展 PB
-级分布式系统架构的经验教训](<a href="http://highscalability.com/blog/2016/2/15/egnyte-architecture-lessons-learned-in-building-and-scaling.html">http://highscalability.com/blog/2016/2/15/egnyte-architecture-lessons-learned-in-building-and-scaling.html</a>)
+<code>[ ]</code> [Egnyte: 构建和扩展 PB 级分布式系统架构的经验教训](<a href="http://highscalability.com/blog/2016/2/15/egnyte-architecture-lessons-learned-in-building-and-scaling.html">http://highscalability.com/blog/2016/2/15/egnyte-architecture-lessons-learned-in-building-and-scaling.html</a>)
 </li>
 <li>
-<code>[ ]</code> [机器学习驱动的编程:
-新世界的新编程方式](<a href="http://highscalability.com/blog/2016/7/6/machine-learning-driven-programming-a-new-programming-for-a.html">http://highscalability.com/blog/2016/7/6/machine-learning-driven-programming-a-new-programming-for-a.html</a>)
+<code>[ ]</code> [机器学习驱动的编程: 新世界的新编程方式](<a href="http://highscalability.com/blog/2016/7/6/machine-learning-driven-programming-a-new-programming-for-a.html">http://highscalability.com/blog/2016/7/6/machine-learning-driven-programming-a-new-programming-for-a.html</a>)
 </li>
 <li>
-<code>[ ]</code>          [日服务数百万请求的图像优化技术](<a href="http://highscalability.com/blog/2016/6/15/the-image-optimization-technology-that-serves-millions-of-re.html">http://highscalability.com/blog/2016/6/15/the-image-optimization-technology-that-serves-millions-of-re.html</a>)
+<code>[ ]</code> [日服务数百万请求的图像优化技术](<a href="http://highscalability.com/blog/2016/6/15/the-image-optimization-technology-that-serves-millions-of-re.html">http://highscalability.com/blog/2016/6/15/the-image-optimization-technology-that-serves-millions-of-re.html</a>)
 </li>
 <li>
-<code>[ ]</code> [Patreon
-架构](<a href="http://highscalability.com/blog/2016/2/1/a-patreon-architecture-short.html">http://highscalability.com/blog/2016/2/1/a-patreon-architecture-short.html</a>)
+<code>[ ]</code> [Patreon 架构](<a href="http://highscalability.com/blog/2016/2/1/a-patreon-architecture-short.html">http://highscalability.com/blog/2016/2/1/a-patreon-architecture-short.html</a>)
 </li>
 <li>
-<code>[ ]</code> [Tinder:
-推荐引擎是如何决定下一个你将会看到谁的?](<a href="http://highscalability.com/blog/2016/1/27/tinder-how-does-one-of-the-largest-recommendation-engines-de.html">http://highscalability.com/blog/2016/1/27/tinder-how-does-one-of-the-largest-recommendation-engines-de.html</a>)
+<code>[ ]</code> [Tinder: 推荐引擎是如何决定下一个你将会看到谁的?](<a href="http://highscalability.com/blog/2016/1/27/tinder-how-does-one-of-the-largest-recommendation-engines-de.html">http://highscalability.com/blog/2016/1/27/tinder-how-does-one-of-the-largest-recommendation-engines-de.html</a>)
 </li>
 <li>
-<code>[ ]</code>          [现代缓存设计](<a href="http://highscalability.com/blog/2016/1/25/design-of-a-modern-cache.html">http://highscalability.com/blog/2016/1/25/design-of-a-modern-cache.html</a>)
+<code>[ ]</code> [现代缓存设计](<a href="http://highscalability.com/blog/2016/1/25/design-of-a-modern-cache.html">http://highscalability.com/blog/2016/1/25/design-of-a-modern-cache.html</a>)
 </li>
 <li>
-<code>[ ]</code> [Facebook
-实时视频流扩展](<a href="http://highscalability.com/blog/2016/1/13/live-video-streaming-at-facebook-scale.html">http://highscalability.com/blog/2016/1/13/live-video-streaming-at-facebook-scale.html</a>)
+<code>[ ]</code> [Facebook 实时视频流扩展](<a href="http://highscalability.com/blog/2016/1/13/live-video-streaming-at-facebook-scale.html">http://highscalability.com/blog/2016/1/13/live-video-streaming-at-facebook-scale.html</a>)
 </li>
 <li>
-<code>[ ]</code> [在 Amazon AWS 上把服务扩展到 1100
-万量级的新手教程](<a href="http://highscalability.com/blog/2016/1/11/a-beginners-guide-to-scaling-to-11-million-users-on-amazons.html">http://highscalability.com/blog/2016/1/11/a-beginners-guide-to-scaling-to-11-million-users-on-amazons.html</a>)
+<code>[ ]</code> [在 Amazon AWS 上把服务扩展到 1100 万量级的新手教程](<a href="http://highscalability.com/blog/2016/1/11/a-beginners-guide-to-scaling-to-11-million-users-on-amazons.html">http://highscalability.com/blog/2016/1/11/a-beginners-guide-to-scaling-to-11-million-users-on-amazons.html</a>)
 </li>
 <li>
-<code>[ ]</code> [对延时敏感的应用是否应该使用
-Docker?](<a href="http://highscalability.com/blog/2015/12/16/how-does-the-use-of-docker-effect-latency.html">http://highscalability.com/blog/2015/12/16/how-does-the-use-of-docker-effect-latency.html</a>)
+<code>[ ]</code> [对延时敏感的应用是否应该使用 Docker?](<a href="http://highscalability.com/blog/2015/12/16/how-does-the-use-of-docker-effect-latency.html">http://highscalability.com/blog/2015/12/16/how-does-the-use-of-docker-effect-latency.html</a>)
 </li>
 <li>
-<code>[ ]</code> [AMP（Accelerated Mobile Pages）的存在是对 Google
-的威胁么?](<a href="http://highscalability.com/blog/2015/12/14/does-amp-counter-an-existential-threat-to-google.html">http://highscalability.com/blog/2015/12/14/does-amp-counter-an-existential-threat-to-google.html</a>)
+<code>[ ]</code> [AMP（Accelerated Mobile Pages）的存在是对 Google 的威胁么?](<a href="http://highscalability.com/blog/2015/12/14/does-amp-counter-an-existential-threat-to-google.html">http://highscalability.com/blog/2015/12/14/does-amp-counter-an-existential-threat-to-google.html</a>)
 </li>
 <li>
-<code>[ ]</code> [360 度解读 Netflix
-技术栈](<a href="http://highscalability.com/blog/2015/11/9/a-360-degree-view-of-the-entire-netflix-stack.html">http://highscalability.com/blog/2015/11/9/a-360-degree-view-of-the-entire-netflix-stack.html</a>)
+<code>[ ]</code> [360 度解读 Netflix 技术栈](<a href="http://highscalability.com/blog/2015/11/9/a-360-degree-view-of-the-entire-netflix-stack.html">http://highscalability.com/blog/2015/11/9/a-360-degree-view-of-the-entire-netflix-stack.html</a>)
 </li>
 <li>
-<code>[ ]</code> [延迟无处不在 -
-如何搞定它？](<a href="http://highscalability.com/latency-everywhere-and-it-costs-you-sales-how-crush-it">http://highscalability.com/latency-everywhere-and-it-costs-you-sales-how-crush-it</a>)
+<code>[ ]</code> [延迟无处不在 - 如何搞定它？](<a href="http://highscalability.com/latency-everywhere-and-it-costs-you-sales-how-crush-it">http://highscalability.com/latency-everywhere-and-it-costs-you-sales-how-crush-it</a>)
 </li>
 <li>
-<code>[ ]</code>          [无服务器架构](<a href="http://martinfowler.com/articles/serverless.html">http://martinfowler.com/articles/serverless.html</a>)
+<code>[ ]</code> [无服务器架构](<a href="http://martinfowler.com/articles/serverless.html">http://martinfowler.com/articles/serverless.html</a>)
 </li>
 <li>
-<code>[ ]</code> [是什么驱动着 Instagram:
-上百个实例、几十种技术](<a href="http://instagram-engineering.tumblr.com/post/13649370142/what-powers-instagram-hundreds-of-instances">http://instagram-engineering.tumblr.com/post/13649370142/what-powers-instagram-hundreds-of-instances</a>)
+<code>[ ]</code> [是什么驱动着 Instagram: 上百个实例、几十种技术](<a href="http://instagram-engineering.tumblr.com/post/13649370142/what-powers-instagram-hundreds-of-instances">http://instagram-engineering.tumblr.com/post/13649370142/what-powers-instagram-hundreds-of-instances</a>)
 </li>
 <li>
-<code>[ ]</code> [Cinchcast 架构 - 每天处理 1500
-小时的音频](<a href="http://highscalability.com/blog/2012/7/16/cinchcast-architecture-producing-1500-hours-of-audio-every-d.html">http://highscalability.com/blog/2012/7/16/cinchcast-architecture-producing-1500-hours-of-audio-every-d.html</a>)
+<code>[ ]</code> [Cinchcast 架构 - 每天处理 1500 小时的音频](<a href="http://highscalability.com/blog/2012/7/16/cinchcast-architecture-producing-1500-hours-of-audio-every-d.html">http://highscalability.com/blog/2012/7/16/cinchcast-architecture-producing-1500-hours-of-audio-every-d.html</a>)
 </li>
 <li>
-<code>[ ]</code> [Justin.Tv
-实时视频播放架构](<a href="http://highscalability.com/blog/2010/3/16/justintvs-live-video-broadcasting-architecture.html">http://highscalability.com/blog/2010/3/16/justintvs-live-video-broadcasting-architecture.html</a>)
+<code>[ ]</code> [Justin.Tv 实时视频播放架构](<a href="http://highscalability.com/blog/2010/3/16/justintvs-live-video-broadcasting-architecture.html">http://highscalability.com/blog/2010/3/16/justintvs-live-video-broadcasting-architecture.html</a>)
 </li>
 <li>
-<code>[ ]</code> [Playfish's 社交游戏架构 -
-每月五千万用户增长](<a href="http://highscalability.com/blog/2010/9/21/playfishs-social-gaming-architecture-50-million-monthly-user.html">http://highscalability.com/blog/2010/9/21/playfishs-social-gaming-architecture-50-million-monthly-user.html</a>)
+<code>[ ]</code> [Playfish's 社交游戏架构 - 每月五千万用户增长](<a href="http://highscalability.com/blog/2010/9/21/playfishs-social-gaming-architecture-50-million-monthly-user.html">http://highscalability.com/blog/2010/9/21/playfishs-social-gaming-architecture-50-million-monthly-user.html</a>)
 </li>
 <li>
-<code>[ ]</code> [猫途鹰架构 - 40 万访客, 200 万动态页面访问, 30TB
-数据](<a href="http://highscalability.com/blog/2011/6/27/tripadvisor-architecture-40m-visitors-200m-dynamic-page-view.html">http://highscalability.com/blog/2011/6/27/tripadvisor-architecture-40m-visitors-200m-dynamic-page-view.html</a>)
+<code>[ ]</code> [猫途鹰架构 - 40 万访客, 200 万动态页面访问, 30TB 数据](<a href="http://highscalability.com/blog/2011/6/27/tripadvisor-architecture-40m-visitors-200m-dynamic-page-view.html">http://highscalability.com/blog/2011/6/27/tripadvisor-architecture-40m-visitors-200m-dynamic-page-view.html</a>)
 </li>
 <li>
-<code>[ ]</code> [PlentyOfFish
-架构](<a href="http://highscalability.com/plentyoffish-architecture">http://highscalability.com/plentyoffish-architecture</a>)
+<code>[ ]</code> [PlentyOfFish 架构](<a href="http://highscalability.com/plentyoffish-architecture">http://highscalability.com/plentyoffish-architecture</a>)
 </li>
 <li>
 <code>[ ]</code> [Salesforce 架构 - 如何扛住 13
 亿日交易量](<a href="http://highscalability.com/blog/2013/9/23/salesforce-architecture-how-they-handle-13-billion-transacti.html">http://highscalability.com/blog/2013/9/23/salesforce-architecture-how-they-handle-13-billion-transacti.html</a>)
 </li>
 <li>
-<code>[ ]</code> [ESPN's
-架构扩展](<a href="http://highscalability.com/blog/2013/11/4/espns-architecture-at-scale-operating-at-100000-duh-nuh-nuhs.html">http://highscalability.com/blog/2013/11/4/espns-architecture-at-scale-operating-at-100000-duh-nuh-nuhs.html</a>)
+<code>[ ]</code> [ESPN's 架构扩展](<a href="http://highscalability.com/blog/2013/11/4/espns-architecture-at-scale-operating-at-100000-duh-nuh-nuhs.html">http://highscalability.com/blog/2013/11/4/espns-architecture-at-scale-operating-at-100000-duh-nuh-nuhs.html</a>)
 </li>
 <li>
-<code>[ ]</code> 下面
-『消息、序列化和消息系统』部分的内容会提到什么样的技术能把各种服务整合到一起
+<code>[ ]</code> 下面 『消息、序列化和消息系统』部分的内容会提到什么样的技术能把各种服务整合到一起
 </li>
 <li>
 <code>[ ]</code> Twitter:
-
 <ul class="org-ul">
-<li>[O'Reilly MySQL CE 2011: Jeremy Cole, "Big and Small Data at
-@Twitter"
-(video)](<a href="https://www.youtube.com/watch?v=5cKTP36HVgI">https://www.youtube.com/watch?v=5cKTP36HVgI</a>)
+<li>[O'Reilly MySQL CE 2011: Jeremy Cole, "Big and Small Data at @Twitter" (video)](<a href="https://www.youtube.com/watch?v=5cKTP36HVgI">https://www.youtube.com/watch?v=5cKTP36HVgI</a>)
 </li>
 <li>
 <a href="https://www.infoq.com/presentations/Twitter-Timeline-Scalability">时间线的扩展</a>
 </li>
 </ul>
 </li>
-
 <li>更多内容可以查看视频部分的『大规模数据挖掘』视频系列。
 </li>
 </ul>
 </li>
-
 <li>
-<code>[ ]</code>       系统设计问题练习：下面有一些指导原则，每一个都有相关文档以及在现实中该如何处理。
-
+<code>[ ]</code> 系统设计问题练习：下面有一些指导原则，每一个都有相关文档以及在现实中该如何处理。
 <ul class="org-ul">
-<li>复习: <a href="http://www.hiredintech.com/system-design/">HiredInTech
-的系统设计</a>
+<li>复习: <a href="http://www.hiredintech.com/system-design/">HiredInTech 的系统设计</a>
 </li>
 <li>
-<a href="https://github.com/jwasham/google-interview-university/blob/master/extras/cheat%20sheets/system-design.pdf">cheat
-sheet</a>
+<a href="https://github.com/jwasham/google-interview-university/blob/master/extras/cheat%20sheets/system-design.pdf">cheat sheet</a>
 </li>
 <li>流程:
-
 <ol class="org-ol">
 <li>理解问题和范围:
-
 <ul class="org-ul">
 <li>在面试官的帮助下定义用例
 </li>
@@ -2837,9 +2689,7 @@ sheet</a>
 </li>
 </ul>
 </li>
-
 <li>考虑约束:
-
 <ul class="org-ul">
 <li>问一下每月请求量
 </li>
@@ -2857,9 +2707,7 @@ sheet</a>
 </li>
 </ul>
 </li>
-
 <li>抽象设计:
-
 <ul class="org-ul">
 <li>分层 (服务, 数据, 缓存)
 </li>
@@ -2873,28 +2721,22 @@ sheet</a>
 </li>
 </ol>
 </li>
-
 <li>练习:
-
 <ul class="org-ul">
 <li>
-<a href="http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&amp;context=compsci">设计一个
-CDN 网络</a>
+<a href="http://repository.cmu.edu/cgi/viewcontent.cgi?article=2112&amp;context=compsci">设计一个 CDN 网络</a>
 </li>
 <li>
-<a href="https://blog.twitter.com/2010/announcing-snowflake">设计一个随机唯一
-ID 生成系统</a>
+<a href="https://blog.twitter.com/2010/announcing-snowflake">设计一个随机唯一 ID 生成系统</a>
 </li>
 <li>
 <a href="http://www.indieflashblog.com/how-to-create-an-asynchronous-multiplayer-game.html">设计一个在线多人卡牌游戏</a>
 </li>
 <li>
-<a href="http://www.slideshare.net/dvirsky/introduction-to-redis">设计一个
-key-value 数据库</a>
+<a href="http://www.slideshare.net/dvirsky/introduction-to-redis">设计一个 key-value 数据库</a>
 </li>
 <li>
-<a href="https://icmi.cs.ucsb.edu/research/tech_reports/reports/2005-23.pdf">设计一个函数获取过去某个时间段内前
-K 个最高频访问的请求</a>
+<a href="https://icmi.cs.ucsb.edu/research/tech_reports/reports/2005-23.pdf">设计一个函数获取过去某个时间段内前 K 个最高频访问的请求</a>
 </li>
 <li>
 <a href="http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html">设计一个图片分享系统</a>
@@ -2914,19 +2756,19 @@ K 个最高频访问的请求</a>
 </li>
 </ul>
 </li>
-
-<li>
-<b>*</b> 论文
-
+</ul>
+</div>
+<div id="outline-container-论文" class="outline-4">
+<h4 id="论文">
+<a id="sec-1-10-1" name="sec-1-10-1"></a>论文</h4>
+<div class="outline-text-4" id="text-论文">
 <ul class="org-ul">
 <li>有 Google 的论文和一些知名的论文.
 </li>
 <li>你很可能实在没时间一篇篇完整的读完他们。我建议可以有选择的读其中一些论文里的核心部分。
 </li>
 <li>
-<code>[ ]</code> [1978:
-通信顺序处理](<a href="http://spinroot.com/courses/summer/Papers/hoare%5C_1978.pdf">http://spinroot.com/courses/summer/Papers/hoare\_1978.pdf</a>)
-
+<code>[ ]</code> [1978: 通信顺序处理](<a href="http://spinroot.com/courses/summer/Papers/hoare%5C_1978.pdf">http://spinroot.com/courses/summer/Papers/hoare\_1978.pdf</a>)
 <ul class="org-ul">
 <li>
 <a href="https://godoc.org/github.com/thomas11/csp">Go 实现</a>
@@ -2936,45 +2778,33 @@ K 个最高频访问的请求</a>
 </li>
 </ul>
 </li>
-
 <li>
-<code>[ ]</code> [2003: The Google
-文件系统](<a href="http://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf">http://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf</a>)
-
+<code>[ ]</code> [2003: The Google 文件系统](<a href="http://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf">http://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf</a>)
 <ul class="org-ul">
 <li>2012 年被 Colossus 取代了
 </li>
 </ul>
 </li>
-
 <li>
-<code>[ ]</code> [2004: MapReduce: Simplified Data Processing on Large
-Clusters](
+<code>[ ]</code> [2004: MapReduce: Simplified Data Processing on Large Clusters](
 <a href="http://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf">http://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf</a>)
-
 <ul class="org-ul">
 <li>大多被云数据流取代了?
 </li>
 </ul>
 </li>
-
 <li>
-<code>[ ]</code> [2007: 每个程序员都应该知道的内存知识
-(非常长，作者建议跳过某些章节来阅读)](<a href="https://www.akkadia.org/drepper/cpumemory.pdf">https://www.akkadia.org/drepper/cpumemory.pdf</a>)
+<code>[ ]</code> [2007: 每个程序员都应该知道的内存知识 (非常长，作者建议跳过某些章节来阅读)](<a href="https://www.akkadia.org/drepper/cpumemory.pdf">https://www.akkadia.org/drepper/cpumemory.pdf</a>)
 </li>
 <li>
-<code>[ ]</code> [2012: Google 的
-Colossus](<a href="https://www.wired.com/2012/07/google-colossus/">https://www.wired.com/2012/07/google-colossus/</a>)
-
+<code>[ ]</code> [2012: Google 的 Colossus](<a href="https://www.wired.com/2012/07/google-colossus/">https://www.wired.com/2012/07/google-colossus/</a>)
 <ul class="org-ul">
 <li>没有论文
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> 2012: AddressSanitizer: 快速的内存访问检查器:
-
 <ul class="org-ul">
 <li>
 <a href="http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/37752.pdf">论文</a>
@@ -2984,10 +2814,8 @@ Colossus](<a href="https://www.wired.com/2012/07/google-colossus/">https://www.w
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> 2013: Spanner: Google 的分布式数据库:
-
 <ul class="org-ul">
 <li>
 <a href="http://static.googleusercontent.com/media/research.google.com/en//archive/spanner-osdi2012.pdf">论文</a>
@@ -2997,42 +2825,33 @@ Colossus](<a href="https://www.wired.com/2012/07/google-colossus/">https://www.w
 </li>
 </ul>
 </li>
-
 <li>
-<code>[ ]</code> [2014: Machine Learning: The High-Interest Credit Card of
-Technical
-Debt](<a href="http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43146.pdf">http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43146.pdf</a>)
+<code>[ ]</code> [2014: Machine Learning: The High-Interest Credit Card of Technical Debt](<a href="http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43146.pdf">http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43146.pdf</a>)
 </li>
 <li>
-<code>[ ]</code> [2015: Continuous Pipelines at
-Google](<a href="http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43790.pdf">http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43790.pdf</a>)
+<code>[ ]</code> [2015: Continuous Pipelines at Google](<a href="http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43790.pdf">http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43790.pdf</a>)
 </li>
 <li>
-<code>[ ]</code> [2015: 大规模高可用: 构建 Google Ads
-的数据基础设施](<a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/44686.pdf">https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/44686.pdf</a>)
+<code>[ ]</code> [2015: 大规模高可用: 构建 Google Ads 的数据基础设施](<a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/44686.pdf">https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/44686.pdf</a>)
 </li>
 <li>
-<code>[ ]</code> [2015: TensorFlow:
-异构分布式系统上的大规模机器学习](<a href="http://download.tensorflow.org/paper/whitepaper2015.pdf">http://download.tensorflow.org/paper/whitepaper2015.pdf</a>
-)
+<code>[ ]</code> [2015: TensorFlow: 异构分布式系统上的大规模机器学习](<a href="http://download.tensorflow.org/paper/whitepaper2015.pdf">http://download.tensorflow.org/paper/whitepaper2015.pdf</a>)
 </li>
 <li>
-<code>[ ]</code> [2015:
-开发者应该如何搜索代码：用例学习](<a href="http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43835.pdf">http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43835.pdf</a>)
+<code>[ ]</code> [2015: 开发者应该如何搜索代码：用例学习](<a href="http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43835.pdf">http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/43835.pdf</a>)
 </li>
 <li>
-<code>[ ]</code> [2016: Borg, Omega, and
-Kubernetes](<a href="http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/44843.pdf">http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/44843.pdf</a>)
+<code>[ ]</code> [2016: Borg, Omega, and Kubernetes](<a href="http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/44843.pdf">http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/44843.pdf</a>)
 </li>
 </ul>
-</li>
-
-<li>
-<b>*</b> 测试
-
+</div>
+</div>
+<div id="outline-container-测试" class="outline-4">
+<h4 id="测试">
+<a id="sec-1-10-2" name="sec-1-10-2"></a>测试</h4>
+<div class="outline-text-4" id="text-测试">
 <ul class="org-ul">
 <li>涵盖了:
-
 <ul class="org-ul">
 <li>单元测试是如何工作的
 </li>
@@ -3044,155 +2863,131 @@ Kubernetes](<a href="http://static.googleusercontent.com/media/research.google.c
 </li>
 </ul>
 </li>
-
 <li>
-<code>[ ]</code> [James Bach 讲敏捷软件测试
-(video)](<a href="https://www.youtube.com/watch?v=SAhJf36%5C_u5U">https://www.youtube.com/watch?v=SAhJf36\_u5U</a>)
+<code>[ ]</code> [James Bach 讲敏捷软件测试 (video)](<a href="https://www.youtube.com/watch?v=SAhJf36%5C_u5U">https://www.youtube.com/watch?v=SAhJf36\_u5U</a>)
 </li>
 <li>
-<code>[ ]</code> [James Bach 软件测试公开课
-(video)](<a href="https://www.youtube.com/watch?v=ILkT%5C_HV9DVU">https://www.youtube.com/watch?v=ILkT\_HV9DVU</a>)
+<code>[ ]</code> [James Bach 软件测试公开课 (video)](<a href="https://www.youtube.com/watch?v=ILkT%5C_HV9DVU">https://www.youtube.com/watch?v=ILkT\_HV9DVU</a>)
 </li>
 <li>
-<code>[ ]</code> [Steve Freeman - 测试驱动的开发
-(video)](<a href="https://vimeo.com/83960706">https://vimeo.com/83960706</a>)
-
+<code>[ ]</code> [Steve Freeman - 测试驱动的开发 (video)](<a href="https://vimeo.com/83960706">https://vimeo.com/83960706</a>)
 <ul class="org-ul">
 <li>
 <a href="http://gotocon.com/dl/goto-berlin-2013/slides/SteveFreeman_TestDrivenDevelopmentThatsNotWhatWeMeant.pdf">slides</a>
 </li>
 </ul>
 </li>
-
 <li>
-<code>[ ]</code>       [测试驱动的开发已死。测试不朽。](<a href="http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html">http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html</a>)
+<code>[ ]</code> [测试驱动的开发已死。测试不朽。](<a href="http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html">http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html</a>)
 </li>
 <li>
-<code>[ ]</code> [测试驱动的开发已死?
-(video)](<a href="https://www.youtube.com/watch?v=z9quxZsLcfo">https://www.youtube.com/watch?v=z9quxZsLcfo</a>)
+<code>[ ]</code> [测试驱动的开发已死? (video)](<a href="https://www.youtube.com/watch?v=z9quxZsLcfo">https://www.youtube.com/watch?v=z9quxZsLcfo</a>)
 </li>
 <li>
-<code>[ ]</code> [视频系列 (152 个) - 并不都是必须
-(video)](<a href="https://www.youtube.com/watch?v=nzJapzxH%5C_rE&amp;list=PLAwxTw4SYaPkWVHeC%5C_8aSIbSxE%5C_NXI76g">https://www.youtube.com/watch?v=nzJapzxH\_rE&amp;list=PLAwxTw4SYaPkWVHeC\_8aSIbSxE\_NXI76g</a>)
+<code>[ ]</code> [视频系列 (152 个) - 并不都是必须 (video)](<a href="https://www.youtube.com/watch?v=nzJapzxH%5C_rE&amp;list=PLAwxTw4SYaPkWVHeC%5C_8aSIbSxE%5C_NXI76g">https://www.youtube.com/watch?v=nzJapzxH\_rE&amp;list=PLAwxTw4SYaPkWVHeC\_8aSIbSxE\_NXI76g</a>)
 </li>
 <li>
-<code>[ ]</code> [Python：测试驱动的 Web
-开发](<a href="http://www.obeythetestinggoat.com/pages/book.html#toc">http://www.obeythetestinggoat.com/pages/book.html#toc</a>)
+<code>[ ]</code> [Python：测试驱动的 Web 开发](<a href="http://www.obeythetestinggoat.com/pages/book.html#toc">http://www.obeythetestinggoat.com/pages/book.html#toc</a>)
 </li>
 <li>
 <code>[ ]</code> 依赖注入:
-
 <ul class="org-ul">
 <li>
 <code>[ ]</code> [视频](<a href="https://www.youtube.com/watch?v=IKD2-MAkXyQ">https://www.youtube.com/watch?v=IKD2-MAkXyQ</a>)
 </li>
 <li>
-<code>[ ]</code>          [测试之道](<a href="http://jasonpolites.github.io/tao-of-testing/ch3-1.1.html">http://jasonpolites.github.io/tao-of-testing/ch3-1.1.html</a>)
+<code>[ ]</code> [测试之道](<a href="http://jasonpolites.github.io/tao-of-testing/ch3-1.1.html">http://jasonpolites.github.io/tao-of-testing/ch3-1.1.html</a>)
 </li>
 </ul>
 </li>
-
 <li>
-<code>[ ]</code>       [如何编写测试](<a href="http://jasonpolites.github.io/tao-of-testing/ch4-1.1.html">http://jasonpolites.github.io/tao-of-testing/ch4-1.1.html</a>)
+<code>[ ]</code> [如何编写测试](<a href="http://jasonpolites.github.io/tao-of-testing/ch4-1.1.html">http://jasonpolites.github.io/tao-of-testing/ch4-1.1.html</a>)
 </li>
 </ul>
-</li>
-
-<li>
-<b>*</b> 调度
-
+</div>
+</div>
+<div id="outline-container-调度" class="outline-4">
+<h4 id="调度">
+<a id="sec-1-10-3" name="sec-1-10-3"></a>调度</h4>
+<div class="outline-text-4" id="text-调度">
 <ul class="org-ul">
 <li>在操作系统中是如何运作的
 </li>
 <li>在操作系统部分的视频里有很多资料
 </li>
 </ul>
-</li>
-
-<li>
-<b>*</b> 实现系统例程
-
+</div>
+</div>
+<div id="outline-container-实现系统例程" class="outline-4">
+<h4 id="实现系统例程">
+<a id="sec-1-10-4" name="sec-1-10-4"></a>实现系统例程</h4>
+<div class="outline-text-4" id="text-实现系统例程">
 <ul class="org-ul">
 <li>理解你使用的系统 API 底层有什么
 </li>
 <li>你能自己实现它们么?
 </li>
 </ul>
-</li>
-
-<li>
-<b>*</b> 字符串搜索和操作
-
+</div>
+</div>
+<div id="outline-container-字符串搜索和操作" class="outline-4">
+<h4 id="字符串搜索和操作">
+<a id="sec-1-10-5" name="sec-1-10-5"></a>字符串搜索和操作</h4>
+<div class="outline-text-4" id="text-字符串搜索和操作">
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [文本的搜索模式
-(video)](<a href="https://www.coursera.org/learn/data-structures/lecture/tAfHI/search-pattern-in-text">https://www.coursera.org/learn/data-structures/lecture/tAfHI/search-pattern-in-text</a>)
+<code>[ ]</code> [文本的搜索模式 (video)](<a href="https://www.coursera.org/learn/data-structures/lecture/tAfHI/search-pattern-in-text">https://www.coursera.org/learn/data-structures/lecture/tAfHI/search-pattern-in-text</a>)
 </li>
 <li>
 <code>[ ]</code> Rabin-Karp (videos):
-
 <ul class="org-ul">
 <li>
-<a href="https://www.coursera.org/learn/data-structures/lecture/c0Qkw/rabin-karps-algorithm">Rabin
-Karps 算法</a>
+<a href="https://www.coursera.org/learn/data-structures/lecture/c0Qkw/rabin-karps-algorithm">Rabin Karps 算法</a>
 </li>
 <li>
 <a href="https://www.coursera.org/learn/data-structures/lecture/nYrc8/optimization-precomputation">预先计算的优化</a>
 </li>
 <li>
-<a href="https://www.coursera.org/learn/data-structures/lecture/h4ZLc/optimization-implementation-and-analysis">优化:
-实现和分析</a>
+<a href="https://www.coursera.org/learn/data-structures/lecture/h4ZLc/optimization-implementation-and-analysis">优化: 实现和分析</a>
 </li>
 <li>
-<a href="https://www.youtube.com/watch?v=BRO7mVIFt08&amp;list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&amp;index=9">Table
-Doubling, Karp-Rabin</a>
+<a href="https://www.youtube.com/watch?v=BRO7mVIFt08&amp;list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&amp;index=9">Table Doubling, Karp-Rabin</a>
 </li>
 <li>
 <a href="https://www.youtube.com/watch?v=w6nuXg0BISo&amp;list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&amp;index=32">滚动哈希</a>
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> Knuth-Morris-Pratt (KMP) 算法:
-
 <ul class="org-ul">
 <li>
-<a href="https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">Pratt
-算法</a>
+<a href="https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">Pratt 算法</a>
 </li>
 <li>
-<a href="https://www.youtube.com/watch?v=2ogqPWJSftE">教程:
-Knuth-Morris-Pratt (KMP) 字符串匹配算法</a>
+<a href="https://www.youtube.com/watch?v=2ogqPWJSftE">教程: Knuth-Morris-Pratt (KMP) 字符串匹配算法</a>
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> Boyer–Moore 字符串搜索算法
-
 <ul class="org-ul">
 <li>
 <a href="https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string_search_algorithm">Boyer-Moore字符串搜索算法</a>
 </li>
 <li>
-<a href="https://www.youtube.com/watch?v=QDZpzctPf10">Boyer-Moore-Horspool
-高级字符串搜索算法 (video)</a>
+<a href="https://www.youtube.com/watch?v=QDZpzctPf10">Boyer-Moore-Horspool 高级字符串搜索算法 (video)</a>
 </li>
 </ul>
 </li>
-
 <li>
-<code>[ ]</code> [Coursera:
-字符串的算法](<a href="https://www.coursera.org/learn/algorithms-on-strings/home/week/1">https://www.coursera.org/learn/algorithms-on-strings/home/week/1</a>)
-</li>
-</ul>
+<code>[ ]</code> [Coursera: 字符串的算法](<a href="https://www.coursera.org/learn/algorithms-on-strings/home/week/1">https://www.coursera.org/learn/algorithms-on-strings/home/week/1</a>)
 </li>
 </ul>
 <hr>
 </div>
 </div>
-
+</div>
 <div id="outline-container-终面" class="outline-3">
 <h3 id="终面">
 <a id="sec-1-11" name="sec-1-11"></a>终面</h3>
@@ -3207,21 +3002,17 @@ Knuth-Morris-Pratt (KMP) 字符串匹配算法</a>
 <ul class="org-ul">
 <li>
 <a id="综述" name="%E7%BB%BC%E8%BF%B0"></a><a id="sec-1-11-0-1" name="sec-1-11-0-1"></a>综述:<br><div class="outline-text-5" id="text-综述">
-
 <ul class="org-ul">
 <li>
 <code>[ ]</code> 2-3 分钟的短视频系列 (23 个)
-
 <ul class="org-ul">
 <li>
 <a href="https://www.youtube.com/watch?v=r4r1DZcx1cM&amp;list=PLmVb1OknmNJuC5POdcDv5oCS7_OUkDgpj&amp;index=22">Videos</a>
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> 2-5 分钟的短视频系列 - Michael Sambol (18 个):
-
 <ul class="org-ul">
 <li>
 <a href="https://www.youtube.com/channel/UCzDJwLWoYCUQowF_nG3m5OQ">Videos</a>
@@ -3231,10 +3022,8 @@ Knuth-Morris-Pratt (KMP) 字符串匹配算法</a>
 </ul>
 </div>
 </li>
-
 <li>
-<a id="排序" name="%E6%8E%92%E5%BA%8F"></a><a id="sec-1-11-0-2" name="sec-1-11-0-2"></a>排序:<br><div class="outline-text-5" id="text-排序">
-
+<a id="sec-1-11-0-2" name="sec-1-11-0-2"></a>排序:<br><div class="outline-text-5" id="text-1-11-0-2">
 <ul class="org-ul">
 <li>
 <code>[ ]</code> 归并排序: <a href="https://www.youtube.com/watch?v=GCae1WNvnZM">https://www.youtube.com/watch?v=GCae1WNvnZM</a>
@@ -3244,18 +3033,15 @@ Knuth-Morris-Pratt (KMP) 字符串匹配算法</a>
 </li>
 </ul>
 </div>
-
 <div id="outline-container-书籍" class="outline-3">
 <h3 id="书籍">
 <a id="sec-1-12" name="sec-1-12"></a>书籍</h3>
 <div class="outline-text-3" id="text-书籍">
 </div>
 
-<div id="outline-container-google-coaching-里提到的" class="outline-4">
-<h4 id="google-coaching-里提到的">
-<a id="sec-1-12-1" name="sec-1-12-1"></a>Google Coaching 里提到的</h4>
-<div class="outline-text-4" id="text-google-coaching-里提到的">
-
+<div id="outline-container-sec-1-12-1" class="outline-4">
+<h4 id="sec-1-12-1">Google Coaching 里提到的</h4>
+<div class="outline-text-4" id="text-1-12-1">
 <p>
 <b>阅读并做练习:</b>
 </p>
@@ -3263,22 +3049,17 @@ Knuth-Morris-Pratt (KMP) 字符串匹配算法</a>
 <ul class="org-ul">
 <li>
 <code>[ ]</code> 算法设计手册 (Skiena)
-
 <ul class="org-ul">
 <li>书 (Kindle 上可以租到):
-
 <ul class="org-ul">
 <li>
-<a href="http://www.amazon.com/Algorithm-Design-Manual-Steven-Skiena/dp/1849967202">Algorithm
-Design Manual</a>
+<a href="http://www.amazon.com/Algorithm-Design-Manual-Steven-Skiena/dp/1849967202">Algorithm Design Manual</a>
 </li>
 </ul>
 </li>
-
 <li>Half.com 是一个资源丰富且性价比很高的在线书店.
 </li>
 <li>答案:
-
 <ul class="org-ul">
 <li>
 <a href="http://www.algorithm.cs.sunysb.edu/algowiki/index.php/The_Algorithms_Design_Manual_(Second_Edition)">解答</a>
@@ -3288,7 +3069,6 @@ Design Manual</a>
 </li>
 </ul>
 </li>
-
 <li>
 <a href="http://www3.cs.stonybrook.edu/~skiena/algorist/book/errata">勘误表</a>
 </li>
@@ -3302,22 +3082,19 @@ challenges (further down below)
 </ul>
 <p>
 <b>首先阅读:</b> - [ ] [Programming Interviews Exposed: Secrets to Landing
-Your Next Job, 2nd
-Edition](<a href="http://www.wiley.com/WileyCDA/WileyTitle/productCd-047012167X.html">http://www.wiley.com/WileyCDA/WileyTitle/productCd-047012167X.html</a>)
+Your Next Job, 2nd Edition](<a href="http://www.wiley.com/WileyCDA/WileyTitle/productCd-047012167X.html">http://www.wiley.com/WileyCDA/WileyTitle/productCd-047012167X.html</a>)
 </p>
 
 <p>
-<b>然后阅读 (这本获得了很多推荐， 但是不在 Google coaching 的文档里):</b> - [
-] [Cracking the Coding Interview, 6th
-Edition](<a href="http://www.amazon.com/Cracking-Coding-Interview-6th-Programming/dp/0984782850/">http://www.amazon.com/Cracking-Coding-Interview-6th-Programming/dp/0984782850/</a>)
+<b>然后阅读 (这本获得了很多推荐， 但是不在 Google coaching 的文档里):</b>
 </p>
 <ul class="org-ul">
-<li>如果你看到有人在看 "The Google Resume", 实际上它和 "Cracking the
+<li>
+<code>[ ]</code> [Cracking the Coding Interview, 6th Edition](<a href="http://www.amazon.com/Cracking-Coding-Interview-6th-Programming/dp/0984782850/">http://www.amazon.com/Cracking-Coding-Interview-6th-Programming/dp/0984782850/</a>)
+</li>
+<li>如果你看到有人在看 "The Google Resume", 实际上它和 "Cracking the Coding Interview" 是同一个作者写的，而且后者是升级版。
 </li>
 </ul>
-<p>
-Coding Interview" 是同一个作者写的，而且后者是升级版。
-</p>
 </div>
 </div>
 
@@ -3327,58 +3104,44 @@ Coding Interview" 是同一个作者写的，而且后者是升级版。
 <div class="outline-text-4" id="text-附加书单">
 
 <p>
-这些没有被 Google
-推荐阅读，不过我因为需要这些背景知识所以也把它们列在了这里。
+这些没有被 Google 推荐阅读，不过我因为需要这些背景知识所以也把它们列在了这里。
 </p>
 
 <ul class="org-ul">
 <li>
 <code>[ ]</code> C Programming Language, Vol 2
-
 <ul class="org-ul">
 <li>
 <a href="https://github.com/lekkas/c-algorithms">练习的答案</a>
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> C++ Primer Plus, 6th Edition
 </li>
-
 <li>
-<code>[ ]</code> [《Unxi 环境高级编程》 The Unix Programming
-Environment](<a href="http://product.half.ebay.com/The-UNIX-Programming-Environment-by-Brian-W-Kernighan-and-Rob-Pike-1983-Other/54385&amp;tg=info">http://product.half.ebay.com/The-UNIX-Programming-Environment-by-Brian-W-Kernighan-and-Rob-Pike-1983-Other/54385&amp;tg=info</a>)
+<code>[ ]</code> [《Unxi 环境高级编程》 The Unix Programming Environment](<a href="http://product.half.ebay.com/The-UNIX-Programming-Environment-by-Brian-W-Kernighan-and-Rob-Pike-1983-Other/54385&amp;tg=info">http://product.half.ebay.com/The-UNIX-Programming-Environment-by-Brian-W-Kernighan-and-Rob-Pike-1983-Other/54385&amp;tg=info</a>)
 </li>
-
 <li>
-<code>[ ]</code> [《编程珠玑》 Programming
-Pearls](<a href="http://www.amazon.com/Programming-Pearls-2nd-Jon-Bentley/dp/0201657880">http://www.amazon.com/Programming-Pearls-2nd-Jon-Bentley/dp/0201657880</a>)
+<code>[ ]</code> [《编程珠玑》 Programming Pearls](<a href="http://www.amazon.com/Programming-Pearls-2nd-Jon-Bentley/dp/0201657880">http://www.amazon.com/Programming-Pearls-2nd-Jon-Bentley/dp/0201657880</a>)
 </li>
-
 <li>
-<code>[ ]</code> [Algorithms and Programming: Problems and
-Solutions](<a href="http://www.amazon.com/Algorithms-Programming-Solutions-Alexander-Shen/dp/0817638474">http://www.amazon.com/Algorithms-Programming-Solutions-Alexander-Shen/dp/0817638474</a>)
+<code>[ ]</code> [Algorithms and Programming: Problems and Solutions](<a href="http://www.amazon.com/Algorithms-Programming-Solutions-Alexander-Shen/dp/0817638474">http://www.amazon.com/Algorithms-Programming-Solutions-Alexander-Shen/dp/0817638474</a>)
 </li>
 </ul>
 </div>
 </div>
-
 <div id="outline-container-如果你有时间" class="outline-4">
 <h4 id="如果你有时间">
 <a id="sec-1-12-3" name="sec-1-12-3"></a>如果你有时间</h4>
 <div class="outline-text-4" id="text-如果你有时间">
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [Introduction to
-Algorithms](<a href="https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844">https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844</a>)
+<code>[ ]</code> [Introduction to Algorithms](<a href="https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844">https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844</a>)
 </li>
 
 <li>
-<code>[ ]</code> [Elements of Programming
-Interviews](<a href="https://www.amazon.com/Elements-Programming-Interviews-Insiders-Guide/dp/1479274836">https://www.amazon.com/Elements-Programming-Interviews-Insiders-Guide/dp/1479274836</a>)
-
+<code>[ ]</code> [Elements of Programming Interviews](<a href="https://www.amazon.com/Elements-Programming-Interviews-Insiders-Guide/dp/1479274836">https://www.amazon.com/Elements-Programming-Interviews-Insiders-Guide/dp/1479274836</a>)
 <ul class="org-ul">
 <li>如果你希望在面试里用 C++ 写代码，这本书的代码全都是 C++ 写的
 </li>
@@ -3397,40 +3160,28 @@ Interviews](<a href="https://www.amazon.com/Elements-Programming-Interviews-Insi
 <div class="outline-text-3" id="text-编码练习和挑战">
 
 <p>
-一旦你学会了理论基础，就应该把它们拿出来练练。
-尽量坚持每天做编码练习，越多越好。
-</p>
-
-<p>
+一旦你学会了理论基础，就应该把它们拿出来练练。 尽量坚持每天做编码练习，越多越好。
 编程问题预备:
 </p>
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [不错的介绍 (摘自 System Design 章节):
-算法设计:](<a href="http://www.hiredintech.com/algorithm-design/">http://www.hiredintech.com/algorithm-design/</a>)
+<code>[ ]</code> [不错的介绍 (摘自 System Design 章节): 算法设计:](<a href="http://www.hiredintech.com/algorithm-design/">http://www.hiredintech.com/algorithm-design/</a>)
 </li>
 <li>
-<code>[ ]</code>    [如何找到解决方案](<a href="https://www.topcoder.com/community/data-science/data-science-tutorials/how-to-find-a-solution/">https://www.topcoder.com/community/data-science/data-science-tutorials/how-to-find-a-solution/</a>)
+<code>[ ]</code> [如何找到解决方案](<a href="https://www.topcoder.com/community/data-science/data-science-tutorials/how-to-find-a-solution/">https://www.topcoder.com/community/data-science/data-science-tutorials/how-to-find-a-solution/</a>)
 </li>
 <li>
-<code>[ ]</code> [如何剖析 Topcoder
-题目描述](<a href="https://www.topcoder.com/community/data-science/data-science-tutorials/how-to-dissect-a-topcoder-problem-statement/">https://www.topcoder.com/community/data-science/data-science-tutorials/how-to-dissect-a-topcoder-problem-statement/</a>)
+<code>[ ]</code> [如何剖析 Topcoder 题目描述](<a href="https://www.topcoder.com/community/data-science/data-science-tutorials/how-to-dissect-a-topcoder-problem-statement/">https://www.topcoder.com/community/data-science/data-science-tutorials/how-to-dissect-a-topcoder-problem-statement/</a>)
 </li>
 <li>
-<code>[ ]</code> [Topcoders
-里用到的数学](<a href="https://www.topcoder.com/community/data-science/data-science-tutorials/mathematics-for-topcoders/">https://www.topcoder.com/community/data-science/data-science-tutorials/mathematics-for-topcoders/</a>)
+<code>[ ]</code> [Topcoders 里用到的数学](<a href="https://www.topcoder.com/community/data-science/data-science-tutorials/mathematics-for-topcoders/">https://www.topcoder.com/community/data-science/data-science-tutorials/mathematics-for-topcoders/</a>)
 </li>
 <li>
-<code>[ ]</code> [动态规划 –
-从入门到精通](<a href="https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/">https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/</a>)
+<code>[ ]</code> [动态规划 – 从入门到精通](<a href="https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/">https://www.topcoder.com/community/data-science/data-science-tutorials/dynamic-programming-from-novice-to-advanced/</a>)
 </li>
-
 <li>
-<a href="https://courses.csail.mit.edu/iap/interview/materials.php">MIT
-面试材料</a>
+<a href="https://courses.csail.mit.edu/iap/interview/materials.php">MIT 面试材料</a>
 </li>
-
 <li>
 <a href="http://exercism.io/languages">针对编程语言本身的练习</a>
 </li>
@@ -3438,7 +3189,6 @@ Interviews](<a href="https://www.amazon.com/Elements-Programming-Interviews-Insi
 <p>
 编码练习平台:
 </p>
-
 <ul class="org-ul">
 <li>
 <a href="https://leetcode.com/">LeetCode</a>
@@ -3447,8 +3197,7 @@ Interviews](<a href="https://www.amazon.com/Elements-Programming-Interviews-Insi
 <a href="https://www.topcoder.com/">TopCoder</a>
 </li>
 <li>
-<a href="https://projecteuler.net/index.php?section=problems">Project Euler
-(数学方向为主)</a>
+<a href="https://projecteuler.net/index.php?section=problems">Project Euler (数学方向为主)</a>
 </li>
 <li>
 <a href="http://www.codewars.com">Codewars</a>
@@ -3465,7 +3214,6 @@ Interviews](<a href="https://www.amazon.com/Elements-Programming-Interviews-Insi
 <li>
 <a href="https://www.interviewbit.com/invite/icjf">InterviewBit</a>
 </li>
-
 <li>
 <a href="http://www.gainlo.co/">模拟大公司的面试</a>
 </li>
@@ -3477,23 +3225,18 @@ Interviews](<a href="https://www.amazon.com/Elements-Programming-Interviews-Insi
 <h3 id="当你临近面试时">
 <a id="sec-1-14" name="sec-1-14"></a>当你临近面试时</h3>
 <div class="outline-text-3" id="text-当你临近面试时">
-
 <ul class="org-ul">
 <li>
 <code>[ ]</code> 搞定代码面试 (videos):
-
 <ul class="org-ul">
 <li>
-<a href="https://www.youtube.com/watch?v=4NIb9l3imAo">Cracking The Code
-Interview</a>
+<a href="https://www.youtube.com/watch?v=4NIb9l3imAo">Cracking The Code Interview</a>
 </li>
 <li>
-<a href="https://www.youtube.com/watch?v=Eg5-tdAwclo">Cracking the Coding
-Interview - 全栈系列</a>
+<a href="https://www.youtube.com/watch?v=Eg5-tdAwclo">Cracking the Coding Interview - 全栈系列</a>
 </li>
 <li>
-<a href="https://www.youtube.com/watch?v=1fqxMuPmGak">Ask Me Anything:
-Gayle Laakmann McDowell (Cracking the Coding Interview 的作者)</a>
+<a href="https://www.youtube.com/watch?v=1fqxMuPmGak">Ask Me Anything: Gayle Laakmann McDowell (Cracking the Coding Interview 的作者)</a>
 </li>
 </ul>
 </li>
@@ -3508,8 +3251,7 @@ Gayle Laakmann McDowell (Cracking the Coding Interview 的作者)</a>
 
 <ul class="org-ul">
 <li>
-<a href="http://steve-yegge.blogspot.co.uk/2007_09_01_archive.html">10
-条小贴士让你写出一份还算不错的简历</a>
+<a href="http://steve-yegge.blogspot.co.uk/2007_09_01_archive.html">10 条小贴士让你写出一份还算不错的简历</a>
 </li>
 <li>这是搞定面试的第一个关键步骤
 </li>
@@ -3600,8 +3342,7 @@ Gayle Laakmann McDowell (Cracking the Coding Interview 的作者)</a>
 
 <ul class="org-ul">
 <li>
-<a href="https://medium.com/@moonstorming/10-things-i-wish-i-knew-on-my-first-day-at-google-107581d87286#.livxn7clw">我希望在
-Google 的第一天就知道的 10 件事</a>
+<a href="https://medium.com/@moonstorming/10-things-i-wish-i-knew-on-my-first-day-at-google-107581d87286#.livxn7clw">我希望在 Google 的第一天就知道的 10 件事</a>
 </li>
 </ul>
 <p>
@@ -3639,13 +3380,10 @@ Google 的第一天就知道的 10 件事</a>
 
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [每一个软件开发者的绝对最低限度，必须要知道的关于 Unicode
-和字符集知识](
-<a href="http://www.joelonsoftware.com/articles/Unicode.html">http://www.joelonsoftware.com/articles/Unicode.html</a>)
+<code>[ ]</code> [每一个软件开发者的绝对最低限度，必须要知道的关于 Unicode 和字符集知识](<a href="http://www.joelonsoftware.com/articles/Unicode.html">http://www.joelonsoftware.com/articles/Unicode.html</a>)
 </li>
 <li>
-<code>[ ]</code> [关于处理文本需要的编码和字符集,
-每个程序员绝对需要知道的知识](<a href="http://kunststube.net/encoding/">http://kunststube.net/encoding/</a>)
+<code>[ ]</code> [关于处理文本需要的编码和字符集, 每个程序员绝对需要知道的知识](<a href="http://kunststube.net/encoding/">http://kunststube.net/encoding/</a>)
 </li>
 </ul>
 </li>
@@ -3655,16 +3393,13 @@ Google 的第一天就知道的 10 件事</a>
 
 <ul class="org-ul">
 <li>
-<code>[ ]</code>       [大、小端字节序](<a href="https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Data/endian.html">https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Data/endian.html</a>)
+<code>[ ]</code> [大、小端字节序](<a href="https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Data/endian.html">https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Data/endian.html</a>)
 </li>
 <li>
-<code>[ ]</code> [大端字节 Vs
-小端字节(视频)](<a href="https://www.youtube.com/watch?v=JrNF0KRAlyo">https://www.youtube.com/watch?v=JrNF0KRAlyo</a>)
+<code>[ ]</code> [大端字节 Vs 小端字节(视频)](<a href="https://www.youtube.com/watch?v=JrNF0KRAlyo">https://www.youtube.com/watch?v=JrNF0KRAlyo</a>)
 </li>
 <li>
-<code>[ ]</code> [大、小端字节序的里里外外(Big And Little Endian Inside/Out)
-(视频)](<a href="https://www.youtube.com/watch?v=oBSuXP-1Tc0">https://www.youtube.com/watch?v=oBSuXP-1Tc0</a>)
-
+<code>[ ]</code> [大、小端字节序的里里外外(Big And Little Endian Inside/Out) (视频)](<a href="https://www.youtube.com/watch?v=oBSuXP-1Tc0">https://www.youtube.com/watch?v=oBSuXP-1Tc0</a>)
 <ul class="org-ul">
 <li>内核开发者的讨论非常技术性，如果大多数都超出了你的理解范围，不要太担心。
 </li>
@@ -3679,93 +3414,65 @@ Google 的第一天就知道的 10 件事</a>
 <b>*</b> Emacs and vi(m)
 
 <ul class="org-ul">
-<li>Yegge 的建议，从一个很早以前的亚马逊招聘信息中而来：熟悉基于 unix
-的代码编辑器
+<li>Yegge 的建议，从一个很早以前的亚马逊招聘信息中而来：熟悉基于 unix 的代码编辑器
 </li>
 <li>vi(m):
-
 <ul class="org-ul">
 <li>
-<a href="https://www.youtube.com/watch?v=5givLEMcINQ&amp;index=1&amp;list=PL13bz4SHGmRxlZVmWQ9DvXo1fEg4UdGkr">使用
-vim 进行编辑 01 - 安装, 设置和模式 (视频)</a>
+<a href="https://www.youtube.com/watch?v=5givLEMcINQ&amp;index=1&amp;list=PL13bz4SHGmRxlZVmWQ9DvXo1fEg4UdGkr">使用 vim 进行编辑 01 - 安装, 设置和模式 (视频)</a>
 </li>
 <li>
 <a href="http://vim-adventures.com/">VIM 的冒险之旅</a>
 </li>
 <li>4 个视频集:
-
 <ul class="org-ul">
-<li>[[<a href="https://www.youtube.com/watch?v=SI8TeVMX8pk%5D%5Bvi/vim">https://www.youtube.com/watch?v=SI8TeVMX8pk][vi/vim</a> 编辑器
-<ul class="org-ul">
-<li>课程 1]]
-</li>
-</ul>
-</li>
-<li>[[<a href="https://www.youtube.com/watch?v=F3OO7ZIOaJE%5D%5Bvi/vim">https://www.youtube.com/watch?v=F3OO7ZIOaJE][vi/vim</a> 编辑器
-<ul class="org-ul">
-<li>课程 2]]
-</li>
-</ul>
-</li>
-<li>[[<a href="https://www.youtube.com/watch?v=1lYD5gwgZIA%5D%5Bvi/vim">https://www.youtube.com/watch?v=1lYD5gwgZIA][vi/vim</a> 编辑器
-<ul class="org-ul">
-<li>课程 4]]
-</li>
-</ul>
-</li>
-<li>[[<a href="https://www.youtube.com/watch?v=ZYEccA_nMaI%5D%5Bvi/vim">https://www.youtube.com/watch?v=ZYEccA_nMaI][vi/vim</a> 编辑器
-<ul class="org-ul">
-<li>课程 3]]
-</li>
-</ul>
-</li>
-</ul>
-</li>
-
 <li>
-<a href="http://www.cs.yale.edu/homes/aspnes/classes/223/notes.html#Using_Vi_instead_of_Emacs">使用
-Vi 而不是 Emacs</a>
+<a href="https://www.youtube.com/watch?v=SI8TeVMX8pk">vi/vim 编辑器 - 课程 1</a>
+</li>
+<li>
+<a href="https://www.youtube.com/watch?v=F3OO7ZIOaJE">vi/vim 编辑器 - 课程 2</a>
+</li>
+<li>
+<a href="https://www.youtube.com/watch?v=1lYD5gwgZIA">vi/vim 编辑器 - 课程 4</a>
+</li>
+<li>
+<a href="https://www.youtube.com/watch?v=ZYEccA_nMaI">vi/vim 编辑器 - 课程 3</a>
 </li>
 </ul>
 </li>
-
+<li>
+<a href="http://www.cs.yale.edu/homes/aspnes/classes/223/notes.html#Using_Vi_instead_of_Emacs">使用 Vi 而不是 Emacs</a>
+</li>
+</ul>
+</li>
 <li>emacs:
-
 <ul class="org-ul">
 <li>
-<a href="https://www.youtube.com/watch?v=hbmV1bnQ-i0">基础 Emacs 教程
-(视频)</a>
+<a href="https://www.youtube.com/watch?v=hbmV1bnQ-i0">基础 Emacs 教程 (视频)</a>
 </li>
 <li>3 个视频集:
-
 <ul class="org-ul">
 <li>
 <a href="https://www.youtube.com/watch?v=ujODL7MD04Q">Emacs 教程
 (初学者) -第 1 部分- 文件命令, 剪切/复制/粘贴, 自定义命令</a>
 </li>
 <li>
-<a href="https://www.youtube.com/watch?v=XWpsRupJ4II">Emacs 教程
-(初学者 -第 2 部分- Buffer 管理, 搜索, M-x grep 和 rgrep
-模式</a>
+<a href="https://www.youtube.com/watch?v=XWpsRupJ4II">Emacs 教程 (初学者 -第 2 部分- Buffer 管理, 搜索, M-x grep 和 rgrep 模式</a>
 </li>
 <li>
-<a href="https://www.youtube.com/watch?v=paSgzPso-yc">Emacs 教程
-(初学者 -第 3 部分- 表达式, 声明, ~/.emacs 文件和包机制</a>
+<a href="https://www.youtube.com/watch?v=paSgzPso-yc">Emacs 教程 (初学者 -第 3 部分- 表达式, 声明, ~/.emacs 文件和包机制</a>
 </li>
 </ul>
 </li>
 
 <li>
-<a href="https://www.youtube.com/watch?v=JWD1Fpdd4Pc">Evil 模式: 或许,
-我是怎样对 Emacs 路人转粉的 (视频)</a>
+<a href="https://www.youtube.com/watch?v=JWD1Fpdd4Pc">Evil 模式: 或许, 我是怎样对 Emacs 路人转粉的 (视频)</a>
 </li>
 <li>
-<a href="http://www.cs.yale.edu/homes/aspnes/classes/223/notes.html#Writing_C_programs_with_Emacs">使用
-Emacs 开发 C 程序</a>
+<a href="http://www.cs.yale.edu/homes/aspnes/classes/223/notes.html#Writing_C_programs_with_Emacs">使用 Emacs 开发 C 程序</a>
 </li>
 <li>
-<a href="https://www.youtube.com/watch?v=nsGYet02bEk">(或许)
-深度组织模式:管理结构 (视频)</a>
+<a href="https://www.youtube.com/watch?v=nsGYet02bEk">(或许) 深度组织模式:管理结构 (视频)</a>
 </li>
 </ul>
 </li>
@@ -3774,7 +3481,6 @@ Emacs 开发 C 程序</a>
 
 <li>
 <b>*</b> Unix 命令行工具
-
 <ul class="org-ul">
 <li>下列内容中的优秀工具由的 Yegge 推荐，Yegge 目前致力于 Amazon
 人事招聘处。
@@ -3820,36 +3526,28 @@ Emacs 开发 C 程序</a>
 
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [Khan Academy
-可汗学院](<a href="https://www.khanacademy.org/computing/computer-science/informationtheory">https://www.khanacademy.org/computing/computer-science/informationtheory</a>)
+<code>[ ]</code> [Khan Academy 可汗学院](<a href="https://www.khanacademy.org/computing/computer-science/informationtheory">https://www.khanacademy.org/computing/computer-science/informationtheory</a>)
 </li>
 <li>
 <code>[ ]</code> 更多有关马尔可夫的内容:
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [Core Markov Text
-Generation马尔可夫内容生成](<a href="https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/waxgx/core-markov-text-generation">https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/waxgx/core-markov-text-generation</a>)
+<code>[ ]</code> [Core Markov Text Generation马尔可夫内容生成](<a href="https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/waxgx/core-markov-text-generation">https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/waxgx/core-markov-text-generation</a>)
 </li>
 <li>
-<code>[ ]</code> [Core Implementing Markov Text
-Generation马尔可夫内容生成补充](<a href="https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/gZhiC/core-implementing-markov-text-generation">https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/gZhiC/core-implementing-markov-text-generation</a>)
+<code>[ ]</code> [Core Implementing Markov Text Generation马尔可夫内容生成补充](<a href="https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/gZhiC/core-implementing-markov-text-generation">https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/gZhiC/core-implementing-markov-text-generation</a>)
 </li>
 <li>
-<code>[ ]</code> [Project = Markov Text Generation Walk
-Through一个马尔可夫内容生成器的项目](<a href="https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/EUjrq/project-markov-text-generation-walk-through">https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/EUjrq/project-markov-text-generation-walk-through</a>)
+<code>[ ]</code> [Project = Markov Text Generation Walk Through一个马尔可夫内容生成器的项目](<a href="https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/EUjrq/project-markov-text-generation-walk-through">https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/EUjrq/project-markov-text-generation-walk-through</a>)
 </li>
 </ul>
 </li>
-
 <li>关于更多信息，请参照下方 MIT 6.050J 信息和系统复杂度的内容.
 </li>
 </ul>
 </li>
-
 <li>
 <b>*</b> 奇偶校验位 &amp; 汉明码 (视频)
-
 <ul class="org-ul">
 <li>
 <code>[ ]</code> [入门](<a href="https://www.youtube.com/watch?v=q-3BctoUpHE">https://www.youtube.com/watch?v=q-3BctoUpHE</a>)
@@ -3859,7 +3557,6 @@ Through一个马尔可夫内容生成器的项目](<a href="https://www.coursera
 </li>
 <li>
 <code>[ ]</code> 汉明码(Hamming Code):
-
 <ul class="org-ul">
 <li>
 <a href="https://www.youtube.com/watch?v=1A_NcXxdoCc">发现错误</a>
@@ -3869,7 +3566,6 @@ Through一个马尔可夫内容生成器的项目](<a href="https://www.coursera
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code> [检查错误](<a href="https://www.youtube.com/watch?v=wbH2VxzmoZk">https://www.youtube.com/watch?v=wbH2VxzmoZk</a>)
 </li>
@@ -3893,7 +3589,6 @@ Through一个马尔可夫内容生成器的项目](<a href="https://www.coursera
 
 <li>
 <b>*</b> 密码学
-
 <ul class="org-ul">
 <li>请参考下方视频
 </li>
@@ -3921,7 +3616,6 @@ Through一个马尔可夫内容生成器的项目](<a href="https://www.coursera
 </li>
 <li>
 <code>[ ]</code> 压缩 (视频):
-
 <ul class="org-ul">
 <li>[[压缩][]](<a href="https://www.youtube.com/watch?v=Lto-ajuqW3w">https://www.youtube.com/watch?v=Lto-ajuqW3w</a>)
 </li>
@@ -3946,34 +3640,29 @@ Probabilities](<a href="https://www.youtube.com/watch?v=cCDCfoHTsaU">https://www
 </li>
 </ul>
 </li>
-
 <li>
 <code>[ ]</code>       [数据压缩的艺术](<a href="https://www.youtube.com/playlist?list=PLOU2XLYxmsIJGErt5rrCqaSGTMyyqNt2H">https://www.youtube.com/playlist?list=PLOU2XLYxmsIJGErt5rrCqaSGTMyyqNt2H</a>)
 </li>
 <li>
-<code>[ ]</code> [(可选) 谷歌开发者: GZIP
-还差远了呢!](<a href="https://www.youtube.com/watch?v=whGwm0Lky2s">https://www.youtube.com/watch?v=whGwm0Lky2s</a>)
+<code>[ ]</code> [(可选) 谷歌开发者: GZIP 还差远了呢!](<a href="https://www.youtube.com/watch?v=whGwm0Lky2s">https://www.youtube.com/watch?v=whGwm0Lky2s</a>)
 </li>
 </ul>
 </li>
 
 <li>
 <b>*</b> 网络 (视频)
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code>       [可汗学院](<a href="https://www.khanacademy.org/computing/computer-science/internet-intro">https://www.khanacademy.org/computing/computer-science/internet-intro</a>)
+<code>[ ]</code> [可汗学院](<a href="https://www.khanacademy.org/computing/computer-science/internet-intro">https://www.khanacademy.org/computing/computer-science/internet-intro</a>)
 </li>
 <li>
-<code>[ ]</code>       [网络传输协议中的数据压缩](<a href="https://www.youtube.com/watch?v=Vdc8TCESIg8">https://www.youtube.com/watch?v=Vdc8TCESIg8</a>)
+<code>[ ]</code> [网络传输协议中的数据压缩](<a href="https://www.youtube.com/watch?v=Vdc8TCESIg8">https://www.youtube.com/watch?v=Vdc8TCESIg8</a>)
 </li>
 <li>
-<code>[ ]</code> [TCP/IP 和 OSI
-模型解析!](<a href="https://www.youtube.com/watch?v=e5DEVa9eSN0">https://www.youtube.com/watch?v=e5DEVa9eSN0</a>)
+<code>[ ]</code> [TCP/IP 和 OSI 模型解析!](<a href="https://www.youtube.com/watch?v=e5DEVa9eSN0">https://www.youtube.com/watch?v=e5DEVa9eSN0</a>)
 </li>
 <li>
-<code>[ ]</code> [TCP/IP
-教程：传输数据包.](<a href="https://www.youtube.com/watch?v=nomyRJehhnM">https://www.youtube.com/watch?v=nomyRJehhnM</a>)
+<code>[ ]</code> [TCP/IP 教程：传输数据包.](<a href="https://www.youtube.com/watch?v=nomyRJehhnM">https://www.youtube.com/watch?v=nomyRJehhnM</a>)
 </li>
 <li>
 <code>[ ]</code> [HTTP](<a href="https://www.youtube.com/watch?v=WGJrLqtX7As">https://www.youtube.com/watch?v=WGJrLqtX7As</a>)
@@ -3988,11 +3677,10 @@ Probabilities](<a href="https://www.youtube.com/watch?v=cCDCfoHTsaU">https://www
 <code>[ ]</code> [HTTP 2.0](<a href="https://www.youtube.com/watch?v=E9FxNzv1Tr8">https://www.youtube.com/watch?v=E9FxNzv1Tr8</a>)
 </li>
 <li>
-<code>[ ]</code>       [视频](<a href="https://www.youtube.com/playlist?list=PLEbnTDJUr%5C_IegfoqO4iPnPYQui46QqT0j">https://www.youtube.com/playlist?list=PLEbnTDJUr\_IegfoqO4iPnPYQui46QqT0j</a>)
+<code>[ ]</code> [视频](<a href="https://www.youtube.com/playlist?list=PLEbnTDJUr%5C_IegfoqO4iPnPYQui46QqT0j">https://www.youtube.com/playlist?list=PLEbnTDJUr\_IegfoqO4iPnPYQui46QqT0j</a>)
 </li>
 <li>
-<code>[ ]</code> [子网络解密 - 第五部分 经典内部域名指向 CIDR
-标记](<a href="https://www.youtube.com/watch?v=t5xYI0jzOf4">https://www.youtube.com/watch?v=t5xYI0jzOf4</a>)
+<code>[ ]</code> [子网络解密 - 第五部分 经典内部域名指向 CIDR 标记](<a href="https://www.youtube.com/watch?v=t5xYI0jzOf4">https://www.youtube.com/watch?v=t5xYI0jzOf4</a>)
 </li>
 </ul>
 </li>
@@ -4003,98 +3691,98 @@ Probabilities](<a href="https://www.youtube.com/watch?v=cCDCfoHTsaU">https://www
 <ul class="org-ul">
 <li>
 <a href="https://www.youtube.com/playlist?list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">MIT</a>
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code>          [威胁模型：入门](<a href="https://www.youtube.com/watch?v=GqmQg-cszw4&amp;index=1&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=GqmQg-cszw4&amp;index=1&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
+<code>[ ]</code> [威胁模型：入门](<a href="https://www.youtube.com/watch?v=GqmQg-cszw4&amp;index=1&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=GqmQg-cszw4&amp;index=1&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
 </li>
 <li>
-<code>[ ]</code>          [控制攻击](<a href="https://www.youtube.com/watch?v=6bwzNg5qQ0o&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh&amp;index=2">https://www.youtube.com/watch?v=6bwzNg5qQ0o&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh&amp;index=2</a>)
+<code>[ ]</code> [控制攻击](<a href="https://www.youtube.com/watch?v=6bwzNg5qQ0o&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh&amp;index=2">https://www.youtube.com/watch?v=6bwzNg5qQ0o&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh&amp;index=2</a>)
 </li>
 <li>
-<code>[ ]</code>          [缓冲数据注入和防御](<a href="https://www.youtube.com/watch?v=drQyrzRoRiA&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh&amp;index=3">https://www.youtube.com/watch?v=drQyrzRoRiA&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh&amp;index=3</a>)
+<code>[ ]</code> [缓冲数据注入和防御](<a href="https://www.youtube.com/watch?v=drQyrzRoRiA&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh&amp;index=3">https://www.youtube.com/watch?v=drQyrzRoRiA&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh&amp;index=3</a>)
 </li>
 <li>
-<code>[ ]</code>          [优先权区分](<a href="https://www.youtube.com/watch?v=6SIJmoE9L9g&amp;index=4&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=6SIJmoE9L9g&amp;index=4&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
+<code>[ ]</code> [优先权区分](<a href="https://www.youtube.com/watch?v=6SIJmoE9L9g&amp;index=4&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=6SIJmoE9L9g&amp;index=4&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
 </li>
 <li>
-<code>[ ]</code>          [能力](<a href="https://www.youtube.com/watch?v=8VqTSY-11F4&amp;index=5&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=8VqTSY-11F4&amp;index=5&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
+<code>[ ]</code> [能力](<a href="https://www.youtube.com/watch?v=8VqTSY-11F4&amp;index=5&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=8VqTSY-11F4&amp;index=5&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
 </li>
 <li>
-<code>[ ]</code>          [在沙盒中运行原生代码](<a href="https://www.youtube.com/watch?v=VEV74hwASeU&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh&amp;index=6">https://www.youtube.com/watch?v=VEV74hwASeU&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh&amp;index=6</a>)
+<code>[ ]</code> [在沙盒中运行原生代码](<a href="https://www.youtube.com/watch?v=VEV74hwASeU&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh&amp;index=6">https://www.youtube.com/watch?v=VEV74hwASeU&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh&amp;index=6</a>)
 </li>
 <li>
-<code>[ ]</code>          [网络安全模型](<a href="https://www.youtube.com/watch?v=chkFBigodIw&amp;index=7&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=chkFBigodIw&amp;index=7&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
+<code>[ ]</code> [网络安全模型](<a href="https://www.youtube.com/watch?v=chkFBigodIw&amp;index=7&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=chkFBigodIw&amp;index=7&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
 </li>
 <li>
-<code>[ ]</code>          [网络安全应用](<a href="https://www.youtube.com/watch?v=EBQIGy1ROLY&amp;index=8&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=EBQIGy1ROLY&amp;index=8&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
+<code>[ ]</code> [网络安全应用](<a href="https://www.youtube.com/watch?v=EBQIGy1ROLY&amp;index=8&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=EBQIGy1ROLY&amp;index=8&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
 </li>
 <li>
-<code>[ ]</code>          [标志化执行](<a href="https://www.youtube.com/watch?v=yRVZPvHYHzw&amp;index=9&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=yRVZPvHYHzw&amp;index=9&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
+<code>[ ]</code> [标志化执行](<a href="https://www.youtube.com/watch?v=yRVZPvHYHzw&amp;index=9&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=yRVZPvHYHzw&amp;index=9&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
 </li>
 <li>
-<code>[ ]</code>          [网络安全](<a href="https://www.youtube.com/watch?v=SIEVvk3NVuk&amp;index=11&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=SIEVvk3NVuk&amp;index=11&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
+<code>[ ]</code> [网络安全](<a href="https://www.youtube.com/watch?v=SIEVvk3NVuk&amp;index=11&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=SIEVvk3NVuk&amp;index=11&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
 </li>
 <li>
-<code>[ ]</code>          [网络协议](<a href="https://www.youtube.com/watch?v=QOtA76ga%5C_fY&amp;index=12&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=QOtA76ga\_fY&amp;index=12&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
+<code>[ ]</code> [网络协议](<a href="https://www.youtube.com/watch?v=QOtA76ga%5C_fY&amp;index=12&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=QOtA76ga\_fY&amp;index=12&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
 </li>
 <li>
-<code>[ ]</code>          [旁路攻击](<a href="https://www.youtube.com/watch?v=PuVMkSEcPiI&amp;index=15&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=PuVMkSEcPiI&amp;index=15&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
+<code>[ ]</code> [旁路攻击](<a href="https://www.youtube.com/watch?v=PuVMkSEcPiI&amp;index=15&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=PuVMkSEcPiI&amp;index=15&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
 </li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+</div>
 
-<li>
-<b>*</b> 释放缓存
+<div id="outline-container-释放缓存" class="outline-4">
+<h4 id="释放缓存">
+<a id="sec-1-19-1" name="sec-1-19-1"></a>释放缓存</h4>
+<div class="outline-text-4" id="text-释放缓存">
 
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [Java 释放缓存; 片段化数据
-(视频)](<a href="https://www.youtube.com/watch?v=StdfeXaKGEc&amp;list=PL-XXv-cvA%5C_iAlnI-BQr9hjqADPBtujFJd&amp;index=25">https://www.youtube.com/watch?v=StdfeXaKGEc&amp;list=PL-XXv-cvA\_iAlnI-BQr9hjqADPBtujFJd&amp;index=25</a>)
+<code>[ ]</code> [Java 释放缓存; 片段化数据 (视频)](<a href="https://www.youtube.com/watch?v=StdfeXaKGEc&amp;list=PL-XXv-cvA%5C_iAlnI-BQr9hjqADPBtujFJd&amp;index=25">https://www.youtube.com/watch?v=StdfeXaKGEc&amp;list=PL-XXv-cvA\_iAlnI-BQr9hjqADPBtujFJd&amp;index=25</a>)
 </li>
 <li>
-<code>[ ]</code> [编译器
-(视频)](<a href="https://www.youtube.com/playlist?list=PLO9y7hOkmmSGTy5z6HZ-W4k2y8WXF7Bff">https://www.youtube.com/playlist?list=PLO9y7hOkmmSGTy5z6HZ-W4k2y8WXF7Bff</a>)
+<code>[ ]</code> [编译器 (视频)](<a href="https://www.youtube.com/playlist?list=PLO9y7hOkmmSGTy5z6HZ-W4k2y8WXF7Bff">https://www.youtube.com/playlist?list=PLO9y7hOkmmSGTy5z6HZ-W4k2y8WXF7Bff</a>)
 </li>
 <li>
-<code>[ ]</code> [Python 释放缓存
-(视频)](<a href="https://www.youtube.com/watch?v=iHVs%5C_HkjdmI">https://www.youtube.com/watch?v=iHVs\_HkjdmI</a>)
+<code>[ ]</code> [Python 释放缓存 (视频)](<a href="https://www.youtube.com/watch?v=iHVs%5C_HkjdmI">https://www.youtube.com/watch?v=iHVs\_HkjdmI</a>)
 </li>
 <li>
-<code>[ ]</code> [深度解析：论释放缓存在 JAVA
-中的重要性](<a href="https://www.infoq.com/presentations/garbage-collection-benefits">https://www.infoq.com/presentations/garbage-collection-benefits</a>)
+<code>[ ]</code> [深度解析：论释放缓存在 JAVA 中的重要性](<a href="https://www.infoq.com/presentations/garbage-collection-benefits">https://www.infoq.com/presentations/garbage-collection-benefits</a>)
 </li>
 <li>
-<code>[ ]</code> [深度解析：论释放缓存在 Python
-中的重要性(视频)](<a href="https://www.youtube.com/watch?v=P-8Z0-MhdQs&amp;list=PLdzf4Clw0VbOEWOS%5C_sLhT%5C_9zaiQDrS5AR&amp;index=3">https://www.youtube.com/watch?v=P-8Z0-MhdQs&amp;list=PLdzf4Clw0VbOEWOS\_sLhT\_9zaiQDrS5AR&amp;index=3</a>)
+<code>[ ]</code> [深度解析：论释放缓存在 Python 中的重要性(视频)](<a href="https://www.youtube.com/watch?v=P-8Z0-MhdQs&amp;list=PLdzf4Clw0VbOEWOS%5C_sLhT%5C_9zaiQDrS5AR&amp;index=3">https://www.youtube.com/watch?v=P-8Z0-MhdQs&amp;list=PLdzf4Clw0VbOEWOS\_sLhT\_9zaiQDrS5AR&amp;index=3</a>)
 </li>
 </ul>
-</li>
+</div>
+</div>
 
-<li>
-<b>*</b> 并行/并发编程
+<div id="outline-container-并行并发编程" class="outline-4">
+<h4 id="并行并发编程">
+<a id="sec-1-19-2" name="sec-1-19-2"></a>并行/并发编程</h4>
+<div class="outline-text-4" id="text-并行并发编程">
 
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [Coursera
-(Scala)](<a href="https://www.coursera.org/learn/parprog1/home/week/1">https://www.coursera.org/learn/parprog1/home/week/1</a>)
+<code>[ ]</code> [Coursera (Scala)](<a href="https://www.coursera.org/learn/parprog1/home/week/1">https://www.coursera.org/learn/parprog1/home/week/1</a>)
 </li>
 <li>
-<code>[ ]</code> [论并行/并发编程如何提高 Python 执行效率
-(视频)](<a href="https://www.youtube.com/watch?v=uY85GkaYzBk">https://www.youtube.com/watch?v=uY85GkaYzBk</a>)
+<code>[ ]</code> [论并行/并发编程如何提高 Python 执行效率 (视频)](<a href="https://www.youtube.com/watch?v=uY85GkaYzBk">https://www.youtube.com/watch?v=uY85GkaYzBk</a>)
 </li>
 </ul>
-</li>
+</div>
+</div>
 
-<li>
-<b>*</b> 设计模式
-
+<div id="outline-container-信息传输-序列化和队列化的系统" class="outline-4">
+<h4 id="信息传输-序列化和队列化的系统">
+<a id="sec-1-19-3" name="sec-1-19-3"></a>设计模式</h4>
+<div class="outline-text-4" id="text-信息传输-序列化和队列化的系统">
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [UML统一建模语言概览
-(视频)](<a href="https://www.youtube.com/watch?v=3cmzqZzwNDM&amp;list=PLGLfVvz%5C_LVvQ5G-LdJ8RLqe-ndo7QITYc&amp;index=3">https://www.youtube.com/watch?v=3cmzqZzwNDM&amp;list=PLGLfVvz\_LVvQ5G-LdJ8RLqe-ndo7QITYc&amp;index=3</a>)
+<code>[ ]</code> [UML统一建模语言概览 (视频)](<a href="https://www.youtube.com/watch?v=3cmzqZzwNDM&amp;list=PLGLfVvz%5C_LVvQ5G-LdJ8RLqe-ndo7QITYc&amp;index=3">https://www.youtube.com/watch?v=3cmzqZzwNDM&amp;list=PLGLfVvz\_LVvQ5G-LdJ8RLqe-ndo7QITYc&amp;index=3</a>)
 </li>
 <li>
 <code>[ ]</code> 主要有如下的设计模式:
@@ -4155,46 +3843,35 @@ Probabilities](<a href="https://www.youtube.com/watch?v=cCDCfoHTsaU">https://www
 </li>
 
 <li>
-<code>[ ]</code> [第六章 (第 1 部分 ) - 设计模式
-(视频)](<a href="https://youtu.be/LAP2A80Ajrg?list=PLJ9pm%5C_Rc9HesnkwKlal%5C_buSIHA-jTZMpO&amp;t=3344">https://youtu.be/LAP2A80Ajrg?list=PLJ9pm\_Rc9HesnkwKlal\_buSIHA-jTZMpO&amp;t=3344</a>)
+<code>[ ]</code> [第六章 (第 1 部分 ) - 设计模式 (视频)](<a href="https://youtu.be/LAP2A80Ajrg?list=PLJ9pm%5C_Rc9HesnkwKlal%5C_buSIHA-jTZMpO&amp;t=3344">https://youtu.be/LAP2A80Ajrg?list=PLJ9pm\_Rc9HesnkwKlal\_buSIHA-jTZMpO&amp;t=3344</a>)
 </li>
 <li>
-<code>[ ]</code> [第六章 (第 2 部分 ) - Abstraction-Occurrence, General
-Hierarchy, Player-Role, Singleton, Observer, Delegation
+<code>[ ]</code> [第六章 (第 2 部分 ) - Abstraction-Occurrence, General Hierarchy, Player-Role, Singleton, Observer, Delegation
 (视频)](<a href="https://www.youtube.com/watch?v=U8-PGsjvZc4&amp;index=12&amp;list=PLJ9pm%5C_Rc9HesnkwKlal%5C_buSIHA-jTZMpO">https://www.youtube.com/watch?v=U8-PGsjvZc4&amp;index=12&amp;list=PLJ9pm\_Rc9HesnkwKlal\_buSIHA-jTZMpO</a>)
 </li>
 <li>
-<code>[ ]</code> [第六章 (第 3 部分 ) - Adapter, Facade, Immutable, Read-Only
-Interface, Proxy
-(video)](<a href="https://www.youtube.com/watch?v=7sduBHuex4c&amp;index=13&amp;list=PLJ9pm%5C_Rc9HesnkwKlal%5C_buSIHA-jTZMpO">https://www.youtube.com/watch?v=7sduBHuex4c&amp;index=13&amp;list=PLJ9pm\_Rc9HesnkwKlal\_buSIHA-jTZMpO</a>)
+<code>[ ]</code> [第六章 (第 3 部分 ) - Adapter, Facade, Immutable, Read-Only Interface, Proxy (video)](<a href="https://www.youtube.com/watch?v=7sduBHuex4c&amp;index=13&amp;list=PLJ9pm%5C_Rc9HesnkwKlal%5C_buSIHA-jTZMpO">https://www.youtube.com/watch?v=7sduBHuex4c&amp;index=13&amp;list=PLJ9pm\_Rc9HesnkwKlal\_buSIHA-jTZMpO</a>)
 </li>
 <li>
-<code>[ ]</code>       [视频](<a href="https://www.youtube.com/playlist?list=PLF206E906175C7E07">https://www.youtube.com/playlist?list=PLF206E906175C7E07</a>)
+<code>[ ]</code> [视频](<a href="https://www.youtube.com/playlist?list=PLF206E906175C7E07">https://www.youtube.com/playlist?list=PLF206E906175C7E07</a>)
 </li>
 <li>
-<code>[ ]</code> [Head First
-设计模型](<a href="https://www.amazon.com/Head-First-Design-Patterns-Freeman/dp/0596007124">https://www.amazon.com/Head-First-Design-Patterns-Freeman/dp/0596007124</a>)
-
+<code>[ ]</code> [Head First 设计模型](<a href="https://www.amazon.com/Head-First-Design-Patterns-Freeman/dp/0596007124">https://www.amazon.com/Head-First-Design-Patterns-Freeman/dp/0596007124</a>)
 <ul class="org-ul">
 <li>尽管这本书叫做设计模式：重复使用模块，但是我还是认为Head
 First是对于新手来说很不错的书。
 </li>
 </ul>
 </li>
-
 <li>
-<code>[ ]</code>       [基于实际操作对于入门开发者的建议](<a href="https://sourcemaking.com/design-patterns-and-tips">https://sourcemaking.com/design-patterns-and-tips</a>)
-</li>
-</ul>
+<code>[ ]</code> [基于实际操作对于入门开发者的建议](<a href="https://sourcemaking.com/design-patterns-and-tips">https://sourcemaking.com/design-patterns-and-tips</a>)
 </li>
 
 <li>
 <b>*</b> 信息传输, 序列化,和队列化的系统
-
 <ul class="org-ul">
 <li>
 <code>[ ]</code> [Thrift](<a href="https://thrift.apache.org/">https://thrift.apache.org/</a>)
-
 <ul class="org-ul">
 <li>
 <a href="http://thrift-tutorial.readthedocs.io/en/latest/intro.html">教程</a>
@@ -4204,7 +3881,6 @@ First是对于新手来说很不错的书。
 
 <li>
 <code>[ ]</code> [协议缓冲](<a href="https://developers.google.com/protocol-buffers/">https://developers.google.com/protocol-buffers/</a>)
-
 <ul class="org-ul">
 <li>
 <a href="https://developers.google.com/protocol-buffers/docs/tutorials">教程</a>
@@ -4214,7 +3890,6 @@ First是对于新手来说很不错的书。
 
 <li>
 <code>[ ]</code> [gRPC](<a href="http://www.grpc.io/">http://www.grpc.io/</a>)
-
 <ul class="org-ul">
 <li>
 <a href="https://www.youtube.com/watch?v=5tmPvSe7xXQ&amp;list=PLcTqM9n_dieN0k1nSeN36Z_ppKnvMJoly&amp;index=1">gRPC
@@ -4225,7 +3900,6 @@ First是对于新手来说很不错的书。
 
 <li>
 <code>[ ]</code> [Redis](<a href="http://redis.io/">http://redis.io/</a>)
-
 <ul class="org-ul">
 <li>
 <a href="http://try.redis.io/">教程</a>
@@ -4241,7 +3915,6 @@ First是对于新手来说很不错的书。
 </li>
 <li>
 <code>[ ]</code> [RabbitMQ](<a href="https://www.rabbitmq.com/">https://www.rabbitmq.com/</a>)
-
 <ul class="org-ul">
 <li>
 <a href="https://www.rabbitmq.com/getstarted.html">入门教程</a>
@@ -4251,7 +3924,6 @@ First是对于新手来说很不错的书。
 
 <li>
 <code>[ ]</code> [Celery](<a href="http://www.celeryproject.org/">http://www.celeryproject.org/</a>)
-
 <ul class="org-ul">
 <li>
 <a href="http://docs.celeryproject.org/en/latest/getting-started/first-steps-with-celery.html">Celery入门</a>
@@ -4261,7 +3933,6 @@ First是对于新手来说很不错的书。
 
 <li>
 <code>[ ]</code> [ZeroMQ](<a href="http://zeromq.org/">http://zeromq.org/</a>)
-
 <ul class="org-ul">
 <li>
 <a href="http://zeromq.org/intro:read-the-manual">入门教程</a>
@@ -4273,7 +3944,7 @@ First是对于新手来说很不错的书。
 <code>[ ]</code> [ActiveMQ](<a href="http://activemq.apache.org/">http://activemq.apache.org/</a>)
 </li>
 <li>
-<code>[ ]</code>       [Kafka](<a href="http://kafka.apache.org/documentation.html#introduction">http://kafka.apache.org/documentation.html#introduction</a>)
+<code>[ ]</code> [Kafka](<a href="http://kafka.apache.org/documentation.html#introduction">http://kafka.apache.org/documentation.html#introduction</a>)
 </li>
 <li>
 <code>[ ]</code> [MessagePack](<a href="http://msgpack.org/index.html">http://msgpack.org/index.html</a>)
@@ -4286,29 +3957,29 @@ First是对于新手来说很不错的书。
 
 <li>
 <b>*</b> 快速傅里叶变换
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code>       [什么是傅立叶变换？论傅立叶变换的用途](<a href="http://www.askamathematician.com/2012/09/q-what-is-a-fourier-transform-what-is-it-used-for/">http://www.askamathematician.com/2012/09/q-what-is-a-fourier-transform-what-is-it-used-for/</a>)
+<code>[ ]</code> [什么是傅立叶变换？论傅立叶变换的用途](<a href="http://www.askamathematician.com/2012/09/q-what-is-a-fourier-transform-what-is-it-used-for/">http://www.askamathematician.com/2012/09/q-what-is-a-fourier-transform-what-is-it-used-for/</a>)
 </li>
 <li>
-<code>[ ]</code> [什么是傅立叶变换？
-(视频)](<a href="https://www.youtube.com/watch?v=Xxut2PN-V8Q">https://www.youtube.com/watch?v=Xxut2PN-V8Q</a>)
+<code>[ ]</code> [什么是傅立叶变换？ (视频)](<a href="https://www.youtube.com/watch?v=Xxut2PN-V8Q">https://www.youtube.com/watch?v=Xxut2PN-V8Q</a>)
 </li>
 <li>
-<code>[ ]</code> [关于 FFT 的不同观点
-(视频)](<a href="https://www.youtube.com/watch?v=iTMn0Kt18tg&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=4">https://www.youtube.com/watch?v=iTMn0Kt18tg&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=4</a>)
+<code>[ ]</code> [关于 FFT 的不同观点 (视频)](<a href="https://www.youtube.com/watch?v=iTMn0Kt18tg&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=4">https://www.youtube.com/watch?v=iTMn0Kt18tg&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=4</a>)
 </li>
 <li>
-<code>[ ]</code> [FTT
-是什么](<a href="http://jakevdp.github.io/blog/2013/08/28/understanding-the-fft/">http://jakevdp.github.io/blog/2013/08/28/understanding-the-fft/</a>)
+<code>[ ]</code> [FTT 是什么](<a href="http://jakevdp.github.io/blog/2013/08/28/understanding-the-fft/">http://jakevdp.github.io/blog/2013/08/28/understanding-the-fft/</a>)
 </li>
 </ul>
 </li>
+</ul>
+</div>
+</div>
 
-<li>
-<b>*</b> 布隆过滤器
-
+<div id="outline-container-布隆过滤器" class="outline-4">
+<h4 id="布隆过滤器">
+<a id="sec-1-19-4" name="sec-1-19-4"></a>布隆过滤器</h4>
+<div class="outline-text-4" id="text-布隆过滤器">
 <ul class="org-ul">
 <li>给一个布隆过滤器m比特和k个哈希函数，所有的注入和相关测试都会是通过。
 </li>
@@ -4316,34 +3987,38 @@ First是对于新手来说很不错的书。
 <a href="https://www.youtube.com/watch?v=-SuTGoFYjZs">布隆过滤器</a>
 </li>
 <li>
-<a href="https://www.youtube.com/watch?v=qBTdukbzc78">布隆过滤器 |
-数据挖掘 | Stanford University</a>
+<a href="https://www.youtube.com/watch?v=qBTdukbzc78">布隆过滤器 | 数据挖掘 | Stanford University</a>
 </li>
 <li>
 <a href="http://billmill.org/bloomfilter-tutorial/">教程</a>
-</li>
+<ul class="org-ul">
 <li>
 <a href="http://blog.michaelschmatz.com/2016/04/11/how-to-write-a-bloom-filter-cpp/">如何写一个布隆过滤器应用</a>
 </li>
 </ul>
 </li>
-
-<li>
-<b>*</b> van Emde Boas 树
-
+</ul>
+</div>
+</div>
+<div id="outline-container-van-emde-boas-树" class="outline-4">
+<h4 id="van-emde-boas-树">
+<a id="sec-1-19-5" name="sec-1-19-5"></a>van Emde Boas 树</h4>
+<div class="outline-text-4" id="text-van-emde-boas-树">
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [争论: van Emde Boas 树
-(视频)](<a href="https://www.youtube.com/watch?v=hmReJCupbNU&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=6">https://www.youtube.com/watch?v=hmReJCupbNU&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=6</a>)
+<code>[ ]</code> [争论: van Emde Boas 树 (视频)](<a href="https://www.youtube.com/watch?v=hmReJCupbNU&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=6">https://www.youtube.com/watch?v=hmReJCupbNU&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=6</a>)
 </li>
 <li>
-<code>[ ]</code>       [MIT课堂笔记](<a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2012/lecture-notes/MIT6%5C_046JS12%5C_lec15.pdf">https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2012/lecture-notes/MIT6\_046JS12\_lec15.pdf</a>)
+<code>[ ]</code> [MIT课堂笔记](<a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2012/lecture-notes/MIT6%5C_046JS12%5C_lec15.pdf">https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2012/lecture-notes/MIT6\_046JS12\_lec15.pdf</a>)
 </li>
 </ul>
-</li>
+</div>
+</div>
 
-<li>
-<b>*</b> 更深入的数据结构
+<div id="outline-container-更深入的数据结构" class="outline-4">
+<h4 id="更深入的数据结构">
+<a id="sec-1-19-6" name="sec-1-19-6"></a>更深入的数据结构</h4>
+<div class="outline-text-4" id="text-更深入的数据结构">
 
 <ul class="org-ul">
 <li>
@@ -4351,98 +4026,99 @@ First是对于新手来说很不错的书。
 更深入的数据结构](<a href="https://youtu.be/zksIj9O8%5C_jc?list=PL4BBB74C7D2A1049C&amp;t=950">https://youtu.be/zksIj9O8\_jc?list=PL4BBB74C7D2A1049C&amp;t=950</a>)
 </li>
 </ul>
-</li>
+</div>
+</div>
 
-<li>
-<b>*</b> 跳表
-
+<div id="outline-container-跳表" class="outline-4">
+<h4 id="跳表">
+<a id="sec-1-19-7" name="sec-1-19-7"></a>跳表</h4>
+<div class="outline-text-4" id="text-跳表">
 <ul class="org-ul">
 <li>"有一种非常迷幻的数据类型" - Skiena
 </li>
 <li>
-<code>[ ]</code> [随机化: 跳表
-(视频)](<a href="https://www.youtube.com/watch?v=2g9OSRKJuzM&amp;index=10&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp">https://www.youtube.com/watch?v=2g9OSRKJuzM&amp;index=10&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp</a>)
+<code>[ ]</code> [随机化: 跳表 (视频)](<a href="https://www.youtube.com/watch?v=2g9OSRKJuzM&amp;index=10&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp">https://www.youtube.com/watch?v=2g9OSRKJuzM&amp;index=10&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp</a>)
 </li>
 <li>
 <code>[ ]</code> [更生动详细的解释](<a href="https://en.wikipedia.org/wiki/Skip%5C_list">https://en.wikipedia.org/wiki/Skip\_list</a>)
 </li>
 </ul>
-</li>
+</div>
+</div>
 
-<li>
-<b>*</b> 网络流
+<div id="outline-container-网络流" class="outline-4">
+<h4 id="网络流">
+<a id="sec-1-19-8" name="sec-1-19-8"></a>网络流</h4>
+<div class="outline-text-4" id="text-网络流">
 
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [5分钟简析Ford-Fulkerson
-(视频)](<a href="https://www.youtube.com/watch?v=v1VgJmkEJW0">https://www.youtube.com/watch?v=v1VgJmkEJW0</a>)
+<code>[ ]</code> [5分钟简析Ford-Fulkerson (视频)](<a href="https://www.youtube.com/watch?v=v1VgJmkEJW0">https://www.youtube.com/watch?v=v1VgJmkEJW0</a>)
 </li>
 <li>
-<code>[ ]</code> [Ford-Fulkerson 算法
-(视频)](<a href="https://www.youtube.com/watch?v=v1VgJmkEJW0">https://www.youtube.com/watch?v=v1VgJmkEJW0</a>)
+<code>[ ]</code> [Ford-Fulkerson 算法 (视频)](<a href="https://www.youtube.com/watch?v=v1VgJmkEJW0">https://www.youtube.com/watch?v=v1VgJmkEJW0</a>)
 </li>
 <li>
 <code>[ ]</code> [网络流 (视频)](<a href="https://www.youtube.com/watch?v=2vhN4Ice5jI">https://www.youtube.com/watch?v=2vhN4Ice5jI</a>)
 </li>
 </ul>
-</li>
+</div>
+</div>
 
-<li>
-<b>*</b> 不相交集 &amp; 联合查找
-
+<div id="outline-container-sec-1-19-9" class="outline-4">
+<h4 id="sec-1-19-9">不相交集 &amp; 联合查找</h4>
+<div class="outline-text-4" id="text-1-19-9">
 <ul class="org-ul">
 <li>
-<code>[ ]</code>       [不相交集](<a href="https://en.wikipedia.org/wiki/Disjoint-set%5C_data%5C_structure">https://en.wikipedia.org/wiki/Disjoint-set\_data\_structure</a>)
+<code>[ ]</code> [不相交集](<a href="https://en.wikipedia.org/wiki/Disjoint-set%5C_data%5C_structure">https://en.wikipedia.org/wiki/Disjoint-set\_data\_structure</a>)
 </li>
 <li>
-<code>[ ]</code> [UCB 61B - 不相交集; 排序 &amp;
-选择(视频)](<a href="https://www.youtube.com/watch?v=MAEGXTwmUsI&amp;list=PL-XXv-cvA%5C_iAlnI-BQr9hjqADPBtujFJd&amp;index=21">https://www.youtube.com/watch?v=MAEGXTwmUsI&amp;list=PL-XXv-cvA\_iAlnI-BQr9hjqADPBtujFJd&amp;index=21</a>)
+<code>[ ]</code> [UCB 61B - 不相交集; 排序 &amp; 选择(视频)](<a href="https://www.youtube.com/watch?v=MAEGXTwmUsI&amp;list=PL-XXv-cvA%5C_iAlnI-BQr9hjqADPBtujFJd&amp;index=21">https://www.youtube.com/watch?v=MAEGXTwmUsI&amp;list=PL-XXv-cvA\_iAlnI-BQr9hjqADPBtujFJd&amp;index=21</a>)
 </li>
 <li>
 <code>[ ]</code> Coursera (not needed since the above video explains it great):
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code>          [概览](<a href="https://www.coursera.org/learn/data-structures/lecture/JssSY/overview">https://www.coursera.org/learn/data-structures/lecture/JssSY/overview</a>)
+<code>[ ]</code> [概览](<a href="https://www.coursera.org/learn/data-structures/lecture/JssSY/overview">https://www.coursera.org/learn/data-structures/lecture/JssSY/overview</a>)
 </li>
 <li>
-<code>[ ]</code>          [初级实践](<a href="https://www.coursera.org/learn/data-structures/lecture/EM5D0/naive-implementations">https://www.coursera.org/learn/data-structures/lecture/EM5D0/naive-implementations</a>)
+<code>[ ]</code> [初级实践](<a href="https://www.coursera.org/learn/data-structures/lecture/EM5D0/naive-implementations">https://www.coursera.org/learn/data-structures/lecture/EM5D0/naive-implementations</a>)
 </li>
 <li>
-<code>[ ]</code>          [树状结构](<a href="https://www.coursera.org/learn/data-structures/lecture/Mxu0w/trees">https://www.coursera.org/learn/data-structures/lecture/Mxu0w/trees</a>)
+<code>[ ]</code> [树状结构](<a href="https://www.coursera.org/learn/data-structures/lecture/Mxu0w/trees">https://www.coursera.org/learn/data-structures/lecture/Mxu0w/trees</a>)
 </li>
 <li>
-<code>[ ]</code>          [合并树状结构](<a href="https://www.coursera.org/learn/data-structures/lecture/qb4c2/union-by-rank">https://www.coursera.org/learn/data-structures/lecture/qb4c2/union-by-rank</a>)
+<code>[ ]</code> [合并树状结构](<a href="https://www.coursera.org/learn/data-structures/lecture/qb4c2/union-by-rank">https://www.coursera.org/learn/data-structures/lecture/qb4c2/union-by-rank</a>)
 </li>
 <li>
-<code>[ ]</code>          [路径压缩](<a href="https://www.coursera.org/learn/data-structures/lecture/Q9CVI/path-compression">https://www.coursera.org/learn/data-structures/lecture/Q9CVI/path-compression</a>)
+<code>[ ]</code> [路径压缩](<a href="https://www.coursera.org/learn/data-structures/lecture/Q9CVI/path-compression">https://www.coursera.org/learn/data-structures/lecture/Q9CVI/path-compression</a>)
 </li>
 <li>
-<code>[ ]</code>          [分析选项](<a href="https://www.coursera.org/learn/data-structures/lecture/GQQLN/analysis-optional">https://www.coursera.org/learn/data-structures/lecture/GQQLN/analysis-optional</a>)
+<code>[ ]</code> [分析选项](<a href="https://www.coursera.org/learn/data-structures/lecture/GQQLN/analysis-optional">https://www.coursera.org/learn/data-structures/lecture/GQQLN/analysis-optional</a>)
 </li>
 </ul>
 </li>
 </ul>
-</li>
+</div>
+</div>
 
-<li>
-<b>*</b> 快速处理数学
-
+<div id="outline-container-快速处理数学" class="outline-4">
+<h4 id="快速处理数学">
+<a id="sec-1-19-10" name="sec-1-19-10"></a>快速处理数学</h4>
+<div class="outline-text-4" id="text-快速处理数学">
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [整数运算, Karatsuba 乘法
-(视频)](<a href="https://www.youtube.com/watch?v=eCaXlAaN2uE&amp;index=11&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb">https://www.youtube.com/watch?v=eCaXlAaN2uE&amp;index=11&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb</a>)
+<code>[ ]</code> [整数运算, Karatsuba 乘法 (视频)](<a href="https://www.youtube.com/watch?v=eCaXlAaN2uE&amp;index=11&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb">https://www.youtube.com/watch?v=eCaXlAaN2uE&amp;index=11&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb</a>)
 </li>
 <li>
-<code>[ ]</code> [中国剩余定理 (在密码学中的使用)
-(视频)](<a href="https://www.youtube.com/watch?v=ru7mWZJlRQg">https://www.youtube.com/watch?v=ru7mWZJlRQg</a>)
+<code>[ ]</code> [中国剩余定理 (在密码学中的使用) (视频)](<a href="https://www.youtube.com/watch?v=ru7mWZJlRQg">https://www.youtube.com/watch?v=ru7mWZJlRQg</a>)
 </li>
 </ul>
-</li>
-
-<li>
-<b>*</b> 树堆 (Treap)
-
+</div>
+</div>
+<div id="outline-container-sec-1-19-11" class="outline-4">
+<h4 id="sec-1-19-11">树堆 (Treap)</h4>
+<div class="outline-text-4" id="text-1-19-11">
 <ul class="org-ul">
 <li>一个二叉搜索树和一个堆的组合
 </li>
@@ -4450,18 +4126,18 @@ First是对于新手来说很不错的书。
 <code>[ ]</code> [树堆](<a href="https://en.wikipedia.org/wiki/Treap">https://en.wikipedia.org/wiki/Treap</a>)
 </li>
 <li>
-<code>[ ]</code>       [数据结构：树堆的讲解(video)](<a href="https://www.youtube.com/watch?v=6podLUYinH8">https://www.youtube.com/watch?v=6podLUYinH8</a>)
+<code>[ ]</code> [数据结构：树堆的讲解(video)](<a href="https://www.youtube.com/watch?v=6podLUYinH8">https://www.youtube.com/watch?v=6podLUYinH8</a>)
 </li>
 <li>
-<code>[ ]</code> [集合操作的应用(Applications in set
-operations)](<a href="https://www.cs.cmu.edu/~scandal/papers/treaps-spaa98.pdf">https://www.cs.cmu.edu/~scandal/papers/treaps-spaa98.pdf</a>)
+<code>[ ]</code> [集合操作的应用(Applications in set operations)](<a href="https://www.cs.cmu.edu/~scandal/papers/treaps-spaa98.pdf">https://www.cs.cmu.edu/~scandal/papers/treaps-spaa98.pdf</a>)
 </li>
 </ul>
-</li>
+</div>
+</div>
 
-<li>
-<b>*</b> 线性规划（Linear Programming）（视频）
-
+<div id="outline-container-sec-1-19-12" class="outline-4">
+<h4 id="sec-1-19-12">线性规划（Linear Programming）（视频）</h4>
+<div class="outline-text-4" id="text-1-19-12">
 <ul class="org-ul">
 <li>
 <code>[ ]</code> [线性规划](<a href="https://www.youtube.com/watch?v=M4K6HYLHREQ">https://www.youtube.com/watch?v=M4K6HYLHREQ</a>)
@@ -4473,83 +4149,75 @@ operations)](<a href="https://www.cs.cmu.edu/~scandal/papers/treaps-spaa98.pdf">
 <code>[ ]</code> [寻找最大值](<a href="https://www.youtube.com/watch?v=8AA%5C_81xI3ik">https://www.youtube.com/watch?v=8AA\_81xI3ik</a>)
 </li>
 </ul>
-</li>
+</div>
+</div>
 
-<li>
-<b>*</b> 几何：凸包（Geometry, Convex hull）（视频）
-
+<div id="outline-container-sec-1-19-13" class="outline-4">
+<h4 id="sec-1-19-13">几何：凸包（Geometry, Convex hull）（视频）</h4>
+<div class="outline-text-4" id="text-1-19-13">
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [Graph Alg. IV: 几何算法介绍 - 第 9
-课](<a href="https://youtu.be/XIAQRlNkJAw?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;t=3164">https://youtu.be/XIAQRlNkJAw?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;t=3164</a>)
+<code>[ ]</code> [Graph Alg. IV: 几何算法介绍 - 第 9 课](<a href="https://youtu.be/XIAQRlNkJAw?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;t=3164">https://youtu.be/XIAQRlNkJAw?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;t=3164</a>)
 </li>
 <li>
-<code>[ ]</code> [Graham &amp; Jarvis: 几何算法 - 第 10
-课](<a href="https://www.youtube.com/watch?v=J5aJEcOr6Eo&amp;index=10&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm">https://www.youtube.com/watch?v=J5aJEcOr6Eo&amp;index=10&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm</a>)
+<code>[ ]</code> [Graham &amp; Jarvis: 几何算法 - 第 10 课](<a href="https://www.youtube.com/watch?v=J5aJEcOr6Eo&amp;index=10&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm">https://www.youtube.com/watch?v=J5aJEcOr6Eo&amp;index=10&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm</a>)
 </li>
 <li>
-<code>[ ]</code> [Divide &amp; Conquer: 凸包,
-中值查找](<a href="https://www.youtube.com/watch?v=EzeYI7p9MjU&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=2">https://www.youtube.com/watch?v=EzeYI7p9MjU&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=2</a>)
+<code>[ ]</code> [Divide &amp; Conquer: 凸包, 中值查找](<a href="https://www.youtube.com/watch?v=EzeYI7p9MjU&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=2">https://www.youtube.com/watch?v=EzeYI7p9MjU&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=2</a>)
 </li>
 </ul>
-</li>
+</div>
+</div>
 
-<li>
-<b>*</b> 离散数学
-
+<div id="outline-container-sec-1-19-14" class="outline-4">
+<h4 id="sec-1-19-14">离散数学</h4>
+<div class="outline-text-4" id="text-1-19-14">
 <ul class="org-ul">
 <li>查看下面的视频：(这里没看到视频= =）
 </li>
 </ul>
-</li>
+</div>
+</div>
 
-<li>
-<b>*</b> 机器学习（Machine Learning）
-
+<div id="outline-container-go-语言" class="outline-4">
+<h4 id="go-语言">
+<a id="sec-1-19-15" name="sec-1-19-15"></a>机器学习（Machine Learning）</h4>
+<div class="outline-text-4" id="text-go-语言">
 <ul class="org-ul">
 <li>
 <code>[ ]</code> 为什么学习机器学习？
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code>          [谷歌如何将自己改造成一家「机器学习优先」公司？](<a href="https://backchannel.com/how-google-is-remaking-itself-as-a-machine-learning-first-company-ada63defcb70">https://backchannel.com/how-google-is-remaking-itself-as-a-machine-learning-first-company-ada63defcb70</a>)
+<code>[ ]</code> [谷歌如何将自己改造成一家「机器学习优先」公司？](<a href="https://backchannel.com/how-google-is-remaking-itself-as-a-machine-learning-first-company-ada63defcb70">https://backchannel.com/how-google-is-remaking-itself-as-a-machine-learning-first-company-ada63defcb70</a>)
 </li>
 <li>
-<code>[ ]</code> [智能计算机系统的大规模深度学习
-(视频)](<a href="https://www.youtube.com/watch?v=QSaZGT4-6EY">https://www.youtube.com/watch?v=QSaZGT4-6EY</a>)
+<code>[ ]</code> [智能计算机系统的大规模深度学习 (视频)](<a href="https://www.youtube.com/watch?v=QSaZGT4-6EY">https://www.youtube.com/watch?v=QSaZGT4-6EY</a>)
 </li>
 <li>
-<code>[ ]</code> [Peter
-Norvig：深度学习和理解与软件工程和验证的对比](<a href="https://www.youtube.com/watch?v=X769cyzBNVw">https://www.youtube.com/watch?v=X769cyzBNVw</a>)
+<code>[ ]</code> [Peter Norvig：深度学习和理解与软件工程和验证的对比](<a href="https://www.youtube.com/watch?v=X769cyzBNVw">https://www.youtube.com/watch?v=X769cyzBNVw</a>)
 </li>
 </ul>
 </li>
 
 <li>
-<code>[ ]</code>       [谷歌云机器学习工具（视频）](<a href="https://www.youtube.com/watch?v=Ja2hxBAwG%5C_0">https://www.youtube.com/watch?v=Ja2hxBAwG\_0</a>)
+<code>[ ]</code> [谷歌云机器学习工具（视频）](<a href="https://www.youtube.com/watch?v=Ja2hxBAwG%5C_0">https://www.youtube.com/watch?v=Ja2hxBAwG\_0</a>)
 </li>
 <li>
-<code>[ ]</code> [谷歌开发者机器学习清单 (Scikit Learn 和 Tensorflow)
-(视频)](<a href="https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU%5C_jL2ryal">https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU\_jL2ryal</a>)
+<code>[ ]</code> [谷歌开发者机器学习清单 (Scikit Learn 和 Tensorflow) (视频)](<a href="https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU%5C_jL2ryal">https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU\_jL2ryal</a>)
 </li>
 <li>
-<code>[ ]</code> [Tensorflow
-(视频)](<a href="https://www.youtube.com/watch?v=oZikw5k%5C_2FM">https://www.youtube.com/watch?v=oZikw5k\_2FM</a>)
+<code>[ ]</code> [Tensorflow (视频)](<a href="https://www.youtube.com/watch?v=oZikw5k%5C_2FM">https://www.youtube.com/watch?v=oZikw5k\_2FM</a>)
 </li>
 <li>
-<code>[ ]</code> [Tensorflow
-教程](<a href="https://www.tensorflow.org/versions/r0.11/tutorials/index.html">https://www.tensorflow.org/versions/r0.11/tutorials/index.html</a>)
+<code>[ ]</code> [Tensorflow 教程](<a href="https://www.tensorflow.org/versions/r0.11/tutorials/index.html">https://www.tensorflow.org/versions/r0.11/tutorials/index.html</a>)
 </li>
 <li>
-<code>[ ]</code> [Python 实现神经网络实例教程（使用
-Theano）](<a href="http://www.analyticsvidhya.com/blog/2016/04/neural-networks-python-theano/">http://www.analyticsvidhya.com/blog/2016/04/neural-networks-python-theano/</a>)
+<code>[ ]</code> [Python 实现神经网络实例教程（使用 Theano）](<a href="http://www.analyticsvidhya.com/blog/2016/04/neural-networks-python-theano/">http://www.analyticsvidhya.com/blog/2016/04/neural-networks-python-theano/</a>)
 </li>
 <li>课程:
-
 <ul class="org-ul">
 <li>
 <code>[ ]</code>          [很棒的初级课程：机器学习](<a href="https://www.coursera.org/learn/machine-learning">https://www.coursera.org/learn/machine-learning</a>)
-
 <ul class="org-ul">
 <li>
 <a href="https://www.youtube.com/playlist?list=PLZ9qNFMHZ-A4rycgrgOYma6zxF4BZGGPW">视频教程</a>
@@ -4560,28 +4228,23 @@ Theano）](<a href="http://www.analyticsvidhya.com/blog/2016/04/neural-networks-
 </li>
 
 <li>
-<code>[ ]</code>          [机器学习中的神经网络](<a href="https://www.coursera.org/learn/neural-networks">https://www.coursera.org/learn/neural-networks</a>)
+<code>[ ]</code> [机器学习中的神经网络](<a href="https://www.coursera.org/learn/neural-networks">https://www.coursera.org/learn/neural-networks</a>)
 </li>
 <li>
-<code>[ ]</code> [Google
-深度学习微学位](<a href="https://www.udacity.com/course/deep-learning--ud730">https://www.udacity.com/course/deep-learning--ud730</a>)
+<code>[ ]</code> [Google 深度学习微学位](<a href="https://www.udacity.com/course/deep-learning--ud730">https://www.udacity.com/course/deep-learning--ud730</a>)
 </li>
 <li>
-<code>[ ]</code> [Google/Kaggle
-机器学习工程师微学位](<a href="https://www.udacity.com/course/machine-learning-engineer-nanodegree-by-google--nd009">https://www.udacity.com/course/machine-learning-engineer-nanodegree-by-google--nd009</a>)
+<code>[ ]</code> [Google/Kaggle 机器学习工程师微学位](<a href="https://www.udacity.com/course/machine-learning-engineer-nanodegree-by-google--nd009">https://www.udacity.com/course/machine-learning-engineer-nanodegree-by-google--nd009</a>)
 </li>
 <li>
 <code>[ ]</code> [无人驾驶工程师微学位](<a href="https://www.udacity.com/drive">https://www.udacity.com/drive</a>)
 </li>
 <li>
-<code>[ ]</code> [Metis 在线课程 (两个月 99
-美元)](<a href="http://www.thisismetis.com/explore-data-science">http://www.thisismetis.com/explore-data-science</a>)
+<code>[ ]</code> [Metis 在线课程 (两个月 99 美元)](<a href="http://www.thisismetis.com/explore-data-science">http://www.thisismetis.com/explore-data-science</a>)
 </li>
 </ul>
 </li>
-
 <li>资源:
-
 <ul class="org-ul">
 <li>书籍: Data Science from Scratch: First Principles with Python:
 <a href="https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X">https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X</a>
@@ -4590,20 +4253,15 @@ Theano）](<a href="http://www.analyticsvidhya.com/blog/2016/04/neural-networks-
 </li>
 </ul>
 </li>
-</ul>
-</li>
 
 <li>
 <b>*</b> Go 语言
-
 <ul class="org-ul">
 <li>
 <code>[ ]</code> 视频:
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [为什么学习 Go
-语言？](<a href="https://www.youtube.com/watch?v=FTl0tl9BGdc">https://www.youtube.com/watch?v=FTl0tl9BGdc</a>)
+<code>[ ]</code> [为什么学习 Go 语言？](<a href="https://www.youtube.com/watch?v=FTl0tl9BGdc">https://www.youtube.com/watch?v=FTl0tl9BGdc</a>)
 </li>
 <li>
 <code>[ ]</code> [Go 语言编程](<a href="https://www.youtube.com/watch?v=CF9S4QZuV30">https://www.youtube.com/watch?v=CF9S4QZuV30</a>)
@@ -4616,22 +4274,17 @@ Theano）](<a href="http://www.analyticsvidhya.com/blog/2016/04/neural-networks-
 
 <li>
 <code>[ ]</code> 书籍:
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [Go 语言编程入门
-(免费在线阅读)](<a href="https://www.golang-book.com/books/intro">https://www.golang-book.com/books/intro</a>)
+<code>[ ]</code> [Go 语言编程入门 (免费在线阅读)](<a href="https://www.golang-book.com/books/intro">https://www.golang-book.com/books/intro</a>)
 </li>
 <li>
-<code>[ ]</code> [Go 语言圣经 (Donovan &amp;
-Kernighan)](<a href="https://www.amazon.com/Programming-Language-Addison-Wesley-Professional-Computing/dp/0134190440">https://www.amazon.com/Programming-Language-Addison-Wesley-Professional-Computing/dp/0134190440</a>)
+<code>[ ]</code> [Go 语言圣经 (Donovan &amp; Kernighan)](<a href="https://www.amazon.com/Programming-Language-Addison-Wesley-Professional-Computing/dp/0134190440">https://www.amazon.com/Programming-Language-Addison-Wesley-Professional-Computing/dp/0134190440</a>)
 </li>
 </ul>
 </li>
-
 <li>
-<code>[ ]</code> [Go
-语言新手训练营](<a href="https://www.golang-book.com/guides/bootcamp">https://www.golang-book.com/guides/bootcamp</a>)
+<code>[ ]</code> [Go 语言新手训练营](<a href="https://www.golang-book.com/guides/bootcamp">https://www.golang-book.com/guides/bootcamp</a>)
 </li>
 </ul>
 </li>
@@ -4639,6 +4292,7 @@ Kernighan)](<a href="https://www.amazon.com/Programming-Language-Addison-Wesley-
 <p>
 –
 </p>
+</div>
 </div>
 </div>
 
@@ -4669,8 +4323,7 @@ Kernighan)](<a href="https://www.amazon.com/Programming-Language-Addison-Wesley-
 背包问题](<a href="https://www.youtube.com/watch?v=ocZMDMZwhCY&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb&amp;index=21">https://www.youtube.com/watch?v=ocZMDMZwhCY&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb&amp;index=21</a>)
 </li>
 <li>
-<code>[ ]</code> [6.006: 动态规划 IV:
-吉他指法，拓扑，超级马里奥.](<a href="https://www.youtube.com/watch?v=tp4%5C_UXaVyx8&amp;index=22&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb">https://www.youtube.com/watch?v=tp4\_UXaVyx8&amp;index=22&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb</a>)
+<code>[ ]</code> [6.006: 动态规划 IV: 吉他指法，拓扑，超级马里奥.](<a href="https://www.youtube.com/watch?v=tp4%5C_UXaVyx8&amp;index=22&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb">https://www.youtube.com/watch?v=tp4\_UXaVyx8&amp;index=22&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb</a>)
 </li>
 <li>
 <code>[ ]</code> [6.046: 动态规划:
@@ -4689,15 +4342,12 @@ Kernighan)](<a href="https://www.amazon.com/Programming-Language-Addison-Wesley-
 
 <li>
 <code>[ ]</code> <b>图形处理进阶</b> (视频)
-
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [异步分布式算法:
-对称性破缺，最小生成树](<a href="https://www.youtube.com/watch?v=mUBmcbbJNf4&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=27">https://www.youtube.com/watch?v=mUBmcbbJNf4&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=27</a>)
+<code>[ ]</code> [异步分布式算法: 对称性破缺，最小生成树](<a href="https://www.youtube.com/watch?v=mUBmcbbJNf4&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=27">https://www.youtube.com/watch?v=mUBmcbbJNf4&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=27</a>)
 </li>
 <li>
-<code>[ ]</code> [异步分布式算法:
-最小生成树](<a href="https://www.youtube.com/watch?v=kQ-UQAzcnzA&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=28">https://www.youtube.com/watch?v=kQ-UQAzcnzA&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=28</a>)
+<code>[ ]</code> [异步分布式算法: 最小生成树](<a href="https://www.youtube.com/watch?v=kQ-UQAzcnzA&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=28">https://www.youtube.com/watch?v=kQ-UQAzcnzA&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&amp;index=28</a>)
 </li>
 </ul>
 </li>
@@ -4708,48 +4358,38 @@ things) (视频):
 
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [MIT 6.042J -
-概率论概述](<a href="https://www.youtube.com/watch?v=SmFwFdESMHI&amp;index=18&amp;list=PLB7540DEDD482705B">https://www.youtube.com/watch?v=SmFwFdESMHI&amp;index=18&amp;list=PLB7540DEDD482705B</a>)
+<code>[ ]</code> [MIT 6.042J - 概率论概述](<a href="https://www.youtube.com/watch?v=SmFwFdESMHI&amp;index=18&amp;list=PLB7540DEDD482705B">https://www.youtube.com/watch?v=SmFwFdESMHI&amp;index=18&amp;list=PLB7540DEDD482705B</a>)
 </li>
 <li>
-<code>[ ]</code> [MIT 6.042J - 条件概率
-Probability](<a href="https://www.youtube.com/watch?v=E6FbvM-FGZ8&amp;index=19&amp;list=PLB7540DEDD482705B">https://www.youtube.com/watch?v=E6FbvM-FGZ8&amp;index=19&amp;list=PLB7540DEDD482705B</a>)
+<code>[ ]</code> [MIT 6.042J - 条件概率 Probability](<a href="https://www.youtube.com/watch?v=E6FbvM-FGZ8&amp;index=19&amp;list=PLB7540DEDD482705B">https://www.youtube.com/watch?v=E6FbvM-FGZ8&amp;index=19&amp;list=PLB7540DEDD482705B</a>)
 </li>
 <li>
-<code>[ ]</code> [MIT 6.042J -
-独立](<a href="https://www.youtube.com/watch?v=l1BCv3qqW4A&amp;index=20&amp;list=PLB7540DEDD482705B">https://www.youtube.com/watch?v=l1BCv3qqW4A&amp;index=20&amp;list=PLB7540DEDD482705B</a>)
+<code>[ ]</code> [MIT 6.042J - 独立](<a href="https://www.youtube.com/watch?v=l1BCv3qqW4A&amp;index=20&amp;list=PLB7540DEDD482705B">https://www.youtube.com/watch?v=l1BCv3qqW4A&amp;index=20&amp;list=PLB7540DEDD482705B</a>)
 </li>
 <li>
-<code>[ ]</code> [MIT 6.042J -
-随机变量](<a href="https://www.youtube.com/watch?v=MOfhhFaQdjw&amp;list=PLB7540DEDD482705B&amp;index=21">https://www.youtube.com/watch?v=MOfhhFaQdjw&amp;list=PLB7540DEDD482705B&amp;index=21</a>)
+<code>[ ]</code> [MIT 6.042J - 随机变量](<a href="https://www.youtube.com/watch?v=MOfhhFaQdjw&amp;list=PLB7540DEDD482705B&amp;index=21">https://www.youtube.com/watch?v=MOfhhFaQdjw&amp;list=PLB7540DEDD482705B&amp;index=21</a>)
 </li>
 <li>
-<code>[ ]</code> [MIT 6.042J - 期望
-I](<a href="https://www.youtube.com/watch?v=gGlMSe7uEkA&amp;index=22&amp;list=PLB7540DEDD482705B">https://www.youtube.com/watch?v=gGlMSe7uEkA&amp;index=22&amp;list=PLB7540DEDD482705B</a>)
+<code>[ ]</code> [MIT 6.042J - 期望 I](<a href="https://www.youtube.com/watch?v=gGlMSe7uEkA&amp;index=22&amp;list=PLB7540DEDD482705B">https://www.youtube.com/watch?v=gGlMSe7uEkA&amp;index=22&amp;list=PLB7540DEDD482705B</a>)
 </li>
 <li>
-<code>[ ]</code> [MIT 6.042J - 期望
-II](<a href="https://www.youtube.com/watch?v=oI9fMUqgfxY&amp;index=23&amp;list=PLB7540DEDD482705B">https://www.youtube.com/watch?v=oI9fMUqgfxY&amp;index=23&amp;list=PLB7540DEDD482705B</a>)
+<code>[ ]</code> [MIT 6.042J - 期望 II](<a href="https://www.youtube.com/watch?v=oI9fMUqgfxY&amp;index=23&amp;list=PLB7540DEDD482705B">https://www.youtube.com/watch?v=oI9fMUqgfxY&amp;index=23&amp;list=PLB7540DEDD482705B</a>)
 </li>
 <li>
-<code>[ ]</code> [MIT 6.042J -
-大偏差](<a href="https://www.youtube.com/watch?v=q4mwO2qS2z4&amp;index=24&amp;list=PLB7540DEDD482705B">https://www.youtube.com/watch?v=q4mwO2qS2z4&amp;index=24&amp;list=PLB7540DEDD482705B</a>)
+<code>[ ]</code> [MIT 6.042J - 大偏差](<a href="https://www.youtube.com/watch?v=q4mwO2qS2z4&amp;index=24&amp;list=PLB7540DEDD482705B">https://www.youtube.com/watch?v=q4mwO2qS2z4&amp;index=24&amp;list=PLB7540DEDD482705B</a>)
 </li>
 <li>
-<code>[ ]</code> [MIT 6.042J -
-随机游走](<a href="https://www.youtube.com/watch?v=56iFMY8QW2k&amp;list=PLB7540DEDD482705B&amp;index=25">https://www.youtube.com/watch?v=56iFMY8QW2k&amp;list=PLB7540DEDD482705B&amp;index=25</a>)
+<code>[ ]</code> [MIT 6.042J - 随机游走](<a href="https://www.youtube.com/watch?v=56iFMY8QW2k&amp;list=PLB7540DEDD482705B&amp;index=25">https://www.youtube.com/watch?v=56iFMY8QW2k&amp;list=PLB7540DEDD482705B&amp;index=25</a>)
 </li>
 </ul>
 </li>
 
 <li>
-<code>[ ]</code> [Simonson: 近似算法
-(视频)](<a href="https://www.youtube.com/watch?v=oDniZCmNmNw&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=19">https://www.youtube.com/watch?v=oDniZCmNmNw&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=19</a>)
+<code>[ ]</code> [Simonson: 近似算法 (视频)](<a href="https://www.youtube.com/watch?v=oDniZCmNmNw&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=19">https://www.youtube.com/watch?v=oDniZCmNmNw&amp;list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&amp;index=19</a>)
 </li>
 </ul>
 </div>
 </div>
-
 <div id="outline-container-视频系列" class="outline-3">
 <h3 id="视频系列">
 <a id="sec-1-21" name="sec-1-21"></a>视频系列</h3>
@@ -4761,124 +4401,94 @@ II](<a href="https://www.youtube.com/watch?v=oI9fMUqgfxY&amp;index=23&amp;list=P
 
 <ul class="org-ul">
 <li>
-<code>[ ]</code> [个人的动态规划问题列表
-(都是短视频哟)](<a href="https://www.youtube.com/playlist?list=PLrmLmBdmIlpsHaNTPP%5C_jHHDx%5C_os9ItYXr">https://www.youtube.com/playlist?list=PLrmLmBdmIlpsHaNTPP\_jHHDx\_os9ItYXr</a>)
+<code>[ ]</code> [个人的动态规划问题列表 (都是短视频哟)](<a href="https://www.youtube.com/playlist?list=PLrmLmBdmIlpsHaNTPP%5C_jHHDx%5C_os9ItYXr">https://www.youtube.com/playlist?list=PLrmLmBdmIlpsHaNTPP\_jHHDx\_os9ItYXr</a>)
 </li>
 
 <li>
-<code>[ ]</code> [x86 架构，汇编，应用程序 (11
-个视频)](<a href="https://www.youtube.com/playlist?list=PL038BE01D3BAEFDB0">https://www.youtube.com/playlist?list=PL038BE01D3BAEFDB0</a>)
+<code>[ ]</code> [x86 架构，汇编，应用程序 (11 个视频)](<a href="https://www.youtube.com/playlist?list=PL038BE01D3BAEFDB0">https://www.youtube.com/playlist?list=PL038BE01D3BAEFDB0</a>)
 </li>
 
 <li>
-<code>[ ]</code> [MIT 18.06 线性代数，2005 年春季 (35
-个视频)](<a href="https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8">https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8</a>)
+<code>[ ]</code> [MIT 18.06 线性代数，2005 年春季 (35 个视频)](<a href="https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8">https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8</a>)
+</li>
+<li>
+<code>[ ]</code> [绝妙的 MIT 微积分：单变量微积分](<a href="https://www.youtube.com/playlist?list=PL3B08AE665AB9002A">https://www.youtube.com/playlist?list=PL3B08AE665AB9002A</a>)
 </li>
 
 <li>
-<code>[ ]</code> [绝妙的 MIT
-微积分：单变量微积分](<a href="https://www.youtube.com/playlist?list=PL3B08AE665AB9002A">https://www.youtube.com/playlist?list=PL3B08AE665AB9002A</a>)
+<code>[ ]</code> [计算机科学 70, 001 - 2015 年春季 - 离散数学和概率理论](<a href="https://www.youtube.com/playlist?list=PL-XXv-cvA%5C_iD8wQm8U0gG%5C_Z1uHjImKXFy">https://www.youtube.com/playlist?list=PL-XXv-cvA\_iD8wQm8U0gG\_Z1uHjImKXFy</a>)
 </li>
 
 <li>
-<code>[ ]</code> [计算机科学 70, 001 - 2015 年春季 -
-离散数学和概率理论](<a href="https://www.youtube.com/playlist?list=PL-XXv-cvA%5C_iD8wQm8U0gG%5C_Z1uHjImKXFy">https://www.youtube.com/playlist?list=PL-XXv-cvA\_iD8wQm8U0gG\_Z1uHjImKXFy</a>)
-</li>
-
-<li>
-<code>[ ]</code> [离散数学 (19
-个视频)](<a href="https://www.youtube.com/playlist?list=PL3o9D4Dl2FJ9q0%5C_gtFXPh%5C_H4POI5dK0yG">https://www.youtube.com/playlist?list=PL3o9D4Dl2FJ9q0\_gtFXPh\_H4POI5dK0yG</a>)
+<code>[ ]</code> [离散数学 (19 个视频)](<a href="https://www.youtube.com/playlist?list=PL3o9D4Dl2FJ9q0%5C_gtFXPh%5C_H4POI5dK0yG">https://www.youtube.com/playlist?list=PL3o9D4Dl2FJ9q0\_gtFXPh\_H4POI5dK0yG</a>)
 </li>
 
 <li>
 <code>[ ]</code> CSE373 - 算法分析 (25 个视频)
-
 <ul class="org-ul">
 <li>
-<a href="https://www.youtube.com/watch?v=ZFjhkohHdAA&amp;list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&amp;index=1">Skiena
-的算法设计手册讲座</a>
+<a href="https://www.youtube.com/watch?v=ZFjhkohHdAA&amp;list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b&amp;index=1">Skiena 的算法设计手册讲座</a>
 </li>
 </ul>
 </li>
-
 <li>
-<code>[ ]</code> [UC Berkeley 61B (2014 年春季): 数据结构 (25
-个视频)](<a href="https://www.youtube.com/watch?v=mFPmKGIrQs4&amp;list=PL-XXv-cvA%5C_iAlnI-BQr9hjqADPBtujFJd">https://www.youtube.com/watch?v=mFPmKGIrQs4&amp;list=PL-XXv-cvA\_iAlnI-BQr9hjqADPBtujFJd</a>)
+<code>[ ]</code> [UC Berkeley 61B (2014 年春季): 数据结构 (25 个视频)](<a href="https://www.youtube.com/watch?v=mFPmKGIrQs4&amp;list=PL-XXv-cvA%5C_iAlnI-BQr9hjqADPBtujFJd">https://www.youtube.com/watch?v=mFPmKGIrQs4&amp;list=PL-XXv-cvA\_iAlnI-BQr9hjqADPBtujFJd</a>)
+</li>
+<li>
+<code>[ ]</code> [UC Berkeley 61B (2006 年秋季): 数据结构 (39 个视频)](<a href="https://www.youtube.com/playlist?list=PL4BBB74C7D2A1049C">https://www.youtube.com/playlist?list=PL4BBB74C7D2A1049C</a>)
+</li>
+<li>
+<code>[ ]</code> [UC Berkeley 61C: 计算机结构 (26 个视频)](<a href="https://www.youtube.com/watch?v=gJJeUFyuvvg&amp;list=PL-XXv-cvA%5C_iCl2-D-FS5mk0jFF6cYSJs">https://www.youtube.com/watch?v=gJJeUFyuvvg&amp;list=PL-XXv-cvA\_iCl2-D-FS5mk0jFF6cYSJs</a>\_)
+</li>
+<li>
+<code>[ ]</code> [OOSE: 使用 UML 和 Java 进行软件开发 (21 个视频)](<a href="https://www.youtube.com/playlist?list=PLJ9pm%5C_Rc9HesnkwKlal%5C_buSIHA-jTZMpO">https://www.youtube.com/playlist?list=PLJ9pm\_Rc9HesnkwKlal\_buSIHA-jTZMpO</a>)
 </li>
 
 <li>
-<code>[ ]</code> [UC Berkeley 61B (2006 年秋季): 数据结构 (39 个视频)](
-<a href="https://www.youtube.com/playlist?list=PL4BBB74C7D2A1049C">https://www.youtube.com/playlist?list=PL4BBB74C7D2A1049C</a>)
+<code>[ ]</code> [UC Berkeley CS 152: 计算机结构和工程 (20 个视频)](<a href="https://www.youtube.com/watch?v=UH0QYvtP7Rk&amp;index=20&amp;list=PLkFD6%5C_40KJIwEiwQx1dACXwh-2Fuo32qr">https://www.youtube.com/watch?v=UH0QYvtP7Rk&amp;index=20&amp;list=PLkFD6\_40KJIwEiwQx1dACXwh-2Fuo32qr</a>)
+</li>
+<li>
+<code>[ ]</code> [MIT 6.004: 计算结构 (49 视频)](<a href="https://www.youtube.com/playlist?list=PLrRW1w6CGAcXbMtDFj205vALOGmiRc82">https://www.youtube.com/playlist?list=PLrRW1w6CGAcXbMtDFj205vALOGmiRc82</a>-)
 </li>
 
 <li>
-<code>[ ]</code> [UC Berkeley 61C: 计算机结构 (26
-个视频)](<a href="https://www.youtube.com/watch?v=gJJeUFyuvvg&amp;list=PL-XXv-cvA%5C_iCl2-D-FS5mk0jFF6cYSJs">https://www.youtube.com/watch?v=gJJeUFyuvvg&amp;list=PL-XXv-cvA\_iCl2-D-FS5mk0jFF6cYSJs</a>\_)
+<code>[ ]</code> [卡內基梅隆大学 - 计算机架构讲座 (39 个视频)](<a href="https://www.youtube.com/playlist?list=PL5PHm2jkkXmi5CxxI7b3JCL1TWybTDtKq">https://www.youtube.com/playlist?list=PL5PHm2jkkXmi5CxxI7b3JCL1TWybTDtKq</a>)
 </li>
 
 <li>
-<code>[ ]</code> [OOSE: 使用 UML 和 Java 进行软件开发 (21
-个视频)](<a href="https://www.youtube.com/playlist?list=PLJ9pm%5C_Rc9HesnkwKlal%5C_buSIHA-jTZMpO">https://www.youtube.com/playlist?list=PLJ9pm\_Rc9HesnkwKlal\_buSIHA-jTZMpO</a>)
+<code>[ ]</code> [MIT 6.006: 算法介绍 (47 个视频)](<a href="https://www.youtube.com/watch?v=HtSuA80QTyo&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb&amp;nohtml5=False">https://www.youtube.com/watch?v=HtSuA80QTyo&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb&amp;nohtml5=False</a>)
 </li>
 
 <li>
-<code>[ ]</code> [UC Berkeley CS 152: 计算机结构和工程 (20
-个视频)](<a href="https://www.youtube.com/watch?v=UH0QYvtP7Rk&amp;index=20&amp;list=PLkFD6%5C_40KJIwEiwQx1dACXwh-2Fuo32qr">https://www.youtube.com/watch?v=UH0QYvtP7Rk&amp;index=20&amp;list=PLkFD6\_40KJIwEiwQx1dACXwh-2Fuo32qr</a>)
+<code>[ ]</code> [MIT 6.033: 计算机系统工程 (22 个视频)](<a href="https://www.youtube.com/watch?v=zm2VP0kHl1M&amp;list=PL6535748F59DCA484">https://www.youtube.com/watch?v=zm2VP0kHl1M&amp;list=PL6535748F59DCA484</a>)
 </li>
 
 <li>
-<code>[ ]</code> [MIT 6.004: 计算结构 (49
-视频)](<a href="https://www.youtube.com/playlist?list=PLrRW1w6CGAcXbMtDFj205vALOGmiRc82">https://www.youtube.com/playlist?list=PLrRW1w6CGAcXbMtDFj205vALOGmiRc82</a>-)
+<code>[ ]</code> [MIT 6.034 人工智能, 2010 年秋季 (30 个视频)](<a href="https://www.youtube.com/playlist?list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe%5C_4hSi">https://www.youtube.com/playlist?list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe\_4hSi</a>)
 </li>
 
 <li>
-<code>[ ]</code> [卡內基梅隆大学 - 计算机架构讲座 (39
-个视频)](<a href="https://www.youtube.com/playlist?list=PL5PHm2jkkXmi5CxxI7b3JCL1TWybTDtKq">https://www.youtube.com/playlist?list=PL5PHm2jkkXmi5CxxI7b3JCL1TWybTDtKq</a>)
+<code>[ ]</code> [MIT 6.042J: 计算机科学数学, 2010 年秋季 (25 个视频)](<a href="https://www.youtube.com/watch?v=L3LMbpZIKhQ&amp;list=PLB7540DEDD482705B">https://www.youtube.com/watch?v=L3LMbpZIKhQ&amp;list=PLB7540DEDD482705B</a>)
 </li>
 
 <li>
-<code>[ ]</code> [MIT 6.006: 算法介绍 (47
-个视频)](<a href="https://www.youtube.com/watch?v=HtSuA80QTyo&amp;list=PLUl4u3cNGP61Oq3tWYp6V%5C_F-5jb5L2iHb&amp;nohtml5=False">https://www.youtube.com/watch?v=HtSuA80QTyo&amp;list=PLUl4u3cNGP61Oq3tWYp6V\_F-5jb5L2iHb&amp;nohtml5=False</a>)
+<code>[ ]</code> [MIT 6.046: 算法设计与分析 (34 个视频)](<a href="https://www.youtube.com/watch?v=2P-yW7LQr08&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp">https://www.youtube.com/watch?v=2P-yW7LQr08&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp</a>)
 </li>
 
 <li>
-<code>[ ]</code> [MIT 6.033: 计算机系统工程 (22
-个视频)](<a href="https://www.youtube.com/watch?v=zm2VP0kHl1M&amp;list=PL6535748F59DCA484">https://www.youtube.com/watch?v=zm2VP0kHl1M&amp;list=PL6535748F59DCA484</a>)
+<code>[ ]</code> [MIT 6.050J: 信息和熵, 2008 年春季 (19 个视频)](<a href="https://www.youtube.com/watch?v=phxsQrZQupo&amp;list=PL%5C_2Bwul6T-A7OldmhGODImZL8KEVE38X7">https://www.youtube.com/watch?v=phxsQrZQupo&amp;list=PL\_2Bwul6T-A7OldmhGODImZL8KEVE38X7</a>)
 </li>
 
 <li>
-<code>[ ]</code> [MIT 6.034 人工智能, 2010 年秋季 (30
-个视频)](<a href="https://www.youtube.com/playlist?list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe%5C_4hSi">https://www.youtube.com/playlist?list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe\_4hSi</a>)
+<code>[ ]</code> [MIT 6.851: 高等数据结构 (22 个视频)](<a href="https://www.youtube.com/watch?v=T0yzrZL1py0&amp;list=PLUl4u3cNGP61hsJNdULdudlRL493b-XZf&amp;index=1">https://www.youtube.com/watch?v=T0yzrZL1py0&amp;list=PLUl4u3cNGP61hsJNdULdudlRL493b-XZf&amp;index=1</a>)
 </li>
 
 <li>
-<code>[ ]</code> [MIT 6.042J: 计算机科学数学, 2010 年秋季 (25
-个视频)](<a href="https://www.youtube.com/watch?v=L3LMbpZIKhQ&amp;list=PLB7540DEDD482705B">https://www.youtube.com/watch?v=L3LMbpZIKhQ&amp;list=PLB7540DEDD482705B</a>)
+<code>[ ]</code> [MIT 6.854: 高等算法, 2016 年春季 (24 个视频)](<a href="https://www.youtube.com/playlist?list=PL6ogFv-ieghdoGKGg2Bik3Gl1glBTEu8c">https://www.youtube.com/playlist?list=PL6ogFv-ieghdoGKGg2Bik3Gl1glBTEu8c</a>)
 </li>
 
 <li>
-<code>[ ]</code> [MIT 6.046: 算法设计与分析 (34
-个视频)](<a href="https://www.youtube.com/watch?v=2P-yW7LQr08&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp">https://www.youtube.com/watch?v=2P-yW7LQr08&amp;list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp</a>)
-</li>
-
-<li>
-<code>[ ]</code> [MIT 6.050J: 信息和熵, 2008 年春季 (19
-个视频)](<a href="https://www.youtube.com/watch?v=phxsQrZQupo&amp;list=PL%5C_2Bwul6T-A7OldmhGODImZL8KEVE38X7">https://www.youtube.com/watch?v=phxsQrZQupo&amp;list=PL\_2Bwul6T-A7OldmhGODImZL8KEVE38X7</a>)
-</li>
-
-<li>
-<code>[ ]</code> [MIT 6.851: 高等数据结构 (22
-个视频)](<a href="https://www.youtube.com/watch?v=T0yzrZL1py0&amp;list=PLUl4u3cNGP61hsJNdULdudlRL493b-XZf&amp;index=1">https://www.youtube.com/watch?v=T0yzrZL1py0&amp;list=PLUl4u3cNGP61hsJNdULdudlRL493b-XZf&amp;index=1</a>)
-</li>
-
-<li>
-<code>[ ]</code> [MIT 6.854: 高等算法, 2016 年春季 (24
-个视频)](<a href="https://www.youtube.com/playlist?list=PL6ogFv-ieghdoGKGg2Bik3Gl1glBTEu8c">https://www.youtube.com/playlist?list=PL6ogFv-ieghdoGKGg2Bik3Gl1glBTEu8c</a>)
-</li>
-
-<li>
-<code>[ ]</code> [MIT 6.858计算机系统安全, 2014
-年秋季](<a href="https://www.youtube.com/watch?v=GqmQg-cszw4&amp;index=1&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=GqmQg-cszw4&amp;index=1&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
+<code>[ ]</code> [MIT 6.858计算机系统安全, 2014 年秋季](<a href="https://www.youtube.com/watch?v=GqmQg-cszw4&amp;index=1&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh">https://www.youtube.com/watch?v=GqmQg-cszw4&amp;index=1&amp;list=PLUl4u3cNGP62K2DjQLRxDNRi0z2IRWnNh</a>)
 </li>
 
 <li>
@@ -4886,19 +4496,16 @@ II](<a href="https://www.youtube.com/watch?v=oI9fMUqgfxY&amp;index=23&amp;list=P
 
 <ul class="org-ul">
 <li>
-<a href="https://www.youtube.com/watch?v=jTSvthW34GU&amp;list=PLC0B8B318B7394B6F&amp;nohtml5=False">C
-和 C++ 课程</a>
+<a href="https://www.youtube.com/watch?v=jTSvthW34GU&amp;list=PLC0B8B318B7394B6F&amp;nohtml5=False">C 和 C++ 课程</a>
 </li>
 </ul>
 </li>
 
 <li>
-<code>[ ]</code>    [密码学导论](<a href="https://www.youtube.com/watch?v=2aHkqB2-46k&amp;feature=youtu.be">https://www.youtube.com/watch?v=2aHkqB2-46k&amp;feature=youtu.be</a>)
-
+<code>[ ]</code> [密码学导论](<a href="https://www.youtube.com/watch?v=2aHkqB2-46k&amp;feature=youtu.be">https://www.youtube.com/watch?v=2aHkqB2-46k&amp;feature=youtu.be</a>)
 <ul class="org-ul">
 <li>
-<a href="https://www.youtube.com/channel/UC1usFRN4LCMcfIV7UjHNuQg">本系列更多内容
-(不分先后顺序)</a>
+<a href="https://www.youtube.com/channel/UC1usFRN4LCMcfIV7UjHNuQg">本系列更多内容 (不分先后顺序)</a>
 </li>
 </ul>
 </li>
@@ -4918,17 +4525,12 @@ II](<a href="https://www.youtube.com/watch?v=oI9fMUqgfxY&amp;index=23&amp;list=P
 
 <ul class="org-ul">
 <li>
-<a href="https://github.com/open-source-society/computer-science">在线 CS
-课程目录</a>
+<a href="https://github.com/open-source-society/computer-science">在线 CS 课程目录</a>
 </li>
 <li>
-<a href="https://github.com/prakhar1989/awesome-courses">CS 课程目录
-(一些是在线讲座)</a>
+<a href="https://github.com/prakhar1989/awesome-courses">CS 课程目录 (一些是在线讲座)</a>
 </li>
 </ul>
-<p>
-*
-</p>
 </div>
 </div>
 </div>
