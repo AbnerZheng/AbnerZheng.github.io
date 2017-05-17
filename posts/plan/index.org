@@ -514,16 +514,21 @@ Google，你只有三种固定的选择：
        树的实现（视频）](https://www.coursera.org/learn/data-structures/lecture/PKEBC/avl-tree-implementation)
      - [ ]
        [分离与合并](https://www.coursera.org/learn/data-structures/lecture/22BgE/split-and-merge)
-   - [0%] *伸展树*
+   - [50%] *伸展树*
      - 实际中：伸展树一般用于缓存、内存分配者、路由器、垃圾回收者、数据压缩、ropes（字符串的一种替代品，用于存储长串的文本字符）、Windows NT（虚拟内存、网络及文件系统）等的实现。
      - [100%] 手写splay tree，实现:
        - [X] splay,find_next , find_pre , remove , insert
        - [0%] lazy tag
+     - [X] 刷题应用
+       - [X] hihocoder week 104
+       - [ ] hihocoder week 105
      - [0%] 复杂度证明
        - [0%] MIT 教程：伸展树（Splay trees）[[https://www.youtube.com/watch?v=QnPl_Y6EqMo][视频]]
        - 尝试手工证明
      - [0%] [[https://www.youtube.com/watch?v%3DNajzh1rYQTo&index%3D23&list%3DPL-XXv-cvA\_iAlnI-BQr9hjqADPBtujFJd][CS 61B：伸展树（Splay trees）（视频）]]
      - [ ] 写一篇博客记录一下
+     - [ ] paper阅读: when to use splay tree
+
    - [ ] *2-3查找树*
      - 实际中：2-3树的元素插入非常快速，但却有着查询慢的代价（因为相比较
        AVL 树来说，其高度更高）。
