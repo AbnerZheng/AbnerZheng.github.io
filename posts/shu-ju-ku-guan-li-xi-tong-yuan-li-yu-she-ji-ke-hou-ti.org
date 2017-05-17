@@ -1,0 +1,39 @@
+#+BEGIN_COMMENT
+.. title: 数据库管理系统<原理与设计>课后题
+.. slug: shu-ju-ku-guan-li-xi-tong-yuan-li-yu-she-ji-ke-hou-ti
+.. date: 2017-05-06 23:50:44 UTC+08:00
+.. tags: mathjax
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+
+
+#+HTML: <!--TEASER_END-->
+*  第四章
+
+** 练习
+4.1: 只有当关系操作符可以被组合的时候，才能具备足够强的表达能力来迎合用户多样的需求。
+
+4.2:
+
+| exp                   | max                     |           min |
+|-----------------------+-------------------------+---------------|
+| $R1\cup R2$           | $N2+N1$                 |  $max(N2,N1)$ |
+| $R1\cap R2$           | $min(N2, N1)$           |             0 |
+| $R1-R2$               | N1                      |             0 |
+| $R1\times R2$         | $N1\times N2$           | $max(N1, N2)$ |
+| $\sigma _{a=5}(R1)$ | N1                      |             0 |
+| $\pi _a\(R1\)         | $\lfloor{R1/R2}\rfloor$ |             0 |
+
+4.5:
+
+(1). 关系代数: $\pi_{eid}(\sigma_{sname=Boeing}Aircrafts \Join Certified)$
+
+(2). 关系代数: $\pi_{ename}(\sigma_{sname=Boeing}Aircrafts \Join Certified \Join Employees)
+
+(3). 关系代数: $\pi_{distance}(\sigma_{from=Bonn}Fights \cap \sigma_{to=Madras}Fights) \Join_{cruisingrange>distance} Aircraft$
+
+(4).
