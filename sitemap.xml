@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://abnerzheng.github.io/archive.html</loc>
-  <lastmod>2017-05-07T08:22:00Z</lastmod>
+  <lastmod>2017-05-17T09:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/categories/</loc>
-  <lastmod>2017-04-03T15:41:00Z</lastmod>
+  <lastmod>2017-05-17T09:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/categories/blog/</loc>
@@ -34,8 +34,20 @@
   <lastmod>2017-04-03T08:14:00Z</lastmod>
  </url>
  <url>
+  <loc>https://abnerzheng.github.io/categories/cat_database/</loc>
+  <lastmod>2017-05-17T09:48:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/categories/database/</loc>
+  <lastmod>2017-05-17T09:48:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://abnerzheng.github.io/categories/mathjax/</loc>
   <lastmod>2017-04-03T10:04:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/categories/query-optimizer/</loc>
+  <lastmod>2017-05-17T09:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/categories/system-programming/</loc>
@@ -60,6 +72,10 @@
  <url>
   <loc>https://abnerzheng.github.io/posts/plan/</loc>
   <lastmod>2017-04-07T06:30:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/posts/query-optimizer-in-database/</loc>
+  <lastmod>2017-05-17T09:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/posts/shu-ju-ku-guan-li-xi-tong-yuan-li-yu-she-ji-ke-hou-ti/</loc>

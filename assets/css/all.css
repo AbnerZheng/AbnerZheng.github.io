@@ -469,14 +469,23 @@ h3
 	color: #8c837a;
 	margin: 10px 0 6px 0;
 }
+ol
+{
+	margin: 10px 0 10px 20px;
+}
 ul
 {
 	margin: 10px 0 10px 20px;
 	padding: 0;
 }
-li 
+
+ol li{
+   margin: 6px 0px;
+}
+
+ul li
 {
-	/*background: transparent url(../img/bullet.png) no-repeat 2px 4px;*/
+    background: transparent url(../img/bullet.png) no-repeat 2px 4px;
 	padding: 0 0 0 24px;
 	margin: 6px 0px;
 	list-style: none; 
