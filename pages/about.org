@@ -11,3 +11,13 @@
 
 
 abnerzheng
+
+Codewars:
+
+#+begin_html
+<img src="https://www.codewars.com/users/AbnerZheng/badges/small">
+#+end_html
+
+Checkio:
+
+https://py.checkio.org/user/AbnerZheng24/
