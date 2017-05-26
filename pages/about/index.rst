@@ -6,4 +6,5 @@
 .. description:
 .. type: text
 
-codewars: .. image:: https://www.codewars.com/users/AbnerZheng/badges/large
+codewars:
+.. image:: https://www.codewars.com/users/AbnerZheng/badges/large
