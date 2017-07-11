@@ -13,6 +13,7 @@ setup:
 		@echo "source $(ENVIRONMENT)bin/activate;"
 		@echo "pip install --upgrade pip 'Nikola[extras]';"
 help:
+		@echo $(MODLIB)
 		@echo "To setup Nikola environment, please use 'eval \$$(make setup)'."
 
 post:
