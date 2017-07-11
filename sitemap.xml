@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://abnerzheng.github.io/archive.html</loc>
-  <lastmod>2017-05-26T06:46:00Z</lastmod>
+  <lastmod>2017-07-11T06:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/categories/</loc>
-  <lastmod>2017-05-26T06:46:00Z</lastmod>
+  <lastmod>2017-07-11T06:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/categories/blog/</loc>
@@ -44,6 +44,14 @@
  <url>
   <loc>https://abnerzheng.github.io/categories/mathjax/</loc>
   <lastmod>2017-05-26T06:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/categories/prove/</loc>
+  <lastmod>2017-07-11T06:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/categories/proven/</loc>
+  <lastmod>2017-07-11T06:54:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/categories/query-optimizer/</loc>
@@ -76,6 +84,10 @@
  <url>
   <loc>https://abnerzheng.github.io/posts/query-optimizer-in-database/</loc>
   <lastmod>2017-05-26T06:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/posts/ru-he-zheng-ming-you-2he-5zu-cheng-de-ying-bi-ke-yi-huan-chu-ren-yi-da-yu-3de-zheng-shu-ying-bi/</loc>
+  <lastmod>2017-07-11T06:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/posts/shu-ju-ku-guan-li-xi-tong-yuan-li-yu-she-ji-ke-hou-ti/</loc>

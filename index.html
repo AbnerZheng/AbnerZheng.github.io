@@ -27,6 +27,63 @@
                             <li><a href="https://github.com/abnerzheng" title="My GitHub repo"><i class="fa fa-fw fa-github"></i></a></li>
                         </ul></nav><div id="content">
         <article class="teaser h-entry post-text"><h1 class="p-name">
+<a href="posts/ru-he-zheng-ming-you-2he-5zu-cheng-de-ying-bi-ke-yi-huan-chu-ren-yi-da-yu-3de-zheng-shu-ying-bi/" class="u-url">如何证明由2和5组成的硬币可以换出任意大于3的整数硬币</a>
+             <time class="published dt-published" datetime="2017-07-11T14:28:25+08:00">2017-07-11 14:28</time>
+</h1>
+        <div class="p-summary">
+        <p>
+今天看视频看到一个题目， 如何证明由2和5组成的硬币可以换出任意大于3的整数硬币，相信很多人之前也碰到过类似的。证明方法很简单，使用归纳法就可以了，具体如下:
+</p>
+
+<p>
+Basic case:
+</p>
+
+<p>
+\[
+    4 = 2 + 2
+\]
+</p>
+
+<p>
+假设需要兑n是有命题成立， 则需要证明n+1时， 也能由2、5兑出.
+即:
+\[
+    n = k*2 + j*5 , ( k &gt;= 0, j &gt;= 0 )
+\]
+</p>
+
+<p>
+此时有两种情况，如下:
+</p>
+
+<ul class="org-ul">
+<li>当\(j \ge 1\) ,有
+</li>
+</ul>
+<p>
+\[
+    n + 1 = k * 2 + (j-1) * 5 + 6 = (k+3)*2 + (j-1) * 5
+\]
+</p>
+
+<ul class="org-ul">
+<li>当\(j = 0\), 此时因为 \(n \ge 4\) ,必有 \(k\ge2\) ,所以有
+</li>
+</ul>
+<p>
+\[
+    n + 1 = (k -2) * 2 + 5 = (k-2) * 2 + 1 * 5
+\]
+</p>
+
+<p>
+证毕.
+</p>
+        </div>
+                    
+
+        </article><article class="teaser h-entry post-text"><h1 class="p-name">
 <a href="posts/query-optimizer-in-database/" class="u-url">Query Optimizer in Database</a>
              <time class="published dt-published" datetime="2017-05-17T17:35:26+08:00">2017-05-17 17:35</time>
 </h1>

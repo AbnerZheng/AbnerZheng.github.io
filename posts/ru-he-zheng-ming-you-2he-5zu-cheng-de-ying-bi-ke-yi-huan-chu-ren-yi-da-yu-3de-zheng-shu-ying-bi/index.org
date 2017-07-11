@@ -1,0 +1,38 @@
+#+BEGIN_COMMENT
+.. title: 如何证明由2和5组成的硬币可以换出任意大于3的整数硬币
+.. slug: ru-he-zheng-ming-you-2he-5zu-cheng-de-ying-bi-ke-yi-huan-chu-ren-yi-da-yu-3de-zheng-shu-ying-bi
+.. date: 2017-07-11 14:28:25 UTC+08:00
+.. tags: proven, mathjax
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+今天看视频看到一个题目， 如何证明由2和5组成的硬币可以换出任意大于3的整数硬币，相信很多人之前也碰到过类似的。证明方法很简单，使用归纳法就可以了，具体如下:
+
+Basic case:
+
+\[
+    4 = 2 + 2
+\]
+
+假设需要兑n是有命题成立， 则需要证明n+1时， 也能由2、5兑出.
+即:
+\[
+    n = k*2 + j*5 , ( k >= 0, j >= 0 )
+\]
+
+此时有两种情况，如下:
+
+- 当$j \ge 1$ ,有
+\[
+    n + 1 = k * 2 + (j-1) * 5 + 6 = (k+3)*2 + (j-1) * 5
+\]
+
+- 当$j = 0$, 此时因为 $n \ge 4$ ,必有 $k\ge2$ ,所以有
+\[
+    n + 1 = (k -2) * 2 + 5 = (k-2) * 2 + 1 * 5
+\]
+
+证毕.
