@@ -1,0 +1,43 @@
+#+BEGIN_COMMENT
+.. title: 一个同余问题的证明和应用
+.. slug: yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong
+.. date: 2017-07-17 11:14:14 UTC+08:00
+.. tags: mathjax
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+今天在学习并发编程中，碰到一个问题，如何证明如下式子:
+#+HTML: <!--TEASER_END-->
+
+\[
+(x \bmod kN) \bmod N \equiv (x \bmod 2kN) \bmod N, \{x,k,N \in N^+\}
+\]
+
+这么个简单的问题想了半天，太久不联系真的退步很多。
+证明如下:
+
+设 $x = a * 2kN + b,\{a,b \in N^+ \}$, 则有左边式子为
+\[
+(x \bmod kN) \bmod N = (a*2kN + b) \bmod kN \bmod N = b \bmod kN \bmod N
+\]
+
+右边式子为
+\[
+(x \bmod 2kN) \bmod N = (a*2kN + b) \bmod 2kN \bmod N = b \bmod N
+\]
+
+另$b = c * kN + d$, 再代入一次，则有左边式子为
+\[
+b \bmod kN \bmod N = (c*kN + d) \bmod kN \bmod N = d \bmod N
+\]
+右边式子为
+\[
+b \bmod N = (c*kN + d) \bmod N = d \bmod N
+\]
+
+由此可见此时式子两边相同，由此得证。
+
+这个的应用场景在于lock stripe中，在hash map做reallocate时，只要保证，slot长度是lock的整数倍，那么将已有的容量扩充为k倍，此时元素虽然落入不同的slot中，但是同一个元素它的锁保持不变.

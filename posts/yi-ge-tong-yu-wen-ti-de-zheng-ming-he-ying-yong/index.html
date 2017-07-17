@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="Abner Zheng">
-<title>如何证明由2和5组成的硬币可以换出任意大于3的整数硬币 | Abner Zheng's Blog</title>
+<title>一个同余问题的证明和应用 | Abner Zheng's Blog</title>
 <link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
@@ -26,80 +26,68 @@
                             <li><a href="https://github.com/abnerzheng" title="My GitHub repo"><i class="fa fa-fw fa-github"></i></a></li>
                         </ul></nav><div id="content">
     <article class="post-text"><div class="h-entry" itemscope="itemscope" itemtype="http://schema.org/Article">
-        <h1 class="p-name" itemprop="headline name">如何证明由2和5组成的硬币可以换出任意大于3的整数硬币</h1>
+        <h1 class="p-name" itemprop="headline name">一个同余问题的证明和应用</h1>
 
     <small>
-        Posted: <time class="published dt-published" datetime="2017-07-11T14:28:25+08:00" itemprop="datePublished">2017-07-11 14:28</time>
+        Posted: <time class="published dt-published" datetime="2017-07-17T11:14:14+08:00" itemprop="datePublished">2017-07-17 11:14</time>
 		          |  More posts about
             <a class="tag" href="../../categories/mathjax/"><span class="badge badge-info">mathjax</span></a>
-            <a class="tag" href="../../categories/proven/"><span class="badge badge-info">proven</span></a>
 
     </small>
     <div class="e-content" itemprop="articleBody text">
     <p>
-今天看视频看到一个题目， 如何证明由2和5组成的硬币可以换出任意大于3的整数硬币，相信很多人之前也碰到过类似的问题。
+今天在学习并发编程中，碰到一个问题，如何证明如下式子:
 </p>
-
 <!--TEASER_END-->
 
 <p>
-证明方法很简单，使用归纳法就可以了，具体如下:
-</p>
-
-
-<p>
-Basic case:
-</p>
-
-<p>
 \[
-    4 = 2 + 2
+(x \bmod kN) \bmod N \equiv (x \bmod 2kN) \bmod N, \{x,k,N \in N^+\}
 \]
 </p>
 
 <p>
-假设需要兑n是有命题成立， 则需要证明n+1时， 也能由2、5兑出.
-即:
+这么个简单的问题想了半天，太久不联系真的退步很多。
+证明如下:
+</p>
+
+<p>
+设 \(x = a * 2kN + b,\{a,b \in N^+ \}\), 则有左边式子为
 \[
-    n = k*2 + j*5 , ( k &gt;= 0, j &gt;= 0 )
+(x \bmod kN) \bmod N = (a*2kN + b) \bmod kN \bmod N = b \bmod kN \bmod N
 \]
 </p>
 
 <p>
-此时有两种情况，如下:
-</p>
-
-<ul class="org-ul">
-<li>当\(j \ge 1\) ,有
-</li>
-</ul>
-<p>
+右边式子为
 \[
-    n + 1 = k * 2 + (j-1) * 5 + 6 = (k+3)*2 + (j-1) * 5
-\]
-</p>
-
-<ul class="org-ul">
-<li>当\(j = 0\), 此时因为 \(n \ge 4\) ,必有 \(k\ge2\) ,所以有
-</li>
-</ul>
-<p>
-\[
-    n + 1 = (k -2) * 2 + 5 = (k-2) * 2 + 1 * 5
+(x \bmod 2kN) \bmod N = (a*2kN + b) \bmod 2kN \bmod N = b \bmod N
 \]
 </p>
 
 <p>
-证毕.
+另\(b = c * kN + d\), 再代入一次，则有左边式子为
+\[
+b \bmod kN \bmod N = (c*kN + d) \bmod kN \bmod N = d \bmod N
+\]
+右边式子为
+\[
+b \bmod N = (c*kN + d) \bmod N = d \bmod N
+\]
+</p>
+
+<p>
+由此可见此时式子两边相同，由此得证。
+</p>
+
+<p>
+这个的应用场景在于lock stripe中，在hash map做reallocate时，只要保证，slot长度是lock的整数倍，那么将已有的容量扩充为k倍，此时元素虽然落入不同的slot中，但是同一个元素它的锁保持不变.
 </p>
     </div>
     </div>
             <ul class="pager">
 <li class="previous">
-                <a href="../query-optimizer-in-database/" rel="prev">← 前一篇</a>
-            </li>
-            <li class="next">
-                <a href="../yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong/" rel="next">后一篇 →</a>
+                <a href="../ru-he-zheng-ming-you-2he-5zu-cheng-de-ying-bi-ke-yi-huan-chu-ren-yi-da-yu-3de-zheng-shu-ying-bi/" rel="prev">← 前一篇</a>
             </li>
         </ul>
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
