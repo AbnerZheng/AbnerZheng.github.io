@@ -1,0 +1,16 @@
+#+BEGIN_COMMENT
+.. title: MESI protocol
+.. slug: mesi-protocol
+.. date: 2017-07-18 14:35:22 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+今天学习了CPU缓存一致性模型MESI，在wiki上发现一个好东东， 可视化MESI协议， 地址为: [[https://www.scss.tcd.ie/Jeremy.Jones/vivio/caches/MESIHelp.htm][MESI visualization]]
+
+另外wal的ARIES协议也有可视化程序， 地址为:[[https://mwhittaker.github.io/aries/][ ARIES protocol]]
+
+这些可视化程序对于协议的理解有很大的帮助。

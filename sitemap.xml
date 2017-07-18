@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://abnerzheng.github.io/archive.html</loc>
-  <lastmod>2017-07-17T04:58:00Z</lastmod>
+  <lastmod>2017-07-18T06:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/categories/</loc>
@@ -68,6 +68,10 @@
  <url>
   <loc>https://abnerzheng.github.io/posts/how-to-write-a-own-malloc/</loc>
   <lastmod>2017-05-26T06:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/posts/mesi-protocol/</loc>
+  <lastmod>2017-07-18T06:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/posts/migrating-my-blog-to-nikola/</loc>
