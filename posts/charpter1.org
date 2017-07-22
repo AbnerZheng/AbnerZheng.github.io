@@ -1,0 +1,95 @@
+#+BEGIN_COMMENT
+.. title: charpter1
+.. slug: charpter1
+.. date: 2017-07-21 22:58:55 UTC+08:00
+.. tags: mathjax, transaction
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+
+* 1
+
+** 1.9 保存点和部分回滚
+
+SQL的事务模型允许事务的部分提交：在前滚事务中的更新操作中的一个子集可以在不全部丢弃回滚整个事务的情况下回滚。 在执行了部分回滚后，在前滚阶段中余下的事务能够继续进行新的前滚操作。
+
+部分回滚中要回滚的操作是由该事务的最后一次更新操作到上一个设置的保存点。保存点可以通过SQL语句来设置:
+
+#+BEGIN_SRC sql
+  set savepoint P
+#+END_SRC
+
+其中P是savepoint的一个独一名称。SQL语句
+
+#+BEGIN_SRC sql
+  rollback to savepoint P
+#+END_SRC
+
+可以执行一个部分回滚到保存点P: 事务中在设置P后执行的未被撤销的所有前滚更新操作将会被撤销.
+
+*例子1.10* 部分回滚可以嵌套
+
+#+BEGIN_SRC sql
+  insert into r values (x_1, v_1);
+  set savepoint P_1;
+  insert into r values (x_2, v_2);
+  set savepoint P_2;
+  insert into r values (x_3, v_3);
+  rollback to savepoint P_2;
+  insert into r values (x_4, v_4);
+  rollback to savepoint P_1;
+  insert into r values (x_5, v_5);
+  commit;
+#+END_SRC
+
+语句 *rollback to savepoint P_2* 从关系r中删除刚刚加入的元组(x_3, v_3)。语句 *rollback to savepoint P_1* 将删除刚刚天添加的(x_4, v_4)和(x_2, v_2)。 在事务的结尾， 一个初始空的关系r将只含有元组(x_1, v_1)和(x_5,v_5).
+
+我们现在要将部分回滚加入到我们的事务模型中。为了该目的，我们定义了以下操作:
+
+7. [@7] S[P]: set savepoint P.
+8. A[P]: begin partial rollback to savepoint P.
+9. C[P]: complete the partial rollback to savepoint P.
+
+现在，在一个事务的前滚阶段B\alpha 中, \alpha 可能包含set savepoint操作S[P], 完成的回滚操作 S[P]...A[P]...C[P], 或者一个已初始化但还未完成的部分回滚 S[P]...A[P]... 形式上来说， 一个事务的前滚阶段现在可以是以下三种形式中的任意一种:
+
+(a) 一系列由R、I、D、W和S组成的操作
+
+(b) 形如 $\alpha S[P]\beta A[P] \beta^{-1}C[P]\gamma$ 的操作序列, 其中\alpha , \beta 和 \gamma 是(a)或(b)的形式.
+
+(c) 形如 $\alpha S[P]\beta \delta A[P] \delta^{-1}$ 的操作序列,
+
+在情形(b)中， 子序列 $S[P]\beta A[P] \beta^{-1}C[P]$ 表示一个完成的回到保存点P的部分回滚。 在情形(c)中，子序列 $S[P]\beta \delta A[P] \beta^{-1}$ 表示事务回滚到保存点P.
+
+\alpha 的撤销操作序列，表示为\alpha^{-1}或者undo(\alpha), 是根据它的形式定义的: 对形式(a)中的序列\alpha，它的撤销操作\alpha^{1}和之前的定义一样；对形式(b)中的一个序列，它的撤销操作序列是$\gamma^{-1}\alpha^{-1}$. 对形式(c)中的序列，它的撤销序列是$\beta^{-1}C[P]\alpha^{-1}$.
+
+保存点和部分回滚组成了一个重要的数据库编程范式: 事务可以被随意用于立即更新数据库，即使一些接下来的事件强制回滚该更新，之后另一个事件完成该事务。 事实上,对于部分回滚，每个事务可以使用一个提交请求来终止而不需要使用回滚请求(比如说，完全回滚). 完全回滚的效果可以通过一下操作实现:在第一个更新前设置一个保存点，然后在结尾执行一个部分回滚到保存点, 然后提交该事务.
+
+** 1.10 多粒度
+
+我们可以扩展键范围事务,加入多粒度,因此元组可以被分组到不同关系中。数据库的关系组成一个集合，该集合根据它们的标识符全序排列。该集合可表示为:
+
+$$\{(r_1,R_1),...,(r_{n_i}, R_{n_i})\}$$
+
+其中，r_i 是一个在数据库中唯一标识一个关系的标识符，R_i 是关系模式($\underline{X_i}V_i$). 由此，关系r中的元组(x, v)可由(r,x)来唯一标识。
+
+事务模型中的逐元组前滚现在可以定义为:
+
+1. $R[r, x, \ge z, v]$: 读取在关系r中第一个满足 $x\ge z$ 的元组(x,v)
+2. $R[r, x, \gt z, v]$: 读取在关系r中z的下一个元组(x,v)
+3. $W[r, x, u, v]$: 更新在关系r中的元组(x,v)
+4. $I[r, x, v]$: 向关系r中插入元组(x,v)
+5. $D[r, x, v]$: 在关系r中删除元组(x,v)
+6.
+
+新的操作包括:
+
+(a) $R[r', \theta r, R']$: 阅览关系$r'$中的模式$R'$
+
+(b) $I[r, R]$: 向数据库中创建一个新的关系r(R), 对应于SQL语句 *create table r(R)* .
+
+(c) $D[r, R]$: 从数据库中删除一个空的关系r, 对应于SQL语句 *drop table r*
+
+额外的级别可以被加入到颗粒分级中，通过将关系分成不同数据库(为不同拥有者); 新的操作将包括这些对应于SQL语句 *create database* 和 *destroy database*.
