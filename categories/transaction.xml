@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Abner Zheng's Blog</title><link>https://abnerzheng.github.io/</link><description>my blog</description><atom:link href="https://abnerzheng.github.io/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>zh_cn</language><copyright>Contents © 2017 &lt;a href="mailto:abnerzheng@gmail.com"&gt;Abner Zheng&lt;/a&gt; </copyright><lastBuildDate>Sat, 22 Jul 2017 10:09:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>charpter1</title><link>https://abnerzheng.github.io/posts/charpter1/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Abner Zheng's Blog (文章分类：transaction)</title><link>https://abnerzheng.github.io/</link><description></description><atom:link href="https://abnerzheng.github.io/categories/transaction.xml" type="application/rss+xml" rel="self"></atom:link><language>zh_cn</language><copyright>Contents © 2017 &lt;a href="mailto:abnerzheng@gmail.com"&gt;Abner Zheng&lt;/a&gt; </copyright><lastBuildDate>Sat, 22 Jul 2017 10:09:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>charpter1</title><link>https://abnerzheng.github.io/posts/charpter1/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
 &lt;h2 id="sec-1"&gt;1&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;/div&gt;&lt;div id="outline-container-sec-1-1" class="outline-3"&gt;
@@ -144,54 +144,4 @@ $$\{(r_1,R_1),...,(r_{n_i}, R_{n_i})\}$$
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>mathjax</category><category>transaction</category><guid>https://abnerzheng.github.io/posts/charpter1/</guid><pubDate>Fri, 21 Jul 2017 14:58:55 GMT</pubDate></item><item><title>STM学习</title><link>https://abnerzheng.github.io/posts/stm/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
-STM是软件事务内存(software transaction memory)的简称。 我在PPCP中对它进行了一些学习，这里做个记录。
-&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/stm/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/stm/</guid><pubDate>Tue, 18 Jul 2017 09:09:17 GMT</pubDate></item><item><title>MESI protocol</title><link>https://abnerzheng.github.io/posts/mesi-protocol/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;p&gt;
-今天学习了CPU缓存一致性模型MESI，在wiki上发现一个好东东， 可视化MESI协议， 地址为: &lt;a href="https://www.scss.tcd.ie/Jeremy.Jones/vivio/caches/MESIHelp.htm"&gt;MESI visualization&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-另外wal的ARIES协议也有可视化程序， 地址为:&lt;a href="https://mwhittaker.github.io/aries/"&gt; ARIES protocol&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-这些可视化程序对于协议的理解有很大的帮助。
-&lt;/p&gt;</description><guid>https://abnerzheng.github.io/posts/mesi-protocol/</guid><pubDate>Tue, 18 Jul 2017 06:35:22 GMT</pubDate></item><item><title>一个同余问题的证明和应用</title><link>https://abnerzheng.github.io/posts/yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
-今天在学习并发编程中，碰到一个问题，如何证明如下式子:
-&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><category>mathjax</category><guid>https://abnerzheng.github.io/posts/yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong/</guid><pubDate>Mon, 17 Jul 2017 03:14:14 GMT</pubDate></item><item><title>如何证明由2和5组成的硬币可以换出任意大于3的整数硬币</title><link>https://abnerzheng.github.io/posts/ru-he-zheng-ming-you-2he-5zu-cheng-de-ying-bi-ke-yi-huan-chu-ren-yi-da-yu-3de-zheng-shu-ying-bi/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
-今天看视频看到一个题目， 如何证明由2和5组成的硬币可以换出任意大于3的整数硬币，相信很多人之前也碰到过类似的问题。
-&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/ru-he-zheng-ming-you-2he-5zu-cheng-de-ying-bi-ke-yi-huan-chu-ren-yi-da-yu-3de-zheng-shu-ying-bi/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><category>mathjax</category><category>proven</category><guid>https://abnerzheng.github.io/posts/ru-he-zheng-ming-you-2he-5zu-cheng-de-ying-bi-ke-yi-huan-chu-ren-yi-da-yu-3de-zheng-shu-ying-bi/</guid><pubDate>Tue, 11 Jul 2017 06:28:25 GMT</pubDate></item><item><title>Query Optimizer in Database</title><link>https://abnerzheng.github.io/posts/query-optimizer-in-database/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;近况&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
-&lt;p&gt;
-最近在上CS186, 数据库系统。 这么课挺棒的，课程的project是实现一个单机数据库，一共分为四个project，分别为:
-&lt;/p&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;实现schema设计
-&lt;/li&gt;
-&lt;li&gt;实现BPlusTree
-&lt;/li&gt;
-&lt;li&gt;实现join操作符
-&lt;/li&gt;
-&lt;li&gt;实现query optimizer
-&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/query-optimizer-in-database/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>database</category><category>mathjax</category><category>query optimizer</category><guid>https://abnerzheng.github.io/posts/query-optimizer-in-database/</guid><pubDate>Wed, 17 May 2017 09:35:26 GMT</pubDate></item><item><title>数据库管理系统&lt;原理与设计&gt;课后题</title><link>https://abnerzheng.github.io/posts/shu-ju-ku-guan-li-xi-tong-yuan-li-yu-she-ji-ke-hou-ti/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/shu-ju-ku-guan-li-xi-tong-yuan-li-yu-she-ji-ke-hou-ti/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;</description><category>mathjax</category><guid>https://abnerzheng.github.io/posts/shu-ju-ku-guan-li-xi-tong-yuan-li-yu-she-ji-ke-hou-ti/</guid><pubDate>Sat, 06 May 2017 15:50:44 GMT</pubDate></item><item><title>plan</title><link>https://abnerzheng.github.io/posts/plan/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;我的学习计划及完成情况汇总&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-1-1" class="outline-3"&gt;
-&lt;h3 id="sec-1-1"&gt;大体是从/Google Interview University/ 中复制过来的, 但根据自己的兴趣增删了很多东西&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-1"&gt;
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/plan/"&gt;更多…&lt;/a&gt; (剩余 20 分钟去阅读)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/plan/</guid><pubDate>Fri, 07 Apr 2017 06:30:18 GMT</pubDate></item><item><title>splay tree</title><link>https://abnerzheng.github.io/posts/splay-tree/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;p&gt;
-Splay tree is a self-adjusting form of BST.
-&lt;/p&gt;</description><guid>https://abnerzheng.github.io/posts/splay-tree/</guid><pubDate>Fri, 07 Apr 2017 02:46:00 GMT</pubDate></item><item><title>Migrating My Blog to org-mode(using nikola)</title><link>https://abnerzheng.github.io/posts/migrating-my-blog-to-nikola/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
-Two years ago, I established my first blog, and wrote down somes articals to summarize my learning experience in Chinese. At that time, I use Jekyll with a theme forking from others. But nowadays, I fall in love with org-mode and Emacs. I try to schedule all my work and study with org-mode.
-&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/migrating-my-blog-to-nikola/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><category>blog</category><guid>https://abnerzheng.github.io/posts/migrating-my-blog-to-nikola/</guid><pubDate>Mon, 03 Apr 2017 12:16:02 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>mathjax</category><category>transaction</category><guid>https://abnerzheng.github.io/posts/charpter1/</guid><pubDate>Fri, 21 Jul 2017 14:58:55 GMT</pubDate></item></channel></rss>

@@ -1,5 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Abner Zheng's Blog (文章分类：mathjax)</title><link>https://abnerzheng.github.io/</link><description></description><atom:link href="https://abnerzheng.github.io/categories/mathjax.xml" type="application/rss+xml" rel="self"></atom:link><language>zh_cn</language><copyright>Contents © 2017 &lt;a href="mailto:abnerzheng@gmail.com"&gt;Abner Zheng&lt;/a&gt; </copyright><lastBuildDate>Mon, 17 Jul 2017 05:36:09 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>一个同余问题的证明和应用</title><link>https://abnerzheng.github.io/posts/yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Abner Zheng's Blog (文章分类：mathjax)</title><link>https://abnerzheng.github.io/</link><description></description><atom:link href="https://abnerzheng.github.io/categories/mathjax.xml" type="application/rss+xml" rel="self"></atom:link><language>zh_cn</language><copyright>Contents © 2017 &lt;a href="mailto:abnerzheng@gmail.com"&gt;Abner Zheng&lt;/a&gt; </copyright><lastBuildDate>Sat, 22 Jul 2017 10:09:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>charpter1</title><link>https://abnerzheng.github.io/posts/charpter1/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;1&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;/div&gt;&lt;div id="outline-container-sec-1-1" class="outline-3"&gt;
+&lt;h3 id="sec-1-1"&gt;1.9 保存点和部分回滚&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-1"&gt;
+&lt;p&gt;
+SQL的事务模型允许事务的部分提交：在前滚事务中的更新操作中的一个子集可以在不全部丢弃回滚整个事务的情况下回滚。 在执行了部分回滚后，在前滚阶段中余下的事务能够继续进行新的前滚操作。
+&lt;/p&gt;
+
+&lt;p&gt;
+部分回滚中要回滚的操作是由该事务的最后一次更新操作到上一个设置的保存点。保存点可以通过SQL语句来设置:
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="n"&gt;savepoint&lt;/span&gt; &lt;span class="n"&gt;P&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+其中P是savepoint的一个独一名称。SQL语句
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;rollback&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="n"&gt;savepoint&lt;/span&gt; &lt;span class="n"&gt;P&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+可以执行一个部分回滚到保存点P: 事务中在设置P后执行的未被撤销的所有前滚更新操作将会被撤销.
+&lt;/p&gt;
+
+&lt;p&gt;
+&lt;b&gt;例子1.10&lt;/b&gt; 部分回滚可以嵌套
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;insert&lt;/span&gt; &lt;span class="k"&gt;into&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="k"&gt;values&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x_1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v_1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="n"&gt;savepoint&lt;/span&gt; &lt;span class="n"&gt;P_1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;insert&lt;/span&gt; &lt;span class="k"&gt;into&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="k"&gt;values&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x_2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v_2&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="n"&gt;savepoint&lt;/span&gt; &lt;span class="n"&gt;P_2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;insert&lt;/span&gt; &lt;span class="k"&gt;into&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="k"&gt;values&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x_3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v_3&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="k"&gt;rollback&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="n"&gt;savepoint&lt;/span&gt; &lt;span class="n"&gt;P_2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;insert&lt;/span&gt; &lt;span class="k"&gt;into&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="k"&gt;values&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x_4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v_4&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="k"&gt;rollback&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="n"&gt;savepoint&lt;/span&gt; &lt;span class="n"&gt;P_1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;insert&lt;/span&gt; &lt;span class="k"&gt;into&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="k"&gt;values&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x_5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v_5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="k"&gt;commit&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+语句 &lt;b&gt;rollback to savepoint P&lt;sub&gt;2&lt;/sub&gt;&lt;/b&gt; 从关系r中删除刚刚加入的元组(x&lt;sub&gt;3&lt;/sub&gt;, v&lt;sub&gt;3&lt;/sub&gt;)。语句 &lt;b&gt;rollback to savepoint P&lt;sub&gt;1&lt;/sub&gt;&lt;/b&gt; 将删除刚刚天添加的(x&lt;sub&gt;4&lt;/sub&gt;, v&lt;sub&gt;4&lt;/sub&gt;)和(x&lt;sub&gt;2&lt;/sub&gt;, v&lt;sub&gt;2&lt;/sub&gt;)。 在事务的结尾， 一个初始空的关系r将只含有元组(x&lt;sub&gt;1&lt;/sub&gt;, v&lt;sub&gt;1&lt;/sub&gt;)和(x&lt;sub&gt;5&lt;/sub&gt;,v&lt;sub&gt;5&lt;/sub&gt;).
+&lt;/p&gt;
+
+&lt;p&gt;
+我们现在要将部分回滚加入到我们的事务模型中。为了该目的，我们定义了以下操作:
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li value="7"&gt;S[P]: set savepoint P.
+&lt;/li&gt;
+&lt;li&gt;A[P]: begin partial rollback to savepoint P.
+&lt;/li&gt;
+&lt;li&gt;C[P]: complete the partial rollback to savepoint P.
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;
+现在，在一个事务的前滚阶段Bα 中, α 可能包含set savepoint操作S[P], 完成的回滚操作 S[P]…A[P]…C[P], 或者一个已初始化但还未完成的部分回滚 S[P]…A[P]… 形式上来说， 一个事务的前滚阶段现在可以是以下三种形式中的任意一种:
+&lt;/p&gt;
+
+&lt;p&gt;
+(a) 一系列由R、I、D、W和S组成的操作
+&lt;/p&gt;
+
+&lt;p&gt;
+(b) 形如 \(\alpha S[P]\beta A[P] \beta^{-1}C[P]\gamma\) 的操作序列, 其中α , β 和 γ 是(a)或(b)的形式.
+&lt;/p&gt;
+
+&lt;p&gt;
+(c) 形如 \(\alpha S[P]\beta \delta A[P] \delta^{-1}\) 的操作序列,
+&lt;/p&gt;
+
+&lt;p&gt;
+在情形(b)中， 子序列 \(S[P]\beta A[P] \beta^{-1}C[P]\) 表示一个完成的回到保存点P的部分回滚。 在情形(c)中，子序列 \(S[P]\beta \delta A[P] \beta^{-1}\) 表示事务回滚到保存点P.
+&lt;/p&gt;
+
+&lt;p&gt;
+α 的撤销操作序列，表示为α&lt;sup&gt;-1&lt;/sup&gt;或者undo(α), 是根据它的形式定义的: 对形式(a)中的序列α，它的撤销操作α&lt;sup&gt;1&lt;/sup&gt;和之前的定义一样；对形式(b)中的一个序列，它的撤销操作序列是\(\gamma^{-1}\alpha^{-1}\). 对形式(c)中的序列，它的撤销序列是\(\beta^{-1}C[P]\alpha^{-1}\).
+&lt;/p&gt;
+
+&lt;p&gt;
+保存点和部分回滚组成了一个重要的数据库编程范式: 事务可以被随意用于立即更新数据库，即使一些接下来的事件强制回滚该更新，之后另一个事件完成该事务。 事实上,对于部分回滚，每个事务可以使用一个提交请求来终止而不需要使用回滚请求(比如说，完全回滚). 完全回滚的效果可以通过一下操作实现:在第一个更新前设置一个保存点，然后在结尾执行一个部分回滚到保存点, 然后提交该事务.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-1-2" class="outline-3"&gt;
+&lt;h3 id="sec-1-2"&gt;1.10 多粒度&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-2"&gt;
+&lt;p&gt;
+我们可以扩展键范围事务,加入多粒度,因此元组可以被分组到不同关系中。数据库的关系组成一个集合，该集合根据它们的标识符全序排列。该集合可表示为:
+&lt;/p&gt;
+
+&lt;p&gt;
+$$\{(r_1,R_1),...,(r_{n_i}, R_{n_i})\}$$
+&lt;/p&gt;
+
+&lt;p&gt;
+其中，r&lt;sub&gt;i&lt;/sub&gt; 是一个在数据库中唯一标识一个关系的标识符，R&lt;sub&gt;i&lt;/sub&gt; 是关系模式(\(\underline{X_i}V_i\)). 由此，关系r中的元组(x, v)可由(r,x)来唯一标识。
+&lt;/p&gt;
+
+&lt;p&gt;
+事务模型中的逐元组前滚现在可以定义为:
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;\(R[r, x, \ge z, v]\): 读取在关系r中第一个满足 \(x\ge z\) 的元组(x,v)
+&lt;/li&gt;
+&lt;li&gt;\(R[r, x, \gt z, v]\): 读取在关系r中z的下一个元组(x,v)
+&lt;/li&gt;
+&lt;li&gt;\(W[r, x, u, v]\): 更新在关系r中的元组(x,v)
+&lt;/li&gt;
+&lt;li&gt;\(I[r, x, v]\): 向关系r中插入元组(x,v)
+&lt;/li&gt;
+&lt;li&gt;\(D[r, x, v]\): 在关系r中删除元组(x,v)
+&lt;/li&gt;
+&lt;li&gt;
+&lt;/li&gt;&lt;/ol&gt;
+
+&lt;p&gt;
+新的操作包括:
+&lt;/p&gt;
+
+&lt;p&gt;
+(a) \(R[r', \theta r, R']\): 阅览关系$r'$中的模式\(R'\)
+&lt;/p&gt;
+
+&lt;p&gt;
+(b) \(I[r, R]\): 向数据库中创建一个新的关系r(R), 对应于SQL语句 &lt;b&gt;create table r(R)&lt;/b&gt; .
+&lt;/p&gt;
+
+&lt;p&gt;
+(c) \(D[r, R]\): 从数据库中删除一个空的关系r, 对应于SQL语句 &lt;b&gt;drop table r&lt;/b&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+额外的级别可以被加入到颗粒分级中，通过将关系分成不同数据库(为不同拥有者); 新的操作将包括这些对应于SQL语句 &lt;b&gt;create database&lt;/b&gt; 和 &lt;b&gt;destroy database&lt;/b&gt;.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>mathjax</category><category>transaction</category><guid>https://abnerzheng.github.io/posts/charpter1/</guid><pubDate>Fri, 21 Jul 2017 14:58:55 GMT</pubDate></item><item><title>一个同余问题的证明和应用</title><link>https://abnerzheng.github.io/posts/yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
 今天在学习并发编程中，碰到一个问题，如何证明如下式子:
 &lt;/p&gt;
 &lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><category>mathjax</category><guid>https://abnerzheng.github.io/posts/yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong/</guid><pubDate>Mon, 17 Jul 2017 03:14:14 GMT</pubDate></item><item><title>如何证明由2和5组成的硬币可以换出任意大于3的整数硬币</title><link>https://abnerzheng.github.io/posts/ru-he-zheng-ming-you-2he-5zu-cheng-de-ying-bi-ke-yi-huan-chu-ren-yi-da-yu-3de-zheng-shu-ying-bi/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
