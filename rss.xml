@@ -1,150 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Abner Zheng's Blog</title><link>https://abnerzheng.github.io/</link><description>my blog</description><atom:link href="https://abnerzheng.github.io/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>zh_cn</language><copyright>Contents © 2017 &lt;a href="mailto:abnerzheng@gmail.com"&gt;Abner Zheng&lt;/a&gt; </copyright><lastBuildDate>Sat, 22 Jul 2017 10:09:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>charpter1</title><link>https://abnerzheng.github.io/posts/charpter1/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;1&lt;/h2&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Abner Zheng's Blog</title><link>https://abnerzheng.github.io/</link><description>my blog</description><atom:link href="https://abnerzheng.github.io/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>zh_cn</language><copyright>Contents © 2017 &lt;a href="mailto:abnerzheng@gmail.com"&gt;Abner Zheng&lt;/a&gt; </copyright><lastBuildDate>Tue, 01 Aug 2017 03:18:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Charpter 2 of 《Transaction Processing》</title><link>https://abnerzheng.github.io/posts/charpter-2-of-transaction-processing/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;物理数据库中的操作&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
-&lt;/div&gt;&lt;div id="outline-container-sec-1-1" class="outline-3"&gt;
-&lt;h3 id="sec-1-1"&gt;1.9 保存点和部分回滚&lt;/h3&gt;
+&lt;p&gt;
+逻辑数据库中的元组集合被存储在一个底层物理数据库中，由固定大小的数据页组成，这些页存储在非易失的随机访问存储器中, 一般是磁盘。为了读取或更新逻辑数据库中的元组，包含该元组的页必须先从磁盘中读取到数据库的内存缓存中，被更新的页之后被写回磁盘，替代旧版本。 数据库管理系统的缓存管理模块管理经常访问的数据库页,使之尽可能久地保存在缓存中, 以减少昂贵的随机读写需求.
+&lt;/p&gt;
+
+&lt;p&gt;
+在本章中，我们讨论物理数据库中的主题: 逻辑数据库层的事务管理和逻辑数据库行为所触发的底层物理数据库结构的管理之间的相互影响. 这些主题包括数据库的基于页的构造， 在缓存中固定页以减少访问页时间, 物理数据库中的完整性约束,将页锁起来以防止其他并发线程导致影响的访问, 实现在物理数据库中的结构修改作为一个原子操作序列，
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-1-1" class="outline-3"&gt;
+&lt;h3 id="sec-1-1"&gt;2.1 服务器中的数据结构和处理&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1-1"&gt;
 &lt;p&gt;
-SQL的事务模型允许事务的部分提交：在前滚事务中的更新操作中的一个子集可以在不全部丢弃回滚整个事务的情况下回滚。 在执行了部分回滚后，在前滚阶段中余下的事务能够继续进行新的前滚操作。
+两个持久话(非易失)的数据集合维护在事务服务器中:
 &lt;/p&gt;
-
-&lt;p&gt;
-部分回滚中要回滚的操作是由该事务的最后一次更新操作到上一个设置的保存点。保存点可以通过SQL语句来设置:
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="n"&gt;savepoint&lt;/span&gt; &lt;span class="n"&gt;P&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-其中P是savepoint的一个独一名称。SQL语句
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;rollback&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="n"&gt;savepoint&lt;/span&gt; &lt;span class="n"&gt;P&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-可以执行一个部分回滚到保存点P: 事务中在设置P后执行的未被撤销的所有前滚更新操作将会被撤销.
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;b&gt;例子1.10&lt;/b&gt; 部分回滚可以嵌套
-&lt;/p&gt;
-
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;insert&lt;/span&gt; &lt;span class="k"&gt;into&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="k"&gt;values&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x_1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v_1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="n"&gt;savepoint&lt;/span&gt; &lt;span class="n"&gt;P_1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;insert&lt;/span&gt; &lt;span class="k"&gt;into&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="k"&gt;values&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x_2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v_2&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="n"&gt;savepoint&lt;/span&gt; &lt;span class="n"&gt;P_2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;insert&lt;/span&gt; &lt;span class="k"&gt;into&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="k"&gt;values&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x_3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v_3&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="k"&gt;rollback&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="n"&gt;savepoint&lt;/span&gt; &lt;span class="n"&gt;P_2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;insert&lt;/span&gt; &lt;span class="k"&gt;into&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="k"&gt;values&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x_4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v_4&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="k"&gt;rollback&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="n"&gt;savepoint&lt;/span&gt; &lt;span class="n"&gt;P_1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="k"&gt;insert&lt;/span&gt; &lt;span class="k"&gt;into&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="k"&gt;values&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x_5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;v_5&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="k"&gt;commit&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;
-语句 &lt;b&gt;rollback to savepoint P&lt;sub&gt;2&lt;/sub&gt;&lt;/b&gt; 从关系r中删除刚刚加入的元组(x&lt;sub&gt;3&lt;/sub&gt;, v&lt;sub&gt;3&lt;/sub&gt;)。语句 &lt;b&gt;rollback to savepoint P&lt;sub&gt;1&lt;/sub&gt;&lt;/b&gt; 将删除刚刚天添加的(x&lt;sub&gt;4&lt;/sub&gt;, v&lt;sub&gt;4&lt;/sub&gt;)和(x&lt;sub&gt;2&lt;/sub&gt;, v&lt;sub&gt;2&lt;/sub&gt;)。 在事务的结尾， 一个初始空的关系r将只含有元组(x&lt;sub&gt;1&lt;/sub&gt;, v&lt;sub&gt;1&lt;/sub&gt;)和(x&lt;sub&gt;5&lt;/sub&gt;,v&lt;sub&gt;5&lt;/sub&gt;).
-&lt;/p&gt;
-
-&lt;p&gt;
-我们现在要将部分回滚加入到我们的事务模型中。为了该目的，我们定义了以下操作:
-&lt;/p&gt;
-
 &lt;ol class="org-ol"&gt;
-&lt;li value="7"&gt;S[P]: set savepoint P.
+&lt;li&gt;数据磁盘: 包含数据库的关系、索引和系统目录或数据字典
 &lt;/li&gt;
-&lt;li&gt;A[P]: begin partial rollback to savepoint P.
-&lt;/li&gt;
-&lt;li&gt;C[P]: complete the partial rollback to savepoint P.
+&lt;li&gt;日志磁盘: 包含为数据库更新的日志记录
 &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;
-现在，在一个事务的前滚阶段Bα 中, α 可能包含set savepoint操作S[P], 完成的回滚操作 S[P]…A[P]…C[P], 或者一个已初始化但还未完成的部分回滚 S[P]…A[P]… 形式上来说， 一个事务的前滚阶段现在可以是以下三种形式中的任意一种:
-&lt;/p&gt;
-
-&lt;p&gt;
-(a) 一系列由R、I、D、W和S组成的操作
-&lt;/p&gt;
-
-&lt;p&gt;
-(b) 形如 \(\alpha S[P]\beta A[P] \beta^{-1}C[P]\gamma\) 的操作序列, 其中α , β 和 γ 是(a)或(b)的形式.
-&lt;/p&gt;
-
-&lt;p&gt;
-(c) 形如 \(\alpha S[P]\beta \delta A[P] \delta^{-1}\) 的操作序列,
-&lt;/p&gt;
-
-&lt;p&gt;
-在情形(b)中， 子序列 \(S[P]\beta A[P] \beta^{-1}C[P]\) 表示一个完成的回到保存点P的部分回滚。 在情形(c)中，子序列 \(S[P]\beta \delta A[P] \beta^{-1}\) 表示事务回滚到保存点P.
-&lt;/p&gt;
-
-&lt;p&gt;
-α 的撤销操作序列，表示为α&lt;sup&gt;-1&lt;/sup&gt;或者undo(α), 是根据它的形式定义的: 对形式(a)中的序列α，它的撤销操作α&lt;sup&gt;1&lt;/sup&gt;和之前的定义一样；对形式(b)中的一个序列，它的撤销操作序列是\(\gamma^{-1}\alpha^{-1}\). 对形式(c)中的序列，它的撤销序列是\(\beta^{-1}C[P]\alpha^{-1}\).
-&lt;/p&gt;
-
-&lt;p&gt;
-保存点和部分回滚组成了一个重要的数据库编程范式: 事务可以被随意用于立即更新数据库，即使一些接下来的事件强制回滚该更新，之后另一个事件完成该事务。 事实上,对于部分回滚，每个事务可以使用一个提交请求来终止而不需要使用回滚请求(比如说，完全回滚). 完全回滚的效果可以通过一下操作实现:在第一个更新前设置一个保存点，然后在结尾执行一个部分回滚到保存点, 然后提交该事务.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-sec-1-2" class="outline-3"&gt;
-&lt;h3 id="sec-1-2"&gt;1.10 多粒度&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-2"&gt;
-&lt;p&gt;
-我们可以扩展键范围事务,加入多粒度,因此元组可以被分组到不同关系中。数据库的关系组成一个集合，该集合根据它们的标识符全序排列。该集合可表示为:
-&lt;/p&gt;
-
-&lt;p&gt;
-$$\{(r_1,R_1),...,(r_{n_i}, R_{n_i})\}$$
-&lt;/p&gt;
-
-&lt;p&gt;
-其中，r&lt;sub&gt;i&lt;/sub&gt; 是一个在数据库中唯一标识一个关系的标识符，R&lt;sub&gt;i&lt;/sub&gt; 是关系模式(\(\underline{X_i}V_i\)). 由此，关系r中的元组(x, v)可由(r,x)来唯一标识。
-&lt;/p&gt;
-
-&lt;p&gt;
-事务模型中的逐元组前滚现在可以定义为:
+当数据库的一个实例在运行时，以下易失性数据结构维护在服务器进程的虚拟内存中:
 &lt;/p&gt;
 
 &lt;ol class="org-ol"&gt;
-&lt;li&gt;\(R[r, x, \ge z, v]\): 读取在关系r中第一个满足 \(x\ge z\) 的元组(x,v)
+&lt;li value="3"&gt;缓存池或数据库缓存，缓存从磁盘中读取的数据库页.
 &lt;/li&gt;
-&lt;li&gt;\(R[r, x, \gt z, v]\): 读取在关系r中z的下一个元组(x,v)
+&lt;li&gt;日志缓存(log buffer)， 用于缓存日志文件.
 &lt;/li&gt;
-&lt;li&gt;\(W[r, x, u, v]\): 更新在关系r中的元组(x,v)
+&lt;li&gt;活跃事务表， 存储关于活跃事务的信息.
 &lt;/li&gt;
-&lt;li&gt;\(I[r, x, v]\): 向关系r中插入元组(x,v)
+&lt;li&gt;修改页表, 存储关于缓存页的信息.
 &lt;/li&gt;
-&lt;li&gt;\(D[r, x, v]\): 在关系r中删除元组(x,v)
+&lt;li&gt;锁表， 存储被活跃事务持有锁的信息(当事务并发控制是基于锁实现时)
+&lt;/li&gt;
+&lt;li&gt;其他易失结构， 比如一个查询计划缓存，存储可重用的已编译的查询执行计划
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;
+数据磁盘和数据库缓存基于数据库页的随机访问(通过页标识码), 而日志磁盘和日志缓存是只可顺序添加的文件. 每个数据库更新操作在一个从数据磁盘中读入数据库缓存的页上， 该更新以一条日志条目添加到日志缓存中。该日志记录持有足够的信息，保证能够重做对页上旧版本数据的更新(当更新因为错误而丢失时)或者撤销该更新(在事务回滚的时候).
+&lt;/p&gt;
+
+&lt;p&gt;
+在事务提交或日志缓存满的时候， 日志中的内容被刷新到日志磁盘中，这些日志记录被添加到上一次刷入的结尾. 因此，每一个提交的事务都至少将它的所有更新持久化到日志磁盘。
+&lt;/p&gt;
+
+&lt;p&gt;
+在基于日志的系统中，事务处理的最重要的效率来源是数据磁盘不需要立刻反映事务的更新: 数据库缓存中的更新页不需要在事务提交时被写入。 为了保证操作的正确性，一个更新的数据页一定不能在更新对应的日志记录被写入前写入。
+&lt;/p&gt;
+
+&lt;p&gt;
+在一个数据库系统实例中， 若干数据库进程在共享在磁盘的数据以及共享虚拟内存数据结构上进行操作:
+&lt;/p&gt;
+
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;服务器进程和它们的线程(前面已经提到)响应从应用进程过来的请求并且生成事务
+&lt;/li&gt;
+&lt;li&gt;数据库写进程将已更新的数据库页从缓冲区中刷入到磁盘中
+&lt;/li&gt;
+&lt;li&gt;日志写进程在日志缓冲区满的时候或当服务器进程在事务提交上要求的情况下，将日志从缓冲区写入到磁盘中
+&lt;/li&gt;
+&lt;li&gt;Checkpoint 进程周期性的设置一个checkpoint, 保证之前的相关易失数据写入到磁盘中
 &lt;/li&gt;
 &lt;li&gt;
 &lt;/li&gt;&lt;/ol&gt;
-
-&lt;p&gt;
-新的操作包括:
-&lt;/p&gt;
-
-&lt;p&gt;
-(a) \(R[r', \theta r, R']\): 阅览关系$r'$中的模式\(R'\)
-&lt;/p&gt;
-
-&lt;p&gt;
-(b) \(I[r, R]\): 向数据库中创建一个新的关系r(R), 对应于SQL语句 &lt;b&gt;create table r(R)&lt;/b&gt; .
-&lt;/p&gt;
-
-&lt;p&gt;
-(c) \(D[r, R]\): 从数据库中删除一个空的关系r, 对应于SQL语句 &lt;b&gt;drop table r&lt;/b&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-额外的级别可以被加入到颗粒分级中，通过将关系分成不同数据库(为不同拥有者); 新的操作将包括这些对应于SQL语句 &lt;b&gt;create database&lt;/b&gt; 和 &lt;b&gt;destroy database&lt;/b&gt;.
-&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>mathjax</category><category>transaction</category><guid>https://abnerzheng.github.io/posts/charpter1/</guid><pubDate>Fri, 21 Jul 2017 14:58:55 GMT</pubDate></item><item><title>STM学习</title><link>https://abnerzheng.github.io/posts/stm/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
+&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/charpter-2-of-transaction-processing/</guid><pubDate>Sat, 22 Jul 2017 13:59:55 GMT</pubDate></item><item><title>Charpter 1 of 《transaction processing》</title><link>https://abnerzheng.github.io/posts/charpter1/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;1&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-1"&gt;
+&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/charpter1/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>mathjax</category><category>transaction</category><guid>https://abnerzheng.github.io/posts/charpter1/</guid><pubDate>Fri, 21 Jul 2017 14:58:55 GMT</pubDate></item><item><title>STM学习</title><link>https://abnerzheng.github.io/posts/stm/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
 STM是软件事务内存(software transaction memory)的简称。 我在PPCP中对它进行了一些学习，这里做个记录。
 &lt;/p&gt;
 
@@ -191,7 +122,4 @@ STM是软件事务内存(software transaction memory)的简称。 我在PPCP中�
 &lt;div class="outline-text-3" id="text-1-1"&gt;
 &lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/plan/"&gt;更多…&lt;/a&gt; (剩余 20 分钟去阅读)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/plan/</guid><pubDate>Fri, 07 Apr 2017 06:30:18 GMT</pubDate></item><item><title>splay tree</title><link>https://abnerzheng.github.io/posts/splay-tree/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;p&gt;
 Splay tree is a self-adjusting form of BST.
-&lt;/p&gt;</description><guid>https://abnerzheng.github.io/posts/splay-tree/</guid><pubDate>Fri, 07 Apr 2017 02:46:00 GMT</pubDate></item><item><title>Migrating My Blog to org-mode(using nikola)</title><link>https://abnerzheng.github.io/posts/migrating-my-blog-to-nikola/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
-Two years ago, I established my first blog, and wrote down somes articals to summarize my learning experience in Chinese. At that time, I use Jekyll with a theme forking from others. But nowadays, I fall in love with org-mode and Emacs. I try to schedule all my work and study with org-mode.
-&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/migrating-my-blog-to-nikola/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><category>blog</category><guid>https://abnerzheng.github.io/posts/migrating-my-blog-to-nikola/</guid><pubDate>Mon, 03 Apr 2017 12:16:02 GMT</pubDate></item></channel></rss>
+&lt;/p&gt;</description><guid>https://abnerzheng.github.io/posts/splay-tree/</guid><pubDate>Fri, 07 Apr 2017 02:46:00 GMT</pubDate></item></channel></rss>

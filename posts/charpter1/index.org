@@ -1,5 +1,5 @@
 #+BEGIN_COMMENT
-.. title: charpter1
+.. title: Charpter 1 of 《transaction processing》
 .. slug: charpter1
 .. date: 2017-07-21 22:58:55 UTC+08:00
 .. tags: mathjax, transaction
@@ -10,7 +10,11 @@
 #+END_COMMENT
 
 
+
 * 1
+
+#+HTML: <!--TEASER_END-->
+
 
 ** 1.9 保存点和部分回滚
 
@@ -93,3 +97,21 @@ $$\{(r_1,R_1),...,(r_{n_i}, R_{n_i})\}$$
 (c) $D[r, R]$: 从数据库中删除一个空的关系r, 对应于SQL语句 *drop table r*
 
 额外的级别可以被加入到颗粒分级中，通过将关系分成不同数据库(为不同拥有者); 新的操作将包括这些对应于SQL语句 *create database* 和 *destroy database*.
+
+
+** 问题
+
+1.1
+
+** 文献引用
+基于事务的数据库处理是由Eswaran等人[fn:1] [1997, 1976] 和Gray等人。部分回滚的事务在Astrahan等人[1976]描述的System R关系数据库管理系统中已经实现。 System R的作者声称一个事务的执行应该是原子性、持久性和一致性的，以及最后一个特性, 描述为:"事务的执行和一次只有事务顺序地执行一样", 被称为隔离性.
+
+Gray[1980] 提出一个用于事务处理的一般形式化模型。 Gray[1981]回顾了事务概念和它的实现方法， 分析平常的"平坦事务"的局限性，主张"嵌套事务"作为建模长久工作流的必要性。在他们关于实现事务处理系统的书中，Gray和Reuter[1993]详尽地分析了事务概念并且回顾了开发事务概念和事务处理系统的历史。
+
+在许多关于数据库管理系统和事务处理的教科书中，最著名的是Papadimitriou[1986]和Bernstein等人[1987]的工作，读写事务模型(1.7节)被采用作为讨论面向事务概念的基本模型。在这个设置中，数据库被看做是未解析的抽象数据项的集合x, 它可被读(通过操作R[x])和写(通过R[x]). Schek等人[1993]提出了一个加强模型：一个丢弃事务的后滚阶段可以被表示为一串撤销操作; 这项特性也被加入到Weikum和Vossen[2002]写的教科书中采用的读写模型(也被称为页模型).
+
+本书以及Sippu和Soisalon-Soininen[2001]等人所采用的键范围事务模型，是受Mohan和Levine用来描述ARIES/KVL和ARIES/IM算法的模型所启发的。 Gray等人考虑的实物模型包含一项特性，一个事务可以在事务终止前声明某个更新为已提交, 尽管这项特征只能被允许运行在最低层的隔离等级.
+
+* Footnotes
+
+[fn:1] Kapali P. Eswaran, Jim Gray, Raymond A. Lorie, and Irving L. Traiger. The notions of consistency and predicate locks in a database system. Commun. ACM, 19(11):624–633, 1976.
