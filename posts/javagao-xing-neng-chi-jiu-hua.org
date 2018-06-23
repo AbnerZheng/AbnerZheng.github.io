@@ -1,0 +1,16 @@
+#+BEGIN_COMMENT
+.. title: Java高性能持久化
+.. slug: javagao-xing-neng-chi-jiu-hua
+.. date: 2018-04-22 19:26:16 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+一开始以为这本书是讲java的序列化库的，结果是将java的数据库应用。比较老的一本书，浏览一下，做一篇笔记。
+
+#+HTML: <!--TEASER_END-->
+
+o

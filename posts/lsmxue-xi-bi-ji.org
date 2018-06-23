@@ -1,0 +1,34 @@
+#+BEGIN_COMMENT
+.. title: lsm学习笔记
+.. slug: lsmxue-xi-bi-ji
+.. date: 2017-10-23 14:40:11 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+最近学习好几天的lsm tree，开篇博客做个记录。
+#+HTML: <!--TEASER_END-->
+
+
+* 序言
+LSM是Patrick在1996年的 [[http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.44.2782&rep=rep1&type=pdf][论文]] 中提出的，全称为Log Structured Merge Tree。文章参考Log Structured File System的想法，设计了一种适合于日志等多读少写的场景的算法。我看了几个小时的论文，感觉还是比较生涩的，文章里面大多是对插入、查找等操作的复杂度分析，但是却没有指出特定的数据结构以及完整算法描述。后来，Google发布了三驾马车中的bigTable疑问，其中用到了LSM算法，这才让LSM算法重获新生。
+
+LSM算法是现在的NoSQL数据库中常用到的一种算法，诸如HBase、LevelDB，都是围绕LSM算法来构建。 这就给学习LSM算法提出了必要性。
+
+
+* B+Tree 有什么不好的
+B+Tree是传统数据库中常用的一种索引存储算法，能够高效支持search、range search、insert、delete等操作，然而在有了B+Tree这种数据结构之后，为什么还需要LSM算法。这主要是因为在传统的磁盘中，顺序读写的速度至少比随机读写快三个数量级。 虽然在insert插入中，B+Tree只需要两个I/O操作(读入内存，写出该页), 所以牵涉到一次随机读写。而LSM算法能够有效利用磁盘的特性，将多次随机插入合并，一次batch写出到磁盘，因此能够大幅提高性能。
+
+* LSM算法具体介绍
+
+基本的LSM算法非常简单。这里以LevelDB中的实现为准。它的结构分成两部分: 存放在内存中的易失性的MemTable以及存放在磁盘中的持久化不可变结构SSTable。 思路也很简单，每次操作执行于MemTable上，在阈值条件C1满足时，将该MemTable转化为一个SSTable，然后如果再满足阈值条件C2后，开始Merge这些SSTable，生成新一级SSTable。在LevelDB中，第一级(即L0)SSTable存在
+
+**
+
+** 更新
+LSM舍弃了本地更新的功能,取而代之的是一次删除+一次插入操作。
+
+* 新时代的挑战和应对

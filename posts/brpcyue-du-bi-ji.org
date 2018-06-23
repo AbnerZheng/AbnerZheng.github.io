@@ -1,0 +1,17 @@
+#+BEGIN_COMMENT
+.. title: brpc阅读笔记
+.. slug: brpcyue-du-bi-ji
+.. date: 2017-09-27 13:26:38 UTC+08:00
+.. tags: mathjax
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+brpc是百度最近开源的一个项目，以优秀文档著称，其文档考虑了实际应用中的种种场景，公认为一个优秀的开源项目。特定过来学习一番。
+
+#+HTML: <!--TEASER_END-->
+
+律特法则(little's law): 一个排队系统在稳定条件下，在系统里面的个体数量的评价值L,等于平均个体到达率λ（单位是个每单位时间）乘以个体的平均逗留时间W。
+将律特法则应用到服务器端，评估server的最大并发，可以用 *最大qps \times 非拥塞时的时延* 来衡量。

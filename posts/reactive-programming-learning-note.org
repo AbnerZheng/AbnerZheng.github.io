@@ -1,0 +1,47 @@
+#+BEGIN_COMMENT
+.. title: Reactive Programming Learning Note
+.. slug: reactive-programming-learning-note
+.. date: 2018-02-08 15:44:22 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+学习一波马丁的Reactive Programming for Scala. Actor这种并发范式还是得学习一波的。
+
+#+HTML: <!--TEASER_END-->
+
+
+* 可扩展性
+
+- Scale up: 在多核系统中利用并行性
+- Scale out: 利用多服务器结点
+
+可扩展性中重要的一点是：最少化共用的可修改状态, 而Scale out的重要一点是弹性和位置透明。
+
+** 弹性
+
+弹性指的是一个应用能快速从错误中回复过来.
+
+这些错误包括:
+- 软件错误
+- 硬件错误
+- 网络错误
+
+一般来说，弹性是不能之后添加的，必须是从起始就开始设计. 它需要架构是:
+- 松耦合
+- 对状态的强封装
+- 无孔不入的监控体系
+
+响应式的应用可以使用事件驱动、可扩展和弹性架构来构建。
+
+*** Actor这种范式和JavaScript的有什么不同呢？
+JavaScript这种有以下几个问题:
+
+- 可能存在共享可修改状态
+- 不能被组合
+- 很容易导致回调地狱
+
+而Actor这种

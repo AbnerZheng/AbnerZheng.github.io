@@ -1,0 +1,30 @@
+#+BEGIN_COMMENT
+.. title: Java 9 Concurrency Cookbook
+.. slug: java-9-concurrency-cookbook
+.. date: 2018-04-22 19:34:35 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+* 线程管理
+在java中有两种方法创建thread:
+1. 基础Thread类并实现run方法
+2. 构建一个实现了Runnable接口的类并实现他的方法。然后在创建Thread对象时将该类的实例化对象传为参数。
+
+Thread的属性:
+- ID, 即tid
+- Name, 线程名字
+- Priority, 线程中的优先级只是对系统线程的一个建议，并不能保证什么。
+- Status: 线程状态
+  - NEW: 新建还未开始
+  - RUNNABLE: 可执行
+  - BLOCKED: 被阻塞
+  - WAITTING: 等待
+  - TIME_WAITING: 等待另一个线程固定时间
+  - TERMINATED: 终止
+
+Thread.join方法：可以传入一个时间来获得到期返回。
+#+HTML: <!--TEASER_END-->

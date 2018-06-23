@@ -1,0 +1,33 @@
+#+BEGIN_COMMENT
+.. title: how to prove the Log Matching Property of Raft
+.. slug: how-to-prove-the-log-matching-property-of-raft
+.. date: 2017-08-07 13:39:39 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+最近在跟着6.824实现raft协议，lab很有趣，也推荐喜欢分布式的同学做做。 其中，lab2b需要实现其中的日志复制，而日志复制满足Log Matching Property:
+
+1. 在不同server中的日志中，存在两条记录, 他们的term和index都相等，那么这两条记录存有相同的指令
+2. 在不同server中的日志中，存在两条记录，它们的term和index都相等，那么这两条记录前的所有记录都相同
+
+论文[fn:1] 中粗略介绍了如何使用归纳法证明，但是感觉还是不容易看懂，这里就做一个思考纪录, 给出一个比较详细的证明.
+
+#+HTML: <!--TEASER_END-->
+
+第一条性质： 可以用反证法证明， 假设存在两条记录，他们的term和index都相等，却存放两条不同的指令。
+设这两条记录为log_1和log_2, 拥有相同的term和index.
+
+1. 假设leader一直没宕机，那么该leader在同一个index中只会有一条记录, 因此该记录也会相同，假设不成立.
+2. 假设不存在network split, 在term时,服务器1在index生成一条带有command_1的log_1. 之后leader宕机. 另一个leader选举成功,使服务器2在index生成一条带有command_2的log_2, 如果log_1和log_2的term相同，那么换举时term不变化，这与raft的选举策略冲突(leader宕机后，follower在timeout后，首先增加term，再变成candidate), 因此这种情况下也不可能成立
+3. 假设存在network split. 在term时,发生了network split, 分成两个部分, 分别为多数的max部分、少数连接的min部分。
+
+ 在raft中，在特定一个term 为t的时间段，只会有一个leader，即使该leader挂了换了下一个leader，也必然需要产生一个term+1的
+
+
+* Footnotes
+
+[fn:1] In Search of an Understandable Consensus Algorithm (Extended Version)

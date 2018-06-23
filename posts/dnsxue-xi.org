@@ -1,0 +1,23 @@
+#+BEGIN_COMMENT
+.. title: DNS学习
+.. slug: dnsxue-xi
+.. date: 2017-11-22 14:34:38 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+DNS是一个经典的分布式名字查询、管理系统。在一开始，
+
+*** recursive query的好处
+recursive query的好处分为以下几个部分。对于客户端来说, 这种策略简化了客户端的代码设计，不再需要为处理type为ns这种场景来写递归函数，解耦了客户端和dns服务器。
+对于服务器来说，recursive query的过程中能够产生一系列的域名解析中间结果，包括一些其他域名服务器，dns服务器由此能够做一些缓存策略，加快整个网络的速度。
+
+*** DNS's hierarchical design的好处
+1. 分布式
+2. 分权
+
+*** Drawbacks to DNS's design
+没有处理认证，容易被伪造。

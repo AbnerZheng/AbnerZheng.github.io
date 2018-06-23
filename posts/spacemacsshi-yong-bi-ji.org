@@ -1,0 +1,46 @@
+#+BEGIN_COMMENT
+.. title: spacemacs使用笔记
+.. slug: spacemacsshi-yong-bi-ji
+.. date: 2017-09-21 22:53:03 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+
+记录经常要用到的一些快捷键,好记性不如烂笔头。
+#+HTML: <!--TEASER_END-->
+
+| 功能描述         | 快捷键      | 所处mode | 依赖包 | 相关函数                                |
+|------------------+-------------+----------+--------+-----------------------------------------|
+| 按括号对向前跳转 | C-M-f       | *        |        | forward-sexp                            |
+| 按括号对向后跳转 | C-M-b       | *        |        | backward-sexp                           |
+| 退出emacs        | C-x C-c     | *        |        |                                         |
+| 显示行号         |             |          |        | linum-mode                              |
+| 显示帮助文档     | C-h-[kvf]   |          |        |                                         |
+| 查看系统定义位置 | C-h C-[kvf] |          |        |                                         |
+| 插入表格         | C-c         | org      |        | org-table-create-or-convert-from-region |
+|                  |             |          |        |                                         |
+|                  |             |          |        |                                         |
+
+
+下面这个表格是常用的org mode下的一些快捷键
+
+
+#+CAPTION: Org-mode 专用check sheet
+| 功能描述                | 快捷键  | 相关函数 |
+|-------------------------+---------+----------|
+| 捕捉想法                | C-c c   |          |
+| 打开agenda              | C-c a   |          |
+| 切换条目状态            | C-c C-t | org-todo |
+| 切换复选框[ ]状态       | C-c C-c |          |
+| 使用spacemacs管理快捷键 | ,       |          |
+|                         |         |          |
+|                         |         |          |
+|                         |         |          |
+|                         |         |          |
+
+
+在这里书写你的文章。

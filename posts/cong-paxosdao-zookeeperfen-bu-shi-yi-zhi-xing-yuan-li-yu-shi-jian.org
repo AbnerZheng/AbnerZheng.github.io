@@ -1,0 +1,36 @@
+#+BEGIN_COMMENT
+.. title: 《从paxos到ZooKeeper分布式一致性原理与实践》笔记
+.. slug: cong-paxosdao-zookeeperfen-bu-shi-yi-zhi-xing-yuan-li-yu-shi-jian
+.. date: 2017-09-18 15:20:49 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+#+HTML: <!--TEASER_END-->
+
+
+
+* 4. ZooKeeper与Paxos
+
+**
+
+* 6. 典型应用场景
+
+** 典型应用场景
+
+ZooKeeper的典型应用场景包括以下： 数据发布/订阅、负载均衡、命名服务、分布式协调/通知、集群管理、Master选举、分布式锁和分布式队列。
+
+*** 数据发布/订阅
+
+常见的设计模式有推和拉两种，ZooKeeper采用了推拉混合的设计模式，客户端向服务器订阅关注的结点，之后数据更改之后，服务端向注册的客户端推送Watcher事件通知，客户端收到请求之后，再去拉数据。
+
+这个可以应用在配置信息的分布式同步需求中。 解决方案是：
+
+1. 将初始配置放到某个特定结点Node1上
+2. 集群中的每台机器在启动时，向该结点Node1获取配置信息，并在Node1上注册一个数据变更的Watcher监听
+3. 在配置需要变更的时候，只需要更改Node1上的数据。 此时，ZooKeeper会将数据变更的通知发送到各个客户端，客户端再拉数据就能得到更改后的配置
+
+*** 负载均衡

@@ -1,0 +1,24 @@
+#+BEGIN_COMMENT
+.. title: B-tree 锁技术研究(翻译)
+.. slug: b-tree-suo-ji-zhu-yan-jiu
+.. date: 2017-12-25 14:47:45 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+这是CMU高级数据库推荐的一篇论文，详细讲诉了B树锁技术的各种变体的区别和实现。是一篇不可多得的论文。 需要细读，所以干脆就把关键的地方翻译。原论文题目为《A Survey of B-Tree Locking Techniques》。
+
+#+HTML: <!--TEASER_END-->
+
+Gray和Reuter断定“B-tree是目前数据库和文件系统中最重要的访问路径数据结构”。B-tree除了能够实现键值映射的索引基本功能外，还能高效地支持范围查询和基于排序的查询算法，比如合并排序。 最近，B-tree索引还被扩展以支持多维数据的存储和查询，通过使用空间填充曲线，比如UB-tree中的Z-order. [注: R-tree好像支持更广些吧]
+
+B-tree的基本操作比较容易实现,本科生的课程作业。但是如果考虑到，多线程甚至事务的话，它的代码就大大复杂起来了。
+
+与B-tree并发控制相关的一些术语常常让人不知所云，包括：row-level locking, key value locking, key range locking, lock coupling, latching, latch coupling, and crabbing.
+
+1.1 历史背景
+
+尽管原始的B-tree将数据项和它的键作为B-tree内部结点的分隔符，即使最早的B-treeb并发控制也是依赖叶子结点上的数据项，内部结点的分隔符键也只是用来帮助搜索而不携带真实信息内容。
