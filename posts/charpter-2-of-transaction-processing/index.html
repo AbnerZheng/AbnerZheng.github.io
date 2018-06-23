@@ -1,36 +1,77 @@
 <!DOCTYPE html>
-<html lang="zh_cn">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="zh_cn">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Abner Zheng">
+<meta name="viewport" content="width=device-width">
 <title>Charpter 2 of 《Transaction Processing》 | Abner Zheng's Blog</title>
 <link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-</head>
-<body>
-    <div id="wrp">
-        <div id="cont">
-            <div id="page">
-                <header><h1>
-                        <a href="https://abnerzheng.github.io/" title="Abner Zheng's Blog" rel="home">Abner Zheng's Blog</a>
-                    </h1>
-                </header><div id="body">
-                    <nav><ul>
-<li><a href="https://abnerzheng.github.io/" title="Home" rel="home"><i class="fa fa-fw fa-home"></i></a></li>
-                            <li><a href="https://abnerzheng.github.io/categories/" title="Tags"><i class="fa fa-fw fa-tags"></i></a></li>
-                            <li><a href="https://abnerzheng.github.io/rss.xml" title="RSS feed"><i class="fa fa-fw fa-rss"></i></a></li>
-                            <li><a href="https://abnerzheng.github.io/pages/about" title="About"><i class="fa fa-fw fa-user"></i></a></li>
-                            <li><a href="https://github.com/abnerzheng" title="My GitHub repo"><i class="fa fa-fw fa-github"></i></a></li>
-                        </ul></nav><div id="content">
-    <article class="post-text"><div class="h-entry" itemscope="itemscope" itemtype="http://schema.org/Article">
-        <h1 class="p-name" itemprop="headline name">Charpter 2 of 《Transaction Processing》</h1>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://abnerzheng.github.io/posts/charpter-2-of-transaction-processing/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Abner Zheng">
+<link rel="prev" href="../charpter1/" title="Charpter 1 of 《transaction processing》" type="text/html">
+<link rel="next" href="../how-to-prove-the-log-matching-property-of-raft/" title="how to prove the Log Matching Property of Raft" type="text/html">
+<meta property="og:site_name" content="Abner Zheng's Blog">
+<meta property="og:title" content="Charpter 2 of 《Transaction Processing》">
+<meta property="og:url" content="https://abnerzheng.github.io/posts/charpter-2-of-transaction-processing/">
+<meta property="og:description" content="物理数据库中的操作
 
-    <small>
-        Posted: <time class="published dt-published" datetime="2017-07-22T21:59:55+08:00" itemprop="datePublished">2017-07-22 21:59</time></small>
-    <div class="e-content" itemprop="articleBody text">
+
+逻辑数据库中的元组集合被存储在一个底层物理数据库中，由固定大小的数据页组成，这些页存储在非易失的随机访问存储器中, 一般是磁盘。为了读取或更新逻辑数据库中的元组，包含该元组的页必须先从磁盘中读取到数据库的内存缓存中，被更新的页之后被写回磁盘，替代旧版本。 数据库管理系统的缓存管理模块管理经常访问的数据库页,使之尽可能久地保存在缓存中, 以减少昂贵的随机读写需求.
+
+
+
+在本">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-07-22T21:59:55+08:00">
+</head>
+<body class="theme-base-08">
+    <a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+            styles, `#sidebar-checkbox` for behavior. -->
+    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"><!-- Toggleable sidebar --><div class="sidebar" id="sidebar">
+        <div class="sidebar-item">
+            <p>A reserved <a href="https://getnikola.com" target="_blank">Nikola</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> for Jekyll,
+            ported to Nikola by <a href="https://twitter.com/ralsina" target="_blank">@ralsina</a>.</p>
+        </div>
+        
+    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../../archive.html">文章存档</a>
+        <a class="sidebar-nav-item" href="../../categories/">标签</a>
+        <a class="sidebar-nav-item" href="../../rss.xml">RSS 源</a>
+    
+    
+    </nav>
+</div>
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          
+    <h3 id="brand" class="masthead-title">
+      <a href="https://abnerzheng.github.io/" title="Abner Zheng's Blog" rel="home">Abner Zheng's Blog</a>
+    </h3>
+
+        </div>
+      </div>
+
+      <div class="container content" id="content">
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="." class="u-url">Charpter 2 of 《Transaction Processing》</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="post-date published dt-published" datetime="2017-07-22T21:59:55+08:00" itemprop="datePublished" title="2017-07-22 21:59">2017-07-22 21:59</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
     <div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1">物理数据库中的操作</h2>
 <div class="outline-text-2" id="text-1">
@@ -39,7 +80,7 @@
 </p>
 
 <p>
-在本章中，我们讨论物理数据库中的主题: 逻辑数据库层的事务管理和逻辑数据库行为所触发的底层物理数据库结构的管理之间的相互影响. 这些主题包括数据库的基于页的构造， 在缓存中固定页以减少访问页时间, 物理数据库中的完整性约束,将页锁起来以防止其他并发线程导致影响的访问, 实现在物理数据库中的结构修改作为一个原子操作序列，
+在本章中，我们讨论物理数据库中的主题: 逻辑数据库层的事务管理和逻辑数据库行为所触发的底层物理数据库结构的管理之间的相互影响. 这些主题包括数据库的基于页的构造， 在缓存中固定页以减少访问页时间, 物理数据库中的完整性约束,将页锁起来以防止其他并发线程导致影响, 实现在物理数据库中的结构修改作为一个原子操作序列，
 </p>
 </div>
 
@@ -86,39 +127,134 @@
 </p>
 
 <p>
-在一个数据库系统实例中， 若干数据库进程在共享在磁盘的数据以及共享虚拟内存数据结构上进行操作:
+在一个数据库系统实例中， 若干数据库进程在磁盘上的共享数据以及共享虚拟内存数据结构上进行操作:
 </p>
 
 <ol class="org-ol">
-<li>服务器进程和它们的线程(前面已经提到)响应从应用进程过来的请求并且生成事务
+<li>服务器进程和它们的线程(前面提到的), 响应从应用进程过来的请求并且生成事务
 </li>
 <li>数据库写进程将已更新的数据库页从缓冲区中刷入到磁盘中
 </li>
-<li>日志写进程在日志缓冲区满的时候或当服务器进程在事务提交上要求的情况下，将日志从缓冲区写入到磁盘中
+<li>日志写进程在日志缓冲满的时候或当服务器进程在事务提交时要求时，会将日志从缓冲区写入到磁盘中
 </li>
 <li>Checkpoint 进程周期性的设置一个checkpoint, 保证之前的相关易失数据写入到磁盘中
 </li>
-<li>
+<li>进程监视器进程监视系统的其他系统，并且负责故障进程的恢复，包括丢弃或回滚之前由于服务器进程发生故障而终止的事务。
+</li>
+<li>锁管理器进程，为进程获取或释放数据项的锁，并且负责死锁检测。
 </li>
 </ol>
+<p>
+为了减少进程间的消息数量，在许多系统中，服务器进程通过直接更新共享锁表来锁住数据项，而不是发送请求给特意的锁管理器进程。在这种情况下，锁表必须被互斥机制(信号量)或者其他任何进程间共享的虚拟内存结构。
+</p>
 </div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">数据页和文件</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+物理数据库是由包含记录的页组成的集合。页是磁盘中固定大小(比如4、8或者16 kB)的区域,一般占一个磁盘块，如果页比一个磁盘块大的话，则为几个连续的磁盘块。一个磁盘块是一个包含一个或更多在磁盘表面上同一个磁道上的连续区块。举个例子，如果块大小为8kB，sector的大小为512字节，那么一个块就包好16个连续的sector。sector是磁盘的最小可寻址单位。
+</p>
+
+<p>
+物理数据库的操作包括从磁盘中取出(读)页到内存中的数据库缓存和从缓存中刷新(写)页到磁盘中。这两个操作都执行一个磁盘访问操作，包括寻找到正确的磁道和读或写组成页的连续磁盘块序列。
+</p>
+
+<p>
+逻辑数据库使用物理数据库来存储页中的数据库元组来实现。包括元组的页被称为数据页。除了数据页，物理数据库还包括索引页来高效查询数据页。索引页的结构依赖于元组在页中的组织方式。为了管理数据库，存在一些其他页类型。
+</p>
+
+<p>
+一个元组一般存储为数据页中的一条记录。如果一个元组比一页还大是，就需要被分为连接在一起的多条记录。
+</p>
+
+<p>
+页包括一个页头，记录区域以及记录索引。页头至少包含以下信息：
+</p>
+
+<ol class="org-ol">
+<li>Page id: 页的唯一标志符
+</li>
+<li>Page type: "relation data page"(一个关系的元组), "cluster data page"(来自多个关系的元组), "index page"(关系索引的一部分),"free space"(一个未分配页),"data-dictionary page"(数据库的数据字典的一部分),或"storage-map page"(描述其他页的分配状态的页),以及其他.
+</li>
+<li>内部标识符，关系、索引或其他页所属的结构
+</li>
+<li>记录数: 该页所包含的元素数
+</li>
+<li>空余空间数：用于维护该页空闲空间区域的信息，比如说最长连续空余区域的长度以及该页空闲空间的总量。
+</li>
+<li>Page-LSN: 最近一条对页的更新日志记录的日志序列数（LSN）。当一个缓存页更新时，页的Page-LSN被设置为本次更新的日志记录LSN. 在重启恢复时，该页在磁盘上的版本的PAGE-LSN会被用于确定这些对页的更新在系统故障时已经走了多远（详见第四章）。 在一般处理中，页的目前版本的PAGE-LSNs用于加速撤销动作(见4.3节)和索引结构的遍历（见第七章）。
+</li>
+<li>下一页:在页链表中的"下一页"的页标识(依据图结构)
+</li>
+</ol>
+<p>
+页的记录区域包含该页的实际数据。数据页中的内容是逻辑数据库中的元组。记录区域从头到尾填充(从页头开始).
+</p>
+
+<p>
+页中的记录索引是一个在页结尾的数组m。数组的一个元素m[i]包括字节偏移量，指向记录区域的第i个记录。记录索引从结尾向上增长:m<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>是在页的末尾,m<sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup>在它前面。Figure2.1展示页924中在位置m<sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup>的元组。
+</p>
+
+<p>
+数据库的页常常被归组为文件或者段，每一个都由一页或多个连续页组成。一般来说，分组根据记录的类型。关系型数据库的一个关系常常放置于它自己的文件中。在一些系统中，通过外键联系的两个或者多个关系的元组可以被存储在同一个文件中，这种组织形式一般被称为聚簇文件。
+</p>
+
+<p>
+当然也可以将数据库管理系统的文件直接映射到操作系统提供的文件系统中的一个文件。那么，数据库系统可以使用操作系统提供的服务，数据库管理软件可以变得更小和更简单。
+</p>
+
+<p>
+然而，文件系统并不能提供所有特性
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef">
+<sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup><p>DEFINITION NOT FOUND.</p>
+</div>
+
+<div class="footdef">
+<sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup><p>DEFINITION NOT FOUND.</p>
+</div>
+
+<div class="footdef">
+<sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup><p>DEFINITION NOT FOUND.</p>
+</div>
+
+
 </div>
 </div>
     </div>
-    </div>
-            <ul class="pager">
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="previous">
-                <a href="../charpter1/" rel="prev">← 前一篇</a>
+                <a href="../charpter1/" rel="prev" title="Charpter 1 of 《transaction processing》">前一篇</a>
             </li>
-        </ul></article>
+            <li class="next">
+                <a href="../how-to-prove-the-log-matching-property-of-raft/" rel="next" title="how to prove the Log Matching Property of Raft">后一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>注释</h2>
+        
+        
+
+
+        </section></article><footer id="footer"><p>Contents © 2018         <a href="mailto:abnerzheng@gmail.com">Abner Zheng</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
 </div>
-                </div>
-                <div id="ftr">
-                </div>
-            </div>
-        </div>
     </div>
-	<footer><small>Contents © 2017         <a href="mailto:abnerzheng@gmail.com">Abner Zheng</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </small>
-	</footer>
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    
+    
+    
+            <script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("zh-cn");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
 </body>
 </html>

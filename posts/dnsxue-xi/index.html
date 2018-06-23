@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="zh_cn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>DNS学习 | Abner Zheng's Blog</title>
+<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://abnerzheng.github.io/posts/dnsxue-xi/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Abner Zheng">
+<link rel="prev" href="../how-to-read-paper/" title="how to read paper?" type="text/html">
+<link rel="next" href="../cmu15-721-lecture-note/" title="cmu15-721 lecture note" type="text/html">
+<meta property="og:site_name" content="Abner Zheng's Blog">
+<meta property="og:title" content="DNS学习">
+<meta property="og:url" content="https://abnerzheng.github.io/posts/dnsxue-xi/">
+<meta property="og:description" content="DNS是一个经典的分布式名字查询、管理系统。在一开始，
+
+
+
+recursive query的好处
+
+
+recursive query的好处分为以下几个部分。对于客户端来说, 这种策略简化了客户端的代码设计，不再需要为处理type为ns这种场景来写递归函数，解耦了客户端和dns服务器。
+对于服务器来说，recursive query的过程中能够产生一系列的域名解析中间结果，包括一些其他域名服务器，">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-11-22T14:34:38+08:00">
+</head>
+<body class="theme-base-08">
+    <a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+            styles, `#sidebar-checkbox` for behavior. -->
+    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"><!-- Toggleable sidebar --><div class="sidebar" id="sidebar">
+        <div class="sidebar-item">
+            <p>A reserved <a href="https://getnikola.com" target="_blank">Nikola</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> for Jekyll,
+            ported to Nikola by <a href="https://twitter.com/ralsina" target="_blank">@ralsina</a>.</p>
+        </div>
+        
+    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../../archive.html">文章存档</a>
+        <a class="sidebar-nav-item" href="../../categories/">标签</a>
+        <a class="sidebar-nav-item" href="../../rss.xml">RSS 源</a>
+    
+    
+    </nav>
+</div>
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          
+    <h3 id="brand" class="masthead-title">
+      <a href="https://abnerzheng.github.io/" title="Abner Zheng's Blog" rel="home">Abner Zheng's Blog</a>
+    </h3>
+
+        </div>
+      </div>
+
+      <div class="container content" id="content">
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="." class="u-url">DNS学习</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="post-date published dt-published" datetime="2017-11-22T14:34:38+08:00" itemprop="datePublished" title="2017-11-22 14:34">2017-11-22 14:34</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>
+DNS是一个经典的分布式名字查询、管理系统。在一开始，
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">recursive query的好处</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+recursive query的好处分为以下几个部分。对于客户端来说, 这种策略简化了客户端的代码设计，不再需要为处理type为ns这种场景来写递归函数，解耦了客户端和dns服务器。
+对于服务器来说，recursive query的过程中能够产生一系列的域名解析中间结果，包括一些其他域名服务器，dns服务器由此能够做一些缓存策略，加快整个网络的速度。
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">DNS's hierarchical design的好处</h2>
+<div class="outline-text-2" id="text-2">
+<ol class="org-ol">
+<li>分布式
+</li>
+<li>分权
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Drawbacks to DNS's design</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+没有处理认证，容易被伪造。
+</p>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../how-to-read-paper/" rel="prev" title="how to read paper?">前一篇</a>
+            </li>
+            <li class="next">
+                <a href="../cmu15-721-lecture-note/" rel="next" title="cmu15-721 lecture note">后一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>注释</h2>
+        
+        
+
+
+        </section></article><footer id="footer"><p>Contents © 2018         <a href="mailto:abnerzheng@gmail.com">Abner Zheng</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    </div>
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    
+    
+    
+            <script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("zh-cn");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>

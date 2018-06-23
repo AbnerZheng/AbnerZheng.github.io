@@ -1,0 +1,21 @@
+#+BEGIN_COMMENT
+.. title: Scala's types of types(中文翻译)
+.. slug: scalas-types-of-types
+.. date: 2018-03-14 15:41:39 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+
+
+* Scala's Types of Types
+
+** 在scala中各种不同的Types
+
+** 工作仍在进行
+尽管我在这篇文章上已经花了有些时间，这里仍有很多事情要做。当你看到某个章节被标了"x"， 这表示它需要被重做或者在某些方面还未完成。
+
+** 类型归因

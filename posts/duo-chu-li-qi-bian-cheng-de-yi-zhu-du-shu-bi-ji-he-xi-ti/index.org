@@ -1,0 +1,14 @@
+#+BEGIN_COMMENT
+.. title: 《多处理器编程的艺术》读书笔记和习题
+.. slug: duo-chu-li-qi-bian-cheng-de-yi-zhu-du-shu-bi-ji-he-xi-ti
+.. date: 2018-06-03 15:45:50 UTC+08:00
+.. tags: 
+.. category: multi-thread
+.. link:
+.. description: 
+.. type: text
+#+END_COMMENT
+
+所有你绕过的坑最后还是得亲自跨过去。
+
+#+HTML: <!--TEASER_END-->

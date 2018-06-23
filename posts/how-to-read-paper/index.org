@@ -1,0 +1,18 @@
+#+BEGIN_COMMENT
+.. title: how to read paper?
+.. slug: how-to-read-paper
+.. date: 2017-10-24 20:21:54 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+在学习分布式系统和数据库的道路上看了很多论文， 最近开始上中阶课程uc cs262, 是数据库红宝书的作者Joseph M. Hellerstein开的哦，这门课是一个论文选读课吧。第一节课就是学习如何读论文，这里做个记录，以后自己读论文也要按照这个方法读。
+
+#+HTML: <!--TEASER_END-->
+
+* 三遍式方法
+
+** 第一遍

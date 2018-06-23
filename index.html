@@ -1,275 +1,308 @@
 <!DOCTYPE html>
-<html lang="zh_cn">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="zh_cn">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="my blog">
-<meta name="author" content="Abner Zheng">
+<meta name="viewport" content="width=device-width">
 <title>Abner Zheng's Blog | Abner Zheng's Blog</title>
 <link href="assets/css/all.css" rel="stylesheet" type="text/css">
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<link rel="canonical" href="https://abnerzheng.github.io/">
+<link rel="next" href="index-3.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/zhong-du-gfs/" type="text/html">
 </head>
-<body>
-    <div id="wrp">
-        <div id="cont">
-            <div id="page">
-                <header><h1>
-                        <a href="https://abnerzheng.github.io/" title="Abner Zheng's Blog" rel="home">Abner Zheng's Blog</a>
-                    </h1>
-                </header><div id="body">
-                    <nav><ul>
-<li><a href="https://abnerzheng.github.io/" title="Home" rel="home"><i class="fa fa-fw fa-home"></i></a></li>
-                            <li><a href="https://abnerzheng.github.io/categories/" title="Tags"><i class="fa fa-fw fa-tags"></i></a></li>
-                            <li><a href="https://abnerzheng.github.io/rss.xml" title="RSS feed"><i class="fa fa-fw fa-rss"></i></a></li>
-                            <li><a href="https://abnerzheng.github.io/pages/about" title="About"><i class="fa fa-fw fa-user"></i></a></li>
-                            <li><a href="https://github.com/abnerzheng" title="My GitHub repo"><i class="fa fa-fw fa-github"></i></a></li>
-                        </ul></nav><div id="content">
-        <article class="teaser h-entry post-text"><h1 class="p-name">
-<a href="posts/charpter-2-of-transaction-processing/" class="u-url">Charpter 2 of 《Transaction Processing》</a>
-             <time class="published dt-published" datetime="2017-07-22T21:59:55+08:00">2017-07-22 21:59</time>
-</h1>
-        <div class="p-summary">
-        <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">物理数据库中的操作</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-逻辑数据库中的元组集合被存储在一个底层物理数据库中，由固定大小的数据页组成，这些页存储在非易失的随机访问存储器中, 一般是磁盘。为了读取或更新逻辑数据库中的元组，包含该元组的页必须先从磁盘中读取到数据库的内存缓存中，被更新的页之后被写回磁盘，替代旧版本。 数据库管理系统的缓存管理模块管理经常访问的数据库页,使之尽可能久地保存在缓存中, 以减少昂贵的随机读写需求.
-</p>
-
-<p>
-在本章中，我们讨论物理数据库中的主题: 逻辑数据库层的事务管理和逻辑数据库行为所触发的底层物理数据库结构的管理之间的相互影响. 这些主题包括数据库的基于页的构造， 在缓存中固定页以减少访问页时间, 物理数据库中的完整性约束,将页锁起来以防止其他并发线程导致影响的访问, 实现在物理数据库中的结构修改作为一个原子操作序列，
-</p>
-</div>
-
-<div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1">2.1 服务器中的数据结构和处理</h3>
-<div class="outline-text-3" id="text-1-1">
-<p>
-两个持久话(非易失)的数据集合维护在事务服务器中:
-</p>
-<ol class="org-ol">
-<li>数据磁盘: 包含数据库的关系、索引和系统目录或数据字典
-</li>
-<li>日志磁盘: 包含为数据库更新的日志记录
-</li>
-</ol>
-<p>
-当数据库的一个实例在运行时，以下易失性数据结构维护在服务器进程的虚拟内存中:
-</p>
-
-<ol class="org-ol">
-<li value="3">缓存池或数据库缓存，缓存从磁盘中读取的数据库页.
-</li>
-<li>日志缓存(log buffer)， 用于缓存日志文件.
-</li>
-<li>活跃事务表， 存储关于活跃事务的信息.
-</li>
-<li>修改页表, 存储关于缓存页的信息.
-</li>
-<li>锁表， 存储被活跃事务持有锁的信息(当事务并发控制是基于锁实现时)
-</li>
-<li>其他易失结构， 比如一个查询计划缓存，存储可重用的已编译的查询执行计划
-</li>
-</ol>
-<p>
-数据磁盘和数据库缓存基于数据库页的随机访问(通过页标识码), 而日志磁盘和日志缓存是只可顺序添加的文件. 每个数据库更新操作在一个从数据磁盘中读入数据库缓存的页上， 该更新以一条日志条目添加到日志缓存中。该日志记录持有足够的信息，保证能够重做对页上旧版本数据的更新(当更新因为错误而丢失时)或者撤销该更新(在事务回滚的时候).
-</p>
-
-<p>
-在事务提交或日志缓存满的时候， 日志中的内容被刷新到日志磁盘中，这些日志记录被添加到上一次刷入的结尾. 因此，每一个提交的事务都至少将它的所有更新持久化到日志磁盘。
-</p>
-
-<p>
-在基于日志的系统中，事务处理的最重要的效率来源是数据磁盘不需要立刻反映事务的更新: 数据库缓存中的更新页不需要在事务提交时被写入。 为了保证操作的正确性，一个更新的数据页一定不能在更新对应的日志记录被写入前写入。
-</p>
-
-<p>
-在一个数据库系统实例中， 若干数据库进程在共享在磁盘的数据以及共享虚拟内存数据结构上进行操作:
-</p>
-
-<ol class="org-ol">
-<li>服务器进程和它们的线程(前面已经提到)响应从应用进程过来的请求并且生成事务
-</li>
-<li>数据库写进程将已更新的数据库页从缓冲区中刷入到磁盘中
-</li>
-<li>日志写进程在日志缓冲区满的时候或当服务器进程在事务提交上要求的情况下，将日志从缓冲区写入到磁盘中
-</li>
-<li>Checkpoint 进程周期性的设置一个checkpoint, 保证之前的相关易失数据写入到磁盘中
-</li>
-<li>
-</li>
-</ol>
-</div>
-</div>
-</div>
+<body class="theme-base-08">
+    <a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+            styles, `#sidebar-checkbox` for behavior. -->
+    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"><!-- Toggleable sidebar --><div class="sidebar" id="sidebar">
+        <div class="sidebar-item">
+            <p>A reserved <a href="https://getnikola.com" target="_blank">Nikola</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> for Jekyll,
+            ported to Nikola by <a href="https://twitter.com/ralsina" target="_blank">@ralsina</a>.</p>
         </div>
-                    
+        
+    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="archive.html">文章存档</a>
+        <a class="sidebar-nav-item" href="categories/">标签</a>
+        <a class="sidebar-nav-item" href="rss.xml">RSS 源</a>
+    
+    
+    </nav>
+</div>
 
-        </article><article class="teaser h-entry post-text"><h1 class="p-name">
-<a href="posts/charpter1/" class="u-url">Charpter 1 of 《transaction processing》</a>
-             <time class="published dt-published" datetime="2017-07-21T22:58:55+08:00">2017-07-21 22:58</time>
-</h1>
-        <div class="p-summary">
-        <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">1</h2>
-<div class="outline-text-2" id="text-1">
-<p class="more"><a href="posts/charpter1/">更多…</a></p>
-</div>
-</div>
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          
+    <h3 id="brand" class="masthead-title">
+      <a href="https://abnerzheng.github.io/" title="Abner Zheng's Blog" rel="home">Abner Zheng's Blog</a>
+    </h3>
+
         </div>
-                    
+      </div>
 
-        </article><article class="teaser h-entry post-text"><h1 class="p-name">
-<a href="posts/stm/" class="u-url">STM学习</a>
-             <time class="published dt-published" datetime="2017-07-18T17:09:17+08:00">2017-07-18 17:09</time>
-</h1>
-        <div class="p-summary">
-        <div>
+      <div class="container content" id="content">
+        
+
+<div class="posts">
+    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/zhong-du-gfs/" class="u-url">重读GFS</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
+            <p class="dateline"><a href="posts/zhong-du-gfs/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-06-23T15:16:08+08:00" title="2018-06-23 15:16">2018-06-23 15:16</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
 <p>
-STM是软件事务内存(software transaction memory)的简称。 我在PPCP中对它进行了一些学习，这里做个记录。
+前段时间转岗了，放弃了node，转为普通的Java业务工程师，作为一个过渡。但梦想还是要有的。最近得空，赚钱之余还得努力提高自己。故又开始数据库和分布式系统的学习旅程。
 </p>
-
-<p class="more"><a href="posts/stm/">更多…</a></p>
+<p class="more"><a href="posts/zhong-du-gfs/">更多…</a></p>
 </div>
-        </div>
-                    
-
-        </article><article class="teaser h-entry post-text"><h1 class="p-name">
-<a href="posts/mesi-protocol/" class="u-url">MESI protocol</a>
-             <time class="published dt-published" datetime="2017-07-18T14:35:22+08:00">2017-07-18 14:35</time>
-</h1>
-        <div class="p-summary">
-        <p>
-今天学习了CPU缓存一致性模型MESI，在wiki上发现一个好东东， 可视化MESI协议， 地址为: <a href="https://www.scss.tcd.ie/Jeremy.Jones/vivio/caches/MESIHelp.htm">MESI visualization</a>
-</p>
-
-<p>
-另外wal的ARIES协议也有可视化程序， 地址为:<a href="https://mwhittaker.github.io/aries/"> ARIES protocol</a>
-</p>
-
-<p>
-这些可视化程序对于协议的理解有很大的帮助。
-</p>
-        </div>
-                    
-
-        </article><article class="teaser h-entry post-text"><h1 class="p-name">
-<a href="posts/yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong/" class="u-url">一个同余问题的证明和应用</a>
-             <time class="published dt-published" datetime="2017-07-17T11:14:14+08:00">2017-07-17 11:14</time>
-</h1>
-        <div class="p-summary">
-        <div>
-<p>
-今天在学习并发编程中，碰到一个问题，如何证明如下式子:
-</p>
-<p class="more"><a href="posts/yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong/">更多…</a></p>
-</div>
-        </div>
-                    
-
-        </article><article class="teaser h-entry post-text"><h1 class="p-name">
-<a href="posts/ru-he-zheng-ming-you-2he-5zu-cheng-de-ying-bi-ke-yi-huan-chu-ren-yi-da-yu-3de-zheng-shu-ying-bi/" class="u-url">如何证明由2和5组成的硬币可以换出任意大于3的整数硬币</a>
-             <time class="published dt-published" datetime="2017-07-11T14:28:25+08:00">2017-07-11 14:28</time>
-</h1>
-        <div class="p-summary">
-        <div>
-<p>
-今天看视频看到一个题目， 如何证明由2和5组成的硬币可以换出任意大于3的整数硬币，相信很多人之前也碰到过类似的问题。
-</p>
-
-<p class="more"><a href="posts/ru-he-zheng-ming-you-2he-5zu-cheng-de-ying-bi-ke-yi-huan-chu-ren-yi-da-yu-3de-zheng-shu-ying-bi/">更多…</a></p>
-</div>
-        </div>
-                    
-
-        </article><article class="teaser h-entry post-text"><h1 class="p-name">
-<a href="posts/query-optimizer-in-database/" class="u-url">Query Optimizer in Database</a>
-             <time class="published dt-published" datetime="2017-05-17T17:35:26+08:00">2017-05-17 17:35</time>
-</h1>
-        <div class="p-summary">
-        <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">近况</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-最近在上CS186, 数据库系统。 这么课挺棒的，课程的project是实现一个单机数据库，一共分为四个project，分别为:
-</p>
-
-<ol class="org-ol">
-<li>实现schema设计
-</li>
-<li>实现BPlusTree
-</li>
-<li>实现join操作符
-</li>
-<li>实现query optimizer
-</li>
-</ol>
-<p class="more"><a href="posts/query-optimizer-in-database/">更多…</a></p>
-</div>
-</div>
-        </div>
-                    
-
-        </article><article class="teaser h-entry post-text"><h1 class="p-name">
-<a href="posts/shu-ju-ku-guan-li-xi-tong-yuan-li-yu-she-ji-ke-hou-ti/" class="u-url">数据库管理系统课后题</a>
-             <time class="published dt-published" datetime="2017-05-06T23:50:44+08:00">2017-05-06 23:50</time>
-</h1>
-        <div class="p-summary">
-        <p class="more"><a href="posts/shu-ju-ku-guan-li-xi-tong-yuan-li-yu-she-ji-ke-hou-ti/">更多…</a></p>
-        </div>
-                    
-
-        </article><article class="teaser h-entry post-text"><h1 class="p-name">
-<a href="posts/plan/" class="u-url">plan</a>
-             <time class="published dt-published" datetime="2017-04-07T14:30:18+08:00">2017-04-07 14:30</time>
-</h1>
-        <div class="p-summary">
-        <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">我的学习计划及完成情况汇总</h2>
-<div class="outline-text-2" id="text-1">
-</div>
-<div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1">大体是从/Google Interview University/ 中复制过来的, 但根据自己的兴趣增删了很多东西</h3>
-<div class="outline-text-3" id="text-1-1">
-<p class="more"><a href="posts/plan/">更多…</a></p>
-</div>
-</div>
-</div>
-        </div>
-                    
-
-        </article><article class="teaser h-entry post-text"><h1 class="p-name">
-<a href="posts/splay-tree/" class="u-url">splay tree</a>
-             <time class="published dt-published" datetime="2017-04-07T10:46:00+08:00">2017-04-07 10:46</time>
-</h1>
-        <div class="p-summary">
-        <p>
-Splay tree is a self-adjusting form of BST.
-</p>
-        </div>
-                    
-
-        </article><div>
-        <ul class="pager">
-<li class="next">
-                <a href="index-1.html" rel="next">旧一篇 →</a>
-            </li>
-        </ul>
-</div>
-
-            
-
-	        <script src="assets/js/mathjax.js" type="text/javascript"></script>
-</div>
-                </div>
-                <div id="ftr">
-                </div>
-            </div>
-        </div>
     </div>
-	<footer><small>Contents © 2017         <a href="mailto:abnerzheng@gmail.com">Abner Zheng</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </small>
-	</footer>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/duo-chu-li-qi-bian-cheng-de-yi-zhu-du-shu-bi-ji-he-xi-ti/" class="u-url">《多处理器编程的艺术》读书笔记和习题</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
+            <p class="dateline"><a href="posts/duo-chu-li-qi-bian-cheng-de-yi-zhu-du-shu-bi-ji-he-xi-ti/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-06-03T15:45:50+08:00" title="2018-06-03 15:45">2018-06-03 15:45</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>
+所有你绕过的坑最后还是得亲自跨过去。
+</p>
+
+<p class="more"><a href="posts/duo-chu-li-qi-bian-cheng-de-yi-zhu-du-shu-bi-ji-he-xi-ti/">更多…</a></p>
+</div>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/monads-xue-xi-bi-ji/" class="u-url">Monads 学习笔记</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
+            <p class="dateline"><a href="posts/monads-xue-xi-bi-ji/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-05-20T18:00:46+08:00" title="2018-05-20 18:00">2018-05-20 18:00</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>
+原来函数式编程也分为两派， pure和impure。其中Haskell是pure派的代表，而scheme和Standard ML则是impure派的代表。而Monads将impure effects整合到了pure functional languages。
+</p>
+
+<p class="more"><a href="posts/monads-xue-xi-bi-ji/">更多…</a></p>
+</div>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/java-9-concurrency-cookbook/" class="u-url">Java 9 Concurrency Cookbook</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
+            <p class="dateline"><a href="posts/java-9-concurrency-cookbook/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-04-22T19:34:35+08:00" title="2018-04-22 19:34">2018-04-22 19:34</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">线程管理</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+在java中有两种方法创建thread:
+</p>
+<ol class="org-ol">
+<li>基础Thread类并实现run方法
+</li>
+<li>构建一个实现了Runnable接口的类并实现他的方法。然后在创建Thread对象时将该类的实例化对象传为参数。
+</li>
+</ol>
+<p>
+Thread的属性:
+</p>
+<ul class="org-ul">
+<li>ID, 即tid
+</li>
+<li>Name, 线程名字
+</li>
+<li>Priority, 线程中的优先级只是对系统线程的一个建议，并不能保证什么。
+</li>
+<li>Status: 线程状态
+<ul class="org-ul">
+<li>NEW: 新建还未开始
+</li>
+<li>RUNNABLE: 可执行
+</li>
+<li>BLOCKED: 被阻塞
+</li>
+<li>WAITTING: 等待
+</li>
+<li>TIME<sub>WAITING</sub>: 等待另一个线程固定时间
+</li>
+<li>TERMINATED: 终止
+</li>
+</ul>
+</li>
+</ul>
+<p>
+Thread.join方法：可以传入一个时间来获得到期返回。
+</p>
+<p class="more"><a href="posts/java-9-concurrency-cookbook/">更多…</a></p>
+</div>
+</div>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/javagao-xing-neng-chi-jiu-hua/" class="u-url">Java高性能持久化</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
+            <p class="dateline"><a href="posts/javagao-xing-neng-chi-jiu-hua/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-04-22T19:26:16+08:00" title="2018-04-22 19:26">2018-04-22 19:26</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>
+一开始以为这本书是讲java的序列化库的，结果是将java的数据库应用。比较老的一本书，浏览一下，做一篇笔记。
+</p>
+
+<p class="more"><a href="posts/javagao-xing-neng-chi-jiu-hua/">更多…</a></p>
+</div>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/fen-bu-shi-xi-tong/" class="u-url">分布式系统</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
+            <p class="dateline"><a href="posts/fen-bu-shi-xi-tong/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-04-13T20:27:59+08:00" title="2018-04-13 20:27">2018-04-13 20:27</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>
+记录一波分布式系统的学习。
+</p>
+
+<p class="more"><a href="posts/fen-bu-shi-xi-tong/">更多…</a></p>
+</div>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/scalas-types-of-types/" class="u-url">Scala's types of types(中文翻译)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
+            <p class="dateline"><a href="posts/scalas-types-of-types/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-03-14T15:41:39+08:00" title="2018-03-14 15:41">2018-03-14 15:41</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Scala's Types of Types</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">在scala中各种不同的Types</h3>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">工作仍在进行</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+尽管我在这篇文章上已经花了有些时间，这里仍有很多事情要做。当你看到某个章节被标了"x"， 这表示它需要被重做或者在某些方面还未完成。
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3">类型归因</h3>
+</div>
+</div>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/reactive-programming-learning-note/" class="u-url">Reactive Programming Learning Note</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
+            <p class="dateline"><a href="posts/reactive-programming-learning-note/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-02-08T15:44:22+08:00" title="2018-02-08 15:44">2018-02-08 15:44</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>
+学习一波马丁的Reactive Programming for Scala. Actor这种并发范式还是得学习一波的。
+</p>
+
+<p class="more"><a href="posts/reactive-programming-learning-note/">更多…</a></p>
+</div>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/scalaxue-xi-bi-ji/" class="u-url">scala学习笔记</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
+            <p class="dateline"><a href="posts/scalaxue-xi-bi-ji/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-02-07T14:38:37+08:00" title="2018-02-07 14:38">2018-02-07 14:38</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <p class="more"><a href="posts/scalaxue-xi-bi-ji/">更多…</a></p>
+    </div>
+    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/b-tree-suo-ji-zhu-yan-jiu/" class="u-url">B-tree 锁技术研究(翻译)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
+            <p class="dateline"><a href="posts/b-tree-suo-ji-zhu-yan-jiu/" rel="bookmark"><time class="post-date published dt-published" datetime="2017-12-25T14:47:45+08:00" title="2017-12-25 14:47">2017-12-25 14:47</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>
+这是CMU高级数据库推荐的一篇论文，详细讲诉了B树锁技术的各种变体的区别和实现。是一篇不可多得的论文。 需要细读，所以干脆就把关键的地方翻译。原论文题目为《A Survey of B-Tree Locking Techniques》。
+</p>
+
+<p class="more"><a href="posts/b-tree-suo-ji-zhu-yan-jiu/">更多…</a></p>
+</div>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="next">
+                <a href="index-3.html" rel="next">旧一篇</a>
+            </li>
+        </ul></nav><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script><footer id="footer"><p>Contents © 2018         <a href="mailto:abnerzheng@gmail.com">Abner Zheng</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    </div>
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    
+    
+    
+            <script src="assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("zh-cn");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
 </body>
 </html>

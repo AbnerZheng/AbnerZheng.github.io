@@ -1,0 +1,235 @@
+#+BEGIN_COMMENT
+.. title: scala学习笔记
+.. slug: scalaxue-xi-bi-ji
+.. date: 2018-02-07 14:38:37 UTC+08:00
+.. tags: mathjax
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+#+HTML: <!--TEASER_END-->
+
+
+
+** 包管理
+
+*** 简介
+
+Scala的包管理和大体上和Java类似，都是使用import关键字来实现，但它更灵活:
+
+- import声明可以放在任意地方
+- 可以import的东西包括类、包和对象
+- 在导入的时候可以隐藏(使用_)和rename(使用=>)
+- 可以使用类似于C++中的namespace方法来使用package
+
+区别:
+- java使用的是 '*' 而scala是用的是'_'
+
+所有在scala.Predef(David Pollak 强烈建议阅读的代码)定义的对象都已经隐形导入到所有类中，均可使用。
+
+Scala支持 =import java.io.{File, IOException, FileNotFoundException}=  这种语法来同时导入多个类或对象
+
+在使用通配符"_"的时候往往又有需要排除一些类的导入的场景，这种情况下，可以使用一下的语法来实现 =import java.util.{Random => _, _}= ，这样就可以把Random隐藏了并且把其他所有的都导入。
+
+*** Traits
+
+Traits是java中interface的极大加强版本。 Scala中一个类也可以extend多个traits。
+
+Scala多extend的语法如下
+
+#+BEGIN_SRC scala
+  class Foo extends BaseClass with Trait1 with Trait2 {
+  }
+#+END_SRC
+
+当一个类extend一个trait的时候就必须要实现它定义的所有方法，如果做不到，则要声明该类为abstract。
+
+
+**** field
+如果在Traits定义中只给出一个field的类型而不赋值，那么该field就是为抽象的，否则为具体的。 field可以用var和val定义，var定义的不必加上override，而val则必须要。
+
+****
+
+*** 函数式编程
+Collect方法与map方法的不同：colect方法会测试该函数的isDefinedAt,只有满足条件的才会被收集，而map则不会，当不满足的时候，可能会报错。
+
+** 集合
+
+*** Collections Hierarchy
+Scala所有的集合类起始于Traversable和Iterable这两个traits，然后扩展到三大类：
+- Seq
+- Set
+- Map
+
+默认导入Map是immutable的，mutable的需要重新导入。
+
+|                      | Immutable | Mutable     |
+|----------------------+-----------+-------------|
+| Indexed              | Vector    | ArrayBuffer |
+| Linear(Linked lists) | List      | ListBuffer  |
+
+不可修改Seq的选择标准:
+
+#+CAPTION: Main immutable sequence choices
+|        | IndexedSeq | LinearSeq | Description                                                          |
+|--------+------------+-----------+----------------------------------------------------------------------|
+| List   |            | $\surd$   | 单链表,有head、tail适合做递归                                        |
+| Queue  |            | $\surd$   | 先进先出                                                             |
+| Range  | $\surd$    |           |                                                                      |
+| Stack  |            | $\surd$   | 后进先出                                                             |
+| Stream |            | $\surd$   | 与 =List= 类似,但是它是Lazy和persitent的， 与haskell中的 =List= 类似 |
+| String | $\surd$    |           |                                                                      |
+| Vector | $\surd$    |           | 方便进行Split和join操作                                               |
+
+可修改Seq的选择标准：
+
+#+CAPTION: Main mutable Sequece Choices
+|             | Indexed | LinearSeq | Description                        |
+|-------------+---------+-----------+------------------------------------|
+| Array       | $\surd$ |           | 底层由java的Array实现,length不可变 |
+| ArrayBuffer | $\surd$ |           | 可扩展的Array                      |
+|             |         |           |                                    |
+
+*** Extractors
+模式匹配依赖于提取器的存在。Case class由编译器自动帮助创建了一个company object，其中不仅仅有一个`apply` 方法，同时还有一个`unapply`方法。而如果是自己写的class,如果想使用match方法的话，就必须要自己在该class的company object中实现一个`unapply`方法。`unapply`的函数签名为
+
+#+BEGIN_SRC scala
+  def unapply(object: S): Option[(T1,...,Tn)]
+#+END_SRC
+
+**** Boolean Extractor
+实际上，在pattern match中，并不一定需要返回数据，很多时候所需要的，仅仅是返回一个boolean，这个时候Boolean Extractor就排上了用场。他的签名为：
+
+#+BEGIN_SRC scala
+  def unapply(object: S): Boolean
+#+END_SRC
+
+使用在`match pattern`中，只有当unapply返回true的时候，才会被匹配上，如果返回false，则尝试下一个case。
+
+Boolean Extractor的用法略有不同，同时不用传入任何参数，如果需要取得匹配到的变量，可以使用@运算符将该值绑定到一个变量上, 如：
+
+#+BEGIN_SRC scala
+  object premiumCandidate {
+    def unapply(user: FreeUser): Boolean = user.upgradeProbability > 75
+  } bd
+
+  val user: User = new FreeUser("Daniel", 2500, 0.5d)
+  user match {
+    case freeUser@ premiumCandidate() => initiateSpanProgram(freeUser)
+    case _ => sendRegularNewsletter(user)
+  }
+#+END_SRC
+
+
+#+BEGIN_SRC scala
+  print(12)
+#+END_SRC
+
+
+
+
+
+
+
+
+
+
+* 高级主题
+
+*** Effect
+
+Effect是一种所谓的phantom type(幻影类型), 它没有运行时实例，仅有的目的是给编译器一些额外信息来做一些条件判断。
+
+***
+
+
+
+
+
+
+
+
+
+
+
+
+* Codewars练习
+
+光看肯定是没用的，还得练习！
+
+** [[https://www.codewars.com/kata/57339a5226196a7f90001bcf/train/scala][N-point Crossover<6kyu>]]
+
+这题就是个模拟题，很简单。 但是其实可以不按模拟做，用负负得正就可以确定每一个位置上是否需要转换.
+
+我自己写的解法如下
+
+
+#+BEGIN_SRC scala
+  object NPointCrossover {
+
+    def crossover[T](ns: List[Int], xs: List[T], ys: List[T]): (List[T], List[T]) = {
+      // ns 去重并且从小到大排列
+      val nss = ns.distinct
+      val result1 = xs.zip(ys).zipWithIndex.map{ case ((ele1,ele2), index) => {
+                                                  if(nss.filter(_<=index).size % 2 == 1)
+                                                    (ele2, ele1)
+                                                  else
+                                                    (ele1, ele2)
+                                                }
+      }
+      result1.unzip
+    }
+  }
+#+END_SRC
+
+看了一圈别人的解法，我这个应该算比较完美的了。哈哈哈
+
+** [[https://www.codewars.com/kata/54b42f9314d9229fd6000d9c/train/scala][Duplicate Encoder]]
+
+这题很简单， 就是一个word count
+
+我的解法:
+
+#+BEGIN_SRC scala
+  object Solution {
+
+    def duplicateEncode(word: String) = {
+      val m = word.toLowerCase.groupBy(x=>x)
+      word.toLowerCase.map(x=>{ if (m.get(x).getOrElse("").size > 1) ')' else '('})
+    }
+  }
+#+END_SRC
+
+看了下别人的解法，有个比较好的方法是在将size的判断提前，使用mapValues(_.size) 可以对Map中的value进行梳理，可以减少不必要的重复计算.还有个人，他不用这种map，直接通过index和lastIndex得到的两个索引值是否相等来判断是不是只出现过一次，这个是比较聪明的做法，摘录代码如下:
+
+
+#+BEGIN_SRC scala
+  object Solution {
+
+    def duplicateEncode(word: String) = {
+      val w = word.toLowerCase
+      w.map {
+        case l if w.indexOf(l) == w.lastIndexOf(l) => "("
+        case _ => ")"
+      }.mkString
+    }
+  }
+#+END_SRC
+
+** [[ https://www.codewars.com/trainer/scala][Are they the "same"?<6kyu>]]
+
+太简单了
+
+#+BEGIN_SRC scala
+object Solution {
+  def comp(seq1: Seq[Int], seq2: Seq[Int]) = {
+      if(seq2 == null){
+        false
+      }else{
+      seq2.diff(seq1.map(x=>x*x)).size == 0
+      }
+  }
+}
+#+END_SRC

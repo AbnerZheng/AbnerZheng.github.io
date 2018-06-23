@@ -1,125 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Abner Zheng's Blog</title><link>https://abnerzheng.github.io/</link><description>my blog</description><atom:link href="https://abnerzheng.github.io/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>zh_cn</language><copyright>Contents © 2017 &lt;a href="mailto:abnerzheng@gmail.com"&gt;Abner Zheng&lt;/a&gt; </copyright><lastBuildDate>Tue, 01 Aug 2017 03:18:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Charpter 2 of 《Transaction Processing》</title><link>https://abnerzheng.github.io/posts/charpter-2-of-transaction-processing/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;物理数据库中的操作&lt;/h2&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Abner Zheng's Blog</title><link>https://abnerzheng.github.io/</link><description>my blog</description><atom:link href="https://abnerzheng.github.io/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>zh_cn</language><copyright>Contents © 2018 &lt;a href="mailto:abnerzheng@gmail.com"&gt;Abner Zheng&lt;/a&gt; </copyright><lastBuildDate>Sat, 23 Jun 2018 10:03:09 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>重读GFS</title><link>https://abnerzheng.github.io/posts/zhong-du-gfs/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
+前段时间转岗了，放弃了node，转为普通的Java业务工程师，作为一个过渡。但梦想还是要有的。最近得空，赚钱之余还得努力提高自己。故又开始数据库和分布式系统的学习旅程。
+&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/zhong-du-gfs/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/zhong-du-gfs/</guid><pubDate>Sat, 23 Jun 2018 07:16:08 GMT</pubDate></item><item><title>《多处理器编程的艺术》读书笔记和习题</title><link>https://abnerzheng.github.io/posts/duo-chu-li-qi-bian-cheng-de-yi-zhu-du-shu-bi-ji-he-xi-ti/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
+所有你绕过的坑最后还是得亲自跨过去。
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/duo-chu-li-qi-bian-cheng-de-yi-zhu-du-shu-bi-ji-he-xi-ti/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/duo-chu-li-qi-bian-cheng-de-yi-zhu-du-shu-bi-ji-he-xi-ti/</guid><pubDate>Sun, 03 Jun 2018 07:45:50 GMT</pubDate></item><item><title>Monads 学习笔记</title><link>https://abnerzheng.github.io/posts/monads-xue-xi-bi-ji/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
+原来函数式编程也分为两派， pure和impure。其中Haskell是pure派的代表，而scheme和Standard ML则是impure派的代表。而Monads将impure effects整合到了pure functional languages。
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/monads-xue-xi-bi-ji/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/monads-xue-xi-bi-ji/</guid><pubDate>Sun, 20 May 2018 10:00:46 GMT</pubDate></item><item><title>Java 9 Concurrency Cookbook</title><link>https://abnerzheng.github.io/posts/java-9-concurrency-cookbook/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;线程管理&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;p&gt;
-逻辑数据库中的元组集合被存储在一个底层物理数据库中，由固定大小的数据页组成，这些页存储在非易失的随机访问存储器中, 一般是磁盘。为了读取或更新逻辑数据库中的元组，包含该元组的页必须先从磁盘中读取到数据库的内存缓存中，被更新的页之后被写回磁盘，替代旧版本。 数据库管理系统的缓存管理模块管理经常访问的数据库页,使之尽可能久地保存在缓存中, 以减少昂贵的随机读写需求.
-&lt;/p&gt;
-
-&lt;p&gt;
-在本章中，我们讨论物理数据库中的主题: 逻辑数据库层的事务管理和逻辑数据库行为所触发的底层物理数据库结构的管理之间的相互影响. 这些主题包括数据库的基于页的构造， 在缓存中固定页以减少访问页时间, 物理数据库中的完整性约束,将页锁起来以防止其他并发线程导致影响的访问, 实现在物理数据库中的结构修改作为一个原子操作序列，
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-sec-1-1" class="outline-3"&gt;
-&lt;h3 id="sec-1-1"&gt;2.1 服务器中的数据结构和处理&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-1"&gt;
-&lt;p&gt;
-两个持久话(非易失)的数据集合维护在事务服务器中:
+在java中有两种方法创建thread:
 &lt;/p&gt;
 &lt;ol class="org-ol"&gt;
-&lt;li&gt;数据磁盘: 包含数据库的关系、索引和系统目录或数据字典
+&lt;li&gt;基础Thread类并实现run方法
 &lt;/li&gt;
-&lt;li&gt;日志磁盘: 包含为数据库更新的日志记录
+&lt;li&gt;构建一个实现了Runnable接口的类并实现他的方法。然后在创建Thread对象时将该类的实例化对象传为参数。
 &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;
-当数据库的一个实例在运行时，以下易失性数据结构维护在服务器进程的虚拟内存中:
+Thread的属性:
 &lt;/p&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li value="3"&gt;缓存池或数据库缓存，缓存从磁盘中读取的数据库页.
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;ID, 即tid
 &lt;/li&gt;
-&lt;li&gt;日志缓存(log buffer)， 用于缓存日志文件.
+&lt;li&gt;Name, 线程名字
 &lt;/li&gt;
-&lt;li&gt;活跃事务表， 存储关于活跃事务的信息.
+&lt;li&gt;Priority, 线程中的优先级只是对系统线程的一个建议，并不能保证什么。
 &lt;/li&gt;
-&lt;li&gt;修改页表, 存储关于缓存页的信息.
+&lt;li&gt;Status: 线程状态
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;NEW: 新建还未开始
 &lt;/li&gt;
-&lt;li&gt;锁表， 存储被活跃事务持有锁的信息(当事务并发控制是基于锁实现时)
+&lt;li&gt;RUNNABLE: 可执行
 &lt;/li&gt;
-&lt;li&gt;其他易失结构， 比如一个查询计划缓存，存储可重用的已编译的查询执行计划
+&lt;li&gt;BLOCKED: 被阻塞
 &lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;WAITTING: 等待
+&lt;/li&gt;
+&lt;li&gt;TIME&lt;sub&gt;WAITING&lt;/sub&gt;: 等待另一个线程固定时间
+&lt;/li&gt;
+&lt;li&gt;TERMINATED: 终止
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;
-数据磁盘和数据库缓存基于数据库页的随机访问(通过页标识码), 而日志磁盘和日志缓存是只可顺序添加的文件. 每个数据库更新操作在一个从数据磁盘中读入数据库缓存的页上， 该更新以一条日志条目添加到日志缓存中。该日志记录持有足够的信息，保证能够重做对页上旧版本数据的更新(当更新因为错误而丢失时)或者撤销该更新(在事务回滚的时候).
+Thread.join方法：可以传入一个时间来获得到期返回。
+&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/java-9-concurrency-cookbook/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/java-9-concurrency-cookbook/</guid><pubDate>Sun, 22 Apr 2018 11:34:35 GMT</pubDate></item><item><title>Java高性能持久化</title><link>https://abnerzheng.github.io/posts/javagao-xing-neng-chi-jiu-hua/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
+一开始以为这本书是讲java的序列化库的，结果是将java的数据库应用。比较老的一本书，浏览一下，做一篇笔记。
 &lt;/p&gt;
 
-&lt;p&gt;
-在事务提交或日志缓存满的时候， 日志中的内容被刷新到日志磁盘中，这些日志记录被添加到上一次刷入的结尾. 因此，每一个提交的事务都至少将它的所有更新持久化到日志磁盘。
+&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/javagao-xing-neng-chi-jiu-hua/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/javagao-xing-neng-chi-jiu-hua/</guid><pubDate>Sun, 22 Apr 2018 11:26:16 GMT</pubDate></item><item><title>分布式系统</title><link>https://abnerzheng.github.io/posts/fen-bu-shi-xi-tong/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
+记录一波分布式系统的学习。
 &lt;/p&gt;
 
-&lt;p&gt;
-在基于日志的系统中，事务处理的最重要的效率来源是数据磁盘不需要立刻反映事务的更新: 数据库缓存中的更新页不需要在事务提交时被写入。 为了保证操作的正确性，一个更新的数据页一定不能在更新对应的日志记录被写入前写入。
-&lt;/p&gt;
-
-&lt;p&gt;
-在一个数据库系统实例中， 若干数据库进程在共享在磁盘的数据以及共享虚拟内存数据结构上进行操作:
-&lt;/p&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;服务器进程和它们的线程(前面已经提到)响应从应用进程过来的请求并且生成事务
-&lt;/li&gt;
-&lt;li&gt;数据库写进程将已更新的数据库页从缓冲区中刷入到磁盘中
-&lt;/li&gt;
-&lt;li&gt;日志写进程在日志缓冲区满的时候或当服务器进程在事务提交上要求的情况下，将日志从缓冲区写入到磁盘中
-&lt;/li&gt;
-&lt;li&gt;Checkpoint 进程周期性的设置一个checkpoint, 保证之前的相关易失数据写入到磁盘中
-&lt;/li&gt;
-&lt;li&gt;
-&lt;/li&gt;&lt;/ol&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/charpter-2-of-transaction-processing/</guid><pubDate>Sat, 22 Jul 2017 13:59:55 GMT</pubDate></item><item><title>Charpter 1 of 《transaction processing》</title><link>https://abnerzheng.github.io/posts/charpter1/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;1&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/charpter1/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>mathjax</category><category>transaction</category><guid>https://abnerzheng.github.io/posts/charpter1/</guid><pubDate>Fri, 21 Jul 2017 14:58:55 GMT</pubDate></item><item><title>STM学习</title><link>https://abnerzheng.github.io/posts/stm/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
-STM是软件事务内存(software transaction memory)的简称。 我在PPCP中对它进行了一些学习，这里做个记录。
-&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/stm/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/stm/</guid><pubDate>Tue, 18 Jul 2017 09:09:17 GMT</pubDate></item><item><title>MESI protocol</title><link>https://abnerzheng.github.io/posts/mesi-protocol/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;p&gt;
-今天学习了CPU缓存一致性模型MESI，在wiki上发现一个好东东， 可视化MESI协议， 地址为: &lt;a href="https://www.scss.tcd.ie/Jeremy.Jones/vivio/caches/MESIHelp.htm"&gt;MESI visualization&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-另外wal的ARIES协议也有可视化程序， 地址为:&lt;a href="https://mwhittaker.github.io/aries/"&gt; ARIES protocol&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-这些可视化程序对于协议的理解有很大的帮助。
-&lt;/p&gt;</description><guid>https://abnerzheng.github.io/posts/mesi-protocol/</guid><pubDate>Tue, 18 Jul 2017 06:35:22 GMT</pubDate></item><item><title>一个同余问题的证明和应用</title><link>https://abnerzheng.github.io/posts/yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
-今天在学习并发编程中，碰到一个问题，如何证明如下式子:
-&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><category>mathjax</category><guid>https://abnerzheng.github.io/posts/yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong/</guid><pubDate>Mon, 17 Jul 2017 03:14:14 GMT</pubDate></item><item><title>如何证明由2和5组成的硬币可以换出任意大于3的整数硬币</title><link>https://abnerzheng.github.io/posts/ru-he-zheng-ming-you-2he-5zu-cheng-de-ying-bi-ke-yi-huan-chu-ren-yi-da-yu-3de-zheng-shu-ying-bi/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
-今天看视频看到一个题目， 如何证明由2和5组成的硬币可以换出任意大于3的整数硬币，相信很多人之前也碰到过类似的问题。
-&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/ru-he-zheng-ming-you-2he-5zu-cheng-de-ying-bi-ke-yi-huan-chu-ren-yi-da-yu-3de-zheng-shu-ying-bi/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><category>mathjax</category><category>proven</category><guid>https://abnerzheng.github.io/posts/ru-he-zheng-ming-you-2he-5zu-cheng-de-ying-bi-ke-yi-huan-chu-ren-yi-da-yu-3de-zheng-shu-ying-bi/</guid><pubDate>Tue, 11 Jul 2017 06:28:25 GMT</pubDate></item><item><title>Query Optimizer in Database</title><link>https://abnerzheng.github.io/posts/query-optimizer-in-database/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;近况&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
-&lt;p&gt;
-最近在上CS186, 数据库系统。 这么课挺棒的，课程的project是实现一个单机数据库，一共分为四个project，分别为:
-&lt;/p&gt;
-
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;实现schema设计
-&lt;/li&gt;
-&lt;li&gt;实现BPlusTree
-&lt;/li&gt;
-&lt;li&gt;实现join操作符
-&lt;/li&gt;
-&lt;li&gt;实现query optimizer
-&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/query-optimizer-in-database/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><category>database</category><category>mathjax</category><category>query optimizer</category><guid>https://abnerzheng.github.io/posts/query-optimizer-in-database/</guid><pubDate>Wed, 17 May 2017 09:35:26 GMT</pubDate></item><item><title>数据库管理系统&lt;原理与设计&gt;课后题</title><link>https://abnerzheng.github.io/posts/shu-ju-ku-guan-li-xi-tong-yuan-li-yu-she-ji-ke-hou-ti/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/shu-ju-ku-guan-li-xi-tong-yuan-li-yu-she-ji-ke-hou-ti/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;</description><category>mathjax</category><guid>https://abnerzheng.github.io/posts/shu-ju-ku-guan-li-xi-tong-yuan-li-yu-she-ji-ke-hou-ti/</guid><pubDate>Sat, 06 May 2017 15:50:44 GMT</pubDate></item><item><title>plan</title><link>https://abnerzheng.github.io/posts/plan/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;我的学习计划及完成情况汇总&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/fen-bu-shi-xi-tong/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/fen-bu-shi-xi-tong/</guid><pubDate>Fri, 13 Apr 2018 12:27:59 GMT</pubDate></item><item><title>Scala's types of types(中文翻译)</title><link>https://abnerzheng.github.io/posts/scalas-types-of-types/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;Scala's Types of Types&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;/div&gt;&lt;div id="outline-container-sec-1-1" class="outline-3"&gt;
-&lt;h3 id="sec-1-1"&gt;大体是从/Google Interview University/ 中复制过来的, 但根据自己的兴趣增删了很多东西&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1-1"&gt;
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/plan/"&gt;更多…&lt;/a&gt; (剩余 20 分钟去阅读)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/plan/</guid><pubDate>Fri, 07 Apr 2017 06:30:18 GMT</pubDate></item><item><title>splay tree</title><link>https://abnerzheng.github.io/posts/splay-tree/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;p&gt;
-Splay tree is a self-adjusting form of BST.
-&lt;/p&gt;</description><guid>https://abnerzheng.github.io/posts/splay-tree/</guid><pubDate>Fri, 07 Apr 2017 02:46:00 GMT</pubDate></item></channel></rss>
+&lt;h3 id="sec-1-1"&gt;在scala中各种不同的Types&lt;/h3&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-1-2" class="outline-3"&gt;
+&lt;h3 id="sec-1-2"&gt;工作仍在进行&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-2"&gt;
+&lt;p&gt;
+尽管我在这篇文章上已经花了有些时间，这里仍有很多事情要做。当你看到某个章节被标了"x"， 这表示它需要被重做或者在某些方面还未完成。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-1-3" class="outline-3"&gt;
+&lt;h3 id="sec-1-3"&gt;类型归因&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/scalas-types-of-types/</guid><pubDate>Wed, 14 Mar 2018 07:41:39 GMT</pubDate></item><item><title>Reactive Programming Learning Note</title><link>https://abnerzheng.github.io/posts/reactive-programming-learning-note/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
+学习一波马丁的Reactive Programming for Scala. Actor这种并发范式还是得学习一波的。
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/reactive-programming-learning-note/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/reactive-programming-learning-note/</guid><pubDate>Thu, 08 Feb 2018 07:44:22 GMT</pubDate></item><item><title>scala学习笔记</title><link>https://abnerzheng.github.io/posts/scalaxue-xi-bi-ji/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/scalaxue-xi-bi-ji/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;</description><category>mathjax</category><guid>https://abnerzheng.github.io/posts/scalaxue-xi-bi-ji/</guid><pubDate>Wed, 07 Feb 2018 06:38:37 GMT</pubDate></item><item><title>B-tree 锁技术研究(翻译)</title><link>https://abnerzheng.github.io/posts/b-tree-suo-ji-zhu-yan-jiu/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
+这是CMU高级数据库推荐的一篇论文，详细讲诉了B树锁技术的各种变体的区别和实现。是一篇不可多得的论文。 需要细读，所以干脆就把关键的地方翻译。原论文题目为《A Survey of B-Tree Locking Techniques》。
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/b-tree-suo-ji-zhu-yan-jiu/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/b-tree-suo-ji-zhu-yan-jiu/</guid><pubDate>Mon, 25 Dec 2017 06:47:45 GMT</pubDate></item></channel></rss>

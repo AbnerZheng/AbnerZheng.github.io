@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="zh_cn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Java高性能持久化 | Abner Zheng's Blog</title>
+<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://abnerzheng.github.io/posts/javagao-xing-neng-chi-jiu-hua/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Abner Zheng">
+<link rel="prev" href="../fen-bu-shi-xi-tong/" title="分布式系统" type="text/html">
+<link rel="next" href="../java-9-concurrency-cookbook/" title="Java 9 Concurrency Cookbook" type="text/html">
+<meta property="og:site_name" content="Abner Zheng's Blog">
+<meta property="og:title" content="Java高性能持久化">
+<meta property="og:url" content="https://abnerzheng.github.io/posts/javagao-xing-neng-chi-jiu-hua/">
+<meta property="og:description" content="一开始以为这本书是讲java的序列化库的，结果是将java的数据库应用。比较老的一本书，浏览一下，做一篇笔记。
+
+
+
+
+
+o">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-04-22T19:26:16+08:00">
+</head>
+<body class="theme-base-08">
+    <a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+            styles, `#sidebar-checkbox` for behavior. -->
+    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"><!-- Toggleable sidebar --><div class="sidebar" id="sidebar">
+        <div class="sidebar-item">
+            <p>A reserved <a href="https://getnikola.com" target="_blank">Nikola</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> for Jekyll,
+            ported to Nikola by <a href="https://twitter.com/ralsina" target="_blank">@ralsina</a>.</p>
+        </div>
+        
+    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../../archive.html">文章存档</a>
+        <a class="sidebar-nav-item" href="../../categories/">标签</a>
+        <a class="sidebar-nav-item" href="../../rss.xml">RSS 源</a>
+    
+    
+    </nav>
+</div>
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          
+    <h3 id="brand" class="masthead-title">
+      <a href="https://abnerzheng.github.io/" title="Abner Zheng's Blog" rel="home">Abner Zheng's Blog</a>
+    </h3>
+
+        </div>
+      </div>
+
+      <div class="container content" id="content">
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="." class="u-url">Java高性能持久化</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="post-date published dt-published" datetime="2018-04-22T19:26:16+08:00" itemprop="datePublished" title="2018-04-22 19:26">2018-04-22 19:26</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>
+一开始以为这本书是讲java的序列化库的，结果是将java的数据库应用。比较老的一本书，浏览一下，做一篇笔记。
+</p>
+
+<!--TEASER_END-->
+
+<p>
+o
+</p>
+    </div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../fen-bu-shi-xi-tong/" rel="prev" title="分布式系统">前一篇</a>
+            </li>
+            <li class="next">
+                <a href="../java-9-concurrency-cookbook/" rel="next" title="Java 9 Concurrency Cookbook">后一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>注释</h2>
+        
+        
+
+
+        </section></article><footer id="footer"><p>Contents © 2018         <a href="mailto:abnerzheng@gmail.com">Abner Zheng</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    </div>
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    
+    
+    
+            <script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("zh-cn");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>

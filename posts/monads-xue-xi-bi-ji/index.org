@@ -1,0 +1,82 @@
+#+BEGIN_COMMENT
+.. title: Monads 学习笔记
+.. slug: monads-xue-xi-bi-ji
+.. date: 2018-05-20 18:00:46 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+原来函数式编程也分为两派， pure和impure。其中Haskell是pure派的代表，而scheme和Standard ML则是impure派的代表。而Monads将impure effects整合到了pure functional languages。
+
+#+HTML: <!--TEASER_END-->
+
+函数式编程的优点是拥有明确的数据流,而它的缺点也恰恰如此：有时，保证数据流明确却很痛苦。
+
+比如说，我使用了函数式语言写了一个计算器。接着：
+
+- 为了加上错误处理， 我必须修改每个递归调用，来恰当得检查和处理错误。而如果我使用的是impure语言，我可以使用exceptions来解决，而不需要这种重构。
+- 为了加上统计操作的次数，我必须修改每个递归调用，将这个计数器传入。而在impure语言中，我可以使用一个全局变量来处理。
+- 为了加上问执行跟踪，我必须修改每个递归调用，将这个跟踪器传入。
+
+可以看到，在这些场景下，函数式编程带来诸多不便利。而monad的出现帮助pure functional language解决了这些问题。
+
+** 版本0: basic evaluator
+
+   #+BEGIN_SRC scala
+     trait Term
+     case class Con(v: Int) extends Term
+     case class Div(u: Term, t: Term) extends Term
+
+
+     def eval(t: Term): Int = t match{
+       case Con(v) => v
+       case Div(t, u) => eval(t) / eval(u)
+     }
+
+     val answer = Div(Div(Con(1972), Con(2)), Con(23) )
+     eval(answer)
+     val error = Div(Con(1), Con(0))
+     eval(error)
+   #+END_SRC
+
+最后一个式子，会产生一个`java.lang.ArithmeticException`, 而我们的代码没有错误处理。在impure中我们可以简单地使用try catch来实现。而在pure language中，我们常常使用Either来处理。
+
+** 版本1：Either
+
+
+   #+BEGIN_SRC scala
+     def eval(t: Term): Either[String, Int] = t match{
+       case Con(v) => Right(v)
+       case Div(t, u) => {
+         eval(t) match {
+           case Left(s) => Left(s)
+           case Right(a) => {
+             eval(u) match{
+               case Left(s2) => Left(s2)
+               case Right(b) => {
+                 if(b == 0) Left("divide by zero")
+                 else Right(a/b)
+               }
+             }
+           }
+         }
+       }
+     }
+   #+END_SRC
+
+这时候再去执行上面的错误，就会返回`Left("divide by zero")`
+在Scala的最新版中，已经修正了Either的map和flatMap方法，不在需要.right，.left这种丑陋的判断了。 上面的`match case`语法可以改写成:
+
+#+BEGIN_SRC scala
+  def evalByFlatMap(t: Term) : Either[String, Int] = t match {
+    case Con(v) => Right(v)
+    case Div(t, u) => evalByFlatMap(t)
+                         .flatMap(a => evalByFlatMap(u).flatMap(b => if(b ==0) Left("divide by zero")else Right(b)).map(b => a/b))
+  }
+#+END_SRC
+
+** 版本2
+添加

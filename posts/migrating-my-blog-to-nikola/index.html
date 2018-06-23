@@ -1,40 +1,71 @@
 <!DOCTYPE html>
-<html lang="zh_cn">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="zh_cn">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Abner Zheng">
+<meta name="viewport" content="width=device-width">
 <title>Migrating My Blog to org-mode(using nikola) | Abner Zheng's Blog</title>
 <link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://abnerzheng.github.io/posts/migrating-my-blog-to-nikola/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Abner Zheng">
+<link rel="prev" href="../how-to-write-a-own-malloc/" title="how to write a own Malloc" type="text/html">
+<link rel="next" href="../splay-tree/" title="splay tree" type="text/html">
+<meta property="og:site_name" content="Abner Zheng's Blog">
+<meta property="og:title" content="Migrating My Blog to org-mode(using nikola)">
+<meta property="og:url" content="https://abnerzheng.github.io/posts/migrating-my-blog-to-nikola/">
+<meta property="og:description" content="Two years ago, I established my first blog, and wrote down somes articals to summarize my learning experience in Chinese. At that time, I use Jekyll with a theme forking from others. But nowadays, I f">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-04-03T20:16:02+08:00">
+<meta property="article:tag" content="blog">
 </head>
-<body>
-    <div id="wrp">
-        <div id="cont">
-            <div id="page">
-                <header><h1>
-                        <a href="https://abnerzheng.github.io/" title="Abner Zheng's Blog" rel="home">Abner Zheng's Blog</a>
-                    </h1>
-                </header><div id="body">
-                    <nav><ul>
-<li><a href="https://abnerzheng.github.io/" title="Home" rel="home"><i class="fa fa-fw fa-home"></i></a></li>
-                            <li><a href="https://abnerzheng.github.io/categories/" title="Tags"><i class="fa fa-fw fa-tags"></i></a></li>
-                            <li><a href="https://abnerzheng.github.io/rss.xml" title="RSS feed"><i class="fa fa-fw fa-rss"></i></a></li>
-                            <li><a href="https://abnerzheng.github.io/pages/about" title="About"><i class="fa fa-fw fa-user"></i></a></li>
-                            <li><a href="https://github.com/abnerzheng" title="My GitHub repo"><i class="fa fa-fw fa-github"></i></a></li>
-                        </ul></nav><div id="content">
-    <article class="post-text"><div class="h-entry" itemscope="itemscope" itemtype="http://schema.org/Article">
-        <h1 class="p-name" itemprop="headline name">Migrating My Blog to org-mode(using nikola)</h1>
+<body class="theme-base-08">
+    <a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+            styles, `#sidebar-checkbox` for behavior. -->
+    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"><!-- Toggleable sidebar --><div class="sidebar" id="sidebar">
+        <div class="sidebar-item">
+            <p>A reserved <a href="https://getnikola.com" target="_blank">Nikola</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> for Jekyll,
+            ported to Nikola by <a href="https://twitter.com/ralsina" target="_blank">@ralsina</a>.</p>
+        </div>
+        
+    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../../archive.html">文章存档</a>
+        <a class="sidebar-nav-item" href="../../categories/">标签</a>
+        <a class="sidebar-nav-item" href="../../rss.xml">RSS 源</a>
+    
+    
+    </nav>
+</div>
 
-    <small>
-        Posted: <time class="published dt-published" datetime="2017-04-03T20:16:02+08:00" itemprop="datePublished">2017-04-03 20:16</time>
-		          |  More posts about
-            <a class="tag" href="../../categories/blog/"><span class="badge badge-info">blog</span></a>
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          
+    <h3 id="brand" class="masthead-title">
+      <a href="https://abnerzheng.github.io/" title="Abner Zheng's Blog" rel="home">Abner Zheng's Blog</a>
+    </h3>
 
-    </small>
-    <div class="e-content" itemprop="articleBody text">
+        </div>
+      </div>
+
+      <div class="container content" id="content">
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="." class="u-url">Migrating My Blog to org-mode(using nikola)</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="post-date published dt-published" datetime="2017-04-03T20:16:02+08:00" itemprop="datePublished" title="2017-04-03 20:16">2017-04-03 20:16</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>
 Two years ago, I established my first blog, and wrote down somes articals to summarize my learning experience in Chinese. At that time, I use Jekyll with a theme forking from others. But nowadays, I fall in love with org-mode and Emacs. I try to schedule all my work and study with org-mode.
 </p>
@@ -44,23 +75,33 @@ Two years ago, I established my first blog, and wrote down somes articals to sum
 What's more, I also migrate my note system to org-mode. It's so amazing and comfortable to write and organize in its way, with high efficiency and beauty. And today, I finally migrate my blog to org-mode. And in order to practice my writing, I will start writing all my blog in English. I wish I would persist in bloging.
 </p>
     </div>
-    </div>
-            <ul class="pager">
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/blog/" rel="tag">blog</a></li>
+        </ul>
+<ul class="pager hidden-print">
 <li class="previous">
-                <a href="../how-to-write-a-own-malloc/" rel="prev">← 前一篇</a>
+                <a href="../how-to-write-a-own-malloc/" rel="prev" title="how to write a own Malloc">前一篇</a>
             </li>
             <li class="next">
-                <a href="../splay-tree/" rel="next">后一篇 →</a>
+                <a href="../splay-tree/" rel="next" title="splay tree">后一篇</a>
             </li>
-        </ul></article>
+        </ul></nav></aside><section class="comments hidden-print"><h2>注释</h2>
+        
+        
+
+
+        </section></article><footer id="footer"><p>Contents © 2018         <a href="mailto:abnerzheng@gmail.com">Abner Zheng</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
 </div>
-                </div>
-                <div id="ftr">
-                </div>
-            </div>
-        </div>
     </div>
-	<footer><small>Contents © 2017         <a href="mailto:abnerzheng@gmail.com">Abner Zheng</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </small>
-	</footer>
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    
+    
+    
+            <script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("zh-cn");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
 </body>
 </html>

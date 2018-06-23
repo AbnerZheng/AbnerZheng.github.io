@@ -1,0 +1,18 @@
+#+BEGIN_COMMENT
+.. title: 分布式系统
+.. slug: fen-bu-shi-xi-tong
+.. date: 2018-04-13 20:27:59 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+记录一波分布式系统的学习。
+
+#+HTML: <!--TEASER_END-->
+
+一个可靠的分布式系统必须拥有一下特性:
+1. 可容错。 Failure是分布式程序和单机程序中最重要的不同之处。在分布式系统中，Failure happens all the time. 所以在系统设计的时候就必须要首先考虑failure。在今天，最常见的硬件错误是网络错误和存储错误。
+2.

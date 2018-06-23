@@ -1,41 +1,96 @@
 <!DOCTYPE html>
-<html lang="zh_cn">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="zh_cn">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="author" content="Abner Zheng">
+<meta name="viewport" content="width=device-width">
 <title>如何证明由2和5组成的硬币可以换出任意大于3的整数硬币 | Abner Zheng's Blog</title>
 <link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-    <![endif]--><link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://abnerzheng.github.io/posts/ru-he-zheng-ming-you-2he-5zu-cheng-de-ying-bi-ke-yi-huan-chu-ren-yi-da-yu-3de-zheng-shu-ying-bi/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Abner Zheng">
+<link rel="prev" href="../query-optimizer-in-database/" title="Query Optimizer in Database" type="text/html">
+<link rel="next" href="../yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong/" title="一个同余问题的证明和应用" type="text/html">
+<meta property="og:site_name" content="Abner Zheng's Blog">
+<meta property="og:title" content="如何证明由2和5组成的硬币可以换出任意大于3的整数硬币">
+<meta property="og:url" content="https://abnerzheng.github.io/posts/ru-he-zheng-ming-you-2he-5zu-cheng-de-ying-bi-ke-yi-huan-chu-ren-yi-da-yu-3de-zheng-shu-ying-bi/">
+<meta property="og:description" content="今天看视频看到一个题目， 如何证明由2和5组成的硬币可以换出任意大于3的整数硬币，相信很多人之前也碰到过类似的问题。
+
+
+
+
+
+证明方法很简单，使用归纳法就可以了，具体如下:
+
+
+
+
+Basic case:
+
+
+
+\[
+    4 = 2 + 2
+\]
+
+
+
+假设需要兑n是有命题成立， 则需要证明n+1时， 也能由2、5兑出.
+即:
+\[
+    n = k*2 + j*5 , ( k &gt;= 0,">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-07-11T14:28:25+08:00">
+<meta property="article:tag" content="mathjax">
+<meta property="article:tag" content="proven">
 </head>
-<body>
-    <div id="wrp">
-        <div id="cont">
-            <div id="page">
-                <header><h1>
-                        <a href="https://abnerzheng.github.io/" title="Abner Zheng's Blog" rel="home">Abner Zheng's Blog</a>
-                    </h1>
-                </header><div id="body">
-                    <nav><ul>
-<li><a href="https://abnerzheng.github.io/" title="Home" rel="home"><i class="fa fa-fw fa-home"></i></a></li>
-                            <li><a href="https://abnerzheng.github.io/categories/" title="Tags"><i class="fa fa-fw fa-tags"></i></a></li>
-                            <li><a href="https://abnerzheng.github.io/rss.xml" title="RSS feed"><i class="fa fa-fw fa-rss"></i></a></li>
-                            <li><a href="https://abnerzheng.github.io/pages/about" title="About"><i class="fa fa-fw fa-user"></i></a></li>
-                            <li><a href="https://github.com/abnerzheng" title="My GitHub repo"><i class="fa fa-fw fa-github"></i></a></li>
-                        </ul></nav><div id="content">
-    <article class="post-text"><div class="h-entry" itemscope="itemscope" itemtype="http://schema.org/Article">
-        <h1 class="p-name" itemprop="headline name">如何证明由2和5组成的硬币可以换出任意大于3的整数硬币</h1>
+<body class="theme-base-08">
+    <a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+            styles, `#sidebar-checkbox` for behavior. -->
+    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"><!-- Toggleable sidebar --><div class="sidebar" id="sidebar">
+        <div class="sidebar-item">
+            <p>A reserved <a href="https://getnikola.com" target="_blank">Nikola</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> for Jekyll,
+            ported to Nikola by <a href="https://twitter.com/ralsina" target="_blank">@ralsina</a>.</p>
+        </div>
+        
+    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../../archive.html">文章存档</a>
+        <a class="sidebar-nav-item" href="../../categories/">标签</a>
+        <a class="sidebar-nav-item" href="../../rss.xml">RSS 源</a>
+    
+    
+    </nav>
+</div>
 
-    <small>
-        Posted: <time class="published dt-published" datetime="2017-07-11T14:28:25+08:00" itemprop="datePublished">2017-07-11 14:28</time>
-		          |  More posts about
-            <a class="tag" href="../../categories/mathjax/"><span class="badge badge-info">mathjax</span></a>
-            <a class="tag" href="../../categories/proven/"><span class="badge badge-info">proven</span></a>
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          
+    <h3 id="brand" class="masthead-title">
+      <a href="https://abnerzheng.github.io/" title="Abner Zheng's Blog" rel="home">Abner Zheng's Blog</a>
+    </h3>
 
-    </small>
-    <div class="e-content" itemprop="articleBody text">
+        </div>
+      </div>
+
+      <div class="container content" id="content">
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="." class="u-url">如何证明由2和5组成的硬币可以换出任意大于3的整数硬币</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="post-date published dt-published" datetime="2017-07-11T14:28:25+08:00" itemprop="datePublished" title="2017-07-11 14:28">2017-07-11 14:28</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
     <p>
 今天看视频看到一个题目， 如何证明由2和5组成的硬币可以换出任意大于3的整数硬币，相信很多人之前也碰到过类似的问题。
 </p>
@@ -93,25 +148,35 @@ Basic case:
 证毕.
 </p>
     </div>
-    </div>
-            <ul class="pager">
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/proven/" rel="tag">proven</a></li>
+        </ul>
+<ul class="pager hidden-print">
 <li class="previous">
-                <a href="../query-optimizer-in-database/" rel="prev">← 前一篇</a>
+                <a href="../query-optimizer-in-database/" rel="prev" title="Query Optimizer in Database">前一篇</a>
             </li>
             <li class="next">
-                <a href="../yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong/" rel="next">后一篇 →</a>
+                <a href="../yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong/" rel="next" title="一个同余问题的证明和应用">后一篇</a>
             </li>
-        </ul>
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
-      </script></article>
+        </ul></nav></aside><section class="comments hidden-print"><h2>注释</h2>
+        
+        
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script></article><footer id="footer"><p>Contents © 2018         <a href="mailto:abnerzheng@gmail.com">Abner Zheng</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
 </div>
-                </div>
-                <div id="ftr">
-                </div>
-            </div>
-        </div>
     </div>
-	<footer><small>Contents © 2017         <a href="mailto:abnerzheng@gmail.com">Abner Zheng</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </small>
-	</footer>
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    
+    
+    
+            <script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("zh-cn");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
 </body>
 </html>
