@@ -23,4 +23,4 @@
 
 * 架构
 
-[[img-url:/images/GFS_architecture.jpg]]
+[[img-url:/images/gfs_architecture.jpg][GFS架构]]
