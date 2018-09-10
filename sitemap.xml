@@ -23,11 +23,11 @@
  </url>
  <url>
   <loc>https://abnerzheng.github.io/archive.html</loc>
-  <lastmod>2018-06-23T10:05:00Z</lastmod>
+  <lastmod>2018-09-10T03:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/categories/</loc>
-  <lastmod>2018-06-23T05:59:00Z</lastmod>
+  <lastmod>2018-09-10T03:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/categories/blog/</loc>
@@ -40,6 +40,10 @@
  <url>
   <loc>https://abnerzheng.github.io/categories/cat_database/</loc>
   <lastmod>2017-05-26T06:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/categories/cat_mathjax/</loc>
+  <lastmod>2018-09-10T03:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/categories/cat_multi-thread/</loc>
@@ -79,7 +83,7 @@
  </url>
  <url>
   <loc>https://abnerzheng.github.io/index-3.html</loc>
-  <lastmod>2018-06-23T10:05:00Z</lastmod>
+  <lastmod>2018-09-10T03:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/pages/about/</loc>
@@ -96,6 +100,10 @@
  <url>
   <loc>https://abnerzheng.github.io/posts/brpcyue-du-bi-ji/</loc>
   <lastmod>2017-09-27T06:15:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/posts/chapter3-logging-and-buffering/</loc>
+  <lastmod>2018-09-10T03:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/posts/charpter-2-of-transaction-processing/</loc>
@@ -148,6 +156,10 @@
  <url>
   <loc>https://abnerzheng.github.io/posts/lsmxue-xi-bi-ji/</loc>
   <lastmod>2017-10-23T06:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/posts/lun-wen-fan-yi/</loc>
+  <lastmod>2018-09-10T03:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/posts/making-a-fault-tolerant-kv-store-using-raft/</loc>
@@ -204,6 +216,10 @@
  <url>
   <loc>https://abnerzheng.github.io/posts/stm/</loc>
   <lastmod>2017-07-22T08:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/posts/xin-de-kai-shi/</loc>
+  <lastmod>2018-09-10T03:27:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/posts/yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong/</loc>

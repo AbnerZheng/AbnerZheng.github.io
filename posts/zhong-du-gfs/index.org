@@ -24,3 +24,7 @@
 * 架构
 
 [[img-url:/images/gfs_architecture.jpg][GFS架构]]
+
+GFS采用单Master多Chunkserver的架构。
+Master存储以下信息:
+-

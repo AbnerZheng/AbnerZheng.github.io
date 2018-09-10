@@ -1,0 +1,14 @@
+#+BEGIN_COMMENT
+.. title: 新的开始
+.. slug: xin-de-kai-shi
+.. date: 2018-09-10 11:24:00 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+最近状态愈发的不好了，人变得很懒很懒，不爱社交，不爱干活，就想躺着玩玩游戏。可能是身体状态确实不大好了，也可能是觉得人生也就这样了，实在学不动了。 但是自己确实又不甘心就这么放弃了，决心做些改变。
+
+#+HTML: <!--TEASER_END-->

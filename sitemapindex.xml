@@ -18,6 +18,10 @@
   <lastmod>2018-06-23T10:03:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://abnerzheng.github.io/categories/cat_mathjax.xml</loc>
+  <lastmod>2018-09-10T03:27:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://abnerzheng.github.io/categories/cat_multi-thread.xml</loc>
   <lastmod>2018-06-23T10:02:00Z</lastmod>
  </sitemap>
@@ -47,10 +51,10 @@
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/rss.xml</loc>
-  <lastmod>2018-06-23T10:07:00Z</lastmod>
+  <lastmod>2018-09-10T03:27:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/sitemap.xml</loc>
-  <lastmod>2018-06-23T10:07:00Z</lastmod>
+  <lastmod>2018-09-10T03:27:00Z</lastmod>
  </sitemap>
 </sitemapindex>
