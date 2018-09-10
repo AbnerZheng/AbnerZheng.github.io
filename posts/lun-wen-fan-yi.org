@@ -1,0 +1,19 @@
+#+BEGIN_COMMENT
+.. title: 论文翻译
+.. slug: lun-wen-fan-yi
+.. date: 2018-07-01 15:54:11 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+Kent推荐的论文,据说是目前最好的描述了。翻译一下。
+
+#+HTML: <!--TEASER_END-->
+
+* Casper - 友好的幽灵, 一个“构造时正确”的区块链共识协议
+
+** 摘要
+本文我们展示了一个基于区块链的共识协议的规范以及有限的实验性观察。
