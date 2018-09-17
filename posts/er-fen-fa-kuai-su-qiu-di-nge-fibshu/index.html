@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="zh_cn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>二分法快速求第n个fib数 | Abner Zheng's Blog</title>
+<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://abnerzheng.github.io/posts/er-fen-fa-kuai-su-qiu-di-nge-fibshu/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Abner Zheng">
+<link rel="prev" href="../xin-de-kai-shi/" title="新的开始" type="text/html">
+<meta property="og:site_name" content="Abner Zheng's Blog">
+<meta property="og:title" content="二分法快速求第n个fib数">
+<meta property="og:url" content="https://abnerzheng.github.io/posts/er-fen-fa-kuai-su-qiu-di-nge-fibshu/">
+<meta property="og:description" content="今天逛知乎，看到一个讨论如何快速获取第100w个fibonacci数，有人提出了一个二分法的快速算法。这里对里面用到的递推公式进行下推导，做个笔记。
+
+
+
+
+
+先给出式子:
+
+
+
+$$f(2n) = f(n) * f(n + 1) + f(n) * f(n - 1) $$
+
+
+
+$$f(2n + 1) = f(n+1)* f(n+1) + f(n) * f(n) $$
+
+
+
+证明:
+
+
+
+\beg">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-09-17T18:53:12+08:00">
+<meta property="article:tag" content="mathjax">
+</head>
+<body class="theme-base-08">
+    <a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+            styles, `#sidebar-checkbox` for behavior. -->
+    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"><!-- Toggleable sidebar --><div class="sidebar" id="sidebar">
+        <div class="sidebar-item">
+            <p>A reserved <a href="https://getnikola.com" target="_blank">Nikola</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> for Jekyll,
+            ported to Nikola by <a href="https://twitter.com/ralsina" target="_blank">@ralsina</a>.</p>
+        </div>
+        
+    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../../archive.html">文章存档</a>
+        <a class="sidebar-nav-item" href="../../categories/">标签</a>
+        <a class="sidebar-nav-item" href="../../rss.xml">RSS 源</a>
+    
+    
+    </nav>
+</div>
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          
+    <h3 id="brand" class="masthead-title">
+      <a href="https://abnerzheng.github.io/" title="Abner Zheng's Blog" rel="home">Abner Zheng's Blog</a>
+    </h3>
+
+        </div>
+      </div>
+
+      <div class="container content" id="content">
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="." class="u-url">二分法快速求第n个fib数</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="post-date published dt-published" datetime="2018-09-17T18:53:12+08:00" itemprop="datePublished" title="2018-09-17 18:53">2018-09-17 18:53</time></a></p>
+                <p class="commentline">
+        
+
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>
+今天逛知乎，看到一个讨论如何快速获取第100w个fibonacci数，有人提出了一个二分法的快速算法。这里对里面用到的递推公式进行下推导，做个笔记。
+</p>
+
+<!--TEASER_END-->
+
+<p>
+先给出式子:
+</p>
+
+<p>
+$$f(2n) = f(n) * f(n + 1) + f(n) * f(n - 1) $$
+</p>
+
+<p>
+$$f(2n + 1) = f(n+1)* f(n+1) + f(n) * f(n) $$
+</p>
+
+<p>
+证明:
+</p>
+
+
+\begin{align}
+  f(2n) &amp;= f(2n-1) + f(2n-2) \\
+        &amp;= f(2n-2) + f(2n-3) + f(2n - 2) \\
+        &amp;= f(1) * f(2n -2) + f(2) * f(2n -3) + f(2) * f(2n - 2) \\
+        &amp;= (f(1) + f(2)) * f(2n - 2) + f(2) * f(2n -3) \\
+        &amp;= f(3) * f(2n - 2) + f(2) * f(2n - 3) \\
+        &amp;... \\
+        &amp;= f(n) * f(n + 1) + f(n-1) * f(n)
+\end{align}
+
+
+\begin{align}
+  f(2n+1) &amp;= f(2n) + f(2n-1) \\
+        &amp;= f(2n-1) + f(2n-2) + f(2n - 1) \\
+        &amp;= f(1) * f(2n -1) + f(2) * f(2n -2) + f(2) * f(2n - 1) \\
+        &amp;= (f(1) + f(2)) * f(2n - 1) + f(2) * f(2n -2) \\
+        &amp;= f(3) * f(2n - 1) + f(2) * f(2n - 2) \\
+        &amp;... \\
+        &amp;= f(n+1) * f(n + 1) + f(n) * f(n)
+\end{align}
+
+<p>
+由此的证。
+</p>
+
+<p>
+由这个式子可以将复杂度优化到log(index)。 消费非常高了
+</p>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags"></ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../xin-de-kai-shi/" rel="prev" title="新的开始">前一篇</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>注释</h2>
+        
+        
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script></article><footer id="footer"><p>Contents © 2018         <a href="mailto:abnerzheng@gmail.com">Abner Zheng</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    </div>
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    
+    
+    
+            <script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("zh-cn");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>
