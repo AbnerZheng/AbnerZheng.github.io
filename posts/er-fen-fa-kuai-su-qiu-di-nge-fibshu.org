@@ -1,0 +1,48 @@
+#+BEGIN_COMMENT
+.. title: 二分法快速求第n个fib数
+.. slug: er-fen-fa-kuai-su-qiu-di-nge-fibshu
+.. date: 2018-09-17 18:53:12 UTC+08:00
+.. tags:  mathjax
+.. category:
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+今天逛知乎，看到一个讨论如何快速获取第100w个fibonacci数，有人提出了一个二分法的快速算法。这里对里面用到的递推公式进行下推导，做个笔记。
+
+#+HTML: <!--TEASER_END-->
+
+先给出式子:
+
+$$f(2n) = f(n) * f(n + 1) + f(n) * f(n - 1) $$
+
+$$f(2n + 1) = f(n+1)* f(n+1) + f(n) * f(n) $$
+
+证明:
+
+
+\begin{align}
+  f(2n) &= f(2n-1) + f(2n-2) \\
+        &= f(2n-2) + f(2n-3) + f(2n - 2) \\
+        &= f(1) * f(2n -2) + f(2) * f(2n -3) + f(2) * f(2n - 2) \\
+        &= (f(1) + f(2)) * f(2n - 2) + f(2) * f(2n -3) \\
+        &= f(3) * f(2n - 2) + f(2) * f(2n - 3) \\
+        &... \\
+        &= f(n) * f(n + 1) + f(n-1) * f(n)
+\end{align}
+
+
+\begin{align}
+  f(2n+1) &= f(2n) + f(2n-1) \\
+        &= f(2n-1) + f(2n-2) + f(2n - 1) \\
+        &= f(1) * f(2n -1) + f(2) * f(2n -2) + f(2) * f(2n - 1) \\
+        &= (f(1) + f(2)) * f(2n - 1) + f(2) * f(2n -2) \\
+        &= f(3) * f(2n - 1) + f(2) * f(2n - 2) \\
+        &... \\
+        &= f(n+1) * f(n + 1) + f(n) * f(n)
+\end{align}
+
+由此的证。
+
+由这个式子可以将复杂度优化到log(index)。 消费非常高了
