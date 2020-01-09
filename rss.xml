@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Abner Zheng's Blog</title><link>https://abnerzheng.github.io/</link><description>my blog</description><atom:link href="https://abnerzheng.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2020 &lt;a href="mailto:abnerzheng@gmail.com"&gt;Abner Zheng&lt;/a&gt; </copyright><lastBuildDate>Thu, 09 Jan 2020 08:12:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Binary Search</title><link>https://abnerzheng.github.io/posts/binary-search/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;p&gt;
-在这里书写你的文章。&lt;/p&gt;</description><guid>https://abnerzheng.github.io/posts/binary-search/</guid><pubDate>Thu, 09 Jan 2020 07:27:27 GMT</pubDate></item><item><title>snapshot isolation</title><link>https://abnerzheng.github.io/posts/snapshot-isolation/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Abner Zheng's Blog</title><link>https://abnerzheng.github.io/</link><description>my blog</description><atom:link href="https://abnerzheng.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2020 &lt;a href="mailto:abnerzheng@gmail.com"&gt;Abner Zheng&lt;/a&gt; </copyright><lastBuildDate>Thu, 09 Jan 2020 10:27:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Multiple Account For Github</title><link>https://abnerzheng.github.io/posts/multiple-account-for-github/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
+前段时间想要配置多个Github账号，后来弃用了一个，删除了~/.ssh/config配置行以及相应的公私钥，但是在push后创建的账号时还是会以删除的账号去push。
+今天终于发现了原因。
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/multiple-account-for-github/"&gt;阅读更多…&lt;/a&gt; (剩余阅读时间 1 分钟)&lt;/p&gt;&lt;/div&gt;</description><category>git</category><guid>https://abnerzheng.github.io/posts/multiple-account-for-github/</guid><pubDate>Thu, 09 Jan 2020 08:40:49 GMT</pubDate></item><item><title>Binary Search</title><link>https://abnerzheng.github.io/posts/binary-search/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;p&gt;
+在这里书写你的文章。
+&lt;/p&gt;</description><category>algorithm</category><category>Loop Invariant</category><guid>https://abnerzheng.github.io/posts/binary-search/</guid><pubDate>Thu, 09 Jan 2020 07:27:27 GMT</pubDate></item><item><title>snapshot isolation</title><link>https://abnerzheng.github.io/posts/snapshot-isolation/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;p&gt;
 These days, I have studyed
 &lt;/p&gt;</description><guid>https://abnerzheng.github.io/posts/snapshot-isolation/</guid><pubDate>Fri, 13 Sep 2019 06:23:06 GMT</pubDate></item><item><title>Isolation Level</title><link>https://abnerzheng.github.io/posts/isolation-level/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
 Isolation Level是数据库开发者的入门知识，
@@ -107,8 +113,4 @@ Isolation Level是数据库开发者的入门知识，
 组件构建的方法（我个人感觉更像是学习知识的方法）
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/xue-xi-zhi-dao-du-shu-bi-ji/</guid><pubDate>Fri, 29 Mar 2019 06:22:32 GMT</pubDate></item><item><title>再读《背包九讲》</title><link>https://abnerzheng.github.io/posts/zai-du-bei-bao-jiu-jiang/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
-几年前的校招期，趁有幸拜读过垂天翼的《背包九讲》, 现在又到了新一轮求职周期，故想着再读一次，并将leetcode上面的相关题目做一遍，加深印象。
-&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/zai-du-bei-bao-jiu-jiang/"&gt;阅读更多…&lt;/a&gt; (剩余阅读时间 1 分钟)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/zai-du-bei-bao-jiu-jiang/</guid><pubDate>Mon, 11 Mar 2019 07:27:19 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/xue-xi-zhi-dao-du-shu-bi-ji/</guid><pubDate>Fri, 29 Mar 2019 06:22:32 GMT</pubDate></item></channel></rss>

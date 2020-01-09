@@ -1,0 +1,37 @@
+#+BEGIN_COMMENT
+.. title: Multiple Account For Github
+.. slug: multiple-account-for-github
+.. date: 2020-01-09 16:40:49 UTC+08:00
+.. tags: git
+.. category:
+.. link: 
+.. description: 
+.. type: text
+
+#+END_COMMENT
+
+前段时间想要配置多个Github账号，后来弃用了一个，删除了~/.ssh/config配置行以及相应的公私钥，但是在push后创建的账号时还是会以删除的账号去push。
+今天终于发现了原因。
+
+#+HTML: <!--TEASER_END-->
+
+其实Github的[[https://help.github.com/en/github/using-git/getting-started-with-git-and-github][官方文档]] 已经写得很详细了，然而大概没几个人会看吧。
+
+Github支持两种协议，分别是Https和ssh。Github官方推荐的是Https，所以Clone按钮默认显示的就是ssh格式的地址,这主要是因为ssh没有https安全吧。而Https方式的登陆就不能使用ssh的key pair来进行了，它是以用户名和密码来进行的, 为了避免每次都要输入用户名、密码，git提供了一个叫credential.helper的配置项，它会用来保存密码。在Mac中，使用brew安装git的时候就默认帮你设置为系统的OSX Keychain了。这样，当你第一次使用git的时候，执行需要触发需要登陆的操作（如push），此时git会要求你输入账号和密码，在正确输入之后，git就会将它保存到Keychain中，之后的操作读取即可。
+
+所以之前失败的原因就是我混淆了这两种方式，我以为使用的ssh，结果使用的是https方式。
+
+** 如何配置多账户
+
+据我所知，目前有以下几种方法，但感觉没有一个非常简单的,都是需要配置。
+
+ 1. 使用ssh方式，设置多个ssh key pair，然后在ssh config配置文件中设置多个host，然后通过在仓库中更改remove url的host或者补全用户名的方式来做区别。
+ 2. 使用https方式，在仓库中补全用户名帮助credential来识别正确的密钥对。比如: https://username@github.com/xxxx.
+ 3. 设置credential.useHttpPath为true. 这种方式其实就是将credential的key设置为httpPath而非host来存储、读取密钥对。 代价就是以后所有的仓库都要输入一次用户名密码了。
+
+** Useful links
+- [[https://help.github.com/en/github/using-git/updating-credentials-from-the-osx-keychain][Updating credentials from the OSX Keychain]]
+- [[https://www.freecodecamp.org/news/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca/][How to manage multiple GitHub accounts on a single machine with SSH keys]]
+- [[https://git-scm.com/docs/gitcredentials][Git Credentials]]
+
+* END

@@ -5,300 +5,280 @@
 <meta name="description" content="my blog">
 <meta name="viewport" content="width=device-width">
 <title>Abner Zheng's Blog (旧文章页 4) | Abner Zheng's Blog</title>
-<link href="assets/css/all.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://abnerzheng.github.io/index-4.html">
-<link rel="prev" href="." type="text/html">
+<link rel="prev" href="index-5.html" type="text/html">
 <link rel="next" href="index-3.html" type="text/html">
 <!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
 </head>
-<body class="theme-base-08">
-    <a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
-    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
-            styles, `#sidebar-checkbox` for behavior. -->
-    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"><!-- Toggleable sidebar --><div class="sidebar" id="sidebar">
-        <div class="sidebar-item">
-            <p>A reserved <a href="https://getnikola.com" target="_blank">Nikola</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> for Jekyll,
-            ported to Nikola by <a href="https://twitter.com/ralsina" target="_blank">@ralsina</a>.</p>
+<body>
+    
+
+    <header id="header" class="navbar"><div class="container">
+            
+    <div class="brand">
+
+        <div class="brand-text">
+            <a href="https://abnerzheng.github.io/" title="Abner Zheng's Blog" rel="home">
+                Abner Zheng's Blog
+            </a>
         </div>
-        
-    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="archive.html">文章存档</a>
-        <a class="sidebar-nav-item" href="categories/">标签</a>
-        <a class="sidebar-nav-item" href="rss.xml">RSS 源</a>
+
+        <a id="btn-toggle-nav" class="navbar-toggle">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+    </div>
+
+            
+    <nav class="navbar-collapse collapse"><ul class="nav">
+<li><a href="archive.html">文章存档</a></li>
+                <li><a href="categories/">标签</a></li>
+                <li><a href="rss.xml">RSS 源</a></li>
     
     
-    </nav>
+    </ul></nav>
 </div>
+    </header><div class="header-padding"> </div>
 
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
-    <div class="wrap">
-      <div class="masthead">
+    
+    
+    <div class="tagline">
         <div class="container">
-          
-    <h3 id="brand" class="masthead-title">
-      <a href="https://abnerzheng.github.io/" title="Abner Zheng's Blog" rel="home">Abner Zheng's Blog</a>
-    </h3>
-
+        my blog
         </div>
-      </div>
+    </div>
 
-      <div class="container content" id="content">
-        
-
-<div class="posts">
-    <article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/rustxue-xi/" class="u-url">rust学习</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
-            <p class="dateline"><a href="posts/rustxue-xi/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-12-13T00:55:36+08:00" title="2018-12-13 00:55">2018-12-13 00:55</time></a></p>
-                <p class="commentline">
+    <div id="index-main" class="main">
+        <div class="container">
+        <div class="post-entry">
+            <time class="post-time" datetime="2018-12-13T00:55:36+08:00">2018-12-13</time><div class="post-desc">
+                <div class="post-title">
+                    <a href="posts/rustxue-xi/">rust学习</a>
+                </div>
+                <div class="post-tags">
+                </div>
+                <div class="num-of-comments">
+                    
         
     <a href="posts/rustxue-xi/#disqus_thread" data-disqus-identifier="cache/posts/rustxue-xi.html">评论</a>
 
 
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>
-Aha, I am learning rust in these days, since we decide to use this language in the SC and storage layer.
-</p>
-
-<p>
-I will take some notes when studying the language.
-</p>
-
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">Chapter 7. Error Handling</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-There are two kinds of way to do error handling: panic and Results.
-</p>
-
-<p>
-Panic is more like the RuntimeException in Java, it contains the stack of function and reason message.
-</p>
-
-<p>
-Results like the Either in Scala. You can use a match expression to deal with them. In rust, we often wanna to use the same Result across every function in the module. Then type alias helps us a lot.
-</p>
-
-<div class="highlight"><pre><span></span>pub type Result&lt;T&gt; = result::Result&lt;T, Error&gt;;
-</pre></div>
-
-<p>
-Then we can use `io::Result&lt;T&gt;` when you use this module.
-</p>
-</div>
-
-<div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1">Propagating Errors</h3>
-<div class="outline-text-3" id="text-1-1">
-<p>
-Rust has a "?" operator that propagate errors up the call stack. This operator can be used in any expression, produces a Result.  When the expression returns a success result, it will unwrap the Result to get the success value inside. And when expression returns an error, it will return from the enclosing function, and passing the error result up against the call chain. So "?" can only be used in functions that return a Result type value.
-</p>
-
-<p>
-So we can add "?" operator to every line of code to avoid checking fail cases everywhere. Rust do the same thing with for by using "?". This is pretty clear, I really like this feature.
-</p>
-</div>
-</div>
-</div>
-    </div>
-    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/new-start/" class="u-url">new start</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
-            <p class="dateline"><a href="posts/new-start/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-12-11T11:36:26+08:00" title="2018-12-11 11:36">2018-12-11 11:36</time></a></p>
-                <p class="commentline">
+                </div>
+                <div class="post-description">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="post-entry">
+            <time class="post-time" datetime="2018-12-11T11:36:26+08:00">2018-12-11</time><div class="post-desc">
+                <div class="post-title">
+                    <a href="posts/new-start/">new start</a>
+                </div>
+                <div class="post-tags">
+                </div>
+                <div class="num-of-comments">
+                    
         
     <a href="posts/new-start/#disqus_thread" data-disqus-identifier="cache/posts/new-start.html">评论</a>
 
 
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>
-在这里书写你的文章。
-</p>
-    </div>
-    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/tla%2B/" class="u-url">TLA+</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
-            <p class="dateline"><a href="posts/tla%2B/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-11-15T11:33:40+08:00" title="2018-11-15 11:33">2018-11-15 11:33</time></a></p>
-                <p class="commentline">
+                </div>
+                <div class="post-description">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="post-entry">
+            <time class="post-time" datetime="2018-11-15T11:33:40+08:00">2018-11-15</time><div class="post-desc">
+                <div class="post-title">
+                    <a href="posts/tla%2B/">TLA+</a>
+                </div>
+                <div class="post-tags">
+                </div>
+                <div class="num-of-comments">
+                    
         
     <a href="posts/tla%2B/#disqus_thread" data-disqus-identifier="cache/posts/tla+.html">评论</a>
 
 
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>
-学习TLA+和并发编程也有一段时间了，纸上得来终觉浅，想更好地掌握他们，就必须要想别人讲解这些，必须要在原创工程上真实得用起来。然而工作上实在是用不到这些屠龙技，只能埋头苦练，孤芳自赏了。
-</p>
-
-<p class="more"><a href="posts/tla%2B/">阅读更多…</a></p>
-</div>
-    </div>
-    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/online-histogram-implementation/" class="u-url">Online histogram implementation</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
-            <p class="dateline"><a href="posts/online-histogram-implementation/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-10-21T12:54:39+08:00" title="2018-10-21 12:54">2018-10-21 12:54</time></a></p>
-                <p class="commentline">
+                </div>
+                <div class="post-description">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="post-entry">
+            <time class="post-time" datetime="2018-10-21T12:54:39+08:00">2018-10-21</time><div class="post-desc">
+                <div class="post-title">
+                    <a href="posts/online-histogram-implementation/">Online histogram implementation</a>
+                </div>
+                <div class="post-tags">
+                    <div class="tag">
+                        <a href="categories/mathjax/" rel="tag">mathjax</a>
+                    </div>
+                </div>
+                <div class="num-of-comments">
+                    
         
     <a href="posts/online-histogram-implementation/#disqus_thread" data-disqus-identifier="cache/posts/online-histogram-implementation.html">评论</a>
 
 
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>
-昨天实现simpleDB的Query Optimizer的时候，需要用到Histogram, 然而我只能想到two pass的算法，第一轮pass找到min和max，然后构建bin。这种算法肯定是不好的。 所以赶紧去Peloton的代码库翻了翻，果然翻到了，还配了相应的论文。 这里做个记录。
-</p>
-<p class="more"><a href="posts/online-histogram-implementation/">阅读更多…</a></p>
-</div>
-    </div>
-    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/er-fen-fa-kuai-su-qiu-di-nge-fibshu/" class="u-url">二分法快速求第n个fib数</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
-            <p class="dateline"><a href="posts/er-fen-fa-kuai-su-qiu-di-nge-fibshu/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-09-17T18:53:12+08:00" title="2018-09-17 18:53">2018-09-17 18:53</time></a></p>
-                <p class="commentline">
+                </div>
+                <div class="post-description">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="post-entry">
+            <time class="post-time" datetime="2018-09-17T18:53:12+08:00">2018-09-17</time><div class="post-desc">
+                <div class="post-title">
+                    <a href="posts/er-fen-fa-kuai-su-qiu-di-nge-fibshu/">二分法快速求第n个fib数</a>
+                </div>
+                <div class="post-tags">
+                    <div class="tag">
+                        <a href="categories/mathjax/" rel="tag">mathjax</a>
+                    </div>
+                </div>
+                <div class="num-of-comments">
+                    
         
     <a href="posts/er-fen-fa-kuai-su-qiu-di-nge-fibshu/#disqus_thread" data-disqus-identifier="cache/posts/er-fen-fa-kuai-su-qiu-di-nge-fibshu.html">评论</a>
 
 
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>
-今天逛知乎，看到一个讨论如何快速获取第100w个fibonacci数，有人提出了一个二分法的快速算法。这里对里面用到的递推公式进行下推导，做个笔记。
-</p>
-
-<p class="more"><a href="posts/er-fen-fa-kuai-su-qiu-di-nge-fibshu/">阅读更多…</a></p>
-</div>
-    </div>
-    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/xin-de-kai-shi/" class="u-url">新的开始</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
-            <p class="dateline"><a href="posts/xin-de-kai-shi/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-09-10T11:24:00+08:00" title="2018-09-10 11:24">2018-09-10 11:24</time></a></p>
-                <p class="commentline">
+                </div>
+                <div class="post-description">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="post-entry">
+            <time class="post-time" datetime="2018-09-10T11:24:00+08:00">2018-09-10</time><div class="post-desc">
+                <div class="post-title">
+                    <a href="posts/xin-de-kai-shi/">新的开始</a>
+                </div>
+                <div class="post-tags">
+                </div>
+                <div class="num-of-comments">
+                    
         
     <a href="posts/xin-de-kai-shi/#disqus_thread" data-disqus-identifier="cache/posts/xin-de-kai-shi.html">评论</a>
 
 
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>
-最近状态愈发的不好了，人变得很懒很懒，不爱社交，不爱干活，就想躺着玩玩游戏。可能是身体状态确实不大好了，也可能是觉得人生也就这样了，实在学不动了。 但是自己确实又不甘心就这么放弃了，决心做些改变。
-</p>
-
-<p class="more"><a href="posts/xin-de-kai-shi/">阅读更多…</a></p>
-</div>
-    </div>
-    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/chapter3-logging-and-buffering/" class="u-url">chapter3: Logging and Buffering</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
-            <p class="dateline"><a href="posts/chapter3-logging-and-buffering/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-08-12T11:55:59+08:00" title="2018-08-12 11:55">2018-08-12 11:55</time></a></p>
-                <p class="commentline">
+                </div>
+                <div class="post-description">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="post-entry">
+            <time class="post-time" datetime="2018-08-12T11:55:59+08:00">2018-08-12</time><div class="post-desc">
+                <div class="post-title">
+                    <a href="posts/chapter3-logging-and-buffering/">chapter3: Logging and Buffering</a>
+                </div>
+                <div class="post-tags">
+                </div>
+                <div class="num-of-comments">
+                    
         
     <a href="posts/chapter3-logging-and-buffering/#disqus_thread" data-disqus-identifier="cache/posts/chapter3-logging-and-buffering.html">评论</a>
 
 
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <p>
-在这里书写你的文章。
-</p>
-    </div>
-    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/lun-wen-fan-yi/" class="u-url">论文翻译</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
-            <p class="dateline"><a href="posts/lun-wen-fan-yi/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-07-01T15:54:11+08:00" title="2018-07-01 15:54">2018-07-01 15:54</time></a></p>
-                <p class="commentline">
+                </div>
+                <div class="post-description">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="post-entry">
+            <time class="post-time" datetime="2018-07-01T15:54:11+08:00">2018-07-01</time><div class="post-desc">
+                <div class="post-title">
+                    <a href="posts/lun-wen-fan-yi/">论文翻译</a>
+                </div>
+                <div class="post-tags">
+                </div>
+                <div class="num-of-comments">
+                    
         
     <a href="posts/lun-wen-fan-yi/#disqus_thread" data-disqus-identifier="cache/posts/lun-wen-fan-yi.html">评论</a>
 
 
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>
-Kent推荐的论文,据说是目前最好的描述了。翻译一下。
-</p>
-
-<p class="more"><a href="posts/lun-wen-fan-yi/">阅读更多…</a></p>
-</div>
-    </div>
-    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/zhong-du-gfs/" class="u-url">重读GFS</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
-            <p class="dateline"><a href="posts/zhong-du-gfs/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-06-23T15:16:08+08:00" title="2018-06-23 15:16">2018-06-23 15:16</time></a></p>
-                <p class="commentline">
+                </div>
+                <div class="post-description">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="post-entry">
+            <time class="post-time" datetime="2018-06-23T15:16:08+08:00">2018-06-23</time><div class="post-desc">
+                <div class="post-title">
+                    <a href="posts/zhong-du-gfs/">重读GFS</a>
+                </div>
+                <div class="post-tags">
+                </div>
+                <div class="num-of-comments">
+                    
         
     <a href="posts/zhong-du-gfs/#disqus_thread" data-disqus-identifier="cache/posts/zhong-du-gfs.html">评论</a>
 
 
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>
-前段时间转岗了，放弃了node，转为普通的Java业务工程师，作为一个过渡。但梦想还是要有的。最近得空，赚钱之余还得努力提高自己。故又开始数据库和分布式系统的学习旅程。
-</p>
-<p class="more"><a href="posts/zhong-du-gfs/">阅读更多…</a></p>
-</div>
-    </div>
-    </article><article class="post h-entry post-text"><header><h1 class="post-title p-name"><a href="posts/duo-chu-li-qi-bian-cheng-de-yi-zhu-du-shu-bi-ji-he-xi-ti/" class="u-url">《多处理器编程的艺术》读书笔记和习题</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
-            <p class="dateline"><a href="posts/duo-chu-li-qi-bian-cheng-de-yi-zhu-du-shu-bi-ji-he-xi-ti/" rel="bookmark"><time class="post-date published dt-published" datetime="2018-06-03T15:45:50+08:00" title="2018-06-03 15:45">2018-06-03 15:45</time></a></p>
-                <p class="commentline">
+                </div>
+                <div class="post-description">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="post-entry">
+            <time class="post-time" datetime="2018-06-03T15:45:50+08:00">2018-06-03</time><div class="post-desc">
+                <div class="post-title">
+                    <a href="posts/duo-chu-li-qi-bian-cheng-de-yi-zhu-du-shu-bi-ji-he-xi-ti/">《多处理器编程的艺术》读书笔记和习题</a>
+                </div>
+                <div class="post-tags">
+                </div>
+                <div class="num-of-comments">
+                    
         
     <a href="posts/duo-chu-li-qi-bian-cheng-de-yi-zhu-du-shu-bi-ji-he-xi-ti/#disqus_thread" data-disqus-identifier="cache/posts/duo-chu-li-qi-bian-cheng-de-yi-zhu-du-shu-bi-ji-he-xi-ti.html">评论</a>
 
 
-        </p>
-</div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>
-所有你绕过的坑最后还是得亲自跨过去。
-</p>
-
-<p class="more"><a href="posts/duo-chu-li-qi-bian-cheng-de-yi-zhu-du-shu-bi-ji-he-xi-ti/">阅读更多…</a></p>
-</div>
+                </div>
+                <div class="post-description">
+                    
+                </div>
+            </div>
+        </div>
+        </div>
     </div>
-    </article>
-</div>
 
+    
         <nav class="postindexpager"><ul class="pager">
 <li class="previous">
-                <a href="." rel="prev">较新的文章</a>
+                <a href="index-5.html" rel="prev">较新的文章</a>
             </li>
             <li class="next">
                 <a href="index-3.html" rel="next">以前的文章</a>
             </li>
         </ul></nav><script>var disqus_shortname="abnerzhengblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
-        </script><footer id="footer"><p>Contents © 2020         <a href="mailto:abnerzheng@gmail.com">Abner Zheng</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
-            
-        </footer>
-</div>
-    </div>
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-    
-    
-    
-            <script src="assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
-    moment.locale("zh-cn");
-    fancydates(0, "YYYY-MM-DD HH:mm");
-    </script><!-- end fancy dates -->
+        </script><footer><div class="container">
+            <div class="social">
+
+
+
+                <div class="social-entry">
+                    <a href="rss.xml" target="_blank">
+                        <i class="fa fa-rss"></i> 
+                    </a>
+                </div>
+            </div>
+                <div class="copyright">
+                    Contents © 2020         <a href="mailto:abnerzheng@gmail.com">Abner Zheng</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+                    
+                </div>
+           
+        </div>
+    </footer><script src="assets/js/all-nocdn.js" type="text/javascript"></script>
 </body>
 </html>
