@@ -1,0 +1,14 @@
+#+BEGIN_COMMENT
+.. title: Solution for Exercises of Chapter 4.
+.. slug: solution-for-exercises-of-chapter-4
+.. date: 2019-07-20 04:01:19 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+1. We can create another control file to store the CRC of the content of block. Everytime you write a block, you can also compute the CRC of it, and then write it to control file as well. And when reading the block, you can compute the CRC of it and compare it with the CRC stored in the control file.
+2. TBD: need read Chapter 3 firstly.
+3.

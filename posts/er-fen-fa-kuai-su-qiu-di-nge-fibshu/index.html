@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " vocab="http://ogp.me/ns" lang="zh_cn">
+<html prefix="" lang="zh_cn">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
@@ -10,6 +10,7 @@
 <link rel="canonical" href="https://abnerzheng.github.io/posts/er-fen-fa-kuai-su-qiu-di-nge-fibshu/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Abner Zheng">
 <link rel="prev" href="../xin-de-kai-shi/" title="新的开始" type="text/html">
+<link rel="next" href="../online-histogram-implementation/" title="Online histogram implementation" type="text/html">
 <meta property="og:site_name" content="Abner Zheng's Blog">
 <meta property="og:title" content="二分法快速求第n个fib数">
 <meta property="og:url" content="https://abnerzheng.github.io/posts/er-fen-fa-kuai-su-qiu-di-nge-fibshu/">
@@ -80,6 +81,7 @@ $$f(2n + 1) = f(n+1)* f(n+1) + f(n) * f(n) $$
             <p class="dateline"><a href="." rel="bookmark"><time class="post-date published dt-published" datetime="2018-09-17T18:53:12+08:00" itemprop="datePublished" title="2018-09-17 18:53">2018-09-17 18:53</time></a></p>
                 <p class="commentline">
         
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/er-fen-fa-kuai-su-qiu-di-nge-fibshu.html">评论</a>
 
 
         </p>
@@ -142,16 +144,36 @@ $$f(2n + 1) = f(n+1)* f(n+1) + f(n) * f(n) $$
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags"></ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="../xin-de-kai-shi/" rel="prev" title="新的开始">前一篇</a>
+                <a href="../xin-de-kai-shi/" rel="prev" title="新的开始">上一篇文章</a>
             </li>
-        </ul></nav></aside><section class="comments hidden-print"><h2>注释</h2>
+            <li class="next">
+                <a href="../online-histogram-implementation/" rel="next" title="Online histogram implementation">下一篇文章</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>评论</h2>
         
         
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="abnerzhengblog",
+            disqus_url="https://abnerzheng.github.io/posts/er-fen-fa-kuai-su-qiu-di-nge-fibshu/",
+        disqus_title="\u4e8c\u5206\u6cd5\u5feb\u901f\u6c42\u7b2cn\u4e2afib\u6570",
+        disqus_identifier="cache/posts/er-fen-fa-kuai-su-qiu-di-nge-fibshu.html",
+        disqus_config = function () {
+            this.language = "zh_cn";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha256-SDRP1VVYu+tgAGKhddBSl5+ezofHKZeI+OzxakbIe/Y=" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
-        </script></article><footer id="footer"><p>Contents © 2018         <a href="mailto:abnerzheng@gmail.com">Abner Zheng</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+        </script></article><script>var disqus_shortname="abnerzhengblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2020         <a href="mailto:abnerzheng@gmail.com">Abner Zheng</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
             
         </footer>
 </div>

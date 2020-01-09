@@ -7,54 +7,58 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://abnerzheng.github.io/categories/blog.xml</loc>
-  <lastmod>2018-06-23T10:02:00Z</lastmod>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/categories/c.xml</loc>
-  <lastmod>2018-06-23T10:03:00Z</lastmod>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/categories/cat_database.xml</loc>
-  <lastmod>2018-06-23T10:03:00Z</lastmod>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/categories/cat_mathjax.xml</loc>
-  <lastmod>2018-09-10T03:27:00Z</lastmod>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/categories/cat_multi-thread.xml</loc>
-  <lastmod>2018-06-23T10:02:00Z</lastmod>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://abnerzheng.github.io/categories/cat_posts.xml</loc>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/categories/database.xml</loc>
-  <lastmod>2018-06-23T10:03:00Z</lastmod>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/categories/mathjax.xml</loc>
-  <lastmod>2018-09-17T10:57:00Z</lastmod>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/categories/proven.xml</loc>
-  <lastmod>2018-06-23T10:02:00Z</lastmod>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/categories/query-optimizer.xml</loc>
-  <lastmod>2018-06-23T10:02:00Z</lastmod>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/categories/system-programming.xml</loc>
-  <lastmod>2018-06-23T10:03:00Z</lastmod>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/categories/transaction.xml</loc>
-  <lastmod>2018-06-23T10:03:00Z</lastmod>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/rss.xml</loc>
-  <lastmod>2018-09-17T10:57:00Z</lastmod>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/sitemap.xml</loc>
-  <lastmod>2018-09-17T10:57:00Z</lastmod>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </sitemap>
 </sitemapindex>

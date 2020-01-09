@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://abnerzheng.github.io/</loc>
-  <lastmod>2018-06-23T05:59:00Z</lastmod>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/2014/</loc>
@@ -22,12 +22,20 @@
   <lastmod>2018-02-07T08:00:00Z</lastmod>
  </url>
  <url>
+  <loc>https://abnerzheng.github.io/2019/</loc>
+  <lastmod>2019-03-29T08:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/2020/</loc>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://abnerzheng.github.io/archive.html</loc>
-  <lastmod>2018-09-17T10:57:00Z</lastmod>
+  <lastmod>2020-01-09T08:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/categories/</loc>
-  <lastmod>2018-09-10T03:27:00Z</lastmod>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/categories/blog/</loc>
@@ -48,6 +56,10 @@
  <url>
   <loc>https://abnerzheng.github.io/categories/cat_multi-thread/</loc>
   <lastmod>2018-06-23T05:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/categories/cat_posts/</loc>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/categories/database/</loc>
@@ -75,15 +87,19 @@
  </url>
  <url>
   <loc>https://abnerzheng.github.io/index-1.html</loc>
-  <lastmod>2018-06-23T10:05:00Z</lastmod>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/index-2.html</loc>
-  <lastmod>2018-06-23T10:05:00Z</lastmod>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/index-3.html</loc>
-  <lastmod>2018-09-17T10:57:00Z</lastmod>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/index-4.html</loc>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/pages/about/</loc>
@@ -96,6 +112,10 @@
  <url>
   <loc>https://abnerzheng.github.io/posts/ben-ke-bi-ye-ji-nian-ji-wo-dan-teng-de-bi-she/</loc>
   <lastmod>2017-05-26T06:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/posts/binary-search/</loc>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/posts/brpcyue-du-bi-ji/</loc>
@@ -150,12 +170,28 @@
   <lastmod>2017-05-26T06:46:00Z</lastmod>
  </url>
  <url>
+  <loc>https://abnerzheng.github.io/posts/isolation-level/</loc>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://abnerzheng.github.io/posts/java-9-concurrency-cookbook/</loc>
   <lastmod>2018-05-12T17:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/posts/javagao-xing-neng-chi-jiu-hua/</loc>
   <lastmod>2018-05-12T17:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/posts/learning-docker/</loc>
+  <lastmod>2019-08-25T06:19:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/posts/learning-rust-with-entirely-too-many-linked-lists/</loc>
+  <lastmod>2019-08-25T06:19:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/posts/linuxxing-neng-you-hua-bi-ji/</loc>
+  <lastmod>2019-08-25T06:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/posts/lsmxue-xi-bi-ji/</loc>
@@ -182,6 +218,14 @@
   <lastmod>2018-06-23T05:59:00Z</lastmod>
  </url>
  <url>
+  <loc>https://abnerzheng.github.io/posts/new-start/</loc>
+  <lastmod>2018-12-12T17:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/posts/online-histogram-implementation/</loc>
+  <lastmod>2018-10-21T05:59:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://abnerzheng.github.io/posts/plan/</loc>
   <lastmod>2017-05-26T06:46:00Z</lastmod>
  </url>
@@ -198,6 +242,10 @@
   <lastmod>2017-07-11T06:42:00Z</lastmod>
  </url>
  <url>
+  <loc>https://abnerzheng.github.io/posts/rustxue-xi/</loc>
+  <lastmod>2018-12-12T17:44:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://abnerzheng.github.io/posts/scalas-types-of-types/</loc>
   <lastmod>2018-05-12T17:03:00Z</lastmod>
  </url>
@@ -206,8 +254,20 @@
   <lastmod>2018-02-07T08:00:00Z</lastmod>
  </url>
  <url>
+  <loc>https://abnerzheng.github.io/posts/serializable-isolation-for-snapshot-database/</loc>
+  <lastmod>2019-08-25T06:19:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://abnerzheng.github.io/posts/shu-ju-ku-guan-li-xi-tong-yuan-li-yu-she-ji-ke-hou-ti/</loc>
   <lastmod>2017-05-26T06:46:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/posts/snapshot-isolation/</loc>
+  <lastmod>2020-01-09T08:12:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/posts/solution-for-exercises-of-chapter-4/</loc>
+  <lastmod>2019-08-25T06:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/posts/spacemacsshi-yong-bi-ji/</loc>
@@ -222,12 +282,24 @@
   <lastmod>2017-07-22T08:29:00Z</lastmod>
  </url>
  <url>
+  <loc>https://abnerzheng.github.io/posts/tla%2B/</loc>
+  <lastmod>2018-12-12T17:44:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://abnerzheng.github.io/posts/xin-de-kai-shi/</loc>
   <lastmod>2018-09-10T03:27:00Z</lastmod>
  </url>
  <url>
+  <loc>https://abnerzheng.github.io/posts/xue-xi-zhi-dao-du-shu-bi-ji/</loc>
+  <lastmod>2019-03-29T08:44:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://abnerzheng.github.io/posts/yi-ge-tong-yu-wen-ti-de-zheng-ming-he-ying-yong/</loc>
   <lastmod>2017-07-17T04:58:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://abnerzheng.github.io/posts/zai-du-bei-bao-jiu-jiang/</loc>
+  <lastmod>2019-03-29T08:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://abnerzheng.github.io/posts/zhong-du-gfs/</loc>

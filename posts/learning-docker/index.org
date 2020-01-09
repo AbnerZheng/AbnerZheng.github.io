@@ -1,0 +1,30 @@
+#+BEGIN_COMMENT
+.. title: learning docker
+.. slug: learning-docker
+.. date: 2019-04-22 21:25:31 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+每次docker都是用了就忘，这次静下心来花一个通宵的时间系统学习一下。
+
+#+HTML: <!--TEASER_END-->
+
+
+
+* Docker 的技术组件
+
+Docker包括以下几个部分：
+
+- 一个原生的Linux容器格式
+- Linux内核的命名空间，用于隔离文件系统、进程和网络
+- 文件系统隔离
+- 进程隔离
+- 网络隔离
+- 资源隔离和分组
+- 写时复制
+- 日志
+- 交互式shell

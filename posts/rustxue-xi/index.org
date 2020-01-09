@@ -1,0 +1,34 @@
+#+BEGIN_COMMENT
+.. title: rust学习
+.. slug: rustxue-xi
+.. date: 2018-12-13 00:55:36 UTC+08:00
+.. tags:
+.. category:
+.. link:
+.. description:
+.. type: text
+#+END_COMMENT
+
+Aha, I am learning rust in these days, since we decide to use this language in the SC and storage layer.
+
+I will take some notes when studying the language.
+
+* Chapter 7. Error Handling
+
+There are two kinds of way to do error handling: panic and Results.
+
+Panic is more like the RuntimeException in Java, it contains the stack of function and reason message.
+
+Results like the Either in Scala. You can use a match expression to deal with them. In rust, we often wanna to use the same Result across every function in the module. Then type alias helps us a lot.
+
+#+BEGIN_SRC rust
+pub type Result<T> = result::Result<T, Error>;
+#+END_SRC
+
+Then we can use `io::Result<T>` when you use this module.
+
+** Propagating Errors
+
+Rust has a "?" operator that propagate errors up the call stack. This operator can be used in any expression, produces a Result.  When the expression returns a success result, it will unwrap the Result to get the success value inside. And when expression returns an error, it will return from the enclosing function, and passing the error result up against the call chain. So "?" can only be used in functions that return a Result type value.
+
+So we can add "?" operator to every line of code to avoid checking fail cases everywhere. Rust do the same thing with for by using "?". This is pretty clear, I really like this feature.

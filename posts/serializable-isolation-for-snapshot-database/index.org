@@ -1,0 +1,24 @@
+#+BEGIN_COMMENT
+.. title: Serializable Isolation for Snapshot Database
+.. slug: serializable-isolation-for-snapshot-database
+.. date: 2019-08-25 13:09:46 UTC+08:00
+.. tags: mathjax
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+该篇论文是Michael J. Cahill在悉尼时候发表的论文，是他博士论文[[https://ses.library.usyd.edu.au/bitstream/2123/5353/1/michael-cahill-2009-thesis.pdf][ michael-cahill-2009-thesis.pdf ]]的一个提炼吧。 他的博士论文将近130页, 里面几乎就是围绕Snapshot Isolation, 最大的特点是在第四章描述了如何向Berkeley DB、InnoDB增加SI支持, 在第四章描述了如何应用TPC-C++来做Benchmark，然后在第六章分析了性能。我过两天应该会看下的，因为还是很好奇要如何在数据库系统中测试Concurrency Control算法，希望这篇博士论文能有一些方法吧。
+
+#+HTML: <!--TEASER_END-->
+
+Snapshot Isolation是一个介于Read Committed和Repeatable Read之间的Isolation Level。它的基本思想是，给每个事务分配一个ts，读取的是距离ts最近的版本，然后在并发事务冲突发生的时候，使用first-committer-win的原则，即每个事务维护一个写集合，如果发现有元素最新版本的时间戳比它大，则abort这个transaction。这样的话，first-win-commit 隔绝了dirty write的发生，然后因为同一事务的读始终是读取同一时间戳的集合，所以也隔绝了dirty read的可能。但是SI无法克服Write Skew, 比如
+
+$$r_1(x=50,y=50)\,r_2(x=50,y=50)\,w_1(x=-20)\,w_2(y=-30)\,c_1\,c_2$$
+
+这样两个事务都能够提交，但是却违反了integration rule, x+y > 0。 所以SI不是seriable。
+
+但是如何不是Repeatable Read呢？这个还得再看看论文。Snapshot Isolation是很多商业系统都实现的级别，Jim Gray他们的《A Critique of ANSI SQL Isolation Levels》论文中详细介绍了这个级别。
+
+Michael的这篇论文是在SI的基础上，发现通过检测杜绝一些模式，从而实现Serializable这个级别的Isolation。后面Postgres实现了这个算法，并发表了一篇《Serializable Snapshot Isolation in PostgreSQL. (2012)》。 待会儿也会介绍。

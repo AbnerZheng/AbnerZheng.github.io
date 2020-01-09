@@ -1,79 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Abner Zheng's Blog</title><link>https://abnerzheng.github.io/</link><description>my blog</description><atom:link href="https://abnerzheng.github.io/rss.xml" type="application/rss+xml" rel="self"></atom:link><language>zh_cn</language><copyright>Contents © 2018 &lt;a href="mailto:abnerzheng@gmail.com"&gt;Abner Zheng&lt;/a&gt; </copyright><lastBuildDate>Mon, 17 Sep 2018 11:38:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>二分法快速求第n个fib数</title><link>https://abnerzheng.github.io/posts/er-fen-fa-kuai-su-qiu-di-nge-fibshu/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
-今天逛知乎，看到一个讨论如何快速获取第100w个fibonacci数，有人提出了一个二分法的快速算法。这里对里面用到的递推公式进行下推导，做个笔记。
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Abner Zheng's Blog</title><link>https://abnerzheng.github.io/</link><description>my blog</description><atom:link href="https://abnerzheng.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><copyright>Contents © 2020 &lt;a href="mailto:abnerzheng@gmail.com"&gt;Abner Zheng&lt;/a&gt; </copyright><lastBuildDate>Thu, 09 Jan 2020 08:12:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Binary Search</title><link>https://abnerzheng.github.io/posts/binary-search/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;p&gt;
+在这里书写你的文章。&lt;/p&gt;</description><guid>https://abnerzheng.github.io/posts/binary-search/</guid><pubDate>Thu, 09 Jan 2020 07:27:27 GMT</pubDate></item><item><title>snapshot isolation</title><link>https://abnerzheng.github.io/posts/snapshot-isolation/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;p&gt;
+These days, I have studyed
+&lt;/p&gt;</description><guid>https://abnerzheng.github.io/posts/snapshot-isolation/</guid><pubDate>Fri, 13 Sep 2019 06:23:06 GMT</pubDate></item><item><title>Isolation Level</title><link>https://abnerzheng.github.io/posts/isolation-level/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
+Isolation Level是数据库开发者的入门知识，
 &lt;/p&gt;
 
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/er-fen-fa-kuai-su-qiu-di-nge-fibshu/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><category>mathjax</category><guid>https://abnerzheng.github.io/posts/er-fen-fa-kuai-su-qiu-di-nge-fibshu/</guid><pubDate>Mon, 17 Sep 2018 10:53:12 GMT</pubDate></item><item><title>新的开始</title><link>https://abnerzheng.github.io/posts/xin-de-kai-shi/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
-最近状态愈发的不好了，人变得很懒很懒，不爱社交，不爱干活，就想躺着玩玩游戏。可能是身体状态确实不大好了，也可能是觉得人生也就这样了，实在学不动了。 但是自己确实又不甘心就这么放弃了，决心做些改变。
+&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/isolation-level/"&gt;阅读更多…&lt;/a&gt; (剩余阅读时间 1 分钟)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/isolation-level/</guid><pubDate>Sun, 25 Aug 2019 10:56:24 GMT</pubDate></item><item><title>Serializable Isolation for Snapshot Database</title><link>https://abnerzheng.github.io/posts/serializable-isolation-for-snapshot-database/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
+该篇论文是Michael J. Cahill在悉尼时候发表的论文，是他博士论文&lt;a href="https://ses.library.usyd.edu.au/bitstream/2123/5353/1/michael-cahill-2009-thesis.pdf"&gt; michael-cahill-2009-thesis.pdf &lt;/a&gt;的一个提炼吧。 他的博士论文将近130页, 里面几乎就是围绕Snapshot Isolation, 最大的特点是在第四章描述了如何向Berkeley DB、InnoDB增加SI支持, 在第四章描述了如何应用TPC-C++来做Benchmark，然后在第六章分析了性能。我过两天应该会看下的，因为还是很好奇要如何在数据库系统中测试Concurrency Control算法，希望这篇博士论文能有一些方法吧。
 &lt;/p&gt;
 
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/xin-de-kai-shi/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/xin-de-kai-shi/</guid><pubDate>Mon, 10 Sep 2018 03:24:00 GMT</pubDate></item><item><title>chapter3: Logging and Buffering</title><link>https://abnerzheng.github.io/posts/chapter3-logging-and-buffering/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;p&gt;
-在这里书写你的文章。
-&lt;/p&gt;</description><guid>https://abnerzheng.github.io/posts/chapter3-logging-and-buffering/</guid><pubDate>Sun, 12 Aug 2018 03:55:59 GMT</pubDate></item><item><title>论文翻译</title><link>https://abnerzheng.github.io/posts/lun-wen-fan-yi/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
-Kent推荐的论文,据说是目前最好的描述了。翻译一下。
+&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/serializable-isolation-for-snapshot-database/"&gt;阅读更多…&lt;/a&gt; (剩余阅读时间 1 分钟)&lt;/p&gt;&lt;/div&gt;</description><category>mathjax</category><guid>https://abnerzheng.github.io/posts/serializable-isolation-for-snapshot-database/</guid><pubDate>Sun, 25 Aug 2019 05:09:46 GMT</pubDate></item><item><title>Solution for Exercises of Chapter 4.</title><link>https://abnerzheng.github.io/posts/solution-for-exercises-of-chapter-4/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;ol class="org-ol"&gt;
+&lt;li&gt;We can create another control file to store the CRC of the content of block. Everytime you write a block, you can also compute the CRC of it, and then write it to control file as well. And when reading the block, you can compute the CRC of it and compare it with the CRC stored in the control file.
+&lt;/li&gt;
+&lt;li&gt;TBD: need read Chapter 3 firstly.
+&lt;/li&gt;
+&lt;li&gt;
+&lt;/li&gt;&lt;/ol&gt;</description><guid>https://abnerzheng.github.io/posts/solution-for-exercises-of-chapter-4/</guid><pubDate>Fri, 19 Jul 2019 20:01:19 GMT</pubDate></item><item><title>Linux性能优化笔记</title><link>https://abnerzheng.github.io/posts/linuxxing-neng-you-hua-bi-ji/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/linuxxing-neng-you-hua-bi-ji/"&gt;阅读更多…&lt;/a&gt; (剩余阅读时间 1 分钟)&lt;/p&gt;</description><guid>https://abnerzheng.github.io/posts/linuxxing-neng-you-hua-bi-ji/</guid><pubDate>Sat, 08 Jun 2019 12:03:48 GMT</pubDate></item><item><title>Learning Rust With Entirely Too Many Linked Lists</title><link>https://abnerzheng.github.io/posts/learning-rust-with-entirely-too-many-linked-lists/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/learning-rust-with-entirely-too-many-linked-lists/"&gt;阅读更多…&lt;/a&gt; (剩余阅读时间 1 分钟)&lt;/p&gt;</description><guid>https://abnerzheng.github.io/posts/learning-rust-with-entirely-too-many-linked-lists/</guid><pubDate>Sun, 12 May 2019 12:50:49 GMT</pubDate></item><item><title>learning docker</title><link>https://abnerzheng.github.io/posts/learning-docker/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
+每次docker都是用了就忘，这次静下心来花一个通宵的时间系统学习一下。
 &lt;/p&gt;
 
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/lun-wen-fan-yi/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/lun-wen-fan-yi/</guid><pubDate>Sun, 01 Jul 2018 07:54:11 GMT</pubDate></item><item><title>重读GFS</title><link>https://abnerzheng.github.io/posts/zhong-du-gfs/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
-前段时间转岗了，放弃了node，转为普通的Java业务工程师，作为一个过渡。但梦想还是要有的。最近得空，赚钱之余还得努力提高自己。故又开始数据库和分布式系统的学习旅程。
-&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/zhong-du-gfs/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/zhong-du-gfs/</guid><pubDate>Sat, 23 Jun 2018 07:16:08 GMT</pubDate></item><item><title>《多处理器编程的艺术》读书笔记和习题</title><link>https://abnerzheng.github.io/posts/duo-chu-li-qi-bian-cheng-de-yi-zhu-du-shu-bi-ji-he-xi-ti/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
-所有你绕过的坑最后还是得亲自跨过去。
+&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/learning-docker/"&gt;阅读更多…&lt;/a&gt; (剩余阅读时间 1 分钟)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/learning-docker/</guid><pubDate>Mon, 22 Apr 2019 13:25:31 GMT</pubDate></item><item><title>《学习之道》读书笔记</title><link>https://abnerzheng.github.io/posts/xue-xi-zhi-dao-du-shu-bi-ji/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;p&gt;
+这本书是coursera知名课程《learn how to learn》老师所写的。说起来，好多MOOC的老师之后都会出一本课程讲义书，比如国内的肖星出的财务报表一书。
 &lt;/p&gt;
 
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/duo-chu-li-qi-bian-cheng-de-yi-zhu-du-shu-bi-ji-he-xi-ti/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/duo-chu-li-qi-bian-cheng-de-yi-zhu-du-shu-bi-ji-he-xi-ti/</guid><pubDate>Sun, 03 Jun 2018 07:45:50 GMT</pubDate></item><item><title>Monads 学习笔记</title><link>https://abnerzheng.github.io/posts/monads-xue-xi-bi-ji/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
-原来函数式编程也分为两派， pure和impure。其中Haskell是pure派的代表，而scheme和Standard ML则是impure派的代表。而Monads将impure effects整合到了pure functional languages。
-&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/monads-xue-xi-bi-ji/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/monads-xue-xi-bi-ji/</guid><pubDate>Sun, 20 May 2018 10:00:46 GMT</pubDate></item><item><title>Java 9 Concurrency Cookbook</title><link>https://abnerzheng.github.io/posts/java-9-concurrency-cookbook/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;线程管理&lt;/h2&gt;
+&lt;div id="outline-container-sec-1" class="outline-2"&gt;
+&lt;h2 id="sec-1"&gt;发散模式和专注模式&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-1"&gt;
 &lt;p&gt;
-在java中有两种方法创建thread:
+作者论述了两种模式，并且告诉我们要善于转换这两种模式。以爱迪生为例，他惊人的创造力来源于一个生活习惯：在碰到困难的时候先去小睡一会儿，激活发散模式。
+其实这个道理我们大多数都知道， 初高中老师就教授过一个理论，那就是如果求解一个问题，十五分钟后还没想到解法的话，就先不管他，出去溜溜再回来解决。思路基本一致。
 &lt;/p&gt;
-&lt;ol class="org-ol"&gt;
-&lt;li&gt;基础Thread类并实现run方法
-&lt;/li&gt;
-&lt;li&gt;构建一个实现了Runnable接口的类并实现他的方法。然后在创建Thread对象时将该类的实例化对象传为参数。
-&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/div&gt;
 
-&lt;p&gt;
-Thread的属性:
-&lt;/p&gt;
+&lt;div id="outline-container-sec-1-1" class="outline-3"&gt;
+&lt;h3 id="sec-1-1"&gt;激活发散模式的方法&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-1"&gt;
 &lt;ul class="org-ul"&gt;
-&lt;li&gt;ID, 即tid
+&lt;li&gt;去健身房
 &lt;/li&gt;
-&lt;li&gt;Name, 线程名字
+&lt;li&gt;运动，打球
 &lt;/li&gt;
-&lt;li&gt;Priority, 线程中的优先级只是对系统线程的一个建议，并不能保证什么。
+&lt;li&gt;洗澡
 &lt;/li&gt;
-&lt;li&gt;Status: 线程状态
-&lt;ul class="org-ul"&gt;
-&lt;li&gt;NEW: 新建还未开始
+&lt;li&gt;弹奏乐器
 &lt;/li&gt;
-&lt;li&gt;RUNNABLE: 可执行
+&lt;li&gt;冥想
 &lt;/li&gt;
-&lt;li&gt;BLOCKED: 被阻塞
-&lt;/li&gt;
-&lt;li&gt;WAITTING: 等待
-&lt;/li&gt;
-&lt;li&gt;TIME&lt;sub&gt;WAITING&lt;/sub&gt;: 等待另一个线程固定时间
-&lt;/li&gt;
-&lt;li&gt;TERMINATED: 终止
+&lt;li&gt;睡觉（最有效）
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-1-2" class="outline-3"&gt;
+&lt;h3 id="sec-1-2"&gt;反直觉的无效方式&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1-2"&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;打游戏
 &lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;上网
+&lt;/li&gt;
+&lt;li&gt;聊天
+&lt;/li&gt;
+&lt;li&gt;处理小事务
+&lt;/li&gt;
+&lt;li&gt;阅读休闲事务
+&lt;/li&gt;
+&lt;li&gt;看电视，电影
+&lt;/li&gt;
+&lt;li&gt;
+&lt;/li&gt;&lt;/ul&gt;
 
 &lt;p&gt;
-Thread.join方法：可以传入一个时间来获得到期返回。
-&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/java-9-concurrency-cookbook/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/java-9-concurrency-cookbook/</guid><pubDate>Sun, 22 Apr 2018 11:34:35 GMT</pubDate></item><item><title>Java高性能持久化</title><link>https://abnerzheng.github.io/posts/javagao-xing-neng-chi-jiu-hua/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
-一开始以为这本书是讲java的序列化库的，结果是将java的数据库应用。比较老的一本书，浏览一下，做一篇笔记。
+可以认为，你先用专注模式将待分散模式处理的事情填充你的心理buffer，然后去放飞自我，这时候可能潜意识中就会处理这些事务。而如果你还是动脑的话，就得不到发散模式的帮助了。
 &lt;/p&gt;
 
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/javagao-xing-neng-chi-jiu-hua/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/javagao-xing-neng-chi-jiu-hua/</guid><pubDate>Sun, 22 Apr 2018 11:26:16 GMT</pubDate></item><item><title>分布式系统</title><link>https://abnerzheng.github.io/posts/fen-bu-shi-xi-tong/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
-记录一波分布式系统的学习。
+&lt;p&gt;
+而睡觉是最彻底的切换两种模式的途径，睡觉的时候，会把专注模式彻底关闭，然后发散模式会开始处理之前存入的事情。 睡一觉就想到解决问题的方法并不是空虚来风。
 &lt;/p&gt;
 
-&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/fen-bu-shi-xi-tong/"&gt;更多…&lt;/a&gt; (剩余 1 分钟去阅读)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/fen-bu-shi-xi-tong/</guid><pubDate>Fri, 13 Apr 2018 12:27:59 GMT</pubDate></item></channel></rss>
+&lt;p&gt;
+在这里我对自己进行下反思。因为我长期不愿意让大脑放松下来，在车上也习惯于看书。在路上走路也倾向于玩手机，看新闻。这么做，是不是就丧失了很多切换到发散模式的机会，导致于我的创造力低下呢？
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-2" class="outline-2"&gt;
+&lt;h2 id="sec-2"&gt;工作记忆和长期记忆&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-2"&gt;
+&lt;p&gt;
+就是短暂记忆要演变为长期记忆，最好的方式是隔几天回顾一次，类似艾兵豪斯记忆曲线。对新概念的第一次回顾，要定在同一天内。要善用记忆卡。
+&lt;/p&gt;
+
+&lt;p&gt;
+而且我们的长期记忆实际上也是有半衰期的，也是要时常回顾，才能不彻底遗忘。
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-sec-3" class="outline-2"&gt;
+&lt;h2 id="sec-3"&gt;组件构建和避免能力错觉&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-3"&gt;
+&lt;p&gt;
+组件构建的方法（我个人感觉更像是学习知识的方法）
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/xue-xi-zhi-dao-du-shu-bi-ji/</guid><pubDate>Fri, 29 Mar 2019 06:22:32 GMT</pubDate></item><item><title>再读《背包九讲》</title><link>https://abnerzheng.github.io/posts/zai-du-bei-bao-jiu-jiang/</link><dc:creator>Abner Zheng</dc:creator><description>&lt;div&gt;&lt;p&gt;
+几年前的校招期，趁有幸拜读过垂天翼的《背包九讲》, 现在又到了新一轮求职周期，故想着再读一次，并将leetcode上面的相关题目做一遍，加深印象。
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://abnerzheng.github.io/posts/zai-du-bei-bao-jiu-jiang/"&gt;阅读更多…&lt;/a&gt; (剩余阅读时间 1 分钟)&lt;/p&gt;&lt;/div&gt;</description><guid>https://abnerzheng.github.io/posts/zai-du-bei-bao-jiu-jiang/</guid><pubDate>Mon, 11 Mar 2019 07:27:19 GMT</pubDate></item></channel></rss>

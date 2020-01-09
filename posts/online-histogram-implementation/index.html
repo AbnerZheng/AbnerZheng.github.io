@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html prefix="" lang="zh_cn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Online histogram implementation | Abner Zheng's Blog</title>
+<link href="../../assets/css/all.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://abnerzheng.github.io/posts/online-histogram-implementation/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Abner Zheng">
+<link rel="prev" href="../er-fen-fa-kuai-su-qiu-di-nge-fibshu/" title="二分法快速求第n个fib数" type="text/html">
+<link rel="next" href="../tla%2B/" title="TLA+" type="text/html">
+<meta property="og:site_name" content="Abner Zheng's Blog">
+<meta property="og:title" content="Online histogram implementation">
+<meta property="og:url" content="https://abnerzheng.github.io/posts/online-histogram-implementation/">
+<meta property="og:description" content="昨天实现simpleDB的Query Optimizer的时候，需要用到Histogram, 然而我只能想到two pass的算法，第一轮pass找到min和max，然后构建bin。这种算法肯定是不好的。 所以赶紧去Peloton的代码库翻了翻，果然翻到了，还配了相应的论文。 这里做个记录。
+
+
+
+
+该在线算法的主要思想是维护一个长度固定的有序bin Array, 然后当范围更新的时候，生成一个新">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2018-10-21T12:54:39+08:00">
+<meta property="article:tag" content="mathjax">
+</head>
+<body class="theme-base-08">
+    <a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+            styles, `#sidebar-checkbox` for behavior. -->
+    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox"><!-- Toggleable sidebar --><div class="sidebar" id="sidebar">
+        <div class="sidebar-item">
+            <p>A reserved <a href="https://getnikola.com" target="_blank">Nikola</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a> for Jekyll,
+            ported to Nikola by <a href="https://twitter.com/ralsina" target="_blank">@ralsina</a>.</p>
+        </div>
+        
+    <nav id="menu" role="navigation" class="sidebar-nav"><a class="sidebar-nav-item" href="../../archive.html">文章存档</a>
+        <a class="sidebar-nav-item" href="../../categories/">标签</a>
+        <a class="sidebar-nav-item" href="../../rss.xml">RSS 源</a>
+    
+    
+    </nav>
+</div>
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          
+    <h3 id="brand" class="masthead-title">
+      <a href="https://abnerzheng.github.io/" title="Abner Zheng's Blog" rel="home">Abner Zheng's Blog</a>
+    </h3>
+
+        </div>
+      </div>
+
+      <div class="container content" id="content">
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="post-title p-name entry-title" itemprop="headline name"><a href="." class="u-url">Online histogram implementation</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">Abner Zheng</span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="post-date published dt-published" datetime="2018-10-21T12:54:39+08:00" itemprop="datePublished" title="2018-10-21 12:54">2018-10-21 12:54</time></a></p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/online-histogram-implementation.html">评论</a>
+
+
+        </p>
+</div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>
+昨天实现simpleDB的Query Optimizer的时候，需要用到Histogram, 然而我只能想到two pass的算法，第一轮pass找到min和max，然后构建bin。这种算法肯定是不好的。 所以赶紧去Peloton的代码库翻了翻，果然翻到了，还配了相应的论文。 这里做个记录。
+</p>
+<!--TEASER_END-->
+
+<p>
+该在线算法的主要思想是维护一个长度固定的有序bin Array, 然后当范围更新的时候，生成一个新的bin，然后插入有序数组，然后将最相邻的两个bin合并，这样bin Array的size还是不变。具体实现如下：
+</p>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags"></ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../er-fen-fa-kuai-su-qiu-di-nge-fibshu/" rel="prev" title="二分法快速求第n个fib数">上一篇文章</a>
+            </li>
+            <li class="next">
+                <a href="../tla%2B/" rel="next" title="TLA+">下一篇文章</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>评论</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="abnerzhengblog",
+            disqus_url="https://abnerzheng.github.io/posts/online-histogram-implementation/",
+        disqus_title="Online histogram implementation",
+        disqus_identifier="cache/posts/online-histogram-implementation.html",
+        disqus_config = function () {
+            this.language = "zh_cn";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
+        </script></article><script>var disqus_shortname="abnerzhengblog";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><footer id="footer"><p>Contents © 2020         <a href="mailto:abnerzheng@gmail.com">Abner Zheng</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         </p>
+            
+        </footer>
+</div>
+    </div>
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    
+    
+    
+            <script src="../../assets/js/all-nocdn.js"></script><!-- fancy dates --><script>
+    moment.locale("zh-cn");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>
