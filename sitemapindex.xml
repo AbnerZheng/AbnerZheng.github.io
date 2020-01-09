@@ -34,20 +34,12 @@
   <lastmod>2020-01-09T10:27:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://abnerzheng.github.io/categories/cat_suo-sui.xml</loc>
-  <lastmod>2020-01-09T08:42:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://abnerzheng.github.io/categories/database.xml</loc>
   <lastmod>2020-01-09T08:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/categories/git.xml</loc>
   <lastmod>2020-01-09T10:27:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://abnerzheng.github.io/categories/github.xml</loc>
-  <lastmod>2020-01-09T08:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/categories/loop-invariant.xml</loc>
@@ -79,6 +71,6 @@
  </sitemap>
  <sitemap>
   <loc>https://abnerzheng.github.io/sitemap.xml</loc>
-  <lastmod>2020-01-09T10:55:00Z</lastmod>
+  <lastmod>2020-01-09T11:06:00Z</lastmod>
  </sitemap>
 </sitemapindex>
