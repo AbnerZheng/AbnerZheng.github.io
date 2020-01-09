@@ -2,7 +2,7 @@
 .. title: Binary Search
 .. slug: binary-search
 .. date: 2020-01-09 15:27:27 UTC+08:00
-.. tags: 
+.. tags: algorithm, Loop Invariant
 .. category: 
 .. link: 
 .. description: 
