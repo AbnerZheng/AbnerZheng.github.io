@@ -1,0 +1,15 @@
+#+BEGIN_COMMENT
+.. title: Online histogram implementation
+.. slug: online-histogram-implementation
+.. date: 2018-10-21 12:54:39 UTC+08:00
+.. tags: mathjax
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+昨天实现simpleDB的Query Optimizer的时候，需要用到Histogram, 然而我只能想到two pass的算法，第一轮pass找到min和max，然后构建bin。这种算法肯定是不好的。 所以赶紧去Peloton的代码库翻了翻，果然翻到了，还配了相应的论文。 这里做个记录。
+#+HTML: <!--TEASER_END-->
+
+该在线算法的主要思想是维护一个长度固定的有序bin Array, 然后当范围更新的时候，生成一个新的bin，然后插入有序数组，然后将最相邻的两个bin合并，这样bin Array的size还是不变。具体实现如下：

@@ -1,0 +1,82 @@
+#+BEGIN_COMMENT
+.. title: Linux性能优化笔记
+.. slug: linuxxing-neng-you-hua-bi-ji
+.. date: 2019-06-08 20:03:48 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+
+#+HTML: <!--TEASER_END-->
+
+* CPU遍
+** 平均负载
+判断一个应用是CPU密集型还是IO密集型的应用，主要有三把刀:
+ - uptime: 可以很快看出系统的平均负载,用于发现问题
+ - mpstat: 用来查看各个cpu的各项负载指标，如user、sys、iowait, 这里就能判断出是cpu密集型还是io密集型
+ - pidstat: 用来查看各个process的上诉负载指标
+
+** 进程上下文切换
+
+
+
+
+* Anki笔记                                                         :noexport:
+
+** Linux性能优化
+:PROPERTIES:
+:ANKI_DECK: linux性能优化
+:END:
+
+*** 平均负载
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Basic
+:ANKI_NOTE_ID: 1559996636639
+:END:
+
+**** Front
+在linux中性能负载指什么？
+**** Back
+平均负载是指单位时间内， 系统处于可运行状态和不可中断状态的平均进程数,也就是平均活跃进程数。与CPU使用率并没有直接联系。
+
+*** 可运行状态
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Basic
+:ANKI_NOTE_ID: 1559996637802
+:END:
+**** Front
+可运行状态和不可中断状态在ps命令下用什么缩写表示？
+**** Back
+R和D, 分别表示是Running和Disk Sleep。
+
+*** CPU
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Basic
+:ANKI_NOTE_ID: 1559997464662
+:END:
+**** Front
+如何在命令行下查询cpu信息
+**** Back
+在linux中，可以查询/proc/cpuinfo
+在mac中，可以查询sysctl machdep.cpu
+
+*** CPU使用率
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Basic
+:ANKI_NOTE_ID: 1560000453485
+:END:
+**** Front
+描述cpu使用率和平均负载之间的差异
+**** Back
+影响cpu使用率的是所有运行中的进程，而平均负载包括两种，一个是运行中的，另一个则是处于不可中断状态。 所以在cpu密集型任务中，两者基本相同，但是在I/O密集型任务中，虽然平均负载很高，但是他的cpu使用率很低。
+*** 进程运行空间
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Basic
+:END:
+
+**** Front
+在Linux中有几种
+**** Back

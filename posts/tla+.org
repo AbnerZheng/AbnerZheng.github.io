@@ -1,0 +1,14 @@
+#+BEGIN_COMMENT
+.. title: TLA+
+.. slug: tla+
+.. date: 2018-11-15 11:33:40 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+学习TLA+和并发编程也有一段时间了，纸上得来终觉浅，想更好地掌握他们，就必须要想别人讲解这些，必须要在原创工程上真实得用起来。然而工作上实在是用不到这些屠龙技，只能埋头苦练，孤芳自赏了。
+
+#+HTML: <!--TEASER_END-->

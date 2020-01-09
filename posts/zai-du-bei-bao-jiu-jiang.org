@@ -1,0 +1,18 @@
+#+BEGIN_COMMENT
+.. title: 再读《背包九讲》
+.. slug: zai-du-bei-bao-jiu-jiang
+.. date: 2019-03-11 15:27:19 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+几年前的校招期，趁有幸拜读过垂天翼的《背包九讲》, 现在又到了新一轮求职周期，故想着再读一次，并将leetcode上面的相关题目做一遍，加深印象。
+
+#+HTML: <!--TEASER_END-->
+
+
+
+* 01背包问题

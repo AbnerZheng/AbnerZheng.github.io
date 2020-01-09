@@ -1,0 +1,12 @@
+#+BEGIN_COMMENT
+.. title: snapshot isolation
+.. slug: snapshot-isolation
+.. date: 2019-09-13 14:23:06 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+These days, I have studyed

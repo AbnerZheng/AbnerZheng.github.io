@@ -1,0 +1,94 @@
+#+BEGIN_COMMENT
+.. title: Learning Rust With Entirely Too Many Linked Lists
+.. slug: learning-rust-with-entirely-too-many-linked-lists
+.. date: 2019-05-12 20:50:49 UTC+08:00
+.. tags: 
+.. category: 
+.. link: 
+.. description: 
+.. type: text
+#+END_COMMENT
+
+
+
+
+#+HTML: <!--TEASER_END-->
+
+* 笔记
+
+** Ownership 101
+在rust中method和function的区别是，method的第一个参数是self
+
+* Anki 卡片                                                        :noexport:
+:PROPERTIES:
+:ANKI_DECK: rust
+:END:
+
+** Item
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Basic
+:ANKI_NOTE_ID: 1557667591310
+:END:
+:LOGBOOK:
+:END:
+
+*** Front
+在orgmode中插入源码块的方法是?
+
+*** Back
+另起一行，然后输入"<s",再按tab键即可
+
+** Ownership
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Basic
+:ANKI_NOTE_ID: 1557666980748
+:END:
+
+*** Front
+在rust中method和function的区别是？
+
+*** Back
+method是定义在impl中，第一个参数为self， 其定义是:
+
+#+BEGIN_SRC rust
+  fn foo(self, arg2: Type2) -> ReturnType{
+      // body
+  }
+#+END_SRC
+
+
+** Item2
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Basic
+:ANKI_NOTE_ID: 1557669603878
+:END:
+
+*** Front
+在method中的self有哪几种形式
+
+*** Back
+- `self`: Value
+- `&mut self`: mutable reference
+- `&self`: shared reference
+
+** Item
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Basic
+:END:
+
+*** Front
+Ownership中的value是什么?
+
+*** Back
+拥有完整的ownership，当参数使用这种方式的时候，调用方就移交了ownership,可以执行move、destroy、mutate、loan out等操作, 所以一般都不用这种形式
+
+** mutable reference
+:PROPERTIES:
+:ANKI_NOTE_TYPE: Basic
+:END:
+
+*** Front
+Ownership中的mutable reference是什么?
+
+*** Back
+它表示
